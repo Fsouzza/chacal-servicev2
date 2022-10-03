@@ -1,0 +1,72 @@
+@import '../../../styles/variaveis';
+
+.secao{
+  overflow-x: auto;
+  margin: .5em 2em;
+}
+
+.tabela{
+  background-color: $cor-card;
+  border-radius: 1em;
+  color: #cecece;
+  filter: drop-shadow($sombra);
+  padding: 2em;
+  thead{
+    background-color: $cor-principal;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 2.1;
+    text-indent: 6px;
+    text-transform: uppercase;
+  }
+  tbody{
+    td{
+      align-items: center;
+      border-bottom: 2px solid $cor-principal;
+      font-weight: 300;
+      line-height: 1.8;
+      text-indent: 8px;
+      width: 180px;
+      &:nth-child(8), &:nth-child(7), &:nth-child(9){
+        width: 260px;
+      }
+      &:nth-child(2){
+        align-items: center;
+        display: flex;
+        font-weight: 400;
+        gap: .5em;
+        text-indent: 0;
+        width: 140px;
+      }
+    }
+  }
+  div{
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 12px;
+    justify-content: center;
+    margin-left: 8px;
+    width: 12px;
+  }
+}
+
+.txtRed{
+  background-color: #d9a1a1;
+  border-radius: 1.5em;
+  text-align: center;
+}
+
+.txtGreen{
+  background-color: #96c186;
+  border-radius: 1.5em;
+  text-align: center;
+}
+
+.valueGreen{
+  color: #96c186;
+}
+
+.valueRed{
+  color: #d9a1a1;
+}

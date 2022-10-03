@@ -1,0 +1,38 @@
+@import '../../../styles/variaveis';
+
+.cards{
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	gap: 4em;
+	justify-content: center;
+	padding: 1em;
+	&__card{
+		background-color: $cor-card;
+		border-radius: 2em;
+    filter: drop-shadow($sombra);
+		padding: 2em 4em;
+		transition: .2s linear;
+		width: 370px;
+    &:hover{
+      filter: none;
+    }
+	}
+	&__titulo{
+		color: #a0a0a0;
+		font-size: 1em;
+		font-weight: 400;
+		margin: 1.5em 0 .3em 0;
+	}
+	&__descricao{
+		align-items: center;
+		display: flex;
+		gap: 1.5em;
+	}
+	&__subtitulo{
+		color: #a0a0a0;
+		font-size: 2.4em;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+}
