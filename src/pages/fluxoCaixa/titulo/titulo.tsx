@@ -1,5 +1,6 @@
 import styles from './titulo.module.scss';
 import { FiDownload } from 'react-icons/fi';
+import { BsPlusLg } from 'react-icons/bs';
 
 export const Titulo = () => {
   return(
@@ -10,7 +11,8 @@ export const Titulo = () => {
       </div>
       <div className={styles.cardTitulo__botoes}>
         <a href='#add'>
-          Add Produto
+          <BsPlusLg />
+          Add produto
         </a>
         <button>
           <FiDownload size={20} />

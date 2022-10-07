@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { Item } from '../../types/item';
 import { items } from '../../data/itens';
 import { Buscador } from './buscador/buscador';
+import { MyChart } from 'components/charts';
 
 export const FluxoCaixa = () => {
   const [busca, setBusca] = useState('');
@@ -26,7 +27,7 @@ export const FluxoCaixa = () => {
     }
     setEntrada(contadorEntrada);
     setSaida(contadorSaida);
-  }, [lista]);
+  }, [lista, busca]);
 
   const handleAddItem = (item: Item) => {
     const novaLista = [...lista];
@@ -38,12 +39,12 @@ export const FluxoCaixa = () => {
   return(
     <>
       <Titulo />
-      <Cards entrada={entrada} saida={saida} />
+      <Cards entrada={entrada} saida={saida} busca={busca} valores={lista}  />
       <AddFluxoCaixa onAdd={handleAddItem} />
       <div>
         <Buscador busca={busca} setBusca={setBusca} />
       </div>
-      <TabelaCaixa busca={busca} list={lista} />
+      <TabelaCaixa busca={busca} items={lista} />
     </>
   );
 };

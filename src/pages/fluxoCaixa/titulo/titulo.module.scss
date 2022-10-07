@@ -30,11 +30,15 @@
     gap: 2em;
     justify-content: center;
     a{
-      border: 2px solid $cor-azul;
+      align-items: center;
+      border: 2px dashed $cor-azul;
       border-radius: 1em;
       color: $cor-azull;
+      display: flex;
       font-size: 1em;
       font-weight: 500;
+      gap: .5em;
+      justify-content: center;
       padding: .5em 1em;
       text-align: center;
       transition: linear .4s;
@@ -59,7 +63,7 @@
       width: 170px;
       &:hover{
         background-color: transparent;
-        color: $cor-azul;
+        color: $cor-azull;
         font-weight: 600;
       }
     }

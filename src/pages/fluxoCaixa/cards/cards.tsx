@@ -1,18 +1,22 @@
 import styles from './cards.module.scss';
 import { BsCreditCard, BsFillCartXFill, BsCash, BsArrowRepeat } from 'react-icons/bs';
-import { MdArrowDropUp, MdArrowDropDown } from 'react-icons/md';
+import { BsFillArrowUpCircleFill, BsFillArrowDownCircleFill } from 'react-icons/bs';
 import { IoAnalyticsSharp } from 'react-icons/io5';
 import { FiArrowUpRight, FiArrowDownRight } from 'react-icons/fi';
 import CountUp from 'react-countup';
+import { Item } from 'types/item';
 
 type Props = {
-  entrada: number;
-  saida: number;
+  busca: string,
+  entrada: number,
+  saida: number,
+  valores: Item[]
 }
 
-export const Cards = ({entrada, saida}: Props) => {
+export const Cards = ({ entrada, saida }: Props) => {
   const total = entrada - saida;
   const porcentagem = total / 100;
+  
 
   return(
     <section className={styles.cards}>
@@ -30,7 +34,7 @@ export const Cards = ({entrada, saida}: Props) => {
               prefix='R$ '
             />
           </span>
-          <MdArrowDropUp size={40} color={'#add193'}  />
+          <BsFillArrowUpCircleFill size={22} color={'#add193'}  />
         </div>
       </article>
       <article className={styles.cards__card}>
@@ -47,7 +51,7 @@ export const Cards = ({entrada, saida}: Props) => {
               prefix='R$ '
             />
           </span>
-          <MdArrowDropDown size={40} color={'#d54724'} />
+          <BsFillArrowDownCircleFill size={22} color={'#d54724'} />
         </div>
       </article>
       <article className={styles.cards__card}>
