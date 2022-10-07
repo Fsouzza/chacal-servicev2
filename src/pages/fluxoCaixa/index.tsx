@@ -40,6 +40,7 @@ export const FluxoCaixa = () => {
     <>
       <Titulo />
       <Cards entrada={entrada} saida={saida} busca={busca} valores={lista}  />
+      <MyChart />
       <AddFluxoCaixa onAdd={handleAddItem} />
       <div>
         <Buscador busca={busca} setBusca={setBusca} />

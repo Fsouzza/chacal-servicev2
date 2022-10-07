@@ -7,6 +7,7 @@ type Props = {
   items: Item[],
   busca: string,
 }
+
 export const TabelaCaixa = (props: Props) => {
   const {items, busca} = props;
   const [lista, setLista] = useState(items);
@@ -26,7 +27,7 @@ export const TabelaCaixa = (props: Props) => {
     );
 
     setLista(listaBusca);
-  }, [lista, busca]);
+  }, [items, busca]);
 
   return(
     <section className={styles.secao}>

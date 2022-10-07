@@ -56,7 +56,7 @@ export const Cards = ({ entrada, saida }: Props) => {
       </article>
       <article className={styles.cards__card}>
         <BsCash size={34} color={'#628DFB'} />
-        <h4 className={styles.cards__titulo}>Balanço Total</h4>
+        <h4 className={styles.cards__titulo}>Saldo em Caixa</h4>
         <div className={styles.cards__descricao}>
           <span className={styles.cards__subtitulo}>
             <CountUp

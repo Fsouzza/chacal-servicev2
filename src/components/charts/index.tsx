@@ -1,43 +1,63 @@
-import { Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
+import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Legend, Tooltip } from 'chart.js';
+import styles from './charts.module.scss';
 
-const data = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-  datasets: [{
-    label: '# of Votes',
-    data: [12, 19, 3, 5, 2, 3],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(255, 206, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(255, 159, 64, 0.2)' ],
-    borderColor: [
-      'rgba(255, 99, 132, 1)',
-      'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)',
-      'rgba(255, 159, 64, 1)'],
-    borderWidth: 1
-  }]
-};
+ChartJS.register(
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  Legend,
+  Tooltip
+);
 
-const options = {
-  scales: {
-    y: {
-      beginAtZero: true
-    }
-  } 
-};
+export const MyChart = () => {
 
+  const valoresEntrada: number[] = [84,92,135,459,69,23];
+  const valoresSaida: number[] = [224, 194, 69, 432, 433, 555];
+  const meses:string[] = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'];
 
+  const data = {
+    labels: meses,
+    datasets: [{
+      label: 'Saídas',
+      data: valoresEntrada,
+      backgroundColor: 'transparent',
+      borderColor: '#f26c6d',
+      pointBorderColor: '#f26c6d',
+      pointBorderWidth: 4, 
+      tension: 0.5
+    },
+    {
+      label: 'Entradas',
+      data: valoresSaida,
+      backgroundColor: 'transparent',
+      borderColor: '#038C3E',
+      pointBorderColor: '#038C3E',
+      pointBorderWidth: 4,
+      tension: 0.5
+    }]
+  };
+  
+  const options = {
+    scales: {
+      x: {
+        grid: {
+          display: false
+        }
+      },
+      y: {
+        beginAtZero: true,
+        grid: {
+          borderDash: [10]
+        }
+      }
+    } 
+  };
 
-export const MyChart: React.FunctionComponent = () => {
   return(
-    <div>
-      <h1>Grafico</h1>
-      <Bar
+    <div className={styles.chart}>
+      <Line
         data={data} 
         options={options}
       />
