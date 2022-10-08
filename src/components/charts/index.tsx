@@ -12,30 +12,27 @@ ChartJS.register(
   Tooltip
 );
 
+
 export const MyChart = () => {
-  const entrada = [];
-  const saida = [];
   const lista = items;
+  const vEntrada = [];
+  const vSaida = [];
+  const meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'nov', 'dez'];
 
   for(let i=0; i<lista.length; i++){
-
     if(lista[i].lancamentos === 'Entrada'){
-      entrada.push(lista[i].valor);
+      vEntrada.push(lista[i].valor);
     }
     if(lista[i].lancamentos === 'Saída'){
-      saida.push(lista[i].valor);
+      vSaida.push(lista[i].valor);
     }
   }
-
-  const valoresEntrada: number[] = entrada;
-  const valoresSaida: number[] = saida;
-  const meses:string[] = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'];
 
   const data = {
     labels: meses,
     datasets: [{
       label: 'Saídas',
-      data: valoresSaida,
+      data: vSaida,
       backgroundColor: 'transparent',
       borderColor: '#f26c6d',
       pointBorderColor: '#f26c6d',
@@ -44,7 +41,7 @@ export const MyChart = () => {
     },
     {
       label: 'Entradas',
-      data: valoresEntrada,
+      data: vEntrada,
       backgroundColor: 'transparent',
       borderColor: '#038C3E',
       pointBorderColor: '#038C3E',
@@ -54,6 +51,7 @@ export const MyChart = () => {
   };
   
   const options = {
+    maintainAspectRatio: false,
     scales: {
       x: {
         grid: {
@@ -63,14 +61,15 @@ export const MyChart = () => {
       y: {
         beginAtZero: true,
         grid: {
-          borderDash: [10]
+          borderDash: [10],
+          borderWidthColor: '#038C3E'
         }
       }
-    } 
+    },
   };
 
   return(
-    <div className={styles.chart}>
+    <div className={styles.chartBox}>
       <Line
         data={data} 
         options={options}

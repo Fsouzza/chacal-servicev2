@@ -13,6 +13,7 @@ export const FluxoCaixa = () => {
   const [entrada, setEntrada] = useState(0);
   const [saida, setSaida] = useState(0);
   const [lista, setLista] = useState(items);
+
  
   useEffect(()=> {
     let contadorEntrada = 0;
