@@ -10,18 +10,28 @@
   border-radius: 1em;
   color: #cecece;
   filter: drop-shadow($sombra);
-  padding: 2em;
+  padding: 1em;
   thead{
-    background-color: $cor-principal;
+    background-color: $cor-preta;
     font-size: 1em;
     font-weight: 500;
     line-height: 2.1;
     text-indent: 6px;
+    tr{
+      td{
+        &:first-child{
+          border-top-left-radius: .5em;
+        }
+        &:last-child{
+          border-top-right-radius: .5em;
+        }
+      }
+    }
   }
   tbody{
     td{
       align-items: center;
-      border-bottom: 2px solid $cor-principal;
+   
       font-size: .94em;
       font-weight: 300;
       line-height: 1.8;
@@ -36,6 +46,11 @@
         gap: .5em;
         text-indent: 0;
         width: 140px;
+      }
+    }
+    tr{
+      &:nth-of-type(even){
+        background-color: $cor-principal
       }
     }
   }

@@ -7,7 +7,7 @@ export const items: Item[] = [
     categoria: 'Compra',
     departamento: 'Operacional',
     tipo: 'Recibo',
-    id: 'CHCL 0023456',
+    id: '00234569',
     local: 'Epi Comercio LTDA',
     item: 'Bota bico aco tam 42',
     valor: 280.00,

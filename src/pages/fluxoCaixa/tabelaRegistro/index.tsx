@@ -3,6 +3,7 @@ import { formatDate } from '../../../helpers/dateFilter';
 import styles from './tabelaRegistro.module.scss';
 import { useEffect, useState } from 'react';
 
+
 type Props = {
   items: Item[],
   busca: string,
@@ -11,6 +12,37 @@ type Props = {
 export const TabelaCaixa = (props: Props) => {
   const {items, busca} = props;
   const [lista, setLista] = useState(items);
+  const colunas = [
+    {
+      label: 'ID'
+    },
+    {
+      label: 'Item'
+    },
+    { label: 'Documento'
+    },
+    {
+      label: 'Categoria'
+    },
+    {
+      label: 'Data'
+    },
+    {
+      label: 'Lançamento'
+    },
+    {
+      label: 'Departamento'
+    },
+    {
+      label: 'Local'
+    },
+    {
+      label: 'Valor'
+    },
+    {
+      label: 'Oberseração'
+    }
+  ];
 
   function verificaBusca(title: string){
     const regex = new RegExp(busca, 'i');
@@ -28,38 +60,18 @@ export const TabelaCaixa = (props: Props) => {
     setLista(listaBusca);
   }, [items, busca]);
 
-  const colunas = [
-    {header: 'ID'},
-    {header: 'Item'},
-    {header: 'Documento'},
-    {header: 'Categoria'},
-    {header: 'Data'},
-    {header: 'Lançamento'},
-    {header: 'Departamento'},
-    {header: 'Local'},
-    {header: 'Valor'},
-    {header: 'Oberseração'}
-  ];
-
   return(
     <section className={styles.secao}>
       <table className={styles.tabela}>
         <thead>
           <tr>
-            <td>ID</td>
-            <td>Item</td>
-            <td>Documento</td>
-            <td>Categoria</td>
-            <td>Data</td>
-            <td>Lançamento</td>
-            <td>Departamento</td>
-            <td>Local</td>
-            <td>Valor</td>
-            <td>Observação</td>
+            {colunas.map((coluna, index) => (
+              <td key={index}>{coluna.label}</td>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {lista.map((item, index) => (
+          {lista && lista.length > 0 ? lista.map((item, index) => (
             <tr key={index}>
               <td>{item.id}</td>
               <td>{item.item}</td>
@@ -77,7 +89,7 @@ export const TabelaCaixa = (props: Props) => {
               </td>
               <td>{item.obs}</td>
             </tr>
-          ))}
+          )) : 'loading...'}
         </tbody>
       </table>
     </section>
