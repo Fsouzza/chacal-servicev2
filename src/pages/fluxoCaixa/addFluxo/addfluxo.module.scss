@@ -25,10 +25,10 @@
 		}
 		select,
 		input {
-      background-color: $cor-principal;
-      border: 1px solid $cor-principal;
-      border-radius: .5em;
-      color: $cor-branco;
+			background-color: $cor-principal;
+			border: 1px solid $cor-principal;
+			border-radius: .5em;
+			color: $cor-branco;
 			min-width: 250px;
 			outline: none;
 			padding: .5em;
@@ -40,6 +40,7 @@
 	button {
 		background-color: $cor-azul;
 		border: none;
+    border-radius: .5em;
 		color: $cor-branco;
 		cursor: pointer;
 		font-weight: 500;

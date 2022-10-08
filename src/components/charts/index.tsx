@@ -34,8 +34,8 @@ export const MyChart = () => {
       label: 'Saídas',
       data: vSaida,
       backgroundColor: 'transparent',
-      borderColor: '#f26c6d',
-      pointBorderColor: '#f26c6d',
+      borderColor: '#F23D3D',
+      pointBorderColor: '#F23D3D',
       pointBorderWidth: 4, 
       tension: 0.5
     },
@@ -51,6 +51,9 @@ export const MyChart = () => {
   };
   
   const options = {
+    legend: {
+      display: false
+    },
     maintainAspectRatio: false,
     scales: {
       x: {
@@ -61,7 +64,7 @@ export const MyChart = () => {
       y: {
         beginAtZero: true,
         grid: {
-          borderDash: [10],
+          borderDash: [15],
           borderWidthColor: '#038C3E'
         }
       }

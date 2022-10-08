@@ -38,7 +38,7 @@ export const Cards = ({ entrada, saida }: Props) => {
         </div>
       </article>
       <article className={styles.cards__card}>
-        <BsFillCartXFill size={34} color={'#ff4f37'} />
+        <BsFillCartXFill size={34} color={'#F23D3D'} />
         <h4 className={styles.cards__titulo}>Total de Saída</h4>
         <div className={styles.cards__descricao}>
           <span className={styles.cards__subtitulo}>
