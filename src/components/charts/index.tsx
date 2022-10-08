@@ -1,5 +1,5 @@
 import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Legend, Tooltip } from 'chart.js';
+import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Legend, Tooltip, Title } from 'chart.js';
 import styles from './charts.module.scss';
 import { items } from 'data/itens';
 
@@ -9,7 +9,8 @@ ChartJS.register(
   LinearScale,
   PointElement,
   Legend,
-  Tooltip
+  Tooltip,
+  Title
 );
 
 
@@ -17,7 +18,7 @@ export const MyChart = () => {
   const lista = items;
   const vEntrada = [];
   const vSaida = [];
-  const meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'nov', 'dez'];
+  const meses = [new Date('01-01-2022').getMonth() +1, 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'nov', 'dez'];
 
   for(let i=0; i<lista.length; i++){
     if(lista[i].lancamentos === 'Entrada'){
@@ -35,9 +36,10 @@ export const MyChart = () => {
       data: vSaida,
       backgroundColor: 'transparent',
       borderColor: '#F23D3D',
+      borderWidth: 3,
       pointBorderColor: '#F23D3D',
       pointBorderWidth: 4, 
-      tension: 0.5
+      tension: 0.5,
     },
     {
       label: 'Entradas',
@@ -45,27 +47,28 @@ export const MyChart = () => {
       backgroundColor: 'transparent',
       borderColor: '#038C3E',
       pointBorderColor: '#038C3E',
+      borderWidth: 3,
       pointBorderWidth: 4,
       tension: 0.5
     }]
   };
   
   const options = {
-    legend: {
-      display: false
-    },
     maintainAspectRatio: false,
     scales: {
       x: {
         grid: {
-          display: false
+          display: false,
+          borderWidth: 2,
+          borderColor: '#262626'
         }
       },
       y: {
-        beginAtZero: true,
+        beginAtZero: false,
         grid: {
           borderDash: [15],
-          borderWidthColor: '#038C3E'
+          borderWidth: 2,
+          borderColor: '#262626'
         }
       }
     },

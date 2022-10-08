@@ -13,8 +13,8 @@ export const FluxoCaixa = () => {
   const [entrada, setEntrada] = useState(0);
   const [saida, setSaida] = useState(0);
   const [lista, setLista] = useState(items);
+  const [selects, setSelects] = useState('');
 
- 
   useEffect(()=> {
     let contadorEntrada = 0;
     let contadorSaida = 0;
@@ -41,6 +41,15 @@ export const FluxoCaixa = () => {
     <>
       <Titulo />
       <Cards entrada={entrada} saida={saida} busca={busca} valores={lista}  />
+      <div>
+        <input type='date'></input>
+        <input type='date'></input>
+        <select value={selects} onChange={e => setSelects(e.target.value)}>
+          <option></option>
+          <option>Departamento</option>
+          <option>Documento</option>
+        </select>
+      </div>
       <MyChart />
       <AddFluxoCaixa onAdd={handleAddItem} />
       <div>
