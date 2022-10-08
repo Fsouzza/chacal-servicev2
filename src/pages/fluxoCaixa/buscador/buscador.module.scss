@@ -1,5 +1,12 @@
 @import '../../../styles/variaveis';
 
+.sBusca{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .pesquisar {
   align-items: center;
   background-color: transparent;
@@ -25,3 +32,24 @@
     }
   }
 }
+
+.tags{
+  display: flex;
+  gap: 1em;
+  margin: 0 1em;
+  padding: 0 1em;
+  select{
+    background-color: $cor-principal;
+    border: 4px solid $cor-card;
+    border-radius: 1em;
+    color: $cor-branco;
+    font-size: 1rem;
+    outline: none;
+    padding: .4em 1em;
+    text-align: center;
+    &::placeholder {
+      color: #6d6e88;
+    }
+  }
+}
+

@@ -45,20 +45,22 @@ export const TabelaCaixa = (props: Props) => {
   ];
 
   function verificaBusca(title: string){
-    const regex = new RegExp(busca, 'i');
+    const regex = new RegExp(`^${busca}`, 'i');
     return regex.test(title);
   }
 
   useEffect(()=> {
-    const listaBusca = items.filter(item => verificaBusca(item.item) 
+    const listaBusca = items.filter(item => verificaBusca(item.item)
       || verificaBusca(item.tipo) 
       || verificaBusca(item.departamento) 
       || verificaBusca(item.categoria)
       || verificaBusca(item.local)
+      || verificaBusca(item.lancamentos)
     );
 
     setLista(listaBusca);
   }, [items, busca]);
+
 
   return(
     <section className={styles.secao}>
