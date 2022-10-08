@@ -8,6 +8,7 @@ import { items } from '../../data/itens';
 import { Buscador } from './buscador/buscador';
 import { MyChart } from 'components/charts';
 
+
 export const FluxoCaixa = () => {
   const [busca, setBusca] = useState('');
   const [entrada, setEntrada] = useState(0);

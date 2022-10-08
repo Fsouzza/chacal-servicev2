@@ -14,7 +14,6 @@ export const TabelaCaixa = (props: Props) => {
 
   function verificaBusca(title: string){
     const regex = new RegExp(busca, 'i');
-
     return regex.test(title);
   }
 
@@ -28,6 +27,19 @@ export const TabelaCaixa = (props: Props) => {
 
     setLista(listaBusca);
   }, [items, busca]);
+
+  const colunas = [
+    {header: 'ID'},
+    {header: 'Item'},
+    {header: 'Documento'},
+    {header: 'Categoria'},
+    {header: 'Data'},
+    {header: 'Lançamento'},
+    {header: 'Departamento'},
+    {header: 'Local'},
+    {header: 'Valor'},
+    {header: 'Oberseração'}
+  ];
 
   return(
     <section className={styles.secao}>
