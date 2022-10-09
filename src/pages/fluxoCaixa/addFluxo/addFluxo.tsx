@@ -13,7 +13,7 @@ export const AddFluxoCaixa = ({ onAdd}: Props) => {
   const [categoriaField, setCategoriaField] = useState('');
   const [deptoField, setDeptoField] = useState('');
   const [docField, setDocField] = useState('');
-  const [idField, setIdField] = useState('');
+  const [idField, setIdField] = useState(0);
   const [localField, setLocalField] = useState('');
   const [itemField, setItemField] = useState('');
   const [obsField, setObsField] = useState('');
@@ -41,7 +41,7 @@ export const AddFluxoCaixa = ({ onAdd}: Props) => {
     setCategoriaField('');
     setDeptoField('');
     setDocField('');
-    setIdField('');
+    setIdField(0);
     setLocalField('');
     setItemField('');
     setObsField('');
@@ -52,7 +52,7 @@ export const AddFluxoCaixa = ({ onAdd}: Props) => {
     <section id='add' className={styles.add}>
       <div>
         <label htmlFor='numero'>ID Doc*</label>
-        <input id='numero' type='text' required onChange={e => setIdField(e.target.value)} />
+        <input id='numero' type='number' maxLength={999999} required onChange={e => setIdField(parseFloat(e.target.value))} />
       </div>
       <div>
         <label htmlFor='item'>Item*</label>

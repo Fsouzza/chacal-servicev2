@@ -4,7 +4,7 @@ export type Item = {
   categoria: string;
   departamento: string;
   tipo: string;
-  id: string;
+  id: number;
   local: string;
   item: string;
   valor: number,
