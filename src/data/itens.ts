@@ -113,7 +113,7 @@ export const items: Item[] = [
     date: new Date(2022, 5, 28),
     lancamentos: 'Saída', 
     categoria: 'Compra',
-    departamento: 'Escritório',
+    departamento: 'Administrativo',
     tipo: 'NFCe',
     id: 9888822,
     local: 'Joaninha Distribuidora',

@@ -7,6 +7,7 @@ import { Item } from '../../types/item';
 import { items } from '../../data/itens';
 import { Buscador } from './buscador/buscador';
 import { MyChart } from 'components/charts';
+import styles from './fluxoCaixa.module.scss';
 
 
 export const FluxoCaixa = () => {
@@ -41,9 +42,11 @@ export const FluxoCaixa = () => {
     <>
       <Titulo />
       <Cards entrada={entrada} saida={saida} busca={busca} valores={lista}  />
-      <div>
-        <input type='date'></input>
-        <input type='date'></input>
+      <div className={styles.inputsData}>
+        <div>
+          <input type='date'></input>
+          <input type='date'></input>
+        </div>
       </div>
       <MyChart />
       <AddFluxoCaixa onAdd={handleAddItem} />
