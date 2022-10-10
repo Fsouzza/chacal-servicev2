@@ -1,16 +1,19 @@
 @import "../../styles/variaveis";
 
-.chartBox{
-  background-color: $cor-card;
-  border-radius: 1em;
-  box-sizing: border-box;
+
+.charts{
   display: flex;
   filter: drop-shadow($sombra);
-  flex-direction: row;
-  grid-gap: 2em;
-  height: 380px;
-  padding: 2em;
-  margin: 0 2em 4em 2em;
-	padding: 2em 4em;
-  max-width: 100%;
+  gap: 1em;
+  margin: 0 2em 2em 2em;
+  &__chartBox{
+    background-color: $cor-card;
+    border-radius: 1em;
+    height: 400px;
+    padding: 2em;
+    width: 65%;
+    &:last-child{
+      width: 35%;
+    }
+  }
 }

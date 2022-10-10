@@ -10,6 +10,7 @@ import { Chart as ChartJS, CategoryScale,
 import styles from './charts.module.scss';
 import { items } from 'data/itens';
 
+
 ChartJS.register(
   BarElement,
   LineElement,
@@ -26,7 +27,7 @@ export const MyChart = () => {
   const lista = items;
   const vEntrada = [];
   const vSaida = [];
-  const meses = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'NOV', 'DEZ'];
+  const meses = [ 'JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
   const departamentos = [];
 
   for(let i=0; i<lista.length; i++){
@@ -105,7 +106,7 @@ export const MyChart = () => {
         }
       },
       y: {
-        beginAtZero: false,
+        beginAtZero: true,
         grid: {
           borderDash: [15],
           borderWidth: 2,
@@ -117,13 +118,13 @@ export const MyChart = () => {
 
   return(
     <div className={styles.charts}>
-      <div className={styles.chartBox}>
+      <div className={styles.charts__chartBox}>
         <Line
           data={data} 
           options={options}
         />
       </div>
-      <div className={styles.chartBox}>
+      <div className={styles.charts__chartBox}>
         <Bar 
           data={data2} 
           options={options}

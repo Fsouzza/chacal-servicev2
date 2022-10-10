@@ -19,16 +19,17 @@ export const TabelaCaixa = (props: Props) => {
     {
       label: 'Item'
     },
-    { label: 'Documento'
-    },
-    {
-      label: 'Categoria'
-    },
     {
       label: 'Data'
     },
     {
       label: 'Lançamento'
+    },
+    { 
+      label: 'Documento'
+    },
+    {
+      label: 'Categoria'
     },
     {
       label: 'Departamento'
@@ -77,13 +78,13 @@ export const TabelaCaixa = (props: Props) => {
             <tr key={index}>
               <td>{item.id}</td>
               <td>{item.item}</td>
-              <td>{item.tipo}</td>
-              <td>{item.categoria}</td>
               <td>{formatDate(item.date)}</td>
               <td className={item.lancamentos === 'Entrada' ? `${styles.valueGreen}` : `${styles.valueRed}`}>
                 <div className={item.lancamentos === 'Entrada' ? `${styles.txtGreen}` : `${styles.txtRed}`}></div>
                 {item.lancamentos}
               </td>
+              <td>{item.tipo}</td>
+              <td>{item.categoria}</td>
               <td>{item.departamento}</td>
               <td>{item.local}</td>
               <td className={item.lancamentos === 'Entrada' ? `${styles.valueGreen}` : `${styles.valueRed}`}>
