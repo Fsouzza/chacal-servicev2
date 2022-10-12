@@ -6,12 +6,12 @@
 	flex-direction: row;
 	gap: 4em;
 	justify-content: center;
-	padding: 1em;
+	
 	&__card{
 		background-color: $cor-card;
 		border-radius: 2em;
     filter: drop-shadow($sombra);
-		padding: 2em 4em;
+		padding: 1.6em 3em;
 		transition: .2s linear;
 		width: 400px;
     &:hover{
@@ -31,8 +31,12 @@
 	}
 	&__subtitulo{
 		color: #a0a0a0;
-		font-size: 2.4em;
+		font-size: 2em;
 		font-weight: 600;
 		text-transform: uppercase;
 	}
+}
+
+.negativo{
+  color: #c34743;
 }

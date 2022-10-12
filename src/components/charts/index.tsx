@@ -1,4 +1,4 @@
-import { Line, Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale,
   LinearScale,
   PointElement,
@@ -9,7 +9,6 @@ import { Chart as ChartJS, CategoryScale,
   Legend, } from 'chart.js';
 import styles from './charts.module.scss';
 import { items } from 'data/itens';
-
 
 ChartJS.register(
   BarElement,
@@ -22,21 +21,17 @@ ChartJS.register(
   Title
 );
 
-
 export const MyChart = () => {
   const lista = items;
   const vEntrada = [];
   const vSaida = [];
   const meses = [ 'JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
-  const departamentos = [];
 
   for(let i=0; i<lista.length; i++){
     if(lista[i].lancamentos === 'Entrada'){
       vEntrada.push(lista[i].valor);
-    }
-    if(lista[i].lancamentos === 'Saída'){
+    } else {
       vSaida.push(lista[i].valor);
-      departamentos.push(lista[i].departamento);
     }
   }
 
@@ -63,26 +58,12 @@ export const MyChart = () => {
       tension: 0.5
     }]
   };
-
-  const data2 = {
-    labels: departamentos,
-    datasets: [{
-      label: 'Administrativo',
-      data: vSaida,
-      backgroundColor: '#F23D3D',
-      borderColor: '#F23D3D',
-      borderWidth: 3,
-      pointBorderColor: '#F23D3D',
-      pointBorderWidth: 4, 
-      tension: 0.5,
-    }],
-  };
   
   const options = {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'top' as const,
+        position: 'bottom' as const,
       },
       title: {
         display: true,
@@ -95,7 +76,6 @@ export const MyChart = () => {
           bottom: 20,
         }
       },
-      
     },
     scales: {
       x: {
@@ -124,13 +104,6 @@ export const MyChart = () => {
           options={options}
         />
       </div>
-      <div className={styles.charts__chartBox}>
-        <Bar 
-          data={data2} 
-          options={options}
-        />
-      </div>
     </div>
   );
-
 };

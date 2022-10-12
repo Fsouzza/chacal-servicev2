@@ -178,7 +178,7 @@ export const items: Item[] = [
     id: 22623698,
     local: 'Escritório',
     item: 'Retirada de Caixa',
-    valor: 592.00,
+    valor: 392.00,
     obs: '-'
   },
   { 

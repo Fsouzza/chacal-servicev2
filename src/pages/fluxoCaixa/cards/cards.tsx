@@ -60,6 +60,7 @@ export const Cards = ({ entrada, saida }: Props) => {
         <div className={styles.cards__descricao}>
           <span className={styles.cards__subtitulo}>
             <CountUp
+              className={total > 0 ? '' : `${styles.negativo}`}
               start={0}
               end={total}
               duration={1}
@@ -77,6 +78,7 @@ export const Cards = ({ entrada, saida }: Props) => {
         <div className={styles.cards__descricao}>
           <span className={styles.cards__subtitulo}>
             <CountUp
+              className={porcentagem > 0 ? '' : `${styles.negativo}`}
               start={0}
               end={porcentagem}
               duration={1}
@@ -85,7 +87,7 @@ export const Cards = ({ entrada, saida }: Props) => {
               suffix=' %'
             />
           </span>
-          {porcentagem > 0 ? <FiArrowUpRight size={30} color={'#7EDBA8'} /> : <FiArrowDownRight size={30} color={'#DB8773'} />}
+          {porcentagem > 0 ? <FiArrowUpRight size={30} color={'#7EDBA8'} /> : <FiArrowDownRight size={30} color={'#c34743'} />}
         </div>
       </article>
     </section>

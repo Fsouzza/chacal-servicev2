@@ -5,15 +5,12 @@
   display: flex;
   filter: drop-shadow($sombra);
   gap: 1em;
-  margin: 0 2em 2em 2em;
+  margin: 0 2em 6em 2em;
   &__chartBox{
     background-color: $cor-card;
     border-radius: 1em;
-    height: 400px;
-    padding: 2em;
-    width: 65%;
-    &:last-child{
-      width: 35%;
-    }
+    height: 380px;
+    padding: 2em 3em;
+    width: 100%;
   }
 }
