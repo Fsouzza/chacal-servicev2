@@ -6,7 +6,7 @@ import { Chart as ChartJS, CategoryScale,
   Title,
   Tooltip,
   BarElement,
-  Legend, } from 'chart.js';
+  Legend } from 'chart.js';
 import styles from './charts.module.scss';
 import { items } from 'data/itens';
 
@@ -37,26 +37,28 @@ export const MyChart = () => {
 
   const data = {
     labels: meses,
-    datasets: [{
-      label: 'Saídas',
-      data: vSaida,
-      backgroundColor: 'transparent',
-      borderColor: '#F23D3D',
-      borderWidth: 3,
-      pointBackgroundColor: '#F23D3D',
-      pointBorderWidth: 4, 
-      tension: 0.3,
-    },
-    {
-      label: 'Entradas',
-      data: vEntrada,
-      backgroundColor: 'transparent',
-      borderColor: '#038C3E',
-      pointBackgroundColor: '#038C3E',
-      borderWidth: 3,
-      pointBorderWidth: 4,
-      tension: 0.3
-    }]
+    datasets: [
+      {
+        label: 'Entradas',
+        data: vEntrada,
+        backgroundColor: 'transparent',
+        borderColor: '#038C3E',
+        pointBackgroundColor: '#038C3E',
+        borderWidth: 2.4,
+        pointBorderWidth: 2,
+        tension: 0.4
+      },
+      {
+        label: 'Saídas',
+        data: vSaida,
+        backgroundColor: 'transparent',
+        borderColor: '#F23D3D',
+        borderWidth: 2.4,
+        pointBackgroundColor: '#F23D3D',
+        pointBorderWidth: 2, 
+        tension: 0.4,
+      }
+    ]
   };
   
   const options = {
@@ -70,7 +72,7 @@ export const MyChart = () => {
       },
       title: {
         display: true,
-        text: 'Demonstrativo por lançamento',
+        text: 'Demonstrativo por Lançamento',
         font: {
           size: 24
         },
@@ -85,7 +87,7 @@ export const MyChart = () => {
         grid: {
           display: false,
           borderWidth: 2,
-          borderColor: '#262626'
+          borderColor: '#4b4b4b'
         }
       },
       y: {
@@ -93,8 +95,11 @@ export const MyChart = () => {
         grid: {
           borderDash: [15],
           borderWidth: 2,
-          borderColor: '#262626'
-        }
+          borderColor: '#4b4b4b'
+        },
+        ticks: {
+          stepSize: 75
+        },
       }
     },
   };

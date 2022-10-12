@@ -10,7 +10,7 @@ export const items: Item[] = [
     id: 234569,
     local: 'Epi Comercio LTDA',
     item: 'Bota bico aco tam 42',
-    valor: 280.00,
+    valor: 80.00,
     obs: '-'
   },
   { 
@@ -22,7 +22,7 @@ export const items: Item[] = [
     id: 0,
     local: 'Escritório',
     item: 'Fundo de Caixa Injetado',
-    valor: 350.00,
+    valor: 250.00,
     obs: '-'
   },
   { 
@@ -46,7 +46,7 @@ export const items: Item[] = [
     id: 0,
     local: 'Escritório',
     item: 'Fundo de Caixa Injetado',
-    valor: 250.00,
+    valor: 150.00,
     obs: '-'
   },
   { 
@@ -58,7 +58,7 @@ export const items: Item[] = [
     id: 2445621,
     local: 'Raça Transportes',
     item: 'Custo de Refeição',
-    valor: 238.00,
+    valor: 138.00,
     obs: '-'
   },
   { 
@@ -70,7 +70,7 @@ export const items: Item[] = [
     id: 234499,
     local: 'Escritório',
     item: 'Retirada de Caixa',
-    valor: 194.00,
+    valor: 167.00,
     obs: '-'
   },
   { 
@@ -82,7 +82,7 @@ export const items: Item[] = [
     id: 2343614,
     local: 'Escritório',
     item: 'Fundo de Caixa Injetado',
-    valor: 186.00,
+    valor: 156.00,
     obs: '-'
   },
   { 
@@ -94,7 +94,7 @@ export const items: Item[] = [
     id: 2343451,
     local: 'Speed Multimodal',
     item: 'Fundo de Caixa Injetado',
-    valor: 104.00,
+    valor: 114.00,
     obs: '-'
   },
   { 
@@ -106,7 +106,7 @@ export const items: Item[] = [
     id: 87612788,
     local: 'Speed Multimodal',
     item: 'Fundo de Caixa Injetado',
-    valor: 246.00,
+    valor: 146.00,
     obs: '-'
   },
   { 
@@ -118,7 +118,7 @@ export const items: Item[] = [
     id: 9888822,
     local: 'Joaninha Distribuidora',
     item: 'Garrafão de Água 20L',
-    valor: 9.00,
+    valor: 19.00,
     obs: '-'
   },
   { 
@@ -130,7 +130,7 @@ export const items: Item[] = [
     id: 1234568,
     local: 'Central & Refrigeração',
     item: 'Manutenção de equip. Split',
-    valor: 254.00,
+    valor: 224.00,
     obs: '-'
   },
   { 
@@ -142,7 +142,7 @@ export const items: Item[] = [
     id: 11623698,
     local: 'Escritório',
     item: 'Fundo de Caixa Injetado',
-    valor: 192.00,
+    valor: 182.00,
     obs: '-'
   },
   { 
@@ -178,7 +178,7 @@ export const items: Item[] = [
     id: 22623698,
     local: 'Escritório',
     item: 'Retirada de Caixa',
-    valor: 392.00,
+    valor: 234.00,
     obs: '-'
   },
   { 
@@ -190,7 +190,7 @@ export const items: Item[] = [
     id: 23623698,
     local: 'Escritório',
     item: 'Fundo de Caixa retirado',
-    valor: 292.00,
+    valor: 192.00,
     obs: '-'
   },
   { 
@@ -226,7 +226,7 @@ export const items: Item[] = [
     id: 99623698,
     local: 'Escritório',
     item: 'Fundo de Caixa Injetado',
-    valor: 422.00,
+    valor: 222.00,
     obs: '-'
   },
   { 
@@ -238,7 +238,7 @@ export const items: Item[] = [
     id: 1234568,
     local: 'Central & Refrigeração',
     item: 'Manutenção de equip. Split',
-    valor: 154.00,
+    valor: 254.00,
     obs: '-'
   },
   { 
@@ -262,7 +262,7 @@ export const items: Item[] = [
     id: 0,
     local: 'Escritório',
     item: 'Fundo de Caixa Injetado',
-    valor: 250.00,
+    valor: 150.00,
     obs: '-'
   },
   { 
@@ -274,7 +274,7 @@ export const items: Item[] = [
     id: 0,
     local: 'Escritório',
     item: 'Fundo de Caixa Injetado',
-    valor: 250.00,
+    valor: 127.00,
     obs: '-'
   },
   { 

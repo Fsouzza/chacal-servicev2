@@ -74,7 +74,7 @@ export const Cards = ({ entrada, saida }: Props) => {
       </article>
       <article className={styles.cards__card}>
         <IoAnalyticsSharp size={34} color={'#36DBCE'} />
-        <h4 className={styles.cards__titulo}>Porcentagem de lucro</h4>
+        <h4 className={styles.cards__titulo}>Porcentagem Orçamentaria</h4>
         <div className={styles.cards__descricao}>
           <span className={styles.cards__subtitulo}>
             <CountUp

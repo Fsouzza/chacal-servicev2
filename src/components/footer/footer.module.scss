@@ -1,55 +1,69 @@
 @import "styles/variaveis";
 
 .footer{
-  background: transparent;
-  border-top: 2px solid $cor-secundaria;
+  background: $cor-preta;
+  color: $cor-brancol;
   font-size: 1em;
   margin-top: 5em;
-  padding: 2em 0;
   text-align: center;
-  div{
+  h3{
+    font-size: 1.4em;
+    text-transform: uppercase;
+  }
+  h4{
+    font-size: 1.5em;
+  }
+  a{
     align-items: center;
-    display: flex;
-    justify-content: space-around;
-  }
-  &__logo{
-    display: inline-block;
-    height: 60px;
-    margin-left: 2em;
-    width: 60px;
-  }
-  &__permalinks{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    justify-content: center;
-    margin: 0 auto 2rem;
-  }
-  &__link{
-    color: $cor-cinza;
-    transition: .6s ease;
+    border-radius: 25%;
+    padding: 2px;
     &:hover{
+      background-color: $cor-cinza;
       color: $cor-preta;
     }
   }
-  &__socials{
+  &__content{
+    align-items: center;
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    padding: 3em 4em .6em 4em;
+  }
+  &__img{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+  }
+  &__logo{
+    height: 50px;
+    width: 50px;
+  }
+  &__permalinks, &__endereco{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  &__links, &__locais{
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+  }
+  &__link, &__descricao{
+    align-items: center;
     display: flex;
     gap: .6em;
-    justify-content: center;
-    margin-bottom: 1.4em;
-    margin-right: 2em;
-    a{
-      background-color: $cor-preta;
-      border: 2px solid transparent;
-      border-radius: 50%;
-      color: $cor-cinza;
-      display: flex;
-      padding: 0.8rem;
-      &:hover{
-        background-color: transparent;
-        color: $cor-preta;
-        border-color: $cor-preta;
-      }
-    }
   }
+}
+
+.copyright{
+  align-items: center;
+  border-top: 2px solid $cor-secundaria;
+  color: $cor-cinza;
+  display: flex;
+  justify-content: center;
+  padding: 1em 0;
 }
