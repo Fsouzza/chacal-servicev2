@@ -62,7 +62,7 @@ export const MyChart = () => {
   };
   
   const options = {
-    radius: 3,
+    radius: 4,
     hitRadius: 30,
     hoverRadius: 5,
     maintainAspectRatio: false,
@@ -93,7 +93,7 @@ export const MyChart = () => {
       y: {
         beginAtZero: true,
         grid: {
-          borderDash: [15],
+          borderDash: [40],
           borderWidth: 2,
           borderColor: '#4b4b4b'
         },

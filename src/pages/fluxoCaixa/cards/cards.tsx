@@ -2,7 +2,7 @@ import styles from './cards.module.scss';
 import { BsCreditCard, BsFillCartXFill, BsCash, BsArrowRepeat } from 'react-icons/bs';
 import { BsFillArrowUpCircleFill, BsFillArrowDownCircleFill } from 'react-icons/bs';
 import { IoAnalyticsSharp } from 'react-icons/io5';
-import { FiArrowUpRight, FiArrowDownRight } from 'react-icons/fi';
+import { TbTrendingUp, TbTrendingDown } from 'react-icons/tb';
 import CountUp from 'react-countup';
 import { Item } from 'types/item';
 
@@ -87,7 +87,7 @@ export const Cards = ({ entrada, saida }: Props) => {
               suffix=' %'
             />
           </span>
-          {porcentagem > 0 ? <FiArrowUpRight size={30} color={'#7EDBA8'} /> : <FiArrowDownRight size={30} color={'#c34743'} />}
+          {porcentagem > 0 ? <TbTrendingUp size={30} color={'#7EDBA8'} /> : <TbTrendingDown size={30} color={'#c34743'} />}
         </div>
       </article>
     </section>

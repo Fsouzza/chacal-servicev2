@@ -49,7 +49,7 @@ export const AddFluxoCaixa = ({ onAdd}: Props) => {
   };
 
   return(
-    <section id='add' className={styles.add}>
+    <form id='add' className={styles.add}>
       <div>
         <label htmlFor='numero'>ID Doc*</label>
         <input id='numero' type='number' maxLength={999999} required onChange={e => setIdField(parseFloat(e.target.value))} />
@@ -126,6 +126,6 @@ export const AddFluxoCaixa = ({ onAdd}: Props) => {
           Adicionar
         </button>
       </div>
-    </section>
+    </form>
   );
 };
