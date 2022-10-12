@@ -43,23 +43,26 @@ export const MyChart = () => {
       backgroundColor: 'transparent',
       borderColor: '#F23D3D',
       borderWidth: 3,
-      pointBorderColor: '#F23D3D',
+      pointBackgroundColor: '#F23D3D',
       pointBorderWidth: 4, 
-      tension: 0.5,
+      tension: 0.3,
     },
     {
       label: 'Entradas',
       data: vEntrada,
       backgroundColor: 'transparent',
       borderColor: '#038C3E',
-      pointBorderColor: '#038C3E',
+      pointBackgroundColor: '#038C3E',
       borderWidth: 3,
       pointBorderWidth: 4,
-      tension: 0.5
+      tension: 0.3
     }]
   };
   
   const options = {
+    radius: 3,
+    hitRadius: 30,
+    hoverRadius: 5,
     maintainAspectRatio: false,
     plugins: {
       legend: {

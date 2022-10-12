@@ -8,6 +8,7 @@ import { items } from '../../data/itens';
 import { Buscador } from './buscador/buscador';
 import { MyChart } from 'components/charts';
 import styles from './fluxoCaixa.module.scss';
+import { Footer } from 'components/footer/footer';
 
 
 export const FluxoCaixa = () => {
@@ -54,6 +55,9 @@ export const FluxoCaixa = () => {
         <Buscador busca={busca} setBusca={setBusca} />
       </div>
       <TabelaCaixa busca={busca} items={lista} />
+      <div>
+        <Footer />
+      </div>
     </>
   );
 };

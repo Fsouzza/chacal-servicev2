@@ -92,10 +92,10 @@
   margin: 2em 0;
   &__bttns{
     background-color: #323232;
-    border-radius: 1em;
+    border-radius: .6em;
     cursor: pointer;
     display: flex;
-    padding: .3em;
+    padding: .2em;
     transition: all .5s;
     &:hover{
       background-color: $cor-secundaria;

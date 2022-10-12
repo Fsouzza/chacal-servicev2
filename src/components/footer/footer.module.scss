@@ -1,0 +1,55 @@
+@import "styles/variaveis";
+
+.footer{
+  background: transparent;
+  border-top: 2px solid $cor-secundaria;
+  font-size: 1em;
+  margin-top: 5em;
+  padding: 2em 0;
+  text-align: center;
+  div{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+  }
+  &__logo{
+    display: inline-block;
+    height: 60px;
+    margin-left: 2em;
+    width: 60px;
+  }
+  &__permalinks{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    margin: 0 auto 2rem;
+  }
+  &__link{
+    color: $cor-cinza;
+    transition: .6s ease;
+    &:hover{
+      color: $cor-preta;
+    }
+  }
+  &__socials{
+    display: flex;
+    gap: .6em;
+    justify-content: center;
+    margin-bottom: 1.4em;
+    margin-right: 2em;
+    a{
+      background-color: $cor-preta;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      color: $cor-cinza;
+      display: flex;
+      padding: 0.8rem;
+      &:hover{
+        background-color: transparent;
+        color: $cor-preta;
+        border-color: $cor-preta;
+      }
+    }
+  }
+}
