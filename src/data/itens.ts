@@ -2,7 +2,7 @@ import { Item } from '../types/item';
 
 export const items: Item[] = [
   { 
-    date: new Date(2022, 1, 15),
+    date: new Date(2022, 0, 15),
     lancamentos: 'Saída', 
     categoria: 'Compra',
     departamento: 'Operacional',
@@ -14,19 +14,31 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 1, 22),
+    date: new Date(2022, 0, 22),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
     departamento: 'Financeiro',
     tipo: 'NFCe',
-    id: 0,
+    id: 123456,
     local: 'Escritório',
     item: 'Fundo de Caixa Injetado',
     valor: 250.00,
     obs: '-'
   },
   { 
-    date: new Date(2022, 2, 17),
+    date: new Date(2022, 0, 24),
+    lancamentos: 'Entrada', 
+    categoria: 'Serviços',
+    departamento: 'Operacional',
+    tipo: 'Recibo',
+    id: 654321,
+    local: 'CD Nova Era',
+    item: 'Valor Carga a vista',
+    valor: 69.00,
+    obs: '-'
+  },
+  { 
+    date: new Date(2022, 1, 17),
     lancamentos: 'Saída', 
     categoria: 'Compra',
     departamento: 'RH',
@@ -38,7 +50,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 2, 13),
+    date: new Date(2022, 1, 13),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
     departamento: 'Administrativo',
@@ -46,11 +58,11 @@ export const items: Item[] = [
     id: 0,
     local: 'Escritório',
     item: 'Fundo de Caixa Injetado',
-    valor: 150.00,
+    valor: 160.00,
     obs: '-'
   },
   { 
-    date: new Date(2022, 3, 20),
+    date: new Date(2022, 2, 20),
     lancamentos: 'Saída', 
     categoria: 'Refeição',
     departamento: 'Operacional',
@@ -62,7 +74,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 4, 2),
+    date: new Date(2022, 3, 2),
     lancamentos: 'Saída', 
     categoria: 'Retirada',
     departamento: 'Financeiro',
@@ -74,7 +86,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 3, 12),
+    date: new Date(2022, 2, 12),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
     departamento: 'Administrativo',
@@ -86,7 +98,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 4, 28),
+    date: new Date(2022, 3, 28),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
     departamento: 'Administrativo',
@@ -98,7 +110,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 5, 19),
+    date: new Date(2022, 4, 19),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
     departamento: 'Administrativo',
@@ -110,7 +122,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 5, 28),
+    date: new Date(2022, 4, 28),
     lancamentos: 'Saída', 
     categoria: 'Compra',
     departamento: 'Administrativo',
@@ -122,7 +134,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 6, 6),
+    date: new Date(2022, 5, 6),
     lancamentos: 'Saída', 
     categoria: 'Serviços',
     departamento: 'Administrativo',
@@ -134,7 +146,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 6, 12),
+    date: new Date(2022, 5, 12),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
     departamento: 'Administrativo',
@@ -146,7 +158,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 7, 22),
+    date: new Date(2022, 6, 22),
     lancamentos: 'Entrada', 
     categoria: 'Serviços',
     departamento: 'Operacional',
@@ -158,7 +170,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 8, 14),
+    date: new Date(2022, 7, 14),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
     departamento: 'Administrativo',
@@ -170,7 +182,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 9, 12),
+    date: new Date(2022, 6, 12),
     lancamentos: 'Saída', 
     categoria: 'Retirada de caixa',
     departamento: 'Administrativo',
@@ -182,7 +194,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 10, 12),
+    date: new Date(2022, 7, 12),
     lancamentos: 'Saída', 
     categoria: 'Receita',
     departamento: 'Administrativo',
@@ -190,6 +202,18 @@ export const items: Item[] = [
     id: 23623698,
     local: 'Escritório',
     item: 'Fundo de Caixa retirado',
+    valor: 192.00,
+    obs: '-'
+  },
+  { 
+    date: new Date(2022, 8, 12),
+    lancamentos: 'Entrada', 
+    categoria: 'Receita',
+    departamento: 'Administrativo',
+    tipo: 'Recibo',
+    id: 11623698,
+    local: 'Escritório',
+    item: 'Fundo de Caixa Injetado',
     valor: 192.00,
     obs: '-'
   },
@@ -202,23 +226,11 @@ export const items: Item[] = [
     id: 11623698,
     local: 'Escritório',
     item: 'Fundo de Caixa Injetado',
-    valor: 192.00,
-    obs: '-'
-  },
-  { 
-    date: new Date(2022, 10, 12),
-    lancamentos: 'Entrada', 
-    categoria: 'Receita',
-    departamento: 'Administrativo',
-    tipo: 'Recibo',
-    id: 11623698,
-    local: 'Escritório',
-    item: 'Fundo de Caixa Injetado',
     valor: 152.00,
     obs: '-'
   },
   { 
-    date: new Date(2022, 11, 12),
+    date: new Date(2022, 10, 12),
     lancamentos: 'Entrada', 
     categoria: 'Serviços',
     departamento: 'Operacional',
@@ -230,7 +242,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 11, 6),
+    date: new Date(2022, 8, 6),
     lancamentos: 'Saída', 
     categoria: 'Serviços',
     departamento: 'Administrativo',
@@ -242,7 +254,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 12, 6),
+    date: new Date(2022, 9, 6),
     lancamentos: 'Saída', 
     categoria: 'Serviços',
     departamento: 'Administrativo',
@@ -254,7 +266,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 12, 23),
+    date: new Date(2022, 11, 23),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
     departamento: 'Administrativo',
@@ -263,18 +275,6 @@ export const items: Item[] = [
     local: 'Escritório',
     item: 'Fundo de Caixa Injetado',
     valor: 150.00,
-    obs: '-'
-  },
-  { 
-    date: new Date(2022, 12, 29),
-    lancamentos: 'Entrada', 
-    categoria: 'Receita',
-    departamento: 'Administrativo',
-    tipo: 'S/ Recibo',
-    id: 0,
-    local: 'Escritório',
-    item: 'Fundo de Caixa Injetado',
-    valor: 127.00,
     obs: '-'
   },
   { 

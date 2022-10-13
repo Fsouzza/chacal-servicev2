@@ -2,15 +2,26 @@
 
 
 .charts{
+  background-color: $cor-card;
+  border-radius: 1em;
+  box-sizing: border-box;
   display: flex;
   filter: drop-shadow($sombra);
   gap: 1em;
+  min-height: 420px;
   margin: 0 2em 6em 2em;
+  padding: 2em 0;
+  &__titulo{
+    color: $cor-brancol;
+    margin-bottom: 1.4em;
+    margin-left: 2em;
+    h2{
+      font-weight: 400;
+    }
+  }
   &__chartBox{
-    background-color: $cor-card;
-    border-radius: 1em;
-    height: 380px;
-    padding: 2em 3em;
+    height: 320px;
+    padding: 1em 2em;
     width: 100%;
   }
 }

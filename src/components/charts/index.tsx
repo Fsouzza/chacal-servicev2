@@ -3,7 +3,6 @@ import { Chart as ChartJS, CategoryScale,
   LinearScale,
   PointElement,
   LineElement,
-  Title,
   Tooltip,
   BarElement,
   Legend } from 'chart.js';
@@ -17,30 +16,30 @@ ChartJS.register(
   LinearScale,
   PointElement,
   Legend,
-  Tooltip,
-  Title
+  Tooltip
 );
 
 export const MyChart = () => {
-  const lista = items;
-  const vEntrada = [];
-  const vSaida = [];
-  const meses = [ 'JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
+  const meses = [...items.map((lancamentos) => lancamentos.date.toLocaleString('pt-BR', {month: 'short'}).toUpperCase())];
+  const listaMeses = [... new Set(meses)];
+  const incomes = balanco('Entrada');
+  const expanses = balanco('Saída');
 
-  for(let i=0; i<lista.length; i++){
-    if(lista[i].lancamentos === 'Entrada'){
-      vEntrada.push(lista[i].valor);
-    } else {
-      vSaida.push(lista[i].valor);
-    }
+  function balanco(lancamentos: string){
+    return listaMeses.map((label) => {
+      return items
+        .filter(item => item.date.toLocaleString('pt-BR', {month: 'short'}).toUpperCase() === label)
+        .filter((item) => item.lancamentos === lancamentos)
+        .reduce((acc, cur) => acc + cur.valor, 0);
+    });
   }
 
   const data = {
-    labels: meses,
+    labels: listaMeses,
     datasets: [
       {
         label: 'Entradas',
-        data: vEntrada,
+        data: incomes,
         backgroundColor: 'transparent',
         borderColor: '#038C3E',
         pointBackgroundColor: '#038C3E',
@@ -50,7 +49,7 @@ export const MyChart = () => {
       },
       {
         label: 'Saídas',
-        data: vSaida,
+        data: expanses,
         backgroundColor: 'transparent',
         borderColor: '#F23D3D',
         borderWidth: 2.4,
@@ -69,17 +68,6 @@ export const MyChart = () => {
     plugins: {
       legend: {
         position: 'bottom' as const,
-      },
-      title: {
-        display: true,
-        text: 'Demonstrativo por Lançamento',
-        font: {
-          size: 24
-        },
-        align: 'center' as const,
-        padding: {
-          bottom: 20,
-        }
       },
     },
     scales: {
@@ -107,6 +95,9 @@ export const MyChart = () => {
   return(
     <div className={styles.charts}>
       <div className={styles.charts__chartBox}>
+        <div className={styles.charts__titulo}>
+          <h2>Demonstrativo de lançamentos</h2>
+        </div>
         <Line
           data={data} 
           options={options}
