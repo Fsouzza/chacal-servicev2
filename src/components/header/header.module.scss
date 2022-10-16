@@ -1,5 +1,10 @@
 @import '../../styles/variaveis';
 
+button{
+  background-color: transparent;
+  border: none;
+}
+
 .header{
     align-items: center;
     border-bottom: 2px solid $cor-secundaria;
@@ -18,10 +23,10 @@
       }
     }
     &__menu{
-      border-radius: .6em;
+      border-radius: 1em;
       color: $cor-brancol;
       cursor: pointer;
-      font-size: 1.4em;
+      font-size: 1.5em;
       margin-right: .6em;
       padding: .3em .5em;
       transition: .3s ease-in;
@@ -41,16 +46,24 @@
         justify-content: center;
     }
     &__link{
-        border-radius: .5em;
-        color: $cor-cinza;
+        border-radius: 1em;
+        color: $cor-brancol;
         cursor: pointer;
         display: flex;
-        font-size: 1.4em;
+        font-size: 1.5em;
         padding: .3em .5em;
         transition: .3s ease-in;
+        &:last-child{
+          padding: .2em .4em;
+        }
         &:hover{
             background-color: #4b4b4b;
             color: $cor-preta;
         }
+    }
+    &__linkProfile{
+      border-radius: 1em;
+      height: 32px;
+      width: 34px;
     }
 }

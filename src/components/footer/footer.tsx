@@ -31,7 +31,7 @@ export const Footer = () =>{
           <ul className={styles.footer__links}>
             {rotas.map((rota, index) => (
               <li key={index} className={styles.footer__link}>
-                <a href={rota.to}>
+                <a href={rota.to} target='blank' >
                   {rota.label}
                 </a>
                 {rota.text}

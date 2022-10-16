@@ -1,8 +1,9 @@
 import styles from './header.module.scss';
 import logo from '../../assets/img/logo-chacal.png';
-import { BiComment, BiBell, BiUser } from 'react-icons/bi';
-import { RiArrowDownSLine } from 'react-icons/ri';
+import { BiBell } from 'react-icons/bi';
 import { FiMenu } from 'react-icons/fi';
+import { AiOutlineSetting } from 'react-icons/ai';
+import profilePicture from 'assets/img/profile/perfil.jpg';
 
 
 export const Header = () => {
@@ -16,9 +17,9 @@ export const Header = () => {
         <strong>Chacal Service</strong>
       </div>
       <ul className={styles.header__lista}>
-        <li className={styles.header__link}><BiBell /></li>
-        <li className={styles.header__link}><BiComment /></li>
-        <li className={styles.header__link}><BiUser /> <RiArrowDownSLine /></li>
+        <button className={styles.header__link}><AiOutlineSetting /></button>
+        <button className={styles.header__link}><BiBell /></button>
+        <button className={styles.header__link}><img className={styles.header__linkProfile} src={profilePicture} /></button>
       </ul>
     </header>
   );
