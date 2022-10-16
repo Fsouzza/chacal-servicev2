@@ -1,0 +1,113 @@
+@import '../../../styles/variaveis';
+
+button{
+  background-color: transparent;
+  border: none;
+}
+
+.link{
+  border-radius: 1em;
+  color: $cor-brancol;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.5em;
+  padding: .2em;
+  overflow: hidden;
+  transition: .4s ease-in;
+  &:hover{
+    background-color: #4b4b4b;
+    color: $cor-preta;
+  }
+  &__profile{
+    border-radius: 1em;
+    height: 34px;
+    width: 34px;
+  }
+}
+
+.profileMenu{
+  align-items: center;
+  background-color: #2e2e2e;
+  border: 1px solid $cor-secundaria;
+  border-radius: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  justify-content: center;
+  opacity: 1;
+  padding: 2em;
+  position: absolute;
+  right: .6em;
+  top: 4em;
+  width: 300px;
+  z-index: 999;
+  &::before{
+    background-color: #2e2e2e;
+    border-left: 1px solid $cor-secundaria;
+    border-top: 1px solid $cor-secundaria;
+    content: '';
+    height: 25px;
+    position: absolute;
+    right: 1.1em;
+    top: -13px;
+    transform: rotate(45deg);
+    width: 25px;
+  }
+  &__inativo{
+    display: none;
+  }
+  &__titulo{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5em;
+    margin-bottom: .8em;
+    h3{
+      color: $cor-branco;
+      font-size: 1.1em;
+    }
+    span{
+      color: $cor-brancol;
+      font-size: .8em;
+      font-weight: 400;
+    }
+  }
+  &__items{
+    align-items: initial;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  &__item{
+    align-items: center;
+    color: $cor-branco;
+    cursor: pointer;
+    display: flex;
+    font-size: 1.1em;
+    gap: .5em;
+    justify-content: flex-start;
+    margin-bottom: .5em;
+    transition: .3s all;
+    &:hover{
+      color: $cor-azull;
+    }
+    a{
+      font-size: .7em;
+    }
+  }
+  &__termos{
+    align-items: flex-start;
+    color: $cor-branco;
+    display: flex;
+    flex-direction: column;
+    gap: .2em;
+    justify-content: center;
+    width: 100%;
+    span{
+      font-size: .6em;
+    }
+  }
+}
