@@ -300,5 +300,17 @@ export const items: Item[] = [
     item: 'Bota bico aco tam 39',
     valor: 94.00,
     obs: '-'
+  },
+  { 
+    date: new Date(2022, 11, 21),
+    lancamentos: 'Saída', 
+    categoria: 'Compra',
+    departamento: 'Operacional',
+    tipo: 'NF',
+    id: 123456,
+    local: 'Escritório',
+    item: 'Bota bico aco tam 43',
+    valor: 80.00,
+    obs: '-'
   }
 ];

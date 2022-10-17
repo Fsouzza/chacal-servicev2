@@ -2,14 +2,20 @@ import styles from './header.module.scss';
 import logo from '../../assets/img/logo-chacal.png';
 import { FiMenu } from 'react-icons/fi';
 import { DropdownNotification, DropdownPerfil, DropdownSettings } from './dropdownMenus/dropDowns';
+import { useState } from 'react';
+import { SideBar } from 'components/sidebar';
 
 export const Header = () => {
+  const [sidebar, setSidebar] = useState(false);
+  const ShowSidebar = () => setSidebar(!sidebar);
+
   return(
     <header className={styles.header}>
       <div className={styles.header__esquerda}>
-        <div className={styles.header__menu}>
+        <div className={styles.header__menu} onClick={ShowSidebar}>
           <FiMenu />
         </div>
+        {sidebar && <SideBar active={setSidebar} />}
         <img className={styles.header__logo} src={logo} alt='Logo da empresa' />
         <strong>Chacal Service</strong>
       </div>

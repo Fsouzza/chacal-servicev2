@@ -4,6 +4,7 @@ import { BiBell, BiUser, BiLogOut, BiHelpCircle } from 'react-icons/bi';
 import profilePicture from 'assets/img/profile/perfil.jpg';
 import { useState, useRef } from 'react';
 import { useEffect } from 'react';
+export const username = 'Filipe Souza';
 
 export const DropdownPerfil = () => {
   const [profileOpen, setProfileOpen] = useState(false);
@@ -50,7 +51,7 @@ export const DropdownPerfil = () => {
 
       <div className={profileOpen ? `${styles.profileMenu}` : `${styles.profileMenu__inativo}`}>
         <div className={styles.profileMenu__titulo}>
-          <h3>Filipe Souza</h3>
+          <h3>{username}</h3>
           <span>Assist. Administrativo</span>
         </div>
         <ul className={styles.profileMenu__items}>

@@ -59,6 +59,18 @@ export const AddFluxoCaixa = ({ onAdd}: Props) => {
         <input id='item' type='text' required onChange={e => setItemField(e.target.value)} />
       </div>
       <div>
+        <label htmlFor='data'>Data*</label>
+        <input id='data' type='date' required onChange={e => setDataField(e.target.value)} />
+      </div>
+      <div>
+        <label htmlFor='lancamento'>Lançamentos</label>
+        <select placeholder='' id='lancamento' required  onChange={e => setLancamentoField(e.target.value)}>
+          <option></option>
+          <option>Entrada</option>
+          <option>Saída</option>
+        </select>
+      </div>
+      <div>
         <label htmlFor='doc'>Tipo Documento*</label>
         <select placeholder='' id='doc' required onChange={e => setDocField(e.target.value)}>
           <option></option>
@@ -83,18 +95,6 @@ export const AddFluxoCaixa = ({ onAdd}: Props) => {
           <option>Vale Transporte</option>
           <option>Veiculo</option>
           <option>VR/VT</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor='data'>Data*</label>
-        <input id='data' type='date' required onChange={e => setDataField(e.target.value)} />
-      </div>
-      <div>
-        <label htmlFor='lancamento'>Lançamentos</label>
-        <select placeholder='' id='lancamento' required  onChange={e => setLancamentoField(e.target.value)}>
-          <option></option>
-          <option>Entrada</option>
-          <option>Saída</option>
         </select>
       </div>
       <div>

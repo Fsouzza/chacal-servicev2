@@ -1,0 +1,21 @@
+@import '../../../styles/variaveis';
+
+.sidebarItems{
+  align-items: center;
+  color: $cor-brancol;
+  cursor: pointer;
+  display: flex;
+  font-weight: 500;
+  gap: 1em;
+  justify-content: flex-start;
+  padding: .4em 1.4em;
+  position: relative;
+  width: 100%;
+  &:hover{
+    background-color: #333333;
+    color: $cor-azull;
+  }
+  div{
+    font-size: 1.3em;
+  }
+}

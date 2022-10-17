@@ -34,7 +34,6 @@ export const FluxoCaixa = () => {
 
   const handleAddItem = (item: Item) => {
     const novaLista = [...lista];
-
     novaLista.push(item);
     setLista(novaLista);
   };
