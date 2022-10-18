@@ -1,9 +1,11 @@
 import styles from './header.module.scss';
 import logo from '../../assets/img/logo-chacal.png';
 import { FiMenu } from 'react-icons/fi';
-import { DropdownNotification, DropdownPerfil, DropdownSettings } from './dropdownMenus/dropDowns';
+import { DropdownSettings } from './dropdownMenus/dropdownSettings/DropdownSettings';
 import { useState } from 'react';
 import { SideBar } from 'components/sidebar';
+import { DropdownPerfil } from './dropdownMenus/dropdownPerfil/DropdownPerfil';
+import { DropdownNotification } from './dropdownMenus/dropdownNotification/DropdownNotification';
 
 export const Header = () => {
   const [sidebar, setSidebar] = useState(false);

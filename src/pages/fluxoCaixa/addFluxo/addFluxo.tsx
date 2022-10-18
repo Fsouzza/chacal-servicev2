@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { newDateAdjusted } from '../../../helpers/dateFilter';
 import { Item } from '../../../types/item';
 import styles from './addfluxo.module.scss';
+import { Input } from './inputs/Input';
+import { Select } from './selects/Select';
 
 type Props = {
   onAdd: (item: Item) => void;
@@ -18,6 +20,10 @@ export const AddFluxoCaixa = ({ onAdd}: Props) => {
   const [itemField, setItemField] = useState('');
   const [obsField, setObsField] = useState('');
   const [valorField, setValorField] = useState(0);
+  const documentos = ['', 'Comprovante', 'NFCe', 'NF', 'Recibo', 'S/ Recibo'];
+  const lancamentos = ['', 'Entrada', 'Saída'];
+  const categorias = ['', 'Compra', 'Despesa', 'Pagamentos', 'Receita', 'Refeição', 'Retirada', 'Serviços', 'Vale Transporte', 'Veiculo', 'VR+VT'];
+  const departamentos = ['', 'Administrativo', 'Financeiro', 'Officeboy', 'Operacional', 'Recursos Humanos', 'Tercerizados'];
 
   function handleAddEvent() {
     onAdd({
@@ -54,73 +60,21 @@ export const AddFluxoCaixa = ({ onAdd}: Props) => {
         <label htmlFor='numero'>ID Doc*</label>
         <input id='numero' type='number' maxLength={999999} required onChange={e => setIdField(parseFloat(e.target.value))} />
       </div>
-      <div>
-        <label htmlFor='item'>Item*</label>
-        <input id='item' type='text' required onChange={e => setItemField(e.target.value)} />
-      </div>
+      <Input htmlFor='item' placeholder='Descrição do Item' label='Item' id='item' type='text' required={true} value={itemField} setInput={value => setItemField(value)}/>
       <div>
         <label htmlFor='data'>Data*</label>
         <input id='data' type='date' required onChange={e => setDataField(e.target.value)} />
       </div>
-      <div>
-        <label htmlFor='lancamento'>Lançamentos</label>
-        <select placeholder='' id='lancamento' required  onChange={e => setLancamentoField(e.target.value)}>
-          <option></option>
-          <option>Entrada</option>
-          <option>Saída</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor='doc'>Tipo Documento*</label>
-        <select placeholder='' id='doc' required onChange={e => setDocField(e.target.value)}>
-          <option></option>
-          <option>Comprovante</option>
-          <option>NFCe</option>
-          <option>NF</option>
-          <option>Recibo</option>
-          <option>S/recibo</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor='categoria'>Categoria*</label>
-        <select placeholder='' id='categoria' required onChange={e => setCategoriaField(e.target.value)}>
-          <option></option>
-          <option>Compra</option>
-          <option>Despesa</option>
-          <option>Pagamentos</option>
-          <option>Receita</option>
-          <option>Refeição</option>
-          <option>Retirada</option>
-          <option>Serviços</option>
-          <option>Vale Transporte</option>
-          <option>Veiculo</option>
-          <option>VR/VT</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor='dpto'>Departamento*</label>
-        <select placeholder='' id='dpto' required onChange={e => setDeptoField(e.target.value)}>
-          <option></option>
-          <option>Administrativo</option>
-          <option>Financeiro</option>
-          <option>Officeboy</option>
-          <option>Operacional</option>
-          <option>RH</option>
-          <option>Terceirizado</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor='texto'>Local*</label>
-        <input id='texto' type='text' required onChange={e => setLocalField(e.target.value)} />
-      </div>
+      <Select label='Lançamento' id='lancamento' htmlFor='lancamento' itens={lancamentos} required={true} value={lancamentoField} setSelected={value => setLancamentoField(value)}/>
+      <Select label='Tipo Documento' id='doc' htmlFor='doc' itens={documentos} required={true} value={docField} setSelected={value => setDocField(value)}/>
+      <Select label='Categoria' id='categoria' htmlFor='categoria' itens={categorias} required={true} value={categoriaField} setSelected={value => setCategoriaField(value)}/>
+      <Select label='Departamento' id='dpto' htmlFor='dpto' itens={departamentos} required={true} value={deptoField} setSelected={value => setDeptoField(value)}/>
+      <Input htmlFor='local' placeholder='Informe o local' label='Local' id='local' type='text' required={true} value={localField} setInput={value => setLocalField(value)}/>
       <div>
         <label htmlFor='valor'>Valor*</label>
         <input id='valor' type='number' required onChange={e => setValorField(parseFloat(e.target.value))} />
       </div>
-      <div>
-        <label htmlFor='obs'>Observação</label>
-        <input id='obs' type='text' onChange={e => setObsField(e.target.value)} />
-      </div>
+      <Input htmlFor='obs' placeholder='Insira informação adicional' label='Observação' id='obs' type='text' required={true} value={obsField} setInput={value => setObsField(value)}/>
       <div>
         <button onClick={handleAddEvent}>
           Adicionar

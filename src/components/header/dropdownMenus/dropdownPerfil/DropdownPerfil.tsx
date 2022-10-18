@@ -1,10 +1,11 @@
-import styles from './dropdown.module.scss';
-import { AiOutlineSetting } from 'react-icons/ai';
-import { BiBell, BiUser, BiLogOut, BiHelpCircle } from 'react-icons/bi';
 import profilePicture from 'assets/img/profile/perfil.jpg';
+import { username } from 'helpers/username';
 import { useState, useRef } from 'react';
 import { useEffect } from 'react';
-export const username = 'Filipe Souza';
+import { BiUser, BiLogOut, BiHelpCircle } from 'react-icons/bi';
+import styles2 from '../../header.module.scss';
+import { DropdownItem } from '../dropdownItem/DropdownItem';
+import styles from './DropdownPerfil.module.scss';
 
 export const DropdownPerfil = () => {
   const [profileOpen, setProfileOpen] = useState(false);
@@ -17,12 +18,9 @@ export const DropdownPerfil = () => {
         setProfileOpen(false);
       }
     };
-    if(profileOpen){
-      window.addEventListener('click', handleClickOutside);
-    }
-    return() => {
-      window.removeEventListener('click', handleClickOutside);
-    };
+    profileOpen 
+      ? window.addEventListener('click', handleClickOutside) 
+      : window.removeEventListener('click', handleClickOutside);
   }, [profileOpen]);
 
   
@@ -30,20 +28,10 @@ export const DropdownPerfil = () => {
     setProfileOpen(!profileOpen);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function DropdownItemPerfil(props: any) {
-    return(
-      <li className={styles.profileMenu__item}>
-        {props.img}
-        <a href='#'>{props.text}</a>
-      </li>
-    );
-  }
-
   return(
     <div ref={dropdownPerfil}>
-      <button className={styles.link}>
-        <img className={styles.link__profile} 
+      <button className={styles2.header__link}>
+        <img className={styles.profileMenu__profile} 
           src={profilePicture} 
           onClick={handleFocus}
         />
@@ -55,9 +43,9 @@ export const DropdownPerfil = () => {
           <span>Assist. Administrativo</span>
         </div>
         <ul className={styles.profileMenu__items}>
-          <DropdownItemPerfil img={<BiUser />} text={'Seu perfil'}/>
-          <DropdownItemPerfil img={<BiHelpCircle />} text={'Ajuda'}/>
-          <DropdownItemPerfil img={<BiLogOut />} text={'Sair'} />
+          <DropdownItem icon={<BiUser />} text={'Seu perfil'}/>
+          <DropdownItem icon={<BiHelpCircle />} text={'Ajuda'}/>
+          <DropdownItem icon={<BiLogOut />} text={'Sair'} />
         </ul>
         <div className={styles.profileMenu__termos}>
           <span>* Politica de Privacidade</span>
@@ -65,21 +53,5 @@ export const DropdownPerfil = () => {
         </div>
       </div>
     </div>
-  );
-};
-
-export const DropdownNotification = () => {
-  return(
-    <li>
-      <button className={styles.link}><BiBell /></button>
-    </li>
-  );
-};
-
-export const DropdownSettings = () => {
-  return(
-    <li>
-      <button className={styles.link}><AiOutlineSetting /></button>
-    </li>
   );
 };

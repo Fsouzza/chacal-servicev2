@@ -32,3 +32,8 @@ em {
 	font-weight: 500;
 	text-decoration: none;
 }
+
+button{
+  background-color: transparent;
+  border: none;
+}

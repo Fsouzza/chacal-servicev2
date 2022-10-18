@@ -49,4 +49,18 @@
     gap: 1em;
     justify-content: center;
   }
+  &__link {
+    border-radius: 1em;
+    color: $cor-brancol;
+    cursor: pointer;
+    display: flex;
+    font-size: 1.3em;
+    padding: 0.2em;
+    overflow: hidden;
+    transition: 0.4s ease-in;
+    &:hover {
+      background-color: #4b4b4b;
+      color: $cor-preta;
+    }
+  }
 }

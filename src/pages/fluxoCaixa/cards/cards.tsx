@@ -22,7 +22,7 @@ export const Cards = ({ entrada, saida }: Props) => {
     <section className={styles.cards}>
       <article className={styles.cards__card}>
         <BsCreditCard size={34} color={'#038C3E'} />
-        <h4 className={styles.cards__titulo}>Total de Entrada</h4>
+        <h4 className={styles.cards__titulo}>Total de entrada</h4>
         <div className={styles.cards__descricao}>
           <span className={styles.cards__subtitulo}>
             <CountUp
@@ -31,6 +31,7 @@ export const Cards = ({ entrada, saida }: Props) => {
               duration={1}
               decimals={2}
               decimal=","
+              separator='.'
               prefix='R$ '
             />
           </span>
@@ -39,7 +40,7 @@ export const Cards = ({ entrada, saida }: Props) => {
       </article>
       <article className={styles.cards__card}>
         <BsFillCartXFill size={34} color={'#F23D3D'} />
-        <h4 className={styles.cards__titulo}>Total de Saída</h4>
+        <h4 className={styles.cards__titulo}>Total de saída</h4>
         <div className={styles.cards__descricao}>
           <span className={styles.cards__subtitulo}>
             <CountUp
@@ -48,6 +49,7 @@ export const Cards = ({ entrada, saida }: Props) => {
               duration={1}
               decimals={2}
               decimal=","
+              separator='.'
               prefix='R$ '
             />
           </span>
@@ -56,7 +58,7 @@ export const Cards = ({ entrada, saida }: Props) => {
       </article>
       <article className={styles.cards__card}>
         <BsCash size={34} color={'#628DFB'} />
-        <h4 className={styles.cards__titulo}>Saldo em Caixa</h4>
+        <h4 className={styles.cards__titulo}>Saldo em caixa</h4>
         <div className={styles.cards__descricao}>
           <span className={styles.cards__subtitulo}>
             <CountUp
@@ -66,6 +68,7 @@ export const Cards = ({ entrada, saida }: Props) => {
               duration={1}
               decimals={2}
               decimal=","
+              separator='.'
               prefix='R$ '
             />
           </span>
@@ -74,7 +77,7 @@ export const Cards = ({ entrada, saida }: Props) => {
       </article>
       <article className={styles.cards__card}>
         <IoAnalyticsSharp size={34} color={'#36DBCE'} />
-        <h4 className={styles.cards__titulo}>Porcentagem Orçamentaria</h4>
+        <h4 className={styles.cards__titulo}>Porcentagem orçamentaria</h4>
         <div className={styles.cards__descricao}>
           <span className={styles.cards__subtitulo}>
             <CountUp

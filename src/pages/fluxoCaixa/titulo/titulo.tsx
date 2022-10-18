@@ -1,7 +1,7 @@
 import styles from './titulo.module.scss';
 import { FiDownload } from 'react-icons/fi';
 import { BsPlusLg } from 'react-icons/bs';
-import { username } from 'components/header/dropdownMenus/dropDowns';
+import { username } from 'helpers/username';
 
 export const Titulo = () => {
   return(
