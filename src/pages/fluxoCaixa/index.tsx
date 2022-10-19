@@ -3,12 +3,10 @@ import { Cards } from './cards/cards';
 import { TabelaCaixa } from './tabelaRegistro';
 import { Titulo } from './titulo/titulo';
 import { useState, useEffect } from 'react';
-import { Item } from '../../types/item';
 import { items } from '../../data/itens';
 import { Buscador } from './buscador/buscador';
 import { MyChart } from 'components/charts';
 import styles from './fluxoCaixa.module.scss';
-import { Footer } from 'components/footer/footer';
 
 
 export const FluxoCaixa = () => {
@@ -30,13 +28,9 @@ export const FluxoCaixa = () => {
     }
     setEntrada(contadorEntrada);
     setSaida(contadorSaida);
+    setLista(lista);
   }, [lista, busca]);
 
-  const handleAddItem = (item: Item) => {
-    const novaLista = [...lista];
-    novaLista.push(item);
-    setLista(novaLista);
-  };
 
   return(
     <>
@@ -49,14 +43,9 @@ export const FluxoCaixa = () => {
         </div>
       </div>
       <MyChart />
-      <AddFluxoCaixa onAdd={handleAddItem} />
-      <div>
-        <Buscador busca={busca} setBusca={setBusca} />
-      </div>
+      <AddFluxoCaixa />
+      <Buscador busca={busca} setBusca={setBusca} />
       <TabelaCaixa busca={busca} items={lista} />
-      <div>
-        <Footer />
-      </div>
     </>
   );
 };

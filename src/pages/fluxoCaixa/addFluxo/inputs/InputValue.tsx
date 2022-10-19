@@ -4,12 +4,12 @@ interface Props {
   label: string
   type: string
   required: boolean
-  setInput: React.Dispatch<React.SetStateAction<string>>
-  value: string | number
+  setInput: React.Dispatch<React.SetStateAction<number>>
+  value: number
   placeholder: string
 }
 
-export const Input = ({ htmlFor, id, label, type, required, setInput, value, placeholder}: Props) => {
+export const InputValue = ({ htmlFor, id, label, type, required, setInput, value, placeholder}: Props) => {
   const placeholderModificada = `${placeholder}`;
 
   return(
@@ -23,7 +23,7 @@ export const Input = ({ htmlFor, id, label, type, required, setInput, value, pla
         value={value} 
         required={required}
         placeholder={placeholderModificada}
-        onChange={e => setInput(e.target.value)} 
+        onChange={e => setInput(parseFloat(e.target.value))} 
       />
     </div>
   );

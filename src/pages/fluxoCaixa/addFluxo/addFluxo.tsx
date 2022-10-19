@@ -1,15 +1,10 @@
 import { useState } from 'react';
-import { newDateAdjusted } from '../../../helpers/dateFilter';
-import { Item } from '../../../types/item';
 import styles from './addfluxo.module.scss';
 import { Input } from './inputs/Input';
 import { Select } from './selects/Select';
+import { InputValue } from './inputs/InputValue';
 
-type Props = {
-  onAdd: (item: Item) => void;
-}
-
-export const AddFluxoCaixa = ({ onAdd}: Props) => {
+export const AddFluxoCaixa = () => {
   const [dataField, setDataField] = useState('');
   const [lancamentoField, setLancamentoField] = useState('');
   const [categoriaField, setCategoriaField] = useState('');
@@ -25,21 +20,6 @@ export const AddFluxoCaixa = ({ onAdd}: Props) => {
   const categorias = ['', 'Compra', 'Despesa', 'Pagamentos', 'Receita', 'Refeição', 'Retirada', 'Serviços', 'Vale Transporte', 'Veiculo', 'VR+VT'];
   const departamentos = ['', 'Administrativo', 'Financeiro', 'Officeboy', 'Operacional', 'Recursos Humanos', 'Tercerizados'];
 
-  function handleAddEvent() {
-    onAdd({
-      date: newDateAdjusted(dataField),
-      lancamentos: lancamentoField, 
-      categoria: categoriaField,
-      departamento: deptoField,
-      tipo: docField,
-      id: idField,
-      local: localField,
-      item: itemField,
-      valor: valorField,
-      obs: obsField,
-    });
-    clearFields();
-  }
 
   const clearFields = () => {
     setDataField('');
@@ -56,10 +36,7 @@ export const AddFluxoCaixa = ({ onAdd}: Props) => {
 
   return(
     <form id='add' className={styles.add}>
-      <div>
-        <label htmlFor='numero'>ID Doc*</label>
-        <input id='numero' type='number' maxLength={999999} required onChange={e => setIdField(parseFloat(e.target.value))} />
-      </div>
+      <InputValue htmlFor='numero' placeholder='Número do documento' label='ID do documento' id='numero' type='number' required={true} value={idField} setInput={value => setIdField(value)}/>
       <Input htmlFor='item' placeholder='Descrição do Item' label='Item' id='item' type='text' required={true} value={itemField} setInput={value => setItemField(value)}/>
       <div>
         <label htmlFor='data'>Data*</label>
@@ -70,13 +47,10 @@ export const AddFluxoCaixa = ({ onAdd}: Props) => {
       <Select label='Categoria' id='categoria' htmlFor='categoria' itens={categorias} required={true} value={categoriaField} setSelected={value => setCategoriaField(value)}/>
       <Select label='Departamento' id='dpto' htmlFor='dpto' itens={departamentos} required={true} value={deptoField} setSelected={value => setDeptoField(value)}/>
       <Input htmlFor='local' placeholder='Informe o local' label='Local' id='local' type='text' required={true} value={localField} setInput={value => setLocalField(value)}/>
-      <div>
-        <label htmlFor='valor'>Valor*</label>
-        <input id='valor' type='number' required onChange={e => setValorField(parseFloat(e.target.value))} />
-      </div>
+      <InputValue htmlFor='valor' placeholder='Insira o valor' label='Valor (R$)' id='numero' type='number' required={true} value={valorField} setInput={value => setValorField(value)}/>
       <Input htmlFor='obs' placeholder='Insira informação adicional' label='Observação' id='obs' type='text' required={true} value={obsField} setInput={value => setObsField(value)}/>
       <div>
-        <button onClick={handleAddEvent}>
+        <button onSubmit={clearFields}>
           Adicionar
         </button>
       </div>
