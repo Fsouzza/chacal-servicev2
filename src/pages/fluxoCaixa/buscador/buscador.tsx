@@ -19,7 +19,7 @@ export const Buscador = ({ busca, setBusca }: Props) => {
           onChange={(evento) => setBusca(evento.target.value)}
           placeholder='Pesquisar'
         />
-        <FaSearch size={22} color='#6d6e88' />
+        <FaSearch size={22} color='#5a6af9' />
       </div>
       <div className={styles.tags}>
         <div className={styles.tags__tag}>

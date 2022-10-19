@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const Input = (props: Props) => {
-  const placeholderModificada = `${props.placeholder}...`;
+  const placeholderModificada = `${props.placeholder}`;
 
   return(
     <div>

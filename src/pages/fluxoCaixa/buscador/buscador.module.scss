@@ -28,7 +28,8 @@
     outline: none;
     width: 100%;
     &::placeholder {
-      color: #6d6e88;
+      color: $cor-azull;
+      opacity: 0.7;
     }
   }
 }
