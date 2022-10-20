@@ -18,11 +18,13 @@
     strong{
       color: $cor-cinza;
       font-size: 1.2em;
+      pointer-events: none;
       text-transform: uppercase;
     }
   }
   &__menu{
     align-items: center;
+    border: 2px solid transparent;
     border-radius: 1em;
     color: $cor-brancol;
     cursor: pointer;
@@ -31,15 +33,28 @@
     justify-content: center;
     margin-right: .6em;
     padding: .4em;
-    transition: .3s ease-in;
     &:hover{
       background-color: #4b4b4b;
       color: $cor-preta;
+      transition: .3s ease-in;
+    }
+    &__btnAtivo{
+      align-items: center;
+      border-radius: 1em;
+      border: 2px solid $cor-azull;
+      color: $cor-brancol;
+      cursor: pointer;
+      display: flex;
+      font-size: 1.4em;
+      justify-content: center;
+      margin-right: .6em;
+      padding: .4em;
     }
   }
   &__logo{
     height: 40px;
     width: 50px;
+    pointer-events: none;
   }
   &__lista{
     align-items: center;
@@ -50,6 +65,7 @@
     justify-content: center;
   }
   &__link {
+    border: 2px solid transparent;
     border-radius: 1em;
     color: $cor-brancol;
     cursor: pointer;
@@ -57,10 +73,20 @@
     font-size: 1.3em;
     padding: 0.2em;
     overflow: hidden;
-    transition: 0.4s ease-in;
     &:hover {
       background-color: #4b4b4b;
       color: $cor-preta;
+      transition: 0.4s ease-in;
+    }
+    &__ativo{
+      border: 2px solid $cor-azull;
+      border-radius: 1em;
+      color: $cor-brancol;
+      cursor: pointer;
+      display: flex;
+      font-size: 1.3em;
+      padding: 0.2em;
+      overflow: hidden;
     }
   }
 }

@@ -23,14 +23,13 @@ export const DropdownPerfil = () => {
       : window.removeEventListener('click', handleClickOutside);
   }, [profileOpen]);
 
-  
   const handleFocus = () => {
     setProfileOpen(!profileOpen);
   };
 
   return(
     <div ref={dropdownPerfil}>
-      <button className={styles2.header__link}>
+      <button className={profileOpen ? `${styles2.header__link__ativo}` : `${styles2.header__link}`}>
         <img className={styles.profileMenu__profile} 
           src={profilePicture} 
           onClick={handleFocus}

@@ -6,33 +6,48 @@ import { FiUserPlus } from 'react-icons/fi';
 import { MdAttachMoney, MdOutlineDashboardCustomize } from 'react-icons/md';
 import styles from './sidebar.module.scss';
 import { SideBarItems } from './sidebarItens/sidebarItems';
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const SideBar = ({active}: any) => {
+export const SideBar = ({active, ref}: any) => {
   const closeSideBar = () => {
     active(false);
   };
   
   return (
-    <nav className={styles.sidebar} onBlur={closeSideBar}>
+    <nav ref={ref} className={styles.sidebar} onBlur={closeSideBar}>
       <ul>
         <span>Operacional</span>
-        <SideBarItems icon={<MdOutlineDashboardCustomize />} titulo={'Clientes'} />
-        <SideBarItems icon={<BsCartDash />} titulo={'Estoque de EPI'} />
+        <Link to='/clientes'>
+          <SideBarItems icon={<MdOutlineDashboardCustomize />} titulo={'Clientes'} />
+        </Link>
+        <Link to='/estoqueEPI'>
+          <SideBarItems icon={<BsCartDash />} titulo={'Estoque de EPI'} />
+        </Link>
       </ul>
       <ul>
         <span>Financeiro</span>
-        <SideBarItems icon={<MdAttachMoney />} titulo={'Fluxo de caixa'} />
-        <SideBarItems icon={<BsCash />} titulo={'Controle de finanças'} />
+        <Link to='/'>
+          <SideBarItems icon={<MdAttachMoney />} titulo={'Fluxo de caixa'} />
+        </Link>
+        <Link to='/financas'>
+          <SideBarItems icon={<BsCash />} titulo={'Controle de finanças'} />
+        </Link>
       </ul>
       <ul>
         <span>Recursos Humanos</span>
-        <SideBarItems icon={<FiUserPlus />} titulo={'Funcionários'} />
+        <Link to='/funcionarios'>
+          <SideBarItems icon={<FiUserPlus />} titulo={'Funcionários'} />
+        </Link>
       </ul>
       <ul>
         <span>Docs</span>
-        <SideBarItems icon={<AiOutlineFilePdf />} titulo={'Documentação'} />
-        <SideBarItems icon={<BiArchive />} titulo={'Arquivos'} />
+        <Link to='/documentos'>
+          <SideBarItems icon={<AiOutlineFilePdf />} titulo={'Documentação'} />
+        </Link>
+        <Link to=''>
+          <SideBarItems icon={<BiArchive />} titulo={'Arquivos'} />
+        </Link>
       </ul>
     </nav>
   );
