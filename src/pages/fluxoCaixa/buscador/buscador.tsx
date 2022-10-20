@@ -3,14 +3,14 @@ import { FaSearch } from 'react-icons/fa';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 
 interface Props {
-	busca: string;
+	busca: string ;
 	setBusca: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const Buscador = ({ busca, setBusca }: Props) => {
   const lancamentos = [{'nome' : 'Lançamentos', 'value': ''}, {'nome' : 'Entrada', 'value': 'Entrada'}, {'nome' : 'Saída', 'value': 'Saída'}];
   const departamentos = [{'nome' : 'Depto', 'value': ''}, {'nome' : 'Administrativo', 'value': 'Administrativo'}, {'nome' : 'Financeiro', 'value': 'Financeiro'}, {'nome' : 'Officeboy', 'value': 'Officeboy'}, {'nome' : 'Operacional', 'value': 'Operacional'}, {'nome' : 'RH', 'value': 'RH'}, {'nome' : 'Terceirizado', 'value': 'Terceirizado'}];
-
+  
   return ( 
     <section className={styles.sBusca}>
       <div className={styles.pesquisar}>

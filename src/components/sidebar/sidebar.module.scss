@@ -2,6 +2,7 @@
 
 .sidebar{
   align-items: flex-start;
+  animation: showsidebar .3s;
   background-color: #232323;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
   display: flex;
@@ -27,5 +28,19 @@
       line-height: 2.8;
       margin-left: .8em;
     }
+  }
+}
+
+@keyframes showsidebar{
+  0% {
+    opacity: 0.2;
+    width: 240px;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    width: 260px;
   }
 }
