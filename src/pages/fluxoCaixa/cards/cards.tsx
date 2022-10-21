@@ -6,15 +6,14 @@ import { TbTrendingUp, TbTrendingDown } from 'react-icons/tb';
 import CountUp from 'react-countup';
 
 type Props = {
-  entrada: number,
-  saida: number,
+  entrada: number
+  porcentagem: number
+  saida: number
+  total: number
 }
 
-export const Cards = ({ entrada, saida }: Props) => {
-  const total = entrada - saida;
-  const porcentagem = total / 100;
-  
-
+export const Cards = ({ entrada, saida, total, porcentagem }: Props) => {
+ 
   return(
     <section className={styles.cards}>
       <article className={styles.cards__card}>
