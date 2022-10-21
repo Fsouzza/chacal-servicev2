@@ -4,13 +4,10 @@ import { BsFillArrowUpCircleFill, BsFillArrowDownCircleFill } from 'react-icons/
 import { IoAnalyticsSharp } from 'react-icons/io5';
 import { TbTrendingUp, TbTrendingDown } from 'react-icons/tb';
 import CountUp from 'react-countup';
-import { Item } from 'types/item';
 
 type Props = {
-  busca: string,
   entrada: number,
   saida: number,
-  valores: Item[]
 }
 
 export const Cards = ({ entrada, saida }: Props) => {

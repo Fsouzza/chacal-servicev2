@@ -2,11 +2,11 @@ interface Props {
   htmlFor: string
   id: string
   label: string
-  type: string
+  type: 'text' | 'email' | 'password' | 'date' | 'number';
   required: boolean
   setInput: React.Dispatch<React.SetStateAction<string>>
   value: string | number
-  placeholder: string
+  placeholder?: string
 }
 
 export const Input = ({ htmlFor, id, label, type, required, setInput, value, placeholder}: Props) => {

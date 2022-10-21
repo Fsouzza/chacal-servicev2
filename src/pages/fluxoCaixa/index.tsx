@@ -35,7 +35,7 @@ export const FluxoCaixa = () => {
   return(
     <>
       <Titulo />
-      <Cards entrada={entrada} saida={saida} busca={busca} valores={lista}  />
+      <Cards entrada={entrada} saida={saida} />
       <div className={styles.inputsData}>
         <div>
           <input type='date'></input>
