@@ -10,6 +10,7 @@
   border-radius: 1em;
   color: $cor-brancol;
   filter: drop-shadow($sombra);
+  min-width: 100%;
   padding: 1em;
   thead{
     background-color: $cor-preta;

@@ -1,7 +1,8 @@
 export const Clientes = () => {
   return(
-    <div>
+    <section>
       <h1>Lista de Clientes</h1>
-    </div>
+      <span>Bem Vindos ao cadatro de clientes</span>
+    </section>
   );
 };

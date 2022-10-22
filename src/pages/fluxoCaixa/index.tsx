@@ -18,28 +18,17 @@ export const FluxoCaixa = () => {
   const [lista, setLista] = useState(items);
 
   useEffect(()=> {
-    let contadorEntrada = 0;
-    let contadorSaida = 0;
-
-
-    for(const i in lista){
-      if(lista[i].lancamentos === 'Entrada'){
-        contadorEntrada += lista[i].valor;
-      } else{
-        contadorSaida += lista[i].valor;
-      }
-    }
-
-    const contadorTotal = contadorEntrada - contadorSaida;
+    const somaEntrada = items.filter((item) => item.lancamentos === 'Entrada').reduce((acc, cur) => acc + cur.valor, 0);
+    const somaSaida = items.filter((item) => item.lancamentos === 'Saída').reduce((acc, cur) => acc + cur.valor, 0);
+    const contadorTotal = somaEntrada - somaSaida;
     const contadorPorcentagem = contadorTotal / 100;
     
-    setEntrada(contadorEntrada);
-    setSaida(contadorSaida);
+    setEntrada(somaEntrada);
+    setSaida(somaSaida);
     setTotal(contadorTotal);
     setPorcentagem(contadorPorcentagem);
     setLista(lista);
-  }, [lista, busca]);
-
+  }, [lista]);
 
   return(
     <>

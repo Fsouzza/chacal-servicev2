@@ -8,9 +8,13 @@ interface Props {
 }
 
 export const Buscador = ({ busca, setBusca }: Props) => {
-  const lancamentos = [{'nome' : 'Lançamentos', 'value': ''}, {'nome' : 'Entrada', 'value': 'Entrada'}, {'nome' : 'Saída', 'value': 'Saída'}];
   const departamentos = [{'nome' : 'Depto', 'value': ''}, {'nome' : 'Administrativo', 'value': 'Administrativo'}, {'nome' : 'Financeiro', 'value': 'Financeiro'}, {'nome' : 'Officeboy', 'value': 'Officeboy'}, {'nome' : 'Operacional', 'value': 'Operacional'}, {'nome' : 'RH', 'value': 'RH'}, {'nome' : 'Terceirizado', 'value': 'Terceirizado'}];
   
+  function filterTag(value: string) {
+    if(busca === value) return setBusca('');
+    return setBusca(value);
+  }
+
   return ( 
     <section className={styles.sBusca}>
       <div className={styles.pesquisar}>
@@ -23,12 +27,24 @@ export const Buscador = ({ busca, setBusca }: Props) => {
       </div>
       <div className={styles.tags}>
         <div className={styles.tags__tag}>
-          <select onChange={(evento) => setBusca(evento.target.value)}>
-            {lancamentos.map((lancam, index) => (
-              <option key={index} value={lancam.value}>{lancam.nome}</option>
-            ))}
-          </select>
-          <span><RiArrowDropDownLine size={40} /></span>
+          <button className={busca === 'Entrada' ? `${styles.btnActive}` : `${styles.tags__button}`} onClick={() => filterTag('Entrada')}>
+            Entradas
+          </button>
+        </div>
+        <div className={styles.tags__tag}>
+          <button className={busca === 'Saída' ? `${styles.btnActive}` : `${styles.tags__button}`} onClick={() => filterTag('Saída')}>
+            Saídas
+          </button>
+        </div>
+        <div className={styles.tags__tag}>
+          <button className={busca === 'NFCe' ? `${styles.btnActive}` : `${styles.tags__button}`} onClick={() => filterTag('NFCe')}>
+            NFCe
+          </button>
+        </div>
+        <div className={styles.tags__tag}>
+          <button className={busca === 'Recibo' ? `${styles.btnActive}` : `${styles.tags__button}`} onClick={() => filterTag('Recibo')}>
+            Recibos
+          </button>
         </div>
         <div className={styles.tags__tag}>
           <select onChange={(evento) => setBusca(evento.target.value)}>
