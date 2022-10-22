@@ -7,9 +7,11 @@ interface Props {
   setInput: React.Dispatch<React.SetStateAction<string>>
   value: string | number
   placeholder?: string
+  onFocus?: React.FocusEventHandler<HTMLInputElement>
+  onBlur?: React.FocusEventHandler<HTMLInputElement>
 }
 
-export const Input = ({ htmlFor, id, label, type, required, setInput, value, placeholder}: Props) => {
+export const Input = ({ htmlFor, id, label, type, required, setInput, value, placeholder, onFocus,  onBlur}: Props) => {
   const placeholderModificada = `${placeholder}`;
 
   return(
@@ -23,7 +25,9 @@ export const Input = ({ htmlFor, id, label, type, required, setInput, value, pla
         value={value} 
         required={required}
         placeholder={placeholderModificada}
-        onChange={e => setInput(e.target.value)} 
+        onChange={e => setInput(e.target.value)}
+        onFocus={onFocus}
+        onBlur={onBlur}
       />
     </div>
   );

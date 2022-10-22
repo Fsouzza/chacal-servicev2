@@ -18,7 +18,7 @@ export const TabelaCaixa = (props: Props) => {
   const currentPages = pageNumber * itemPerPage;
   const colunas = [
     {
-      label: 'ID'
+      label: 'N.º ID'
     },
     {
       label: 'Item'
@@ -55,18 +55,18 @@ export const TabelaCaixa = (props: Props) => {
   }
 
   useEffect(()=> {
-    const listaBusca = items.filter(item => verificaBusca(item.item)
+    const listaBusca = items.filter(item => 
+      verificaBusca(item.item)
       || verificaBusca(item.tipo) 
       || verificaBusca(item.departamento) 
       || verificaBusca(item.categoria)
       || verificaBusca(item.local)
       || verificaBusca(item.lancamentos)
     );
-
     setLista(listaBusca);
   }, [items, busca]);
   
-  const displayTable = lista.slice(currentPages, currentPages + itemPerPage).map((item, index) => (
+  const displayTable = lista.sort((a,b) => a.date < b.date ? 1 : -1).slice(currentPages, currentPages + itemPerPage).map((item, index) => (
     <tr key={index}>
       <td>{item.id}</td>
       <td>{item.item}</td>
@@ -102,7 +102,7 @@ export const TabelaCaixa = (props: Props) => {
           </tr>
         </thead>
         <tbody>
-          {displayTable}
+          { displayTable }
         </tbody>
       </table>
       <ReactPaginate 
