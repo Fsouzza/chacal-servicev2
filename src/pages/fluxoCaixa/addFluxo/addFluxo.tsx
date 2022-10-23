@@ -35,7 +35,7 @@ export const AddFluxoCaixa = () => {
 
   return(
     <form id='add' className={styles.add}>
-      <Input htmlFor='numero' placeholder='Número do documento' label='N.º ID' id='numero' type='text' onFocus={(e) => (e.target.type='number')} onBlur={(e) => (e.target.type='text')} required={true} value={idField} setInput={value => setIdField(value)}/>
+      <Input htmlFor='numero' placeholder='Número do documento' label='Nº ID' id='numero' type='text' onFocus={(e) => (e.target.type='number')} onBlur={(e) => (e.target.type='text')} required={true} value={idField} setInput={value => setIdField(value)}/>
       <Input htmlFor='item' placeholder='Descrição do Item' label='Item' id='item' type='text' required={true} value={itemField} setInput={value => setItemField(value)}/>
       <Input htmlFor='data' placeholder='Data de emissão do doc...' id='data' label='Data' type='text' onFocus={(e) => (e.target.type='date')} onBlur={(e) => (e.target.type='text')} required={true} value={dataField} setInput={value => setDataField(value)}/>
       <Select label='Lançamento' id='lancamento' htmlFor='lancamento' itens={lancamentos} required={true} value={lancamentoField} setSelected={value => setLancamentoField(value)}/>

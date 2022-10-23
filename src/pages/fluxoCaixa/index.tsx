@@ -17,18 +17,31 @@ export const FluxoCaixa = () => {
   const [porcentagem, setPorcentagem] = useState(0);
   const [lista, setLista] = useState(items);
 
+  function verificaBusca(title: string){
+    const regex = new RegExp(`^${busca}`, 'i');
+    return regex.test(title);
+  }
+
   useEffect(()=> {
     const somaEntrada = items.filter((item) => item.lancamentos === 'Entrada').reduce((acc, cur) => acc + cur.valor, 0);
     const somaSaida = items.filter((item) => item.lancamentos === 'Saída').reduce((acc, cur) => acc + cur.valor, 0);
     const contadorTotal = somaEntrada - somaSaida;
     const contadorPorcentagem = contadorTotal / 100;
+    const listaBusca = items.filter(item => 
+      verificaBusca(item.item)
+      || verificaBusca(item.tipo) 
+      || verificaBusca(item.departamento) 
+      || verificaBusca(item.categoria)
+      || verificaBusca(item.local)
+      || verificaBusca(item.lancamentos)
+    );
     
     setEntrada(somaEntrada);
     setSaida(somaSaida);
     setTotal(contadorTotal);
     setPorcentagem(contadorPorcentagem);
-    setLista(lista);
-  }, [lista]);
+    setLista(listaBusca);
+  }, [items, busca]);
 
   return(
     <>
@@ -43,7 +56,7 @@ export const FluxoCaixa = () => {
       <MyChart />
       <AddFluxoCaixa />
       <Buscador busca={busca} setBusca={setBusca} />
-      <TabelaCaixa busca={busca} items={lista} />
+      <TabelaCaixa items={lista} />
     </>
   );
 };

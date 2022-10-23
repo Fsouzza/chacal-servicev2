@@ -1,24 +1,22 @@
 import { Item } from '../../../types/item';
 import { formatDate } from '../../../helpers/dateFilter';
 import styles from './tabelaRegistro.module.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 type Props = {
   items: Item[],
-  busca: string,
 }
 
 export const TabelaCaixa = (props: Props) => {
-  const {items, busca} = props;
-  const [lista, setLista] = useState(items);
+  const { items } = props;
   const [pageNumber, setPageNumber] = useState(0);
   const itemPerPage = 10;
   const currentPages = pageNumber * itemPerPage;
   const colunas = [
     {
-      label: 'N.º ID'
+      label: 'Nº ID'
     },
     {
       label: 'Item'
@@ -48,25 +46,8 @@ export const TabelaCaixa = (props: Props) => {
       label: 'Oberseração'
     }
   ];
-
-  function verificaBusca(title: string){
-    const regex = new RegExp(`^${busca}`, 'i');
-    return regex.test(title);
-  }
-
-  useEffect(()=> {
-    const listaBusca = items.filter(item => 
-      verificaBusca(item.item)
-      || verificaBusca(item.tipo) 
-      || verificaBusca(item.departamento) 
-      || verificaBusca(item.categoria)
-      || verificaBusca(item.local)
-      || verificaBusca(item.lancamentos)
-    );
-    setLista(listaBusca);
-  }, [items, busca]);
   
-  const displayTable = lista.sort((a,b) => a.date < b.date ? 1 : -1).slice(currentPages, currentPages + itemPerPage).map((item, index) => (
+  const displayTable = items.sort((a,b) => a.date < b.date ? 1 : -1).slice(currentPages, currentPages + itemPerPage).map((item, index) => (
     <tr key={index}>
       <td>{item.id}</td>
       <td>{item.item}</td>
@@ -86,7 +67,7 @@ export const TabelaCaixa = (props: Props) => {
     </tr>
   ));
 
-  const pageCount = Math.ceil(lista.length / itemPerPage);
+  const pageCount = Math.ceil(items.length / itemPerPage);
   const changePage = (event: { selected: number; }) => {
     setPageNumber(event.selected);
   };

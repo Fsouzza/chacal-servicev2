@@ -38,11 +38,6 @@ export const Buscador = ({ busca, setBusca }: Props) => {
         </div>
         <div className={styles.tags__tag}>
           <button className={busca === 'NFCe' ? `${styles.btnActive}` : `${styles.tags__button}`} onClick={() => filterTag('NFCe')}>
-            NFCe
-          </button>
-        </div>
-        <div className={styles.tags__tag}>
-          <button className={busca === 'Recibo' ? `${styles.btnActive}` : `${styles.tags__button}`} onClick={() => filterTag('Recibo')}>
             Recibos
           </button>
         </div>
