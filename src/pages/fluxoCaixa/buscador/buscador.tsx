@@ -1,22 +1,27 @@
 import styles from './buscador.module.scss';
 import { FaSearch } from 'react-icons/fa';
 import { RiArrowDropDownLine } from 'react-icons/ri';
+import { FiltroData } from './../filtro/filtro';
 
 interface Props {
-	busca: string ;
+	busca: string;
 	setBusca: React.Dispatch<React.SetStateAction<string>>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  filter: (e: any) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  removeFilter: (e: any) => void;
 }
 
-export const Buscador = ({ busca, setBusca }: Props) => {
+export const Buscador = ({ busca, setBusca, filter, removeFilter }: Props) => {
   const departamentos = [{'nome' : 'Depto', 'value': ''}, {'nome' : 'Administrativo', 'value': 'Administrativo'}, {'nome' : 'Financeiro', 'value': 'Financeiro'}, {'nome' : 'Officeboy', 'value': 'Officeboy'}, {'nome' : 'Operacional', 'value': 'Operacional'}, {'nome' : 'RH', 'value': 'RH'}, {'nome' : 'Terceirizado', 'value': 'Terceirizado'}];
   
   function filterTag(value: string) {
     if(busca === value) return setBusca('');
     return setBusca(value);
   }
-
+  
   return ( 
-    <section className={styles.sBusca}>
+    <>
       <div className={styles.pesquisar}>
         <input
           value={busca}
@@ -38,9 +43,10 @@ export const Buscador = ({ busca, setBusca }: Props) => {
         </div>
         <div className={styles.tags__tag}>
           <button className={busca === 'NFCe' ? `${styles.btnActive}` : `${styles.tags__button}`} onClick={() => filterTag('NFCe')}>
-            Recibos
+            NFCe
           </button>
         </div>
+        <FiltroData filter={filter} removeFilter={removeFilter} />
         <div className={styles.tags__tag}>
           <select onChange={(evento) => setBusca(evento.target.value)}>
             {departamentos.map((dpto, index) => (
@@ -50,6 +56,6 @@ export const Buscador = ({ busca, setBusca }: Props) => {
           <span><RiArrowDropDownLine size={40} /></span>
         </div>
       </div>
-    </section>
+    </>
   );
 };

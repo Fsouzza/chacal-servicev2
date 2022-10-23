@@ -20,7 +20,7 @@ ChartJS.register(
 );
 
 export const MyChart = () => {
-  const meses = [...items.map((lancamentos) => lancamentos.date.toLocaleString('pt-BR', {month: 'short'}).toUpperCase())];
+  const meses = [...items.sort((a,b) => a.date > b.date ? 1 : -1).map((lancamentos) => lancamentos.date.toLocaleString('pt-BR', {month: 'short'}).toUpperCase())];
   const listaMeses = [... new Set(meses)];
   const incomes = balanco('Entrada');
   const expanses = balanco('Saída');
