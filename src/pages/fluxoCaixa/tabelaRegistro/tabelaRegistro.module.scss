@@ -2,12 +2,13 @@
 
 .secao{
   overflow-x: auto;
-  margin: .5em 2em;
+  margin: 0 2em;
 }
 
 .tabela{
   background-color: $cor-card;
-  border-radius: 1em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
   color: $cor-brancol;
   filter: drop-shadow($sombra);
   min-width: 100%;

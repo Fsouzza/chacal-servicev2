@@ -23,12 +23,12 @@ export const Buscador = ({ busca, setBusca, filter, removeFilter }: Props) => {
   return ( 
     <>
       <div className={styles.pesquisar}>
+        <FaSearch size={20} color='#b0b0b0' />
         <input
           value={busca}
           onChange={(evento) => setBusca(evento.target.value)}
-          placeholder='Pesquisar'
+          placeholder='Pesquisar por item ou local'
         />
-        <FaSearch size={22} color='#5a6af9' />
       </div>
       <div className={styles.tags}>
         <div className={styles.tags__tag}>

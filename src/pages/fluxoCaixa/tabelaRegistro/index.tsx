@@ -46,7 +46,6 @@ export const TabelaCaixa = (props: Props) => {
       label: 'Oberseração'
     }
   ];
-  
   const displayTable = items.sort((a,b) => a.date < b.date ? 1 : -1).slice(currentPages, currentPages + itemPerPage).map((item, index) => (
     <tr key={index}>
       <td>{item.id}</td>
@@ -66,7 +65,6 @@ export const TabelaCaixa = (props: Props) => {
       <td>{item.obs}</td>
     </tr>
   ));
-
   const pageCount = Math.ceil(items.length / itemPerPage);
   const changePage = (event: { selected: number; }) => {
     setPageNumber(event.selected);
