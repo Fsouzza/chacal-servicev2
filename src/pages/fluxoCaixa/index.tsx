@@ -22,18 +22,14 @@ export const FluxoCaixa = () => {
     return regex.test(title);
   }
 
-  const filterByDate = () => {
+  const filterByDate = (date: number) => {
     const ano = new Date().getFullYear();
     const mes = new Date().getMonth();
     const dia = new Date().getDate();
     const diaAtual = new Date(ano, mes, dia);
-    const diaFinal = new Date(ano, mes, dia - 7);
+    const diaFinal = new Date(ano, mes, dia - date);
     const dataFiltrada = items.filter((item) => item.date).filter(item => item.date >= diaFinal && item.date <= diaAtual);
-    setLista(dataFiltrada);
-  };
-
-  const removeFilterDate = () => {
-    setLista(items);
+    date < 0 ? setLista(items) : setLista(dataFiltrada);
   };
 
   useEffect(()=> {
@@ -45,7 +41,6 @@ export const FluxoCaixa = () => {
       verificaBusca(item.item)
       || verificaBusca(item.tipo) 
       || verificaBusca(item.departamento) 
-      || verificaBusca(item.categoria)
       || verificaBusca(item.local)
       || verificaBusca(item.lancamentos)
     );
@@ -69,7 +64,7 @@ export const FluxoCaixa = () => {
       <MyChart />
       <AddFluxoCaixa />
       <div className={styles2.sBusca}>
-        <Buscador busca={busca} setBusca={setBusca} filter={filterByDate} removeFilter={removeFilterDate}  />
+        <Buscador busca={busca} setBusca={setBusca} filter={filterByDate}  />
       </div>
       <TabelaCaixa items={lista} />
     </>

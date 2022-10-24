@@ -8,11 +8,9 @@ interface Props {
 	setBusca: React.Dispatch<React.SetStateAction<string>>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   filter: (e: any) => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  removeFilter: (e: any) => void;
 }
 
-export const Buscador = ({ busca, setBusca, filter, removeFilter }: Props) => {
+export const Buscador = ({ busca, setBusca, filter }: Props) => {
   const departamentos = [{'nome' : 'Depto', 'value': ''}, {'nome' : 'Administrativo', 'value': 'Administrativo'}, {'nome' : 'Financeiro', 'value': 'Financeiro'}, {'nome' : 'Officeboy', 'value': 'Officeboy'}, {'nome' : 'Operacional', 'value': 'Operacional'}, {'nome' : 'RH', 'value': 'RH'}, {'nome' : 'Terceirizado', 'value': 'Terceirizado'}];
   
   function filterTag(value: string) {
@@ -23,7 +21,7 @@ export const Buscador = ({ busca, setBusca, filter, removeFilter }: Props) => {
   return ( 
     <>
       <div className={styles.pesquisar}>
-        <FaSearch size={20} color='#b0b0b0' />
+        <FaSearch size={20} color='#898989' />
         <input
           value={busca}
           onChange={(evento) => setBusca(evento.target.value)}
@@ -46,7 +44,6 @@ export const Buscador = ({ busca, setBusca, filter, removeFilter }: Props) => {
             NFCe
           </button>
         </div>
-        <FiltroData filter={filter} removeFilter={removeFilter} />
         <div className={styles.tags__tag}>
           <select onChange={(evento) => setBusca(evento.target.value)}>
             {departamentos.map((dpto, index) => (
@@ -55,6 +52,7 @@ export const Buscador = ({ busca, setBusca, filter, removeFilter }: Props) => {
           </select>
           <span><RiArrowDropDownLine size={40} /></span>
         </div>
+        <FiltroData filter={filter} />
       </div>
     </>
   );

@@ -1,12 +1,12 @@
 
 interface Props {
   label: string
-  required: boolean
+  required?: boolean
   setSelected: React.Dispatch<React.SetStateAction<string>>
-  value: string
-  itens: string[]
-  id: string
-  htmlFor: string
+  value: string | number
+  itens: string[] | number[]
+  id?: string
+  htmlFor?: string
 }
 
 export const Select = (props: Props) => {
