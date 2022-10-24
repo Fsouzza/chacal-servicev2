@@ -34,7 +34,7 @@ export const FiltroData = ({ filter }: Props) => {
   return(
     <>
       <div className={styles.tags__tag}>
-        <select onChange={(e) => filter(e.currentTarget.value)}>
+        <select onChange={(e) => filter(e.currentTarget.value)} className={styles.tags__select}>
           {dateValues.map( (item, index) => (
             <option key={index} value={item.value}>{item.label}</option>
           ))}

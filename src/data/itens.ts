@@ -290,12 +290,12 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 11, 22),
+    date: new Date(2022, 10, 18),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
     departamento: 'Administrativo',
     tipo: 'S/ Recibo',
-    id: 100000,
+    id: 100002,
     local: 'Escritório',
     item: 'Fundo de Caixa Injetado',
     valor: 150.00,

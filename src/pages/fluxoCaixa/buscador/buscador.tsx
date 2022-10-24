@@ -45,7 +45,7 @@ export const Buscador = ({ busca, setBusca, filter }: Props) => {
           </button>
         </div>
         <div className={styles.tags__tag}>
-          <select onChange={(evento) => setBusca(evento.target.value)}>
+          <select onChange={(evento) => setBusca(evento.target.value)} className={styles.tags__select}>
             {departamentos.map((dpto, index) => (
               <option key={index} value={dpto.value}>{dpto.nome}</option>
             ))}
