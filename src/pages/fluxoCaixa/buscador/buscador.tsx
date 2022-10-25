@@ -1,7 +1,8 @@
 import styles from './buscador.module.scss';
 import { FaSearch } from 'react-icons/fa';
 import { RiArrowDropDownLine } from 'react-icons/ri';
-import { FiltroData } from './../filtro/filtro';
+import { FiltroData } from 'components/filtro/filtro';
+import { HiOutlineAdjustments } from 'react-icons/hi';
 
 interface Props {
 	busca: string;
@@ -11,8 +12,59 @@ interface Props {
 }
 
 export const Buscador = ({ busca, setBusca, filter }: Props) => {
-  const departamentos = [{'nome' : 'Depto', 'value': ''}, {'nome' : 'Administrativo', 'value': 'Administrativo'}, {'nome' : 'Financeiro', 'value': 'Financeiro'}, {'nome' : 'Officeboy', 'value': 'Officeboy'}, {'nome' : 'Operacional', 'value': 'Operacional'}, {'nome' : 'RH', 'value': 'RH'}, {'nome' : 'Terceirizado', 'value': 'Terceirizado'}];
-  
+  const departamentos = [
+    {
+      label : 'Depto', 
+      value: ''
+    }, 
+    {
+      label : 'Administrativo',
+      value: 'Administrativo'
+    }, 
+    {
+      label : 'Financeiro', 
+      value: 'Financeiro'
+    }, 
+    {
+      label : 'Officeboy', 
+      value: 'Officeboy'
+    }, 
+    {
+      label : 'Operacional', 
+      value: 'Operacional'
+    }, 
+    {
+      label : 'RH', 
+      value: 'RH'
+    }, 
+    {
+      label : 'Terceirizado', 
+      value: 'Terceirizado'
+    }
+  ];
+  const dateValues = [
+    {
+      label: 'Filtro por data',
+      value : -1
+    },
+    {
+      label: 'Hoje',
+      value : 0
+    },
+    {
+      label: '7 dias',
+      value : 7
+    },
+    {
+      label: '15 dias',
+      value : 15
+    },
+    {
+      label: '30 dias',
+      value : 30
+    },
+  ];
+
   function filterTag(value: string) {
     if(busca === value) return setBusca('');
     return setBusca(value);
@@ -26,6 +78,7 @@ export const Buscador = ({ busca, setBusca, filter }: Props) => {
           value={busca}
           onChange={(evento) => setBusca(evento.target.value)}
           placeholder='Pesquisar por item ou local'
+          type={'search'}
         />
       </div>
       <div className={styles.tags}>
@@ -44,15 +97,8 @@ export const Buscador = ({ busca, setBusca, filter }: Props) => {
             NFCe
           </button>
         </div>
-        <div className={styles.tags__tag}>
-          <select onChange={(evento) => setBusca(evento.target.value)} className={styles.tags__select}>
-            {departamentos.map((dpto, index) => (
-              <option key={index} value={dpto.value}>{dpto.nome}</option>
-            ))}
-          </select>
-          <span><RiArrowDropDownLine size={40} /></span>
-        </div>
-        <FiltroData filter={filter} />
+        <FiltroData filter={setBusca} opcoes={departamentos} icon={<RiArrowDropDownLine size={40} />} />
+        <FiltroData filter={filter} opcoes={dateValues} icon={< HiOutlineAdjustments size={20} color='#898989' />} />
       </div>
     </>
   );

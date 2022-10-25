@@ -7,6 +7,8 @@ interface Props {
   itens: string[] | number[]
   id?: string
   htmlFor?: string
+  onFocus?: React.FocusEventHandler<HTMLSelectElement>
+  onBlur?: React.FocusEventHandler<HTMLSelectElement>
 }
 
 export const Select = (props: Props) => {
@@ -16,8 +18,10 @@ export const Select = (props: Props) => {
       <select 
         id={props.id} 
         required={props.required}
-        onChange={evento => props.setSelected(evento.target.value)}
         value={props.value}
+        onChange={evento => props.setSelected(evento.target.value)}
+        onFocus={props.onFocus}
+        onBlur={props.onBlur}
       >
         {props.itens.map(item => <option key={item}>{item}</option>)}
       </select>

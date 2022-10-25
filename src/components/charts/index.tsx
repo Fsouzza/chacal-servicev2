@@ -8,6 +8,7 @@ import { Chart as ChartJS, CategoryScale,
   Legend } from 'chart.js';
 import styles from './charts.module.scss';
 import { items } from 'data/itens';
+import { dateToString } from 'helpers/dateFilter';
 
 ChartJS.register(
   BarElement,
@@ -20,7 +21,7 @@ ChartJS.register(
 );
 
 export const MyChart = () => {
-  const meses = [...items.sort((a,b) => a.date > b.date ? 1 : -1).map((lancamentos) => lancamentos.date.toLocaleString('pt-BR', {month: 'short'}).toUpperCase())];
+  const meses = [...items.sort((a,b) => a.date > b.date ? 1 : -1).map((lancamentos) => dateToString(lancamentos.date))];
   const listaMeses = [... new Set(meses)];
   const incomes = balanco('Entrada');
   const expanses = balanco('Saída');
@@ -28,7 +29,7 @@ export const MyChart = () => {
   function balanco(lancamentos: string){
     return listaMeses.map((label) => {
       return items
-        .filter(item => item.date.toLocaleString('pt-BR', {month: 'short'}).toUpperCase() === label)
+        .filter(item => dateToString(item.date) === label)
         .filter((item) => item.lancamentos === lancamentos)
         .reduce((acc, cur) => acc + cur.valor, 0);
     });

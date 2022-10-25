@@ -14,6 +14,30 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
+    date: new Date(2022, 0, 28),
+    lancamentos: 'Saída', 
+    categoria: 'Compra',
+    departamento: 'Operacional',
+    tipo: 'Recibo',
+    id: 234569,
+    local: 'Epi Comercio LTDA',
+    item: 'Bota bico aco tam 42',
+    valor: 80.00,
+    obs: '-'
+  },
+  { 
+    date: new Date(2022, 0, 17),
+    lancamentos: 'Entrada', 
+    categoria: 'Serviços',
+    departamento: 'Operacional',
+    tipo: 'Recibo',
+    id: 100222,
+    local: 'CD Nov Era',
+    item: 'Cargas a vista',
+    valor: 180.00,
+    obs: '-'
+  },
+  { 
     date: new Date(2022, 0, 22),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -22,7 +46,7 @@ export const items: Item[] = [
     id: 723459,
     local: 'Escritório',
     item: 'Fundo de Caixa Injetado',
-    valor: 250.00,
+    valor: 50.00,
     obs: '-'
   },
   { 
@@ -314,7 +338,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 9, 23),
+    date: new Date(2022, 10, 23),
     lancamentos: 'Saída', 
     categoria: 'Compra',
     departamento: 'RH',

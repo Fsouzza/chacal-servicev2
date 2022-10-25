@@ -12,3 +12,10 @@ export const newDateAdjusted = (dateField: string) => {
   const [year, month, day] = dateField.split('-');
   return new Date(parseInt(year), parseInt(month) -1, parseInt(day));
 };
+
+export const dateToString = (time: Date) => {
+  return new Date(time).toLocaleDateString('en-US', {
+    year: '2-digit',
+    month: 'short',
+  }).toUpperCase();
+};

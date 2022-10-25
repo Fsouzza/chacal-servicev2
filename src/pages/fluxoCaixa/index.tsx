@@ -8,6 +8,8 @@ import { Buscador } from './buscador/buscador';
 import { MyChart } from 'components/charts';
 import styles from './fluxoCaixa.module.scss';
 import styles2 from '../fluxoCaixa/buscador/buscador.module.scss';
+import { FiltroData } from 'components/filtro/filtro';
+import { AiOutlineCalendar } from 'react-icons/ai';
 
 export const FluxoCaixa = () => {
   const [busca, setBusca] = useState('');
@@ -16,6 +18,16 @@ export const FluxoCaixa = () => {
   const [total, setTotal] = useState(0);
   const [porcentagem, setPorcentagem] = useState(0);
   const [lista, setLista] = useState(items);
+  const opcoesAno = [
+    {
+      label: 'Jan 2022 a Dez 2022',
+      value: ''
+    },
+    {
+      label: 'Jan 2023 a Dez 2023',
+      value: ''
+    }
+  ];
 
   function verificaBusca(title: string){
     const regex = new RegExp(`^${busca}`, 'i');
@@ -23,13 +35,15 @@ export const FluxoCaixa = () => {
   }
 
   const filterByDate = (date: number) => {
-    const ano = new Date().getFullYear();
-    const mes = new Date().getMonth();
-    const dia = new Date().getDate();
-    const diaAtual = new Date(ano, mes, dia);
-    const diaFinal = new Date(ano, mes, dia - date);
-    const dataFiltrada = items.filter((item) => item.date).filter(item => item.date >= diaFinal && item.date <= diaAtual);
+    const dataAtual = new Date();
+    const dataInicial = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), dataAtual.getDate());
+    const dataFinal = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), dataAtual.getDate() - date);
+    const dataFiltrada = items.filter((item) => item.date).filter(item => item.date >= dataFinal && item.date <= dataInicial);
     date < 0 ? setLista(items) : setLista(dataFiltrada);
+  };
+
+  const filterChartByYear = () => {
+    console.log('Resultados exibidos com sucesso');
   };
 
   useEffect(()=> {
@@ -44,11 +58,11 @@ export const FluxoCaixa = () => {
       || verificaBusca(item.local)
       || verificaBusca(item.lancamentos)
     );
+    setLista(listaBusca);
     setEntrada(somaEntrada);
     setSaida(somaSaida);
     setTotal(contadorTotal);
     setPorcentagem(contadorPorcentagem);
-    setLista(listaBusca);
   }, [items, busca]);
 
   return(
@@ -56,10 +70,8 @@ export const FluxoCaixa = () => {
       <Titulo />
       <Cards entrada={entrada} saida={saida} total={total} porcentagem={porcentagem} />
       <div className={styles.inputsData}>
-        <div>
-          <input type='date'></input>
-          <input type='date'></input>
-        </div>
+        <p>Mostrar data de:</p> 
+        <FiltroData filter={filterChartByYear} opcoes={opcoesAno} icon={<AiOutlineCalendar size={18} color='#898989' />}/>
       </div>
       <MyChart />
       <AddFluxoCaixa />

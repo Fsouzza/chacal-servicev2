@@ -4,19 +4,12 @@
   align-items: center;
   display: flex;
   justify-content: right;
-  margin: 4em 1.5em .5em 0;
-  padding: 0 1em;
-  div{
-    border: 4px solid $cor-card;
-    border-radius: 1em;
-    display: flex;
-    gap: 1em;
-    padding: .5em 1em;
-  }
-  input{
-    background-color: transparent;
-    border: none;
+  margin: 4em 0 .5em 0;
+  padding: 0 2em;
+  text-align: center;
+  p{
     color: $cor-cinza;
-    outline: none;
+    font-size: 1em;
+    padding: .1em .1em 0 0;
   }
 }
