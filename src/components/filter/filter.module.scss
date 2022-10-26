@@ -1,0 +1,42 @@
+@import '../../styles/variaveis';
+
+.searchSelect{
+  padding: 0 .6em;
+  position: relative;
+  span{
+    align-items: center;
+    background-color: $cor-principal;
+    border-top-right-radius: .5em;
+    border-bottom-right-radius: .5em;
+    color: $cor-brancol;
+    display: flex;
+    height: 80%;
+    justify-content: center;
+    position: absolute;
+    pointer-events: none;
+    right: .8em;
+    top: .2em;
+    width: 2em;
+  }
+  option{
+    font-size: 1.2em;
+  }
+  &__select{
+    align-items: center;
+    background-color: $cor-principal;
+    border: 2px solid $cor-card;
+    border-radius: .5em;
+    color: $cor-brancol;
+    cursor: pointer;
+    display: flex;
+    font-size: .86rem;
+    font-weight: 400;
+    outline: none;
+    padding: .4em 1.3em .4em 1em;
+    text-align: left;
+    width: fit-content;
+    &:focus{
+      border-color: $cor-azul;
+    }
+  }
+}

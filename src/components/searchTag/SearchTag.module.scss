@@ -1,0 +1,41 @@
+@import '../../styles/variaveis';
+
+.searchTag{
+  padding: 0 .6em;
+  position: relative;
+  &__default{
+    background-color: transparent;
+    border: 2px solid $cor-card;
+    border-radius: .5em;
+    color: $cor-brancol;
+    cursor: pointer;
+    font-size: .9rem;
+    font-weight: 400;
+    outline: none;
+    padding: .5em 1em;
+    text-align: center;
+    width: 90px;
+    &:hover{
+      border-color: $cor-secundaria;
+      color: $cor-cinza;
+      font-weight: 500;
+      transition: ease-in .3s;
+    }
+    &:focus{
+      border-color: $cor-azul;
+    }
+  }
+  &__active{
+    background-color: $cor-azul;
+    border: 2px solid transparent;
+    border-radius: .5em;
+    color: $cor-branco;
+    cursor: pointer;
+    font-size: .9rem;
+    font-weight: 500;
+    outline: none;
+    padding: .5em 1em;
+    text-align: center;
+    width: 90px;
+  }
+}

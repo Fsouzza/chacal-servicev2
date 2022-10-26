@@ -154,7 +154,7 @@ export const items: Item[] = [
     id: 888828,
     local: 'Joaninha Distribuidora',
     item: 'Garrafão de Água 20L',
-    valor: 19.00,
+    valor: 99.00,
     obs: '-'
   },
   { 
@@ -298,7 +298,7 @@ export const items: Item[] = [
     id: 100000,
     local: 'Escritório',
     item: 'Fundo de Caixa Injetado',
-    valor: 150.00,
+    valor: 235.00,
     obs: '-'
   },
   { 

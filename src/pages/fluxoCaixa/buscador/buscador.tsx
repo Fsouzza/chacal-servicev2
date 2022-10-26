@@ -1,8 +1,9 @@
 import styles from './buscador.module.scss';
 import { FaSearch } from 'react-icons/fa';
 import { RiArrowDropDownLine } from 'react-icons/ri';
-import { FiltroData } from 'components/filtro/filtro';
+import { FiltroData } from 'components/filter/filter';
 import { HiOutlineAdjustments } from 'react-icons/hi';
+import { SearchByTag } from 'components/searchTag/SearchTag';
 
 interface Props {
 	busca: string;
@@ -71,8 +72,8 @@ export const Buscador = ({ busca, setBusca, filter }: Props) => {
   }
   
   return ( 
-    <>
-      <div className={styles.pesquisar}>
+    <div className={styles.busca}>
+      <div className={styles.busca__pesquisar}>
         <FaSearch size={20} color='#898989' />
         <input
           value={busca}
@@ -81,25 +82,13 @@ export const Buscador = ({ busca, setBusca, filter }: Props) => {
           type={'search'}
         />
       </div>
-      <div className={styles.tags}>
-        <div className={styles.tags__tag}>
-          <button className={busca === 'Entrada' ? `${styles.btnActive}` : `${styles.tags__button}`} onClick={() => filterTag('Entrada')}>
-            Entradas
-          </button>
-        </div>
-        <div className={styles.tags__tag}>
-          <button className={busca === 'Saída' ? `${styles.btnActive}` : `${styles.tags__button}`} onClick={() => filterTag('Saída')}>
-            Saídas
-          </button>
-        </div>
-        <div className={styles.tags__tag}>
-          <button className={busca === 'NFCe' ? `${styles.btnActive}` : `${styles.tags__button}`} onClick={() => filterTag('NFCe')}>
-            NFCe
-          </button>
-        </div>
+      <div className={styles.busca__tags}>
+        <SearchByTag busca={busca} value={'Entrada'} onClick={() => filterTag('Entrada')}>Entradas</SearchByTag>
+        <SearchByTag busca={busca} value={'Saída'} onClick={() => filterTag('Saída')}>Saídas</SearchByTag>
+        <SearchByTag busca={busca} value={'NFCe'} onClick={() => filterTag('NFCe')}>NFCe</SearchByTag>
         <FiltroData filter={setBusca} opcoes={departamentos} icon={<RiArrowDropDownLine size={40} />} />
         <FiltroData filter={filter} opcoes={dateValues} icon={< HiOutlineAdjustments size={20} color='#898989' />} />
       </div>
-    </>
+    </div>
   );
 };

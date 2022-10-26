@@ -1,6 +1,7 @@
 import styles from './cards.module.scss';
 import { BsCreditCard, BsFillCartXFill, BsCash, BsArrowRepeat } from 'react-icons/bs';
 import { BsFillArrowUpCircleFill, BsFillArrowDownCircleFill } from 'react-icons/bs';
+import { FiAlertCircle } from 'react-icons/fi';
 import { IoAnalyticsSharp } from 'react-icons/io5';
 import { TbTrendingUp, TbTrendingDown } from 'react-icons/tb';
 import CountUp from 'react-countup';
@@ -50,7 +51,7 @@ export const Cards = ({ entrada, saida, total, porcentagem }: Props) => {
       <Card 
         titulo='Saldo em caixa' 
         icon={<BsCash size={34} color={'#628DFB'} />} 
-        indicador={<BsArrowRepeat size={30} color={'#497391'} />}
+        indicador={total > 0 ? <BsArrowRepeat size={30} color={'#497391'} /> : <FiAlertCircle size={30} color={'#c34743'} />}
       >
         <CountUp
           className={total > 0 ? '' : `${styles.negativo}`}

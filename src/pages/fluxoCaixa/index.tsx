@@ -6,10 +6,9 @@ import { useState, useEffect } from 'react';
 import { items } from '../../data/itens';
 import { Buscador } from './buscador/buscador';
 import { MyChart } from 'components/charts';
-import styles from './fluxoCaixa.module.scss';
-import styles2 from '../fluxoCaixa/buscador/buscador.module.scss';
-import { FiltroData } from 'components/filtro/filtro';
+import { FiltroData } from 'components/filter/filter';
 import { AiOutlineCalendar } from 'react-icons/ai';
+import styles from './fluxoCaixa.module.scss';
 
 export const FluxoCaixa = () => {
   const [busca, setBusca] = useState('');
@@ -75,9 +74,7 @@ export const FluxoCaixa = () => {
       </div>
       <MyChart />
       <AddFluxoCaixa />
-      <div className={styles2.sBusca}>
-        <Buscador busca={busca} setBusca={setBusca} filter={filterByDate}  />
-      </div>
+      <Buscador busca={busca} setBusca={setBusca} filter={filterByDate}  />
       <TabelaCaixa items={lista} />
     </>
   );
