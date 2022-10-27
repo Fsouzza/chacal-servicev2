@@ -29,8 +29,8 @@ export const Header = () => {
       <div className={styles.header__esquerda} ref={sideBarEvent}>
         <div className={sidebar ? `${styles.header__menu__btnAtivo}` : `${styles.header__menu}`} onClick={ShowSidebar}>
           <FiMenu />
+          {sidebar && <SideBar active={setSidebar} />}
         </div>
-        {sidebar && <SideBar active={setSidebar} />}
         <img className={styles.header__logo} src={logo} alt='Logo da empresa' />
         <strong>Chacal Service</strong>
       </div>

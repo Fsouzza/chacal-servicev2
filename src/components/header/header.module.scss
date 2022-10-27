@@ -20,6 +20,7 @@
       font-size: 1.2em;
       pointer-events: none;
       text-transform: uppercase;
+      user-select: none;
     }
   }
   &__menu{
@@ -55,6 +56,7 @@
     height: 40px;
     width: 50px;
     pointer-events: none;
+    user-select: none;
   }
   &__lista{
     align-items: center;

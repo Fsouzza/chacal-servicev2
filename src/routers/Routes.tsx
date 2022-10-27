@@ -2,7 +2,7 @@ import React from 'react';
 import { FluxoCaixa } from '../pages/fluxoCaixa';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Clientes } from './../pages/clientes/clientes';
-import { PageDesignPadrao } from './../components/pagePadrao/index';
+import { PageDesignPadrao } from '../components/homePage/index';
 import { EstoqueDeEPI } from './../pages/estoqueEPI/estoqueDeEPI';
 import { ControleDeFinancas } from 'pages/financas/ControleDeFinancas';
 import { ListaFuncionarios } from './../pages/funcionarios/Funcionarios';

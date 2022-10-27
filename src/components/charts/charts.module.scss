@@ -20,7 +20,8 @@
     }
   }
   &__chartBox{
-    height: 320px;
+    box-sizing: border-box;
+    height: 340px;
     padding: 1em 2em;
     width: 100%;
   }

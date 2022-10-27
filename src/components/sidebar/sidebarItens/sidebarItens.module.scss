@@ -6,9 +6,9 @@
   cursor: pointer;
   display: flex;
   font-weight: 500;
-  gap: 1em;
+  gap: .6em;
   justify-content: flex-start;
-  padding: .4em 1.4em;
+  padding: .4em 1.3em;
   position: relative;
   width: 100%;
   &:hover{
@@ -16,6 +16,9 @@
     color: $cor-azull;
   }
   div{
-    font-size: 1.3em;
+    font-size: .9em;
+  }
+  p{
+    font-size: .7em;
   }
 }

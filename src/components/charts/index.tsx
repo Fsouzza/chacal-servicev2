@@ -5,7 +5,7 @@ import { Chart as ChartJS, CategoryScale,
   LineElement,
   Tooltip,
   BarElement,
-  Legend } from 'chart.js';
+  Legend  } from 'chart.js';
 import styles from './charts.module.scss';
 import { items } from 'data/itens';
 import { dateToString } from 'helpers/dateFilter';
@@ -17,7 +17,7 @@ ChartJS.register(
   LinearScale,
   PointElement,
   Legend,
-  Tooltip
+  Tooltip,
 );
 
 export const MyChart = () => {
@@ -41,7 +41,7 @@ export const MyChart = () => {
       {
         label: 'Entradas',
         data: incomes,
-        backgroundColor: 'transparent',
+        backgroundColor: '#038C3E',
         borderColor: '#038C3E',
         pointBackgroundColor: '#038C3E',
         borderWidth: 2.4,
@@ -51,7 +51,7 @@ export const MyChart = () => {
       {
         label: 'Saídas',
         data: expanses,
-        backgroundColor: 'transparent',
+        backgroundColor: '#F23D3D',
         borderColor: '#F23D3D',
         borderWidth: 2.4,
         pointBackgroundColor: '#F23D3D',
@@ -62,13 +62,35 @@ export const MyChart = () => {
   };
   
   const options = {
-    radius: 4,
-    hitRadius: 30,
-    hoverRadius: 5,
+    radius: 0,
+    hitRadius: 10,
+    hoverRadius: 7,
+    hoverBackgroundColor: '#2b2c2f',
+    hoverBorderWidth: 3,
     maintainAspectRatio: false,
+    options: {
+      interaction: {
+        mode: 'index',
+      },
+    },
     plugins: {
       legend: {
         position: 'bottom' as const,
+      },
+      tooltip: {
+        usePointStyle: true,
+        callbacks: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          afterTitle: (context: any) => {
+            const diferenca = context[0].raw - context[1].raw;
+            const formatDiferenca = diferenca.toFixed(2);
+            if(diferenca > 0) {
+              return 'Manteve ' + formatDiferenca + ' R$ do orçamento';
+            } else {
+              return 'Excedeu ' + formatDiferenca + ' R$ do orçamento';
+            }
+          }
+        }
       },
     },
     scales: {
