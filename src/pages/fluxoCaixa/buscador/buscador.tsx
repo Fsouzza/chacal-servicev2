@@ -15,7 +15,7 @@ interface Props {
 export const Buscador = ({ busca, setBusca, filter }: Props) => {
   const departamentos = [
     {
-      label : 'Depto', 
+      label : 'Filtro por Depto', 
       value: ''
     }, 
     {

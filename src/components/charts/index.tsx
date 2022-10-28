@@ -5,7 +5,7 @@ import { Chart as ChartJS, CategoryScale,
   LineElement,
   Tooltip,
   BarElement,
-  Legend  } from 'chart.js';
+  Legend } from 'chart.js';
 import styles from './charts.module.scss';
 import { items } from 'data/itens';
 import { dateToString } from 'helpers/dateFilter';
@@ -79,18 +79,6 @@ export const MyChart = () => {
       },
       tooltip: {
         usePointStyle: true,
-        callbacks: {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          afterTitle: (context: any) => {
-            const diferenca = context[0].raw - context[1].raw;
-            const formatDiferenca = diferenca.toFixed(2);
-            if(diferenca > 0) {
-              return 'Manteve ' + formatDiferenca + ' R$ do orçamento';
-            } else {
-              return 'Excedeu ' + formatDiferenca + ' R$ do orçamento';
-            }
-          }
-        }
       },
     },
     scales: {
@@ -109,7 +97,9 @@ export const MyChart = () => {
           borderColor: '#4b4b4b'
         },
         ticks: {
-          stepSize: 75
+          stepSize: 75,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          callback: (value: any ) => value + ' R$'
         },
       }
     },
