@@ -21,13 +21,13 @@ ChartJS.register(
 );
 
 export const MyChart = () => {
-  const meses = [...items.sort((a,b) => a.date > b.date ? 1 : -1).map((lancamentos) => dateToString(lancamentos.date))];
-  const listaMeses = [... new Set(meses)];
+  const month = [...items.sort((a,b) => a.date > b.date ? 1 : -1).map((lancamentos) => dateToString(lancamentos.date))];
+  const monthMaps = [... new Set(month)];
   const incomes = balanco('Entrada');
   const expanses = balanco('Saída');
 
   function balanco(lancamentos: string){
-    return listaMeses.map((label) => {
+    return monthMaps.map((label) => {
       return items
         .filter(item => dateToString(item.date) === label)
         .filter((item) => item.lancamentos === lancamentos)
@@ -36,7 +36,7 @@ export const MyChart = () => {
   }
 
   const data = {
-    labels: listaMeses,
+    labels: monthMaps,
     datasets: [
       {
         label: 'Entradas',
