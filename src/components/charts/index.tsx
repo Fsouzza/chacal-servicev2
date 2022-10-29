@@ -46,7 +46,7 @@ export const MyChart = () => {
         pointBackgroundColor: '#038C3E',
         borderWidth: 2.4,
         pointBorderWidth: 2,
-        tension: 0.4
+        tension: 0.3
       },
       {
         label: 'Saídas',
@@ -56,7 +56,7 @@ export const MyChart = () => {
         borderWidth: 2.4,
         pointBackgroundColor: '#F23D3D',
         pointBorderWidth: 2, 
-        tension: 0.4,
+        tension: 0.3,
       }
     ]
   };
@@ -68,17 +68,36 @@ export const MyChart = () => {
     hoverBackgroundColor: '#2b2c2f',
     hoverBorderWidth: 3,
     maintainAspectRatio: false,
-    options: {
-      interaction: {
-        mode: 'index',
-      },
+    layout: {
+      padding: 10
     },
     plugins: {
       legend: {
         position: 'bottom' as const,
       },
       tooltip: {
+        backgroundColor: 'rgba(13,13,13,0.8)',
+        bodySpacing: 6,
+        bodyColor: '#cecece',
+        cornerRadius: 16,
         usePointStyle: true,
+        padding: 12,
+        titleMarginBottom: 10,
+        callbacks: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          afterTitle: function(context: any) {
+            const diferenca = context[0].raw - context[1].raw;
+            if(diferenca > 0) {
+              return ['Manteve R$ ' + diferenca.toFixed(2) + ' do orçamento'];
+            } else{
+              return ['Excedeu R$ ' + Math.abs(diferenca).toFixed(2) + ' do orçamento'];
+            }
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
       },
     },
     scales: {

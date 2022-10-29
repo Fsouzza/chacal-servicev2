@@ -2,7 +2,7 @@
 
 .sidebar{
   align-items: flex-start;
-  animation: showsidebar .3s;
+  animation: showsidebar .2s linear;
   background-color: #232323;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
   display: flex;
@@ -33,14 +33,23 @@
 
 @keyframes showsidebar{
   0% {
-    opacity: 0.2;
-    width: 240px;
+    left: -260px;
+    width: 260px;
+  }
+  25% {
+    left: -195px;
+    width: 260px;
   }
   50% {
-    opacity: 0.5;
+    left: -130px;
+    width: 260px;
+  }
+  75% {
+    left: -65px;
+    width: 260px;
   }
   100% {
-    opacity: 1;
+    left: 0;
     width: 260px;
   }
 }
