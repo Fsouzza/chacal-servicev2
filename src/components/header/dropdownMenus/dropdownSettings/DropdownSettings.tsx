@@ -1,5 +1,7 @@
 import styles from './DropdownSettings.module.scss';
 import { AiOutlineSetting } from 'react-icons/ai';
+import { BsMoon, BsSun } from 'react-icons/bs';
+import Switch from 'react-switch';
 import styles2 from '../../header.module.scss';
 import { useEffect, useRef, useState } from 'react';
 
@@ -32,18 +34,25 @@ export const DropdownSettings = () => {
 
       <div className={settingsOpen ? `${styles.settingsMenu}` : `${styles.settingsMenu__inativo}`}>
         <div className={styles.settingsMenu__titulo}>
-          <h3>Configurações rápidas</h3>
-          <span>Escolha de temas</span>
+          <h3>Configurações</h3>
         </div>
         <ul className={styles.settingsMenu__items}>
+          <span>Dark mode | Light mode</span>
           <li className={styles.settingsMenu__item}>
-            <button> Seu perfil</button>
-          </li>
-          <li className={styles.settingsMenu__item}>
-            <button> Ajuda </button>
-          </li>
-          <li className={styles.settingsMenu__item}>
-            <button> Sair </button>
+            <BsMoon />
+            <Switch 
+              onChange={() => []}
+              checked={false}
+              handleDiameter={18}
+              height={8}
+              offColor='#4f4f4f'
+              onColor='#202020'
+              uncheckedIcon={false}
+              checkedIcon={false}
+              width={40}
+
+            />
+            <BsSun />
           </li>
         </ul>
       </div>
