@@ -4,7 +4,6 @@ import { useState, useRef } from 'react';
 import { useEffect } from 'react';
 import { BiUser, BiLogOut, BiHelpCircle } from 'react-icons/bi';
 import styles2 from '../../header.module.scss';
-import { DropdownItem } from '../dropdownItem/DropdownItem';
 import styles from './DropdownPerfil.module.scss';
 
 export const DropdownPerfil = () => {
@@ -18,9 +17,7 @@ export const DropdownPerfil = () => {
         setProfileOpen(false);
       }
     };
-    profileOpen 
-      ? window.addEventListener('click', handleClickOutside) 
-      : window.removeEventListener('click', handleClickOutside);
+    profileOpen ? window.addEventListener('click', handleClickOutside) : window.removeEventListener('click', handleClickOutside);
   }, [profileOpen]);
 
   const handleFocus = () => {
@@ -35,16 +32,21 @@ export const DropdownPerfil = () => {
           onClick={handleFocus}
         />
       </button>
-
       <div className={profileOpen ? `${styles.profileMenu}` : `${styles.profileMenu__inativo}`}>
         <div className={styles.profileMenu__titulo}>
           <h3>{username}</h3>
           <span>Assist. Administrativo</span>
         </div>
         <ul className={styles.profileMenu__items}>
-          <DropdownItem icon={<BiUser />} text={'Seu perfil'}/>
-          <DropdownItem icon={<BiHelpCircle />} text={'Ajuda'}/>
-          <DropdownItem icon={<BiLogOut />} text={'Sair'} />
+          <li className={styles.profileMenu__item}>
+            <button><BiUser /> Seu perfil</button>
+          </li>
+          <li className={styles.profileMenu__item}>
+            <button><BiHelpCircle /> Ajuda</button>
+          </li>
+          <li className={styles.profileMenu__item}>
+            <button><BiLogOut /> Sair</button>
+          </li>
         </ul>
         <div className={styles.profileMenu__termos}>
           <span>* Politica de Privacidade</span>

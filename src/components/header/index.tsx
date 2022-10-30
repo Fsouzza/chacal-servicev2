@@ -35,8 +35,8 @@ export const Header = () => {
         <strong>Chacal Service</strong>
       </div>
       <ul className={styles.header__lista}>
-        <DropdownSettings />
         <DropdownNotification />
+        <DropdownSettings />
         <DropdownPerfil />
       </ul>
     </header>

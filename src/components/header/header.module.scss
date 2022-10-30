@@ -62,7 +62,7 @@
     align-items: center;
     display: flex;
     flex-direction: row;
-    font-size: 1.16em;
+    font-size: 1.2em;
     gap: 1em;
     justify-content: center;
   }
@@ -73,7 +73,7 @@
     cursor: pointer;
     display: flex;
     font-size: 1.3em;
-    padding: 0.2em;
+    padding: 2px;
     overflow: hidden;
     &:hover {
       background-color: #4b4b4b;
@@ -87,7 +87,7 @@
       cursor: pointer;
       display: flex;
       font-size: 1.3em;
-      padding: 0.2em;
+      padding: 2px;
       overflow: hidden;
     }
   }
