@@ -372,5 +372,53 @@ export const items: Item[] = [
     item: 'Bota bico aco tam 43',
     valor: 80.00,
     obs: '-'
+  },
+  { 
+    date: new Date(2023, 0, 12),
+    lancamentos: 'Entrada', 
+    categoria: 'Receita',
+    departamento: 'Financeiro',
+    tipo: 'NF',
+    id: 987654,
+    local: 'Escritório',
+    item: 'Fundo de Caixa injetado',
+    valor: 238.00,
+    obs: '-'
+  },
+  { 
+    date: new Date(2023, 0, 11),
+    lancamentos: 'Saída', 
+    categoria: 'Compra',
+    departamento: 'RH',
+    tipo: 'NFCe',
+    id: 119922,
+    local: 'Escritório',
+    item: 'Almoço semanal',
+    valor: 175.00,
+    obs: '-'
+  },
+  { 
+    date: new Date(2023, 1, 17),
+    lancamentos: 'Entrada', 
+    categoria: 'Receita',
+    departamento: 'Financeiro',
+    tipo: 'NF',
+    id: 987654,
+    local: 'Escritório',
+    item: 'Fundo de Caixa injetado',
+    valor: 138.00,
+    obs: '-'
+  },
+  { 
+    date: new Date(2023, 1, 18),
+    lancamentos: 'Saída', 
+    categoria: 'Compra',
+    departamento: 'RH',
+    tipo: 'NFCe',
+    id: 119922,
+    local: 'Escritório',
+    item: 'Almoço semanal',
+    valor: 75.00,
+    obs: '-'
   }
 ];

@@ -6,9 +6,6 @@ import { useState, useEffect } from 'react';
 import { items } from '../../data/itens';
 import { Buscador } from './buscador/buscador';
 import { MyChart } from 'components/charts';
-import { FiltroData } from 'components/filter/filter';
-import { AiOutlineCalendar } from 'react-icons/ai';
-import styles from './fluxoCaixa.module.scss';
 
 export const FluxoCaixa = () => {
   const [busca, setBusca] = useState('');
@@ -17,16 +14,7 @@ export const FluxoCaixa = () => {
   const [total, setTotal] = useState(0);
   const [porcentagem, setPorcentagem] = useState(0);
   const [lista, setLista] = useState(items);
-  const opcoesAno = [
-    {
-      label: 'Jan 2022 a Dez 2022',
-      value: ''
-    },
-    {
-      label: 'Jan 2023 a Dez 2023',
-      value: ''
-    }
-  ];
+  
 
   function verificaBusca(title: string){
     const regex = new RegExp(`^${busca}`, 'i');
@@ -39,10 +27,6 @@ export const FluxoCaixa = () => {
     const dataFinal = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), dataAtual.getDate() - date);
     const dataFiltrada = items.filter((item) => item.date).filter(item => item.date >= dataFinal && item.date <= dataInicial);
     date < 0 ? setLista(items) : setLista(dataFiltrada);
-  };
-
-  const filterChartByYear = () => {
-    console.log('Resultados exibidos com sucesso');
   };
 
   useEffect(()=> {
@@ -68,10 +52,6 @@ export const FluxoCaixa = () => {
     <>
       <Titulo />
       <Cards entrada={entrada} saida={saida} total={total} porcentagem={porcentagem} />
-      <div className={styles.inputsData}>
-        <p>Mostrar data de:</p> 
-        <FiltroData filter={filterChartByYear} opcoes={opcoesAno} icon={<AiOutlineCalendar size={18} color='#898989' />}/>
-      </div>
       <MyChart />
       <AddFluxoCaixa />
       <Buscador busca={busca} setBusca={setBusca} filter={filterByDate}  />
