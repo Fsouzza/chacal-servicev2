@@ -1,5 +1,5 @@
 import styles from './footer.module.scss';
-import logowhite from '../../assets/img/logoWhite.png';
+import logowhite from 'assets/img/logoWhite.png';
 import { FaFacebook } from 'react-icons/fa';
 import { FiInstagram } from 'react-icons/fi';
 import { IoLogoTwitter } from 'react-icons/io5';

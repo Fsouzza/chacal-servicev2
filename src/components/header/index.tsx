@@ -1,5 +1,5 @@
 import styles from './header.module.scss';
-import logo from '../../assets/img/logo-chacal.png';
+import logo from 'assets/img/logo-chacal.png';
 import { FiMenu } from 'react-icons/fi';
 import { DropdownSettings } from './dropdownMenus/dropdownSettings/DropdownSettings';
 import { useRef, useState, useEffect } from 'react';

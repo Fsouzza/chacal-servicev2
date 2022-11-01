@@ -13,41 +13,83 @@ export const SideBar = ({active, ref}: any) => {
   const closeSideBar = () => {
     active(false);
   };
+  const dataOperat = [
+    {
+      titulo: 'Clientes',
+      to: '/clientes',
+      icon: <MdOutlineDashboardCustomize />
+    },
+    {
+      titulo: 'Estoque de EPI',
+      to: '/estoqueEPI',
+      icon: <BsCartDash />
+    },
+  ];
+  const dataFinanc = [
+    {
+      titulo: 'Fluxo de caixa',
+      to: '/',
+      icon: <MdAttachMoney />
+    },
+    {
+      titulo: 'Controle financeiro',
+      to: '/financas',
+      icon: <BsCash />
+    },
+  ];
+  const dataRH = [
+    {
+      titulo: 'Funcionários',
+      to: '/funcionarios',
+      icon:<FiUserPlus />
+    },
+  ];
+  const dataDoc = [
+    {
+      titulo: 'Documentação',
+      to: '/documentos',
+      icon: <AiOutlineFilePdf />
+    },
+    {
+      titulo: 'Arquivos',
+      to: '',
+      icon: <BiArchive />
+    },
+  ];
   
   return (
     <nav ref={ref} className={styles.sidebar} onBlur={closeSideBar}>
       <ul>
         <span>Operacional</span>
-        <Link to='/clientes'>
-          <SideBarItems icon={<MdOutlineDashboardCustomize />} titulo={'Clientes'} />
-        </Link>
-        <Link to='/estoqueEPI'>
-          <SideBarItems icon={<BsCartDash />} titulo={'Estoque de EPI'} />
-        </Link>
+        {dataOperat.map( (oper, index) => (
+          <Link key={index} to={oper.to}>
+            <SideBarItems icon={oper.icon} titulo={oper.titulo} />
+          </Link>
+        ))}
       </ul>
       <ul>
         <span>Financeiro</span>
-        <Link to='/'>
-          <SideBarItems icon={<MdAttachMoney />} titulo={'Fluxo de caixa'} />
-        </Link>
-        <Link to='/financas'>
-          <SideBarItems icon={<BsCash />} titulo={'Controle de finanças'} />
-        </Link>
+        {dataFinanc.map( (financ, index) => (
+          <Link key={index} to={financ.to}>
+            <SideBarItems icon={financ.icon} titulo={financ.titulo} />
+          </Link>
+        ))}
       </ul>
       <ul>
         <span>Recursos Humanos</span>
-        <Link to='/funcionarios'>
-          <SideBarItems icon={<FiUserPlus />} titulo={'Funcionários'} />
-        </Link>
+        {dataRH.map( (rh, index) => (
+          <Link key={index} to={rh.to}>
+            <SideBarItems icon={rh.icon} titulo={rh.titulo} />
+          </Link>
+        ))}
       </ul>
       <ul>
         <span>Docs</span>
-        <Link to='/documentos'>
-          <SideBarItems icon={<AiOutlineFilePdf />} titulo={'Documentação'} />
-        </Link>
-        <Link to=''>
-          <SideBarItems icon={<BiArchive />} titulo={'Arquivos'} />
-        </Link>
+        {dataDoc.map( (doc, index) => (
+          <Link key={index} to={doc.to}>
+            <SideBarItems icon={doc.icon} titulo={doc.titulo} />
+          </Link>
+        ))}
       </ul>
     </nav>
   );

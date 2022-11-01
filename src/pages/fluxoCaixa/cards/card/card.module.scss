@@ -8,7 +8,12 @@
   transition: .2s linear;
   width: 400px;
   &:hover{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 25px 50px -12px;
     filter: none;
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.025);
+    transition: 0.18s;
   }
   &__titulo{
 		color: #a0a0a0;

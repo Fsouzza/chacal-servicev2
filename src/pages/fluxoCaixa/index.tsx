@@ -1,10 +1,10 @@
-import { AddFluxoCaixa } from './addFluxo/addFluxo';
-import { Cards } from './cards/cards';
+import { AddFluxoCaixa } from './addFluxo';
+import { Cards } from './cards';
 import { TabelaCaixa } from './tabelaRegistro';
 import { Titulo } from './titulo/titulo';
 import { useState, useEffect } from 'react';
-import { items } from '../../data/itens';
-import { Buscador } from './buscador/buscador';
+import { items } from 'data/itens';
+import { Buscador } from './buscador';
 import { MyChart } from 'components/charts';
 
 export const FluxoCaixa = () => {
