@@ -29,11 +29,12 @@
     display: flex;
     gap: 2em;
     justify-content: center;
-    a{
+    &__add{
       align-items: center;
       border: 2px dashed $cor-azul;
       border-radius: 1em;
       color: $cor-azull;
+      cursor: pointer;
       display: flex;
       font-size: 1em;
       font-weight: 500;
@@ -48,7 +49,7 @@
         color: $cor-branco;
       }
     }
-    button{
+    &__pdf{
       align-items: center;
       background-color: $cor-azul;
       border: 2px solid $cor-azul;

@@ -12,7 +12,7 @@ type Props = {
 export const TabelaCaixa = (props: Props) => {
   const { items } = props;
   const [pageNumber, setPageNumber] = useState(0);
-  const itemPerPage = 10;
+  const itemPerPage = 12;
   const currentPages = pageNumber * itemPerPage;
   const colunas = [
     {

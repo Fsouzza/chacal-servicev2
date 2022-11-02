@@ -1,4 +1,3 @@
-import { AddFluxoCaixa } from './addFluxo';
 import { Cards } from './cards';
 import { TabelaCaixa } from './tabelaRegistro';
 import { Titulo } from './titulo/titulo';
@@ -57,7 +56,6 @@ export const FluxoCaixa = () => {
       <Titulo />
       <Cards entrada={entrada} saida={saida} total={total} porcentagem={porcentagem} />
       <MyChart />
-      <AddFluxoCaixa />
       <Buscador busca={busca} setBusca={setBusca} filter={filterByDate}  />
       <TabelaCaixa items={lista} />
     </>
