@@ -30,8 +30,8 @@
 	}
 	&__profile{
 		border-radius: 1em;
-    	height: 32px;
-    	width: 32px;
+    height: 32px;
+    width: 32px;
 	}
 	&__inativo {
 		display: none;
@@ -70,19 +70,32 @@
 		justify-content: flex-start;
 		margin-bottom: 0.5em;
 		transition: 0.3s all;
-		button {
+		&__button {
 			align-items: center;
 			color: $cor-brancol;
 			cursor: pointer;
 			display: flex;
-			font-size: .9em;
+			font-size: .8em;
 			gap: 0.5em;
 			justify-content: flex-start;
-			transition: 0.3s all;
+			transition: 0.2s all;
 			&:hover {
 				color: $cor-azull;
 			}
 		}
+    &__buttonRed{
+      align-items: center;
+			color: $cor-brancol;
+			cursor: pointer;
+			display: flex;
+			font-size: .8em;
+			gap: 0.5em;
+			justify-content: flex-start;
+			transition: 0.2s all;
+      &:hover{
+        color: $cor-vermelhal;
+      }
+    }
 	}
 	&__termos {
 		align-items: flex-start;
@@ -93,7 +106,7 @@
 		width: 100%;
 		span {
       color: $cor-brancol;
-			font-size: .8em;
+			font-size: .7em;
 		}
 	}
 }

@@ -39,13 +39,13 @@ export const DropdownPerfil = () => {
         </div>
         <ul className={styles.profileMenu__items}>
           <li className={styles.profileMenu__item}>
-            <button><BiUser /> Seu perfil</button>
+            <button className={styles.profileMenu__item__button}><BiUser /> Seu perfil</button>
           </li>
           <li className={styles.profileMenu__item}>
-            <button><BiHelpCircle /> Ajuda</button>
+            <button className={styles.profileMenu__item__button}><BiHelpCircle /> Ajuda</button>
           </li>
           <li className={styles.profileMenu__item}>
-            <button><BiLogOut /> Sair</button>
+            <button className={styles.profileMenu__item__buttonRed}><BiLogOut /> Desconectar</button>
           </li>
         </ul>
         <div className={styles.profileMenu__termos}>
