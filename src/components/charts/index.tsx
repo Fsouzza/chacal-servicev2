@@ -49,9 +49,6 @@ export const MyChart = () => {
     hoverBackgroundColor: '#2b2c2f',
     hoverBorderWidth: 3,
     maintainAspectRatio: false,
-    layout: {
-      padding: 10
-    },
     plugins: {
       legend: {
         position: 'bottom' as const,
@@ -99,14 +96,14 @@ export const MyChart = () => {
         ticks: {
           stepSize: 75,
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          callback: (value: any ) => value + ' R$'
+          callback: (value: any ) => value + ' $'
         },
       }
     },
   };
   const yearOptions = [
     {
-      label: 'Filtro por data',
+      label: 'Filtros por ano',
       value: -1
     },
     {
@@ -116,6 +113,10 @@ export const MyChart = () => {
     {
       label: 'Jan 2023 a Dez 2023',
       value: 1
+    },
+    {
+      label: 'Jan 2024 a Dez 2024',
+      value: 2
     }
   ];
  
@@ -129,9 +130,8 @@ export const MyChart = () => {
   }
 
   function filterChartByYear(date: number) {
-    const today = new Date();
-    const monthStart = (new Date(today.getFullYear() + date, 0, 1));
-    const monthEnd = new Date(today.getFullYear() + date, 12, 0);
+    const monthStart = (new Date(2022 + date, 0, 1));
+    const monthEnd = new Date(2022 + date, 12, 0);
     const filterByYear = [...items.sort((a,b) => a.date > b.date ? 1 : -1).filter((item) => item.date).filter(item => item.date >= monthStart && item.date <= monthEnd)];
     const yearToString = filterByYear.map((lancamentos) => dateToString(lancamentos.date));
     date < 0 
@@ -156,16 +156,13 @@ export const MyChart = () => {
       <div className={styles.charts__chartBox}>
         <div className={styles.charts__titulo}>
           <h2>Demonstrativo de lançamentos</h2>
-          <div className={styles.inputsData}>
-            <p>Mostrar data de:</p> 
-            <div className={styles2.searchSelect}>
-              <select className={styles2.searchSelect__select} onChange={(e) => filterChartByYear(parseFloat(e.currentTarget.value))}>
-                {yearOptions.map((opcao, index) => (
-                  <option key={index} value={opcao.value}>{opcao.label}</option>
-                ))}
-              </select>
-              <span><AiOutlineCalendar size={18} color='#898989' /></span>
-            </div>
+          <div className={styles2.searchSelect}>
+            <select className={styles2.searchSelect__select} onChange={(e) => filterChartByYear(parseFloat(e.currentTarget.value))}>
+              {yearOptions.map((opcao, index) => (
+                <option key={index} value={opcao.value}>{opcao.label}</option>
+              ))}
+            </select>
+            <span><AiOutlineCalendar size={18} color='#898989' /></span>
           </div>
         </div>
         <Line

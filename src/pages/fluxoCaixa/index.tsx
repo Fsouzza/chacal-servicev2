@@ -29,9 +29,13 @@ export const FluxoCaixa = () => {
     date < 0 ? setLista(items) : setLista(dataFiltrada);
   };
 
+  function lancamentos(lancamento: string){
+    return items.filter((item) => item.lancamentos === lancamento).reduce((acc, cur) => acc + cur.valor, 0);
+  }
+
   useEffect(()=> {
-    const somaEntrada = items.filter((item) => item.lancamentos === 'Entrada').reduce((acc, cur) => acc + cur.valor, 0);
-    const somaSaida = items.filter((item) => item.lancamentos === 'Saída').reduce((acc, cur) => acc + cur.valor, 0);
+    const somaEntrada = lancamentos('Entrada');
+    const somaSaida = lancamentos('Saída');
     const contadorTotal = somaEntrada - somaSaida;
     const contadorPorcentagem = contadorTotal / 100;
     const listaBusca = items.filter(item => 
