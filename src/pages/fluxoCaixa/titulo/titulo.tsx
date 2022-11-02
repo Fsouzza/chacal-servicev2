@@ -2,7 +2,7 @@ import styles from './titulo.module.scss';
 import { FiDownload } from 'react-icons/fi';
 import { BsPlusLg } from 'react-icons/bs';
 import { username } from 'helpers/username';
-import { ModalCashFlow } from 'components/modalCashFlow';
+import { ModalCashFlow } from 'pages/fluxoCaixa/modalCashFlow';
 import { useState } from 'react';
 
 export const Titulo = () => {
@@ -18,7 +18,7 @@ export const Titulo = () => {
         <li>
           <button className={styles.cardTitulo__botoes__add} onClick={() => setModalCashFlow(true)}>
             <BsPlusLg />
-            Add produto
+            Add Produto
           </button>
           <ModalCashFlow 
             open={modalCashFlow} 
