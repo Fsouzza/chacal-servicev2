@@ -153,8 +153,8 @@ export const MyChart = () => {
 
   return(
     <div className={styles.charts}>
-      <div className={styles.charts__chartBox}>
-        <div className={styles.charts__titulo}>
+      <div className={styles.chartBox}>
+        <div className={styles.chartBox__titulo}>
           <h2>Demonstrativo de lançamentos</h2>
           <div className={styles2.searchSelect}>
             <select className={styles2.searchSelect__select} onChange={(e) => filterChartByYear(parseFloat(e.currentTarget.value))}>

@@ -11,7 +11,7 @@
     flex-direction: column;
     label{
       color: $cor-brancol;
-      font-size: 1em;
+      font-size: .96em;
       margin-left: 8px;
       margin-bottom: 6px;
     }
@@ -20,10 +20,11 @@
       border: 1px solid $cor-principal;
       border-radius: .5em;
       color: $cor-branco;
+      font-size: .94em;
       min-width: 240px;
       outline: none;
       padding: .5em;
-      &:focus{
+      &:focus-within{
         border: 1px solid $cor-azul;
       }
     }
@@ -44,9 +45,9 @@
     font-weight: 500;
     margin-top: 1.3em;
     outline: none;
-    padding: 0.4em;
+    padding: 1em;
     transition: linear 0.4s;
-    width: 240px;
+    width: 220px;
     &:hover {
       background-color: #40199a;
       color: $cor-brancol;

@@ -29,6 +29,11 @@
       margin-left: .8em;
     }
   }
+  &__activo{
+    background-color: #333333;
+    color: $cor-azul;
+    font-weight: 500;
+  }
 }
 
 @keyframes showsidebar{

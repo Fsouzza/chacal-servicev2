@@ -3,24 +3,6 @@
 .searchSelect{
   padding: 0 .6em;
   position: relative;
-  span{
-    align-items: center;
-    background-color: $cor-principal;
-    border-top-right-radius: .5em;
-    border-bottom-right-radius: .5em;
-    color: $cor-brancol;
-    display: flex;
-    height: 80%;
-    justify-content: center;
-    position: absolute;
-    pointer-events: none;
-    right: .8em;
-    top: .2em;
-    width: 2em;
-  }
-  option{
-    font-size: 1.2em;
-  }
   &__select{
     align-items: center;
     background-color: $cor-principal;
@@ -38,5 +20,23 @@
     &:focus{
       border-color: $cor-azul;
     }
+    option{
+      font-size: 1.2em;
+    }
+  }
+  span{
+    align-items: center;
+    background-color: $cor-principal;
+    border-top-right-radius: .5em;
+    border-bottom-right-radius: .5em;
+    color: $cor-brancol;
+    display: flex;
+    height: 80%;
+    justify-content: center;
+    position: absolute;
+    pointer-events: none;
+    right: .8em;
+    top: .2em;
+    width: 2em;
   }
 }

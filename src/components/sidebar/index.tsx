@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const SideBar = ({active, ref}: any) => {
+
   const closeSideBar = () => {
     active(false);
   };
