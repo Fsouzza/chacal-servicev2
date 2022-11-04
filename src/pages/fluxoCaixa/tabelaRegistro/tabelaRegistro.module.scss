@@ -1,69 +1,113 @@
-@import '../../../styles/variaveis';
+@import 'styles/variaveis';
 
 .secao{
   overflow-x: auto;
   margin: 0 2em;
+  .tabela{
+    background-color: $cor-card;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    color: $cor-brancol;
+    filter: drop-shadow($sombra);
+    min-width: 100%;
+    padding: 1em;
+    thead{
+      background-color: $cor-preta;
+      font-size: 1em;
+      font-weight: 500;
+      line-height: 2.1;
+      text-indent: 6px;
+      tr{
+        td{
+          &:first-child{
+            border-top-left-radius: .5em;
+          }
+          &:last-child{
+            border-top-right-radius: .5em;
+          }
+        }
+      }
+    }
+    tbody{
+      td{
+        align-items: center;
+        font-size: .94em;
+        font-weight: 400;
+        line-height: 1.8;
+        text-indent: 8px;
+        width: 180px;
+        &:nth-child(2), &:nth-child(8), &:nth-child(10){
+          width: 280px;
+        }
+        &:nth-child(4){
+          align-items: center;
+          display: flex;
+          gap: .5em;
+          text-indent: 0;
+        }
+      }
+      tr{
+        &:nth-of-type(even){
+          background-color: #27282b;
+        }
+      }
+    }
+    div{
+      align-items: center;
+      border-radius: 50%;
+      display: flex;
+      height: 8px;
+      justify-content: center;
+      margin-left: 8px;
+      width: 8px;
+    }
+  }
+  .pagination{
+    align-items: center;
+    color: $cor-cinza;
+    display: flex;
+    font-size: 1em;
+    gap: .5em;
+    justify-content: center;
+    margin: 2em 0;
+    &__bttns{
+      background-color: #323232;
+      border-radius: .6em;
+      cursor: pointer;
+      display: flex;
+      padding: .2em;
+      transition: all .5s;
+      &:hover{
+        background-color: $cor-secundaria;
+      }
+    }
+    &__link{
+      cursor: pointer;
+      padding: .5em;
+      &:hover{
+        background-color: $cor-card;
+        border-radius: .5em;
+      }
+    }
+    &__disabled{
+      a{
+        background-color: $cor-principal;
+        &:hover{
+          background-color: $cor-principal;
+        }
+      }
+    }
+    &__active{
+      a{
+        background-color: $cor-preta;
+        border-radius: .5em;
+        font-weight: 500;
+        padding: .5em;
+      }
+    }
+  }
 }
 
-.tabela{
-  background-color: $cor-card;
-  border-bottom-left-radius: 1em;
-  border-bottom-right-radius: 1em;
-  color: $cor-brancol;
-  filter: drop-shadow($sombra);
-  min-width: 100%;
-  padding: 1em;
-  thead{
-    background-color: $cor-preta;
-    font-size: 1em;
-    font-weight: 500;
-    line-height: 2.1;
-    text-indent: 6px;
-    tr{
-      td{
-        &:first-child{
-          border-top-left-radius: .5em;
-        }
-        &:last-child{
-          border-top-right-radius: .5em;
-        }
-      }
-    }
-  }
-  tbody{
-    td{
-      align-items: center;
-      font-size: .94em;
-      font-weight: 400;
-      line-height: 1.8;
-      text-indent: 8px;
-      width: 180px;
-      &:nth-child(2), &:nth-child(8), &:nth-child(10){
-        width: 280px;
-      }
-      &:nth-child(4){
-        align-items: center;
-        display: flex;
-        gap: .5em;
-        text-indent: 0;
-      }
-    }
-    tr{
-      &:nth-of-type(even){
-        background-color: #27282b;
-      }
-    }
-  }
-  div{
-    align-items: center;
-    border-radius: 50%;
-    display: flex;
-    height: 8px;
-    justify-content: center;
-    margin-left: 8px;
-    width: 8px;
-  }
-}
 
 .txtRed{
   background-color: #d66464;
@@ -81,49 +125,4 @@
 
 .valueRed{
   color: #d66464;
-}
-
-.pagination{
-  align-items: center;
-  color: $cor-cinza;
-  display: flex;
-  font-size: 1em;
-  gap: .5em;
-  justify-content: center;
-  margin: 2em 0;
-  &__bttns{
-    background-color: #323232;
-    border-radius: .6em;
-    cursor: pointer;
-    display: flex;
-    padding: .2em;
-    transition: all .5s;
-    &:hover{
-      background-color: $cor-secundaria;
-    }
-  }
-  &__link{
-    cursor: pointer;
-    padding: .5em;
-    &:hover{
-      background-color: $cor-card;
-      border-radius: .5em;
-    }
-  }
-  &__disabled{
-    a{
-      background-color: $cor-principal;
-      &:hover{
-        background-color: $cor-principal;
-      }
-    }
-  }
-  &__active{
-   a{
-    background-color: $cor-preta;
-    border-radius: .5em;
-    font-weight: 500;
-    padding: .5em;
-   }
-  }
 }

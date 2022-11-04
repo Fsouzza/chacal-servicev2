@@ -1,4 +1,4 @@
-@import '../../../styles/variaveis';
+@import 'styles/variaveis';
 
 .cards{
 	align-items: center;
@@ -6,9 +6,9 @@
 	flex-direction: row;
 	gap: 2em;
 	justify-content: space-between;
-  	margin: 0 2em;
+  margin: 0 2em;
+  .negativo{
+    color: #c34743;
+  }
 }
 
-.negativo{
-  color: #c34743;
-}

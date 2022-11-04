@@ -6,48 +6,48 @@
     display: flex;
     justify-content: space-between;
     padding: $padd-padrao;
-   &__texto{
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    gap: .5em;
-    justify-content: center;
-    h2{
-      color: $cor-brancol;
-      font-size: 1.2em;
-      font-weight: 400;
-      text-align: left;
-    }
-    span{
-      color: $cor-branco;
-      font-size: 1.6em;
-      text-align: left;
-    }
-   }
-   &__botoes{
-    align-items: center;
-    display: flex;
-    gap: 2em;
-    justify-content: center;
-    &__add{
-      align-items: center;
-      border: 2px dashed $cor-azul;
-      border-radius: 1em;
-      color: $cor-azull;
-      cursor: pointer;
+   .texto{
+      align-items: flex-start;
       display: flex;
-      font-size: 1em;
-      font-weight: 500;
+      flex-direction: column;
       gap: .5em;
       justify-content: center;
-      padding: .5em 1em;
-      text-align: center;
-      transition: linear .4s;
-      width: 170px;
-      &:hover{
-        background-color: $cor-azul;
-        color: $cor-branco;
+      h2{
+        color: $cor-brancol;
+        font-size: 1.2em;
+        font-weight: 400;
+        text-align: left;
       }
+      span{
+        color: $cor-branco;
+        font-size: 1.6em;
+        text-align: left;
+      }
+    }
+   .botoes{
+      align-items: center;
+      display: flex;
+      gap: 2em;
+      justify-content: center;
+      &__add{
+        align-items: center;
+        border: 2px dashed $cor-azul;
+        border-radius: 1em;
+        color: $cor-azull;
+        cursor: pointer;
+        display: flex;
+        font-size: 1em;
+        font-weight: 500;
+        gap: .5em;
+        justify-content: center;
+        padding: .5em 1em;
+        text-align: center;
+        transition: linear .4s;
+        width: 170px;
+        &:hover{
+          background-color: $cor-azul;
+          color: $cor-branco;
+        }
     }
     &__pdf{
       align-items: center;

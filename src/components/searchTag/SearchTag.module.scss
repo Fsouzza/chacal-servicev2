@@ -3,7 +3,7 @@
 .searchTag{
   padding: 0 .6em;
   position: relative;
-  &__default{
+  .default{
     background-color: $cor-card;
     border: 2px solid $cor-card;
     border-radius: .5em;
@@ -24,18 +24,18 @@
     &:focus{
       border-color: $cor-azul;
     }
-  }
-  &__active{
-    background-color: $cor-azul;
-    border: 2px solid transparent;
-    border-radius: .5em;
-    color: $cor-branco;
-    cursor: pointer;
-    font-size: .9rem;
-    font-weight: 500;
-    outline: none;
-    padding: .5em 1em;
-    text-align: center;
-    width: 90px;
+    &__active{
+      background-color: $cor-azul;
+      border: 2px solid transparent;
+      border-radius: .5em;
+      color: $cor-branco;
+      cursor: pointer;
+      font-size: .9rem;
+      font-weight: 500;
+      outline: none;
+      padding: .5em 1em;
+      text-align: center;
+      width: 90px;
+    }
   }
 }

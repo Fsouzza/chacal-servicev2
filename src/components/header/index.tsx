@@ -1,4 +1,3 @@
-import styles from './header.module.scss';
 import logo from 'assets/img/logo-chacal.png';
 import { FiMenu } from 'react-icons/fi';
 import { DropdownSettings } from './dropdownMenus/dropdownSettings/DropdownSettings';
@@ -6,6 +5,7 @@ import { useRef, useState, useEffect } from 'react';
 import { SideBar } from 'components/sidebar';
 import { DropdownPerfil } from './dropdownMenus/dropdownPerfil/DropdownPerfil';
 import { DropdownNotification } from './dropdownMenus/dropdownNotification/DropdownNotification';
+import styles from './header.module.scss';
 
 export const Header = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -26,15 +26,15 @@ export const Header = () => {
 
   return(
     <header className={styles.header}>
-      <div className={styles.header__esquerda} ref={sideBarEvent}>
-        <div className={sidebar ? `${styles.header__menu__btnAtivo}` : `${styles.header__menu}`} onClick={ShowSidebar}>
+      <div className={styles.esquerda} ref={sideBarEvent}>
+        <div className={sidebar ? `${styles.menu__ativo}` : `${styles.menu}`} onClick={ShowSidebar}>
           <FiMenu />
           {sidebar && <SideBar active={setSidebar} />}
         </div>
-        <img className={styles.header__logo} src={logo} alt='Logo da empresa' />
+        <img className={styles.logo} src={logo} alt='Logo da empresa' />
         <strong>Chacal Service</strong>
       </div>
-      <ul className={styles.header__lista}>
+      <ul className={styles.lista}>
         <DropdownNotification />
         <DropdownSettings />
         <DropdownPerfil />

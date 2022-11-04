@@ -1,4 +1,4 @@
-@import "../../../../styles/variaveis";
+@import "styles/variaveis";
 
 .profileMenu {
 	align-items: center;
@@ -59,41 +59,41 @@
 		flex-direction: column;
 		justify-content: center;
 		width: 100%;
-	}
-	&__item {
-		align-items: center;
-		color: $cor-branco;
-		cursor: pointer;
-		display: flex;
-		font-size: 1.1em;
-		gap: 0.5em;
-		justify-content: flex-start;
-		margin-bottom: 0.5em;
-		transition: 0.3s all;
-		&__button {
-			align-items: center;
-			color: $cor-brancol;
-			cursor: pointer;
-			display: flex;
-			font-size: .8em;
-			gap: 0.5em;
-			justify-content: flex-start;
-			transition: 0.2s all;
-			&:hover {
-				color: $cor-azull;
-			}
-		}
-    &__buttonRed{
+    li{
       align-items: center;
-			color: $cor-brancol;
-			cursor: pointer;
-			display: flex;
-			font-size: .8em;
-			gap: 0.5em;
-			justify-content: flex-start;
-			transition: 0.2s all;
-      &:hover{
-        color: $cor-vermelhal;
+      color: $cor-branco;
+      cursor: pointer;
+      display: flex;
+      font-size: 1.1em;
+      gap: 0.5em;
+      justify-content: flex-start;
+      margin-bottom: 0.5em;
+      transition: 0.3s all;
+      .button {
+        align-items: center;
+        color: $cor-brancol;
+        cursor: pointer;
+        display: flex;
+        font-size: .8em;
+        gap: 0.5em;
+        justify-content: flex-start;
+        transition: 0.2s all;
+        &:hover {
+          color: $cor-azull;
+        }
+      }
+      .buttonRed{
+        align-items: center;
+        color: $cor-brancol;
+        cursor: pointer;
+        display: flex;
+        font-size: .8em;
+        gap: 0.5em;
+        justify-content: flex-start;
+        transition: 0.2s all;
+        &:hover{
+          color: $cor-vermelhal;
+        }
       }
     }
 	}

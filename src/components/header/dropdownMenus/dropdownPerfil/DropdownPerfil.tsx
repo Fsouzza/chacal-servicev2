@@ -26,7 +26,7 @@ export const DropdownPerfil = () => {
 
   return(
     <div ref={dropdownPerfil}>
-      <button className={profileOpen ? `${styles2.header__link__ativo}` : `${styles2.header__link}`}>
+      <button className={profileOpen ? `${styles2.link__ativo}` : `${styles2.link}`}>
         <img className={styles.profileMenu__profile} 
           src={profilePicture} 
           onClick={handleFocus}
@@ -38,14 +38,14 @@ export const DropdownPerfil = () => {
           <span>Assist. Administrativo</span>
         </div>
         <ul className={styles.profileMenu__items}>
-          <li className={styles.profileMenu__item}>
-            <button className={styles.profileMenu__item__button}><BiUser /> Seu perfil</button>
+          <li>
+            <button className={styles.button}><BiUser /> Seu perfil</button>
           </li>
-          <li className={styles.profileMenu__item}>
-            <button className={styles.profileMenu__item__button}><BiHelpCircle /> Ajuda</button>
+          <li>
+            <button className={styles.button}><BiHelpCircle /> Ajuda</button>
           </li>
-          <li className={styles.profileMenu__item}>
-            <button className={styles.profileMenu__item__buttonRed}><BiLogOut /> Desconectar</button>
+          <li>
+            <button className={styles.buttonRed}><BiLogOut /> Desconectar</button>
           </li>
         </ul>
         <div className={styles.profileMenu__termos}>

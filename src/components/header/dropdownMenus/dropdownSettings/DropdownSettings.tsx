@@ -26,19 +26,19 @@ export const DropdownSettings = () => {
   return(
     <div ref={dropdownSettings}>
       <button 
-        className={settingsOpen ? `${styles2.header__link__ativo}` : `${styles2.header__link}`}
+        className={settingsOpen ? `${styles2.link__ativo}` : `${styles2.link}`}
         onClick={handleFocus}
       >
         <AiOutlineSetting />
       </button>
 
       <div className={settingsOpen ? `${styles.settingsMenu}` : `${styles.settingsMenu__inativo}`}>
-        <div className={styles.settingsMenu__titulo}>
+        <div className={styles.titulo}>
           <h3>Configurações</h3>
         </div>
-        <ul className={styles.settingsMenu__items}>
-          <span>Dark mode | Light mode</span>
-          <li className={styles.settingsMenu__item}>
+        <ul className={styles.items}>
+          <span>Escolha o modo</span>
+          <li>
             <BsMoon />
             <Switch 
               onChange={() => []}
@@ -50,7 +50,6 @@ export const DropdownSettings = () => {
               uncheckedIcon={false}
               checkedIcon={false}
               width={40}
-
             />
             <BsSun />
           </li>

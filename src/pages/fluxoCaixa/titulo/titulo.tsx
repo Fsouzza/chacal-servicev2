@@ -10,13 +10,13 @@ export const Titulo = () => {
 
   return(
     <section className={styles.cardTitulo}>
-      <div className={styles.cardTitulo__texto}>
+      <div className={styles.texto}>
         <h2>Olá {username}, bem-vindo de volta!</h2>
         <span>Analise seus movimentos de caixa</span>
       </div>
-      <ul className={styles.cardTitulo__botoes}>
+      <ul className={styles.botoes}>
         <li>
-          <button className={styles.cardTitulo__botoes__add} onClick={() => setModalCashFlow(true)}>
+          <button className={styles.botoes__add} onClick={() => setModalCashFlow(true)}>
             <BsPlusLg />
             Add Produto
           </button>
@@ -26,7 +26,7 @@ export const Titulo = () => {
           />
         </li>
         <li>
-          <button className={styles.cardTitulo__botoes__pdf}>
+          <button className={styles.botoes__pdf}>
             <FiDownload size={20} />
             Download PDF
           </button>

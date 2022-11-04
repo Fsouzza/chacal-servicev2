@@ -1,5 +1,5 @@
-import { Item } from '../../../types/item';
-import { formatDate } from '../../../helpers/dateFilter';
+import { Item } from 'types/item';
+import { formatDate } from 'helpers/dateFilter';
 import styles from './tabelaRegistro.module.scss';
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';

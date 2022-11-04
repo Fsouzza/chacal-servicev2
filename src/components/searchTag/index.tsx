@@ -6,7 +6,7 @@ export const SearchByTag = ({busca, onClick, children, value}: Itags) => {
   return(
     <div className={styles.searchTag}>
       <button 
-        className={busca === value ? `${styles.searchTag__active}` : `${styles.searchTag__default}`}
+        className={busca === value ? `${styles.default__active}` : `${styles.default}`}
         onClick={onClick}
         value={value}
       >

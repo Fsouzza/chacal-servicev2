@@ -1,8 +1,8 @@
-@import '../../styles/variaveis';
+@import 'styles/variaveis';
 
 .header{
   align-items: center;
-  background-color: #232323;
+  background-color: $cor-header;
   border-bottom: 1px solid $cor-secundaria;
   display: flex;
   flex-direction: row;
@@ -11,7 +11,7 @@
   position: fixed;
   z-index: 998;
   width: 100%;
-  &__esquerda{
+  .esquerda{
     align-items: center;
     display: flex;
     gap: 1em;
@@ -23,7 +23,7 @@
       user-select: none;
     }
   }
-  &__menu{
+  .menu{
     align-items: center;
     border: 2px solid transparent;
     border-radius: 1em;
@@ -35,11 +35,11 @@
     margin-right: .6em;
     padding: .4em;
     &:hover{
-      background-color: #4b4b4b;
+      background-color: $cor-secundaria;
       color: $cor-preta;
       transition: .3s ease-in;
     }
-    &__btnAtivo{
+    &__ativo{
       align-items: center;
       border-radius: 1em;
       border: 2px solid $cor-azull;
@@ -52,13 +52,13 @@
       padding: .4em;
     }
   }
-  &__logo{
+  .logo{
     height: 40px;
     width: 50px;
     pointer-events: none;
     user-select: none;
   }
-  &__lista{
+  .lista{
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -66,8 +66,24 @@
     gap: 1em;
     justify-content: center;
   }
-  &__link {
-    border: 2px solid transparent;
+}
+
+.link {
+  border: 2px solid transparent;
+  border-radius: 1em;
+  color: $cor-brancol;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.3em;
+  padding: 2px;
+  overflow: hidden;
+  &:hover {
+    background-color: $cor-secundaria;
+    color: $cor-preta;
+    transition: 0.4s ease-in;
+  }
+  &__ativo{
+    border: 2px solid $cor-azull;
     border-radius: 1em;
     color: $cor-brancol;
     cursor: pointer;
@@ -75,20 +91,5 @@
     font-size: 1.3em;
     padding: 2px;
     overflow: hidden;
-    &:hover {
-      background-color: #4b4b4b;
-      color: $cor-preta;
-      transition: 0.4s ease-in;
-    }
-    &__ativo{
-      border: 2px solid $cor-azull;
-      border-radius: 1em;
-      color: $cor-brancol;
-      cursor: pointer;
-      display: flex;
-      font-size: 1.3em;
-      padding: 2px;
-      overflow: hidden;
-    }
   }
 }

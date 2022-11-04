@@ -1,4 +1,4 @@
-@import "../../../../styles/variaveis";
+@import "styles/variaveis";
 
 .settingsMenu {
 	align-items: center;
@@ -31,7 +31,7 @@
 	&__inativo {
 		display: none;
 	}
-	&__titulo {
+	.titulo {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
@@ -40,11 +40,11 @@
 		margin-bottom: 0.8em;
 		h3 {
 			color: $cor-branco;
-			font-size: 1em;
+			font-size: .9em;
       font-weight: 400;
 		}
 	}
-	&__items {
+	.items {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
@@ -52,25 +52,25 @@
 		width: 100%;
     span {
       border-top: 1px solid $cor-secundaria;
-			color: $cor-brancol;
-			font-size: 0.85em;
-			font-weight: 400;
+      color: $cor-brancol;
+      font-size: 0.8em;
+      font-weight: 400;
       margin-bottom: 1em;
       padding-top: 1em;
       width: 100%;
       text-align: center;
 		}
-	}
-	&__item {
-		align-items: center;
-		color: $cor-branco;
-		cursor: pointer;
-		display: flex;
-		font-size: 1em;
-		gap: 1em;
-		justify-content: center;
-    padding-bottom: .8em;
-		transition: 0.3s all;
-    width: 100%;
+    li{
+      align-items: center;
+      color: $cor-branco;
+      cursor: pointer;
+      display: flex;
+      font-size: 1em;
+      gap: 1em;
+      justify-content: center;
+      padding-bottom: .8em;
+      transition: 0.3s all;
+      width: 100%;
+    }
 	}
 }
