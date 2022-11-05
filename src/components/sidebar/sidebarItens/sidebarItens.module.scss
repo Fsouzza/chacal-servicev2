@@ -1,25 +1,33 @@
 @import 'styles/variaveis';
 
-.sidebarItems{
+@mixin linksNavigation($cor, $bg) {
   align-items: center;
-  color: $cor-brancol;
-  cursor: pointer;
+  background-color: $bg;
+  color: $cor;
   display: flex;
   font-weight: 400;
-  gap: .6em;
-  justify-content: flex-start;
-  padding: .4em 1.3em;
-  position: relative;
-  width: 100%;
-  &:hover{
-    background-color: #333333;
-    color: $cor-azull;
-    font-weight: 500;
-  }
+  gap: 5px;
+  padding: .2em 0 .2em 1em;
   div{
-    font-size: .9em;
+    align-items: center;
+    display: flex;
+    font-size: .75em;
+    gap: 8px;
+    line-height: 1.8em;
   }
-  p{
-    font-size: .7em;
+}
+
+.navLinks{
+  .link{
+    @include linksNavigation(#b0b0b0, transparent);
+    &:hover{
+      background-color: $cor-hover;
+      div{
+        color: $cor-azull;
+      }
+    }
+    &__active{
+      @include linksNavigation(#cecece, #5122c0);
+    }
   }
 }

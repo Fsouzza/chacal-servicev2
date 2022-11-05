@@ -6,9 +6,7 @@ export const PageDesignPadrao = () => {
   return(
     <main>
       <Header />
-      <div>
-        <Outlet />
-      </div>
+      <Outlet />
       <Footer />
     </main>
   );

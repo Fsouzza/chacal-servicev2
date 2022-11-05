@@ -16,6 +16,7 @@ function AppRouter() {
           <Route index element={<FluxoCaixa />} />
           <Route path='clientes' element={<Clientes />} />
           <Route path='estoqueEPI' element={<EstoqueDeEPI />} />
+          <Route path='fluxoDeCaixa' element={<FluxoCaixa />} />
           <Route path='financas' element={<ControleDeFinancas />} />
           <Route path='funcionarios' element={<ListaFuncionarios />} />
           <Route path='documentos' element={<Documentacao />} />

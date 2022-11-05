@@ -6,7 +6,6 @@ import { FiUserPlus } from 'react-icons/fi';
 import { MdAttachMoney, MdOutlineDashboardCustomize } from 'react-icons/md';
 import styles from './sidebar.module.scss';
 import { SideBarItems } from './sidebarItens/sidebarItems';
-import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const SideBar = ({active, ref}: any) => {
@@ -29,7 +28,7 @@ export const SideBar = ({active, ref}: any) => {
   const dataFinanc = [
     {
       titulo: 'Fluxo de caixa',
-      to: '/',
+      to: '/fluxoDeCaixa',
       icon: <MdAttachMoney />
     },
     {
@@ -53,7 +52,7 @@ export const SideBar = ({active, ref}: any) => {
     },
     {
       titulo: 'Arquivos',
-      to: '',
+      to: '/arquivos',
       icon: <BiArchive />
     },
   ];
@@ -63,33 +62,25 @@ export const SideBar = ({active, ref}: any) => {
       <ul>
         <span>Operacional</span>
         {dataOperat.map( (oper, index) => (
-          <Link key={index} to={oper.to}>
-            <SideBarItems icon={oper.icon} titulo={oper.titulo} />
-          </Link>
+          <SideBarItems key={index} icon={oper.icon} titulo={oper.titulo} link={oper.to}/>
         ))}
       </ul>
       <ul>
         <span>Financeiro</span>
         {dataFinanc.map( (financ, index) => (
-          <Link key={index} to={financ.to}>
-            <SideBarItems icon={financ.icon} titulo={financ.titulo} />
-          </Link>
+          <SideBarItems key={index} icon={financ.icon} titulo={financ.titulo} link={financ.to} />
         ))}
       </ul>
       <ul>
         <span>Recursos Humanos</span>
         {dataRH.map( (rh, index) => (
-          <Link key={index} to={rh.to}>
-            <SideBarItems icon={rh.icon} titulo={rh.titulo} />
-          </Link>
+          <SideBarItems key={index} icon={rh.icon} titulo={rh.titulo} link={rh.to} />
         ))}
       </ul>
       <ul>
         <span>Docs</span>
         {dataDoc.map( (doc, index) => (
-          <Link key={index} to={doc.to}>
-            <SideBarItems icon={doc.icon} titulo={doc.titulo} />
-          </Link>
+          <SideBarItems key={index} icon={doc.icon} titulo={doc.titulo} link={doc.to} />
         ))}
       </ul>
     </nav>
