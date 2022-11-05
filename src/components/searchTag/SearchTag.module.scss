@@ -1,20 +1,25 @@
-@import '../../styles/variaveis';
+@import 'styles/variaveis';
+
+@mixin tag($cor, $border, $fcor, $fweight) {
+  background-color: $cor;
+  border: 2px solid $border;
+  border-radius: .5em;
+  color: $fcor;
+  cursor: pointer;
+  font-size: .9rem;
+  font-weight: $fweight;
+  outline: none;
+  padding: .5em 1em;
+  text-align: center;
+  width: 90px;
+  
+}
 
 .searchTag{
   padding: 0 .6em;
   position: relative;
   .default{
-    background-color: $cor-card;
-    border: 2px solid $cor-card;
-    border-radius: .5em;
-    color: $cor-brancol;
-    cursor: pointer;
-    font-size: .9rem;
-    font-weight: 400;
-    outline: none;
-    padding: .5em 1em;
-    text-align: center;
-    width: 90px;
+    @include tag(#2b2c2f, #2b2c2f, #b0b0b0, 400);
     &:hover{
       border-color: $cor-secundaria;
       color: $cor-cinza;
@@ -25,17 +30,7 @@
       border-color: $cor-azul;
     }
     &__active{
-      background-color: $cor-azul;
-      border: 2px solid transparent;
-      border-radius: .5em;
-      color: $cor-branco;
-      cursor: pointer;
-      font-size: .9rem;
-      font-weight: 500;
-      outline: none;
-      padding: .5em 1em;
-      text-align: center;
-      width: 90px;
+      @include tag(#5122c0, transparent, #cecece, 500);
     }
   }
 }

@@ -1,5 +1,9 @@
 @import 'styles/variaveis';
 
+@mixin a($cor) {
+  background-color: $cor;
+}
+
 .secao{
   overflow-x: auto;
   margin: 0 2em;
@@ -91,15 +95,15 @@
     }
     &__disabled{
       a{
-        background-color: $cor-principal;
+        @include a(#262626);
         &:hover{
-          background-color: $cor-principal;
+          @include a(#262626);
         }
       }
     }
     &__active{
       a{
-        background-color: $cor-preta;
+        @include a(#1c1c1c);
         border-radius: .5em;
         font-weight: 500;
         padding: .5em;
@@ -108,21 +112,23 @@
   }
 }
 
+@mixin colortxt($bc, $fcor) {
+  background-color: $bc;
+  color: $fcor;
+}
 
 .txtRed{
-  background-color: #d66464;
-  text-align: center;
+  @include colortxt(#d66464, transparent);
 }
 
 .txtGreen{
-  background-color: #96c186;
-  text-align: center;
+  @include colortxt(#96c186, transparent);
 }
 
 .valueGreen{
-  color: #96c186;
+  @include colortxt(transparent, #96c186);
 }
 
 .valueRed{
-  color: #d66464;
+  @include colortxt(transparent, #d66464);
 }

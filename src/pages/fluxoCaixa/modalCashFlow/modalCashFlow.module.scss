@@ -1,5 +1,19 @@
 @import 'styles/variaveis.scss';
 
+@mixin inputs {
+  background-color: $cor-principal;
+  border: 1px solid $cor-principal;
+  border-radius: .5em;
+  color: $cor-branco;
+  font-size: .94em;
+  min-width: 240px;
+  outline: none;
+  padding: .5em;
+  &:focus-within{
+    border: 1px solid $cor-azul;
+  }
+}
+
 .components{
   align-items: center;
   display: flex;
@@ -15,18 +29,11 @@
       margin-left: 8px;
       margin-bottom: 6px;
     }
-    select, input{
-      background-color: $cor-principal;
-      border: 1px solid $cor-principal;
-      border-radius: .5em;
-      color: $cor-branco;
-      font-size: .94em;
-      min-width: 240px;
-      outline: none;
-      padding: .5em;
-      &:focus-within{
-        border: 1px solid $cor-azul;
-      }
+    select{
+      @include inputs;
+    }
+    input{
+      @include inputs;
     }
   }
 }

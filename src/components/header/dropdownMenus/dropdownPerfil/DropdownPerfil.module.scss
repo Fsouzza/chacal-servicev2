@@ -1,5 +1,25 @@
 @import "styles/variaveis";
 
+@mixin button($cor-hover) {
+	align-items: center;
+	color: $cor-brancol;
+	cursor: pointer;
+	display: flex;
+	font-size: .8em;
+	gap: 0.5em;
+	justify-content: flex-start;
+	transition: 0.2s all;
+	&:hover {
+		color: $cor-hover;
+	}
+}
+
+@mixin span($fsize) {
+	color: $cor-brancol;
+	font-size: $fsize;
+	font-weight: 400;
+}
+
 .profileMenu {
 	align-items: center;
 	background-color: #2c2c2c;
@@ -30,8 +50,8 @@
 	}
 	&__profile{
 		border-radius: 1em;
-    height: 32px;
-    width: 32px;
+		height: 32px;
+		width: 32px;
 	}
 	&__inativo {
 		display: none;
@@ -48,9 +68,7 @@
 			font-size: 1.1em;
 		}
 		span {
-			color: $cor-brancol;
-			font-size: 0.8em;
-			font-weight: 400;
+			@include span(0.84em);
 		}
 	}
 	&__items {
@@ -59,43 +77,23 @@
 		flex-direction: column;
 		justify-content: center;
 		width: 100%;
-    li{
-      align-items: center;
-      color: $cor-branco;
-      cursor: pointer;
-      display: flex;
-      font-size: 1.1em;
-      gap: 0.5em;
-      justify-content: flex-start;
-      margin-bottom: 0.5em;
-      transition: 0.3s all;
-      .button {
-        align-items: center;
-        color: $cor-brancol;
-        cursor: pointer;
-        display: flex;
-        font-size: .8em;
-        gap: 0.5em;
-        justify-content: flex-start;
-        transition: 0.2s all;
-        &:hover {
-          color: $cor-azull;
-        }
-      }
-      .buttonRed{
-        align-items: center;
-        color: $cor-brancol;
-        cursor: pointer;
-        display: flex;
-        font-size: .8em;
-        gap: 0.5em;
-        justify-content: flex-start;
-        transition: 0.2s all;
-        &:hover{
-          color: $cor-vermelhal;
-        }
-      }
-    }
+		li{
+			align-items: center;
+			color: $cor-branco;
+			cursor: pointer;
+			display: flex;
+			font-size: 1.1em;
+			gap: 0.5em;
+			justify-content: flex-start;
+			margin-bottom: 0.5em;
+			transition: 0.3s all;
+			.button {
+				@include button(#5a6af9);
+			}
+			.buttonRed{
+				@include button(#c21d17);
+			}
+		}
 	}
 	&__termos {
 		align-items: flex-start;
@@ -105,8 +103,7 @@
 		justify-content: center;
 		width: 100%;
 		span {
-      color: $cor-brancol;
-			font-size: .7em;
+      		@include span(0.7em);
 		}
 	}
 }

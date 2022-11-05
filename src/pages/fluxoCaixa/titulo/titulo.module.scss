@@ -1,72 +1,65 @@
-@import '../../../styles/variaveis';
+@import 'styles/variaveis';
+
+@mixin buttons($bc, $border, $cborder, $fcolor) {
+  align-items: center;
+  background-color: $bc;
+  border: 2px $border $cborder;
+  border-radius: 1em;
+  color: $fcolor;
+  cursor: pointer;
+  display: flex;
+  font-size: 1em;
+  gap: .5em;
+  justify-content: center;
+  padding: .5em 1em;
+  transition: linear .4s;
+  width: 170px;
+}
 
 .cardTitulo{
-    align-items: center;
-    background-color: transparent;
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  padding: $padd-padrao;
+  .texto{
+    align-items: flex-start;
     display: flex;
-    justify-content: space-between;
-    padding: $padd-padrao;
-   .texto{
-      align-items: flex-start;
-      display: flex;
-      flex-direction: column;
-      gap: .5em;
-      justify-content: center;
-      h2{
-        color: $cor-brancol;
-        font-size: 1.2em;
-        font-weight: 400;
-        text-align: left;
-      }
-      span{
-        color: $cor-branco;
-        font-size: 1.6em;
-        text-align: left;
-      }
+    flex-direction: column;
+    gap: .5em;
+    justify-content: center;
+    h2{
+      color: $cor-brancol;
+      font-size: 1.2em;
+      font-weight: 400;
+      text-align: left;
     }
+    span{
+      color: $cor-branco;
+      font-size: 1.6em;
+      text-align: left;
+    }
+  }
    .botoes{
       align-items: center;
       display: flex;
       gap: 2em;
       justify-content: center;
       &__add{
-        align-items: center;
-        border: 2px dashed $cor-azul;
-        border-radius: 1em;
-        color: $cor-azull;
-        cursor: pointer;
-        display: flex;
-        font-size: 1em;
+        @include buttons(transparent, dashed, #5122c0, #5a6af9);
         font-weight: 500;
-        gap: .5em;
-        justify-content: center;
-        padding: .5em 1em;
-        text-align: center;
-        transition: linear .4s;
-        width: 170px;
         &:hover{
           background-color: $cor-azul;
           color: $cor-branco;
         }
     }
     &__pdf{
-      align-items: center;
-      background-color: $cor-azul;
-      border: 2px solid $cor-azul;
-      border-radius: 1em;
-      color: $cor-branco;
-      display: flex;
-      cursor: pointer;
-      font-size: 1em;
-      gap: .5em;
-      padding: .5em 1em;
-      transition: linear .4s;
-      width: 170px;
+      @include buttons(#5122c0, solid, #5122c0, #cecece);
       &:hover{
         background-color: transparent;
         color: $cor-azull;
         font-weight: 600;
       }
     }
-   }
   }
+}

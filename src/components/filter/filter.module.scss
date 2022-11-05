@@ -3,7 +3,7 @@
 .searchSelect{
   padding: 0 .6em;
   position: relative;
-  &__select{
+  .select{
     align-items: center;
     background-color: $cor-principal;
     border: 2px solid $cor-card;

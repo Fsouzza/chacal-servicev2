@@ -1,5 +1,17 @@
 @import 'styles/variaveis';
 
+@mixin menu($cor, $fs, $padd) {
+  align-items: center;
+  border: 2px solid $cor;
+  border-radius: 1em;
+  color: $cor-brancol;
+  cursor: pointer;
+  display: flex;
+  font-size: $fs;
+  justify-content: center;
+  padding: $padd;
+}
+
 .header{
   align-items: center;
   background-color: $cor-header;
@@ -24,32 +36,16 @@
     }
   }
   .menu{
-    align-items: center;
-    border: 2px solid transparent;
-    border-radius: 1em;
-    color: $cor-brancol;
-    cursor: pointer;
-    display: flex;
-    font-size: 1.4em;
-    justify-content: center;
+   @include menu(transparent, 1.4em, .3em);
     margin-right: .6em;
-    padding: .4em;
     &:hover{
       background-color: $cor-secundaria;
       color: $cor-preta;
       transition: .3s ease-in;
     }
     &__ativo{
-      align-items: center;
-      border-radius: 1em;
-      border: 2px solid $cor-azull;
-      color: $cor-brancol;
-      cursor: pointer;
-      display: flex;
-      font-size: 1.4em;
-      justify-content: center;
+      @include menu(#5a6af9, 1.4em, .3em);
       margin-right: .6em;
-      padding: .4em;
     }
   }
   .logo{
@@ -69,13 +65,7 @@
 }
 
 .link {
-  border: 2px solid transparent;
-  border-radius: 1em;
-  color: $cor-brancol;
-  cursor: pointer;
-  display: flex;
-  font-size: 1.3em;
-  padding: 2px;
+  @include menu(transparent, 1.3em, 2px);
   overflow: hidden;
   &:hover {
     background-color: $cor-secundaria;
@@ -83,13 +73,6 @@
     transition: 0.4s ease-in;
   }
   &__ativo{
-    border: 2px solid $cor-azull;
-    border-radius: 1em;
-    color: $cor-brancol;
-    cursor: pointer;
-    display: flex;
-    font-size: 1.3em;
-    padding: 2px;
-    overflow: hidden;
+    @include menu(#5a6af9, 1.3em, 2px);
   }
 }

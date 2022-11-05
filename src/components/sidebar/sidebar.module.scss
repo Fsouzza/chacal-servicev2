@@ -1,4 +1,4 @@
-@import '../../styles/variaveis';
+@import 'styles/variaveis';
 
 .sidebar{
   align-items: flex-start;
@@ -28,11 +28,6 @@
       line-height: 2.8;
       margin-left: .8em;
     }
-  }
-  &__activo{
-    background-color: $cor-ativo;
-    color: $cor-azul;
-    font-weight: 500;
   }
 }
 

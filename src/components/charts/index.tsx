@@ -157,7 +157,7 @@ export const MyChart = () => {
         <div className={styles.chartBox__titulo}>
           <h2>Demonstrativo de lançamentos</h2>
           <div className={styles2.searchSelect}>
-            <select className={styles2.searchSelect__select} onChange={(e) => filterChartByYear(parseFloat(e.currentTarget.value))}>
+            <select className={styles2.select} onChange={(e) => filterChartByYear(parseFloat(e.currentTarget.value))}>
               {yearOptions.map((opcao, index) => (
                 <option key={index} value={opcao.value}>{opcao.label}</option>
               ))}

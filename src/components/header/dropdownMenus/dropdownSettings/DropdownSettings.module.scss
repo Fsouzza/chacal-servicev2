@@ -41,7 +41,7 @@
 		h3 {
 			color: $cor-branco;
 			font-size: .9em;
-      font-weight: 400;
+      		font-weight: 400;
 		}
 	}
 	.items {
@@ -50,27 +50,27 @@
 		flex-direction: column;
 		justify-content: center;
 		width: 100%;
-    span {
-      border-top: 1px solid $cor-secundaria;
-      color: $cor-brancol;
-      font-size: 0.8em;
-      font-weight: 400;
-      margin-bottom: 1em;
-      padding-top: 1em;
-      width: 100%;
-      text-align: center;
+    	span {
+			border-top: 1px solid $cor-secundaria;
+			color: $cor-brancol;
+			font-size: 0.8em;
+			font-weight: 400;
+			margin-bottom: 1em;
+			padding-top: 1em;
+			width: 100%;
+			text-align: center;
 		}
-    li{
-      align-items: center;
-      color: $cor-branco;
-      cursor: pointer;
-      display: flex;
-      font-size: 1em;
-      gap: 1em;
-      justify-content: center;
-      padding-bottom: .8em;
-      transition: 0.3s all;
-      width: 100%;
-    }
+		li{
+			align-items: center;
+			color: $cor-branco;
+			cursor: pointer;
+			display: flex;
+			font-size: 1em;
+			gap: 1em;
+			justify-content: center;
+			padding-bottom: .8em;
+			transition: 0.3s all;
+			width: 100%;
+		}
 	}
 }
