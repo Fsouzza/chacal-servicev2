@@ -394,7 +394,7 @@ export const items: Item[] = [
     id: 119922,
     local: 'Escritório',
     item: 'Almoço semanal',
-    valor: 175.00,
+    valor: 125.00,
     obs: '-'
   },
   { 

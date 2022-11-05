@@ -1,13 +1,11 @@
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, 
   PointElement, LineElement, Tooltip, BarElement, Legend } from 'chart.js';
-import { dateToString } from 'helpers/dateFilter';
 import { AiOutlineCalendar } from 'react-icons/ai';
-import { items } from 'data/itens';
 import { useState, useEffect } from 'react';
 import styles from './charts.module.scss';
 import styles2 from '../filter/filter.module.scss';
-import { DataChartFilter, DataChartInit } from 'helpers/chartFilter';
+import { Balanco, DataChartFilter, DataChartInit, Releases, } from 'helpers/chartFilter';
 
 ChartJS.register( BarElement, LineElement, CategoryScale,
   LinearScale, PointElement, Legend, Tooltip,
@@ -17,7 +15,45 @@ export const MyChart = () => {
   const [labels, setLabels] = useState<string[]>([]);
   const [incomes, setIncomes] = useState<number[]>();
   const [expanses, setExpanses] = useState<number[]>();
-  const month = [...items.sort((a,b) => a.date > b.date ? 1 : -1).map((lancamentos) => dateToString(lancamentos.date))];
+  const yearOptions = [
+    {
+      label: 'Filtros por ano',
+      value: -1
+    },
+    {
+      label: 'Jan 2022 a Dez 2022',
+      value: 0
+    },
+    {
+      label: 'Jan 2023 a Dez 2023',
+      value: 1
+    },
+    {
+      label: 'Jan 2024 a Dez 2024',
+      value: 2
+    }
+  ];
+
+  function filterChartByYear(date: number) {
+    const ChartByYear = DataChartFilter(date);
+    
+    if(date < 0){
+      setLabels(DataChartInit);
+      setIncomes(Releases('Entrada'));
+      setExpanses(Releases('Saída'));
+    } else {
+      setLabels(ChartByYear);
+      setIncomes(Balanco('Entrada'));
+      setExpanses(Balanco('Saída'));
+    }
+  }
+
+  useEffect(() => {
+    setLabels(DataChartInit);
+    setIncomes(Releases('Entrada'));
+    setExpanses(Releases('Saída'));
+  }, []);
+
   const data = {
     labels:  labels,
     datasets: [
@@ -43,6 +79,7 @@ export const MyChart = () => {
       }
     ]
   };
+
   const options = {
     radius: 0,
     hitRadius: 10,
@@ -102,46 +139,6 @@ export const MyChart = () => {
       }
     },
   };
-  const yearOptions = [
-    {
-      label: 'Filtros por ano',
-      value: -1
-    },
-    {
-      label: 'Jan 2022 a Dez 2022',
-      value: 0
-    },
-    {
-      label: 'Jan 2023 a Dez 2023',
-      value: 1
-    },
-    {
-      label: 'Jan 2024 a Dez 2024',
-      value: 2
-    }
-  ];
- 
-  function balanco(lancamentos: string){
-    return [... new Set(month)].map((label) => {
-      return items
-        .filter(item => dateToString(item.date) === label)
-        .filter((item) => item.lancamentos === lancamentos)
-        .reduce((acc, cur) => acc + cur.valor, 0);
-    });
-  }
-
-  function filterChartByYear(date: number) {
-    const ChartByYear = DataChartFilter(date);
-    date < 0 ? setLabels(DataChartInit) : setLabels(ChartByYear);
-  }
-
-  useEffect(() => {
-    const incomesInit = balanco('Entrada');
-    const expansesInit = balanco('Saída');
-    setLabels(DataChartInit);
-    setIncomes(incomesInit);
-    setExpanses(expansesInit);
-  }, []);
 
   return(
     <div className={styles.charts}>
