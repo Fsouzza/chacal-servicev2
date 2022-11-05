@@ -141,7 +141,7 @@ export const MyChart = () => {
     setLabels(DataChartInit);
     setIncomes(incomesInit);
     setExpanses(expansesInit);
-  }, [DataChartInit]);
+  }, []);
 
   return(
     <div className={styles.charts}>
