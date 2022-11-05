@@ -7,6 +7,7 @@ import { items } from 'data/itens';
 import { useState, useEffect } from 'react';
 import styles from './charts.module.scss';
 import styles2 from '../filter/filter.module.scss';
+import { DataChartFilter, DataChartInit } from 'helpers/chartFilter';
 
 ChartJS.register( BarElement, LineElement, CategoryScale,
   LinearScale, PointElement, Legend, Tooltip,
@@ -130,26 +131,17 @@ export const MyChart = () => {
   }
 
   function filterChartByYear(date: number) {
-    const monthStart = (new Date(2022 + date, 0, 1));
-    const monthEnd = new Date(2022 + date, 12, 0);
-    const filterByYear = [...items.sort((a,b) => a.date > b.date ? 1 : -1).filter((item) => item.date).filter(item => item.date >= monthStart && item.date <= monthEnd)];
-    const yearToString = filterByYear.map((lancamentos) => dateToString(lancamentos.date));
-    date < 0 
-      ? setLabels([... new Set(month)]) 
-      : setLabels([... new Set(yearToString)])
-    ;
+    const ChartByYear = DataChartFilter(date);
+    date < 0 ? setLabels(DataChartInit) : setLabels(ChartByYear);
   }
 
   useEffect(() => {
-    const month = [...items.sort((a,b) => a.date > b.date ? 1 : -1)];
-    const convertMonth = month.map((lancamentos) => dateToString(lancamentos.date));
     const incomesInit = balanco('Entrada');
     const expansesInit = balanco('Saída');
-    setLabels([... new Set(convertMonth)]);
+    setLabels(DataChartInit);
     setIncomes(incomesInit);
     setExpanses(expansesInit);
-  }, []);
-
+  }, [DataChartInit]);
 
   return(
     <div className={styles.charts}>
@@ -157,7 +149,7 @@ export const MyChart = () => {
         <div className={styles.chartBox__titulo}>
           <h2>Demonstrativo de lançamentos</h2>
           <div className={styles2.searchSelect}>
-            <select className={styles2.select} onChange={(e) => filterChartByYear(parseFloat(e.currentTarget.value))}>
+            <select className={styles2.select} onChange={(e) => filterChartByYear(Number(e.currentTarget.value))}>
               {yearOptions.map((opcao, index) => (
                 <option key={index} value={opcao.value}>{opcao.label}</option>
               ))}
