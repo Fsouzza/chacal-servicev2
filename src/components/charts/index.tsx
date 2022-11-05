@@ -43,8 +43,8 @@ export const MyChart = () => {
       setExpanses(Releases('Saída'));
     } else {
       setLabels(ChartByYear);
-      setIncomes(Balanco('Entrada'));
-      setExpanses(Balanco('Saída'));
+      setIncomes(Balanco(date, 'Entrada'));
+      setExpanses(Balanco(date, 'Saída'));
     }
   }
 
