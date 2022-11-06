@@ -21,6 +21,6 @@ export const dateToString = (time: Date) => {
 
 export const monthToString = (time: Date) => {
   return new Date(time).toLocaleDateString('pt-BR', {
-    month: 'short',
+    month: 'long',
   }).toUpperCase();
 };

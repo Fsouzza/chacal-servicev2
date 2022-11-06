@@ -5,7 +5,7 @@ import { AiOutlineCalendar } from 'react-icons/ai';
 import { useState, useEffect } from 'react';
 import styles from './charts.module.scss';
 import styles2 from '../filter/filter.module.scss';
-import { Balanco, DataChartFilter, DataChartInit, Releases, } from 'helpers/chartFilter';
+import { DataChartFilter, DataChartInit, Releases, ReleasesFiltered, } from 'helpers/chartFilter';
 
 ChartJS.register( BarElement, LineElement, CategoryScale,
   LinearScale, PointElement, Legend, Tooltip,
@@ -43,8 +43,8 @@ export const MyChart = () => {
       setExpanses(Releases('Saída'));
     } else {
       setLabels(ChartByYear);
-      setIncomes(Balanco(date, 'Entrada'));
-      setExpanses(Balanco(date, 'Saída'));
+      setIncomes(ReleasesFiltered(date, 'Entrada'));
+      setExpanses(ReleasesFiltered(date, 'Saída'));
     }
   }
 
