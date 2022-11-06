@@ -11,7 +11,7 @@ ChartJS.register( BarElement, LineElement, CategoryScale,
   LinearScale, PointElement, Legend, Tooltip,
 );
 
-export const MyChart = () => {
+const MyChart = () => {
   const [labels, setLabels] = useState<string[]>([]);
   const [incomes, setIncomes] = useState<number[]>();
   const [expanses, setExpanses] = useState<number[]>();
@@ -162,3 +162,5 @@ export const MyChart = () => {
     </div>
   );
 };
+
+export default MyChart;

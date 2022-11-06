@@ -4,7 +4,7 @@ import { FaFacebook } from 'react-icons/fa';
 import { FiInstagram } from 'react-icons/fi';
 import { IoLogoTwitter } from 'react-icons/io5';
 
-export const Footer = () =>{
+const Footer = () =>{
   const rotas = [{
     titulo: 'Facebook',
     label: <FaFacebook />,
@@ -48,3 +48,5 @@ export const Footer = () =>{
     </footer>
   );
 };
+
+export default Footer;

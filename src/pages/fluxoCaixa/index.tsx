@@ -4,9 +4,9 @@ import { Titulo } from './titulo/titulo';
 import { useState, useEffect } from 'react';
 import { items } from 'data/itens';
 import { Buscador } from './buscador';
-import { MyChart } from 'components/charts';
+import MyChart from 'components/charts';
 
-export const FluxoCaixa = () => {
+const FluxoCaixa = () => {
   const [busca, setBusca] = useState('');
   const [entrada, setEntrada] = useState(0);
   const [saida, setSaida] = useState(0);
@@ -61,3 +61,5 @@ export const FluxoCaixa = () => {
     </>
   );
 };
+
+export default FluxoCaixa;

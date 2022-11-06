@@ -1,7 +1,9 @@
-export const ControleDeFinancas = () => {
+const ControleDeFinancas = () => {
   return(
     <div>
       <h1>Contas a Pagar e Receber</h1>
     </div>
   );
 };
+
+export default ControleDeFinancas;
