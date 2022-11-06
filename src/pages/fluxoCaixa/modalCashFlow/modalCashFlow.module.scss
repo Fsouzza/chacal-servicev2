@@ -2,15 +2,16 @@
 
 @mixin inputs {
   background-color: $cor-principal;
-  border: 1px solid $cor-principal;
+  border: 4px solid $cor-principal;
   border-radius: .5em;
   color: $cor-branco;
   font-size: .94em;
-  min-width: 240px;
+  width: 340px;
   outline: none;
   padding: .5em;
   &:focus-within{
-    border: 1px solid $cor-azul;
+    border-bottom-color:$cor-azul;
+    transition: all .4s;
   }
 }
 

@@ -1,9 +1,9 @@
 interface Props {
-  htmlFor: string
+  htmlFor?: string
   id: string
   label: string
   type: 'text' | 'email' | 'password' | 'date' | 'number';
-  required: boolean
+  required?: boolean
   setInput: React.Dispatch<React.SetStateAction<string>>
   value: string | number
   placeholder?: string

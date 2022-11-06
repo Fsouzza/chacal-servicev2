@@ -1,4 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+1 - INSERIR DARK-LIGHT MODE;
+2 - REFATORAR INPUTS ADD FLUXO DE CAIXA;
+3 - TIMELINE DE ATIVIDADES RECENTES;
+4 - RESPONSIVIDADE;
+
+
 
 # dependencies
 /node_modules
@@ -21,3 +27,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+

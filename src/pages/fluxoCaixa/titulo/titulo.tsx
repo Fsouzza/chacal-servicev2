@@ -4,6 +4,21 @@ import { BsPlusLg } from 'react-icons/bs';
 import { username } from 'helpers/username';
 import { ModalCashFlow } from 'pages/fluxoCaixa/modalCashFlow';
 import { useState } from 'react';
+import { CSVLink } from 'react-csv';
+import { items } from './../../../data/itens';
+
+const headers = [
+  {label: 'ID', key: 'id'},
+  {label: 'Item', key: 'item'},
+  {label: 'Data', key: 'date'},
+  {label: 'Lançamento', key: 'lancamentos'},
+  {label: 'Documento', key: 'tipo'},
+  {label: 'Categoria', key: 'categoria'},
+  {label: 'Departamento', key: 'departamento'},
+  {label: 'Local', key: 'local'},
+  {label: 'Valor', key: 'valor'},
+  {label: 'Observação', key: 'obs'},
+];
 
 export const Titulo = () => {
   const [modalCashFlow, setModalCashFlow] = useState(false);
@@ -26,10 +41,10 @@ export const Titulo = () => {
           />
         </li>
         <li>
-          <button className={styles.botoes__export}>
+          <CSVLink data={items} headers={headers} filename={'fluxoDeCaixa'} className={styles.botoes__export}>
             <FiDownload size={20} />
             Export CSV
-          </button>
+          </CSVLink>
         </li>
       </ul>
     </section>
