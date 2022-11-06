@@ -26,9 +26,9 @@ export const Titulo = () => {
           />
         </li>
         <li>
-          <button className={styles.botoes__pdf}>
+          <button className={styles.botoes__export}>
             <FiDownload size={20} />
-            Download PDF
+            Export CSV
           </button>
         </li>
       </ul>

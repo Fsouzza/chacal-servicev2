@@ -1,7 +1,6 @@
 import { ReactElement, ReactNode } from 'react';
 import styles from './card.module.scss';
 
-
 type Props = {
   children: ReactElement
   icon: ReactNode

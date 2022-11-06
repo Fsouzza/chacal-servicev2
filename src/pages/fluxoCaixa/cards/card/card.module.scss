@@ -22,7 +22,7 @@
 		transition: 0.18s;
   	}
   	&__titulo{
-		@include title(1em, 400);
+		@include title(.96em, 400);
 		margin: 1.5em 0 .3em 0;
 	}
 	&__descricao{
@@ -31,7 +31,7 @@
 		gap: 1.5em;
 	}
 	&__subtitulo{
-		@include title(2em, 600);
+		@include title(1.8em, 600);
 		text-transform: uppercase;
 	}
 }

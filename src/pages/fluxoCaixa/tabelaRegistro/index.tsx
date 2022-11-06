@@ -14,6 +14,10 @@ export const TabelaCaixa = (props: Props) => {
   const [pageNumber, setPageNumber] = useState(0);
   const itemPerPage = 12;
   const currentPages = pageNumber * itemPerPage;
+  const pageCount = Math.ceil(items.length / itemPerPage);
+  const changePage = (event: { selected: number; }) => {
+    setPageNumber(event.selected);
+  };
   const colunas = [
     {
       label: 'Nº ID'
@@ -65,11 +69,7 @@ export const TabelaCaixa = (props: Props) => {
       <td>{item.obs}</td>
     </tr>
   ));
-  const pageCount = Math.ceil(items.length / itemPerPage);
-  const changePage = (event: { selected: number; }) => {
-    setPageNumber(event.selected);
-  };
-
+  
   return(
     <section className={styles.secao}>
       <table className={styles.tabela}>

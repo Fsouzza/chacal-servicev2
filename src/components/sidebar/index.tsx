@@ -4,6 +4,7 @@ import { BsCash, BsCartDash } from 'react-icons/bs';
 import { BiArchive } from 'react-icons/bi';
 import { FiUserPlus } from 'react-icons/fi';
 import { MdAttachMoney, MdOutlineDashboardCustomize } from 'react-icons/md';
+import { VscReport, VscBellDot } from 'react-icons/vsc';
 import styles from './sidebar.module.scss';
 import { SideBarItems } from './sidebarItens/sidebarItems';
 
@@ -56,6 +57,18 @@ export const SideBar = ({active, ref}: any) => {
       icon: <BiArchive />
     },
   ];
+  const dataSystem = [
+    {
+      titulo: 'Report',
+      to: '/report',
+      icon: <VscReport />
+    },
+    {
+      titulo: 'Notificações',
+      to: '/notificacoes',
+      icon: <VscBellDot />
+    },
+  ];
   
   return (
     <nav ref={ref} className={styles.sidebar} onBlur={closeSideBar}>
@@ -81,6 +94,12 @@ export const SideBar = ({active, ref}: any) => {
         <span>Docs</span>
         {dataDoc.map( (doc, index) => (
           <SideBarItems key={index} icon={doc.icon} titulo={doc.titulo} link={doc.to} />
+        ))}
+      </ul>
+      <ul>
+        <span>System</span>
+        {dataSystem.map( (syst, index) => (
+          <SideBarItems key={index} icon={syst.icon} titulo={syst.titulo} link={syst.to} />
         ))}
       </ul>
     </nav>

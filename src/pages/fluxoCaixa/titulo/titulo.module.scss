@@ -30,13 +30,13 @@
     justify-content: center;
     h2{
       color: $cor-brancol;
-      font-size: 1.2em;
+      font-size: 1em;
       font-weight: 400;
       text-align: left;
     }
     span{
       color: $cor-branco;
-      font-size: 1.6em;
+      font-size: 1.4em;
       text-align: left;
     }
   }
@@ -53,7 +53,7 @@
           color: $cor-branco;
         }
     }
-    &__pdf{
+    &__export{
       @include buttons(#5122c0, solid, #5122c0, #cecece);
       &:hover{
         background-color: transparent;

@@ -15,6 +15,7 @@
   &__pesquisar {
     align-items: center;
     background-color: transparent;
+    color: #7c7c7c;
     display: flex;
     gap: 2rem;
     height: 40px;
@@ -27,6 +28,7 @@
       color: $cor-branco;
       font-size: 1.1em;
       outline: none;
+      text-indent: 4px;
       width: 100%;
       &::placeholder {
         color: $cor-brancol;

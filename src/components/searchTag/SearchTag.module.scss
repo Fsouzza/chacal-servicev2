@@ -6,10 +6,10 @@
   border-radius: .5em;
   color: $fcor;
   cursor: pointer;
-  font-size: .9rem;
+  font-size: .86rem;
   font-weight: $fweight;
   outline: none;
-  padding: .5em 1em;
+  padding: .5em;
   text-align: center;
   width: 90px;
   
@@ -21,8 +21,9 @@
   .default{
     @include tag(#2b2c2f, #2b2c2f, #b0b0b0, 400);
     &:hover{
+      background-color: $cor-secundaria;
       border-color: $cor-secundaria;
-      color: $cor-cinza;
+      color: $cor-branco;
       font-weight: 500;
       transition: ease-in .3s;
     }

@@ -132,7 +132,7 @@ export const MyChart = () => {
           borderColor: '#4b4b4b'
         },
         ticks: {
-          stepSize: 75,
+          stepSize: 100,
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           callback: (value: any ) => value + ' $'
         },

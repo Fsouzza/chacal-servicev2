@@ -74,7 +74,7 @@ export const Buscador = ({ busca, setBusca, filter }: Props) => {
   return ( 
     <div className={styles.busca}>
       <div className={styles.busca__pesquisar}>
-        <FaSearch size={20} color='#898989' />
+        <FaSearch size={22} />
         <input
           value={busca}
           onChange={(evento) => setBusca(evento.target.value)}
