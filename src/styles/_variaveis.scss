@@ -2,32 +2,24 @@ $sombra: 5px 5px 10px rgba(0, 0, 0, 0.4);
 $padd-padrao: 9em 2em 5em 2em;
 
 $cor-principal: #262626;
+$cor-principal-l: #f4f4f4;
 $cor-secundaria: #4b4b4b;
+$cor-secundaria-l: #dfd8d8;
 $cor-card: #2b2c2f;
+$cor-card-l: #979dad;
 $cor-header: #232323;
+$cor-header-l: #ededed;
+$cor-dropdown: #2c2c2c;
+$cor-dropdown-l: #dadada;
 $cor-hover: #333333;
+$cor-hover-l: #d2d2d2;
 $cor-azul: #5122c0;
 $cor-azull: #5a6af9;
 $cor-branco: #cecece;
 $cor-brancol: #b0b0b0;
 $cor-cinza: #898989;
+$cor-cinzad: #1f1f1f;
 $cor-preta: #1c1c1c;
+$cor-pretal: #2d2d2d;
 $cor-vermelha: #991511;
 $cor-vermelhal: #c21d17;
-
-
-[data-theme='light']{
-	$cor-principal: #f4f4f4;
-    $cor-secundaria: #dfd8d8;
-    $cor-card: #979dad;
-    $cor-header: #eee8e8;
-    $cor-hover: #333333;
-    $cor-azul: #5122c0;
-    $cor-azull: #5a6af9;
-    $cor-branco: #2d2d2d;
-    $cor-brancol: #3f3f3f;
-    $cor-cinza: #7d7d7d;
-    $cor-preta: #eeeeee;
-    $cor-vermelha: #991511;
-    $cor-vermelhal: #c21d17;
-}
