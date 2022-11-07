@@ -10,7 +10,6 @@ import { SideBarItems } from './sidebarItens/sidebarItems';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const SideBar = ({active, ref}: any) => {
-
   const closeSideBar = () => {
     active(false);
   };
@@ -67,7 +66,7 @@ export const SideBar = ({active, ref}: any) => {
       titulo: 'Notificações',
       to: '/notificacoes',
       icon: <VscBellDot />
-    },
+    }
   ];
   
   return (

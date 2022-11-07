@@ -28,28 +28,20 @@
       line-height: 2.8;
       margin-left: .8em;
     }
+    button{
+      color: $cor-cinza;
+      cursor: pointer;
+      font-weight: 500;
+      margin-top: .5em;
+      margin-left: .85em;
+    }
   }
 }
 
 @keyframes showsidebar{
-  0% {
-    left: -260px;
-    width: 260px;
-  }
-  25% {
-    left: -195px;
-    width: 260px;
-  }
-  50% {
-    left: -130px;
-    width: 260px;
-  }
-  75% {
-    left: -65px;
-    width: 260px;
-  }
-  100% {
-    left: 0;
-    width: 260px;
-  }
+  0% { left: -260px; width: 260px; }
+  25% { left: -195px; width: 260px; }
+  50% { left: -130px; width: 260px; }
+  75% { left: -65px; width: 260px; }
+  100% { left: 0; width: 260px; }
 }

@@ -141,7 +141,7 @@ const MyChart = () => {
   };
 
   return(
-    <div className={styles.charts}>
+    <section className={styles.charts}>
       <div className={styles.chartBox}>
         <div className={styles.chartBox__titulo}>
           <h2>Demonstrativo de lançamentos</h2>
@@ -159,7 +159,7 @@ const MyChart = () => {
           options={options}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
