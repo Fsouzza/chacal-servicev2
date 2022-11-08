@@ -9,7 +9,7 @@ interface PropsModalCash {
   close: () => void
 }
 
-export const ModalCashFlow = ({open, close}: PropsModalCash) => {
+export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
   const [dataField, setDataField] = useState('');
   const [lancamentoField, setLancamentoField] = useState('');
   const [categoriaField, setCategoriaField] = useState('');
@@ -47,8 +47,9 @@ export const ModalCashFlow = ({open, close}: PropsModalCash) => {
           label='Nº ID' id='numero' htmlFor='numero' type='text' 
           onFocus={(e) => (e.target.type='number')} 
           onBlur={(e) => (e.target.type='text')}  
+          value={idField}
           setInput={value => setIdField(value)}
-          required={true} value={idField}
+          required={true} 
         />
         <Input  
           placeholder='Descrição do Item' 

@@ -5,6 +5,7 @@
   background-color: $cor-principal;
   display: flex;
   flex-direction: column;
+  gap: .6em;
   justify-content: center;
   height: 100vh;
   left: 0;
@@ -14,36 +15,18 @@
   h1{
     animation: blink .7s ease infinite;
     color: $cor-brancol;
+    font-size: 1.5em;
     font-weight: 400;
   }
-  .loader{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    &::after{
-      content: '';
-      animation: loading .7s ease infinite;
-      border: 16px solid $cor-brancol;
-      border-radius: 50%;
-      border-top-color: $cor-azul;
-      border-top-left-radius: 50%;
-      border-top-right-radius: 50%;
-      height: 80px;
-      width: 80px;
-    }
-  }
-}
-
-@keyframes loading{
-  from {transform: rotate(0turn)}
-  to {transform: rotate(1turn);}
 }
 
 @keyframes blink{
   from {
-    color: $cor-brancol;   
+    color: $cor-brancol;
+    opacity: 0.6;   
   }
   to {
-    color: $cor-azul;
+    color: $cor-card-l;
+    opacity: 1;
   }
 }
