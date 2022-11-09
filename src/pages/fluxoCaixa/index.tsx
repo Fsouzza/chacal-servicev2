@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { items } from 'data/itens';
 import { Buscador } from './buscador';
 import MyChart from 'components/charts';
+import { filterTableByDateTags } from 'helpers/chartFilter';
 
 const FluxoCaixa = () => {
   const [busca, setBusca] = useState('');
@@ -21,11 +22,8 @@ const FluxoCaixa = () => {
   }
 
   const filterByDate = (date: number) => {
-    const dataAtual = new Date();
-    const dataInicial = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), dataAtual.getDate());
-    const dataFinal = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), dataAtual.getDate() - date);
-    const dataFiltrada = items.filter((item) => item.date).filter(item => item.date >= dataFinal && item.date <= dataInicial);
-    date < 0 ? setLista(items) : setLista(dataFiltrada);
+    filterTableByDateTags;
+    date < 0 ? setLista(items) : setLista(filterTableByDateTags(date));
   };
 
   function lancamentos(lancamento: string){

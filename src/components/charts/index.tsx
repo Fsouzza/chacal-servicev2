@@ -13,7 +13,7 @@ ChartJS.register( BarElement, LineElement, CategoryScale,
 
 const MyChart = () => {
   const [labels, setLabels] = useState<string[]>([]);
-  const [incomes, setIncomes] = useState<number[]>();
+  const [incomes, setIncomes] = useState<number[] | undefined>();
   const [expanses, setExpanses] = useState<number[]>();
   const yearOptions = [
     {

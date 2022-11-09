@@ -22,6 +22,14 @@ export const DataChartFilter = (date: number) => {
   return yearFiltered;
 };
 
+export const filterTableByDateTags = (date: number) => {
+  const newDate = new Date();
+  const dayStart = new Date(newDate.getFullYear(), newDate.getMonth(), newDate.getDate());
+  const dayEnd = new Date(newDate.getFullYear(), newDate.getMonth(), newDate.getDate() - date);
+  const dateFiltered = items.filter((item) => item.date).filter(item => item.date >= dayEnd && item.date <= dayStart);
+  return dateFiltered;
+};
+
 export const Releases = (lancamentos: string) => {
   const newReleases = [...new Set(stringFormat)];
   return newReleases.map((label) => {
