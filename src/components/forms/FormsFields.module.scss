@@ -1,0 +1,80 @@
+@import 'styles/variaveis.scss';
+
+.areaField{
+  background-color: $cor-pretal;
+  border-top-right-radius: .4em;
+  border-top-left-radius: .4em;
+  border-bottom: 2px solid $cor-secundaria;
+  margin-bottom: 2em;
+  padding: .5em 0;
+  position: relative;
+  width: 360px;
+  min-width: 150px;
+  .input{
+    background-color: transparent;
+    border: none;
+    color: $cor-dropdown-l;
+    display: block;
+    font-size: 1.1em;
+    height: 100%;
+    padding: .1em .4em;
+    width: 100%;
+    &:focus{
+      outline: none;
+    }
+  }
+  .option{
+    background-color: $cor-pretal;
+    border: none;
+    color: $cor-dropdown-l;
+    font-size: 1.1em;
+  }
+  .focus{
+    background: none;
+    color: $cor-cinza;
+    display: block;
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    &::before{
+      content: '';
+      background: $cor-azull;
+      bottom: -2px;
+      display: block;
+      height: 2px;
+      left: 0;
+      position: absolute;
+      transition: all .4s;
+      width: 0;
+    }
+    &::after{
+      color: $cor-cinza;
+      content: attr(data-placeholder);
+      display: block;
+      font-size: .88em;
+      left: 0px;
+      position: absolute;
+      padding-left: .4em;
+      top: 16px;
+      transition: all .4s;
+      width: 100%;
+    }
+  }
+
+  .input:focus + .focus::after{
+    color: $cor-azull;
+    top: -22px;
+  }
+
+  .input:focus + .focus::before{
+    width: 100%;
+  }
+
+  .hasVal + .focus::after{
+    top: -22px;
+    width: 100%;
+  }
+}

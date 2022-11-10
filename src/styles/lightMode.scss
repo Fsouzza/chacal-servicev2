@@ -1,0 +1,11 @@
+@import "styles/_variaveis.scss";
+
+.main.light{
+    background-color: $cor-principal-l;
+    color: $cor-preta;
+
+    .header{
+        background-color: $cor-header-l;
+        border-color: $cor-secundaria-l;
+    }
+}

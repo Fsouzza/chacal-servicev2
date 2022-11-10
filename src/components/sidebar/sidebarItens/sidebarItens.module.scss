@@ -19,7 +19,7 @@
 
 .navLinks{
   .link{
-    @include linksNavigation(#b0b0b0, transparent);
+    @include linksNavigation($cor-brancol, transparent);
     &:hover{
       background-color: $cor-hover;
       div{
@@ -27,7 +27,7 @@
       }
     }
     &__active{
-      @include linksNavigation(#cecece, #5122c0);
+      @include linksNavigation($cor-branco, $cor-azul);
     }
   }
 }

@@ -36,7 +36,7 @@
         &:nth-child(4){
           align-items: center;
           display: flex;
-          gap: .6em;
+          gap: .4em;
         }
       }
       tr{
@@ -64,7 +64,7 @@
     justify-content: center;
     margin: 2em 0;
     &__bttns{
-      background-color: #323232;
+      background-color: $cor-hover;
       border-radius: .6em;
       cursor: pointer;
       display: flex;
@@ -84,15 +84,15 @@
     }
     &__disabled{
       a{
-        @include a(#262626);
+        @include a($cor-principal);
         &:hover{
-          @include a(#262626);
+          @include a($cor-principal);
         }
       }
     }
     &__active{
       a{
-        @include a(#1c1c1c);
+        @include a($cor-preta);
         border-radius: .5em;
         font-weight: 500;
         padding: .5em;

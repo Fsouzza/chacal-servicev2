@@ -45,7 +45,7 @@
       transition: .3s ease-in;
     }
     &__ativo{
-      @include menu(#5a6af9, 1.4em, .3em);
+      @include menu($cor-azull, 1.4em, .3em);
       margin-right: .6em;
     }
   }

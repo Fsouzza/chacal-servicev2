@@ -12,14 +12,13 @@
   padding: .5em;
   text-align: center;
   width: 90px;
-  
 }
 
 .searchTag{
   padding: 0 .6em;
   position: relative;
   .default{
-    @include tag(#2b2c2f, #2b2c2f, #b0b0b0, 400);
+    @include tag($cor-card, $cor-card, $cor-brancol, 400);
     &:hover{
       background-color: $cor-secundaria;
       border-color: $cor-secundaria;
@@ -31,7 +30,7 @@
       border-color: $cor-azul;
     }
     &__active{
-      @include tag(#5122c0, transparent, #cecece, 500);
+      @include tag($cor-azul, transparent, $cor-branco, 500);
     }
   }
 }

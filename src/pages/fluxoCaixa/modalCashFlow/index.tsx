@@ -1,8 +1,10 @@
 import { ModalWindow } from 'components/modalWindow';
-import { Input } from 'components/modalWindow/inputs/Input';
-import { Select } from 'components/modalWindow/selects/Select';
+import { Input } from 'components/forms/inputs/Input';
+import { Select } from 'components/forms/selects/Select';
 import { useState } from 'react';
 import styles from './modalCashFlow.module.scss';
+import { AiOutlineSend } from 'react-icons/ai';
+import { BsTrash } from 'react-icons/bs';
 
 interface PropsModalCash {
   open: boolean
@@ -25,6 +27,11 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
   const categorias = ['', 'Compra', 'Despesa', 'Pagamentos', 'Receita', 'Refeição', 'Retirada', 'Serviços', 'Vale Transporte', 'Veiculo', 'VR+VT'];
   const departamentos = ['', 'Administrativo', 'Financeiro', 'Officeboy', 'Operacional', 'Recursos Humanos', 'Tercerizados'];
 
+  const IsSubmit = () => {
+    console.log('Você clicou!');
+    close();
+  };
+
   const clearFields = () => {
     setDataField('');
     setLancamentoField('');
@@ -36,7 +43,6 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
     setItemField('');
     setObsField('');
     setValorField('');
-    close();
   };
 
   return(
@@ -44,7 +50,7 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
       <div className={styles.components}>
         <Input 
           placeholder='Número do documento' 
-          label='Nº ID' id='numero' htmlFor='numero' type='text' 
+          type='text' 
           onFocus={(e) => (e.target.type='number')} 
           onBlur={(e) => (e.target.type='text')}  
           value={idField}
@@ -53,14 +59,14 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
         />
         <Input  
           placeholder='Descrição do Item' 
-          label='Item' id='item' htmlFor='item' type='text'
+          type='text'
           value={itemField} 
           setInput={value => setItemField(value)}
           required={true}
         />
         <Input 
-          placeholder='Insira a data de emissão' 
-          label='Data' id='data' htmlFor='data' type='text' 
+          placeholder='Data de emissão' 
+          type='text' 
           onFocus={(e) => (e.target.type='date')} 
           onBlur={(e) => (e.target.type='text')}
           value={dataField} 
@@ -68,60 +74,65 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
           required={true}
         />
         <Input 
-          placeholder='Insira o valor (R$)' 
-          label='Valor' id='numero' htmlFor='valor' type='text' 
+          placeholder='Valor do item (R$)' 
+          type='text' 
           onFocus={(e) => (e.target.type='number')} 
           onBlur={(e) => (e.target.type='text')} 
           value={valorField} 
           setInput={value => setValorField(value)}
           required={true}
         />
-        <Select 
-          htmlFor='lancamento' label='Lançamento' id='lancamento' 
+        <Select
+          placeholder='Tipo de lançamento'
           itens={lancamentos} 
           value={lancamentoField} 
           setSelected={value => setLancamentoField(value)}
           required={true}
         />
-        <Select 
-          htmlFor='doc' label='Tipo Documento' id='doc'
+        <Select
+          placeholder='Tipo de documento'
           itens={documentos} 
           value={docField} 
           setSelected={value => setDocField(value)}
           required={true}
         />
-        <Select 
-          htmlFor='categoria' label='Categoria' id='categoria'
+        <Select
+          placeholder='Tipo de categoria'
           itens={categorias} 
           value={categoriaField} 
           setSelected={value => setCategoriaField(value)}
           required={true}
         />
         <Select 
-          htmlFor='dpto' label='Departamento' id='dpto'
+          placeholder='Departamento'
           itens={departamentos} 
           value={deptoField} 
           setSelected={value => setDeptoField(value)}
           required={true}
         />
         <Input 
-          placeholder='Informe o local' 
-          label='Local' id='local' htmlFor='local' type='text' 
+          placeholder='Local de compra ou destino' 
+          type='text' 
           value={localField} 
           setInput={value => setLocalField(value)}
           required={true}
         />
         <Input 
-          placeholder='Insira informação adicional' 
-          label='Observação' id='obs' htmlFor='obs' type='text' 
+          placeholder='Informação ou observação adicional' 
+          type='text' 
           value={obsField} 
           setInput={value => setObsField(value)}
           required={false}
         />
       </div>
       <div className={styles.wrapper}>
-        <button onSubmit={clearFields} className={styles.wrapper__button}>
+        <button onSubmit={IsSubmit} className={styles.submit}>
           Adicionar
+          <AiOutlineSend />
+        </button>
+        <button onClick={clearFields} className={styles.clear}>
+          Reset
+          <BsTrash />
         </button>
       </div>
     </ModalWindow>

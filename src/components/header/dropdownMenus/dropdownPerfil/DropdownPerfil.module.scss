@@ -13,7 +13,6 @@
 		color: $cor-hover;
 	}
 }
-
 @mixin span($fsize) {
 	color: $cor-brancol;
 	font-size: $fsize;
@@ -88,10 +87,10 @@
 			margin-bottom: 0.5em;
 			transition: 0.3s all;
 			.button {
-				@include button(#5a6af9);
+				@include button($cor-azull);
 			}
 			.buttonRed {
-				@include button(#c21d17);
+				@include button($cor-vermelhal);
 			}
 		}
 	}

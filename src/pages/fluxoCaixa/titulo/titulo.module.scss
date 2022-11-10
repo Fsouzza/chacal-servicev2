@@ -46,7 +46,7 @@
       gap: 2em;
       justify-content: center;
       &__add{
-        @include buttons(transparent, dashed, #5122c0, #5a6af9);
+        @include buttons(transparent, dashed, $cor-azul, $cor-azull);
         font-weight: 500;
         &:hover{
           background-color: $cor-azul;
@@ -54,7 +54,7 @@
         }
     }
     &__export{
-      @include buttons(#5122c0, solid, #5122c0, #cecece);
+      @include buttons($cor-azul, solid, $cor-azul, $cor-branco);
       &:hover{
         background-color: transparent;
         color: $cor-azull;
