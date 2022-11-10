@@ -17,22 +17,22 @@
     background-color: $cor-card;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
+    box-sizing: inherit;
     color: $cor-brancol;
+    display: table;
     filter: drop-shadow($sombra);
     min-width: 100%;
     padding: 1em;
     thead{
       background-color: $cor-preta;
-      @include td(1em, 500, 2.1, 8px);
+      display: table-header-group;
+      @include td(1em, 400, 2.1, 8px);
     }
     tbody{
+      display: table-row-group;
       td{
         align-items: center;
         @include td(.94em, 400, 1.8, 8px);
-        width: 180px;
-        &:nth-child(2), &:nth-child(8), &:nth-child(10){
-          width: 280px;
-        }
         &:nth-child(4){
           align-items: center;
           display: flex;
