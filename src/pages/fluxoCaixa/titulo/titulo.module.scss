@@ -20,6 +20,8 @@
   align-items: center;
   background-color: transparent;
   display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
   justify-content: space-between;
   padding: $padd-padrao;
   .texto{
@@ -40,18 +42,19 @@
       text-align: left;
     }
   }
-   .botoes{
-      align-items: center;
-      display: flex;
-      gap: 2em;
-      justify-content: center;
-      &__add{
-        @include buttons(transparent, dashed, $cor-azul, $cor-azull);
+  .botoes{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: flex-start;
+    &__add{
+      @include buttons(transparent, dashed, $cor-azul, $cor-azull);
         font-weight: 500;
-        &:hover{
-          background-color: $cor-azul;
-          color: $cor-branco;
-        }
+      &:hover{
+        background-color: $cor-azul;
+        color: $cor-branco;
+      }
     }
     &__export{
       @include buttons($cor-azul, solid, $cor-azul, $cor-branco);

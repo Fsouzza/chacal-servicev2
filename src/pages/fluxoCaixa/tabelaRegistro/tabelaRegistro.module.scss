@@ -38,6 +38,18 @@
           display: flex;
           gap: .4em;
         }
+        .trash{
+          align-items: center;
+          color: $cor-cinza;
+          display: flex;
+          cursor: pointer;
+          font-size: 1.2em;
+          justify-content: center;
+          width: 100%;
+          &:hover{
+            color: $cor-vermelhal;
+          }
+        }
       }
       tr{
         &:nth-of-type(even){

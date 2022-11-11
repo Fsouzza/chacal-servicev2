@@ -3,6 +3,7 @@ import { formatDate } from 'helpers/dateFilter';
 import styles from './tabelaRegistro.module.scss';
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
+import { BiTrash } from 'react-icons/bi';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 type Props = {
@@ -48,6 +49,9 @@ export const TabelaCaixa = (props: Props) => {
     },
     {
       label: 'Oberseração'
+    },
+    {
+      label: 'Ação'
     }
   ];
   const displayTable = items.sort((a,b) => a.date < b.date ? 1 : -1).slice(currentPages, currentPages + itemPerPage).map((item, index) => (
@@ -67,6 +71,7 @@ export const TabelaCaixa = (props: Props) => {
         R$ {item.valor.toFixed(2)}
       </td>
       <td>{item.obs}</td>
+      <td><button aria-label='Deletar item' title='Deletar item' className={styles.trash}><BiTrash /></button></td>
     </tr>
   ));
   

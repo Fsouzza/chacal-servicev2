@@ -420,5 +420,29 @@ export const items: Item[] = [
     item: 'Almoço semanal',
     valor: 75.00,
     obs: '-'
+  },
+  { 
+    date: new Date(2024, 0, 18),
+    lancamentos: 'Saída', 
+    categoria: 'Compra',
+    departamento: 'RH',
+    tipo: 'NFCe',
+    id: 119952,
+    local: 'Escritório',
+    item: 'Almoço semanal',
+    valor: 125.00,
+    obs: '-'
+  },
+  { 
+    date: new Date(2024, 1, 17),
+    lancamentos: 'Entrada', 
+    categoria: 'Receita',
+    departamento: 'Financeiro',
+    tipo: 'NF',
+    id: 987696,
+    local: 'Escritório',
+    item: 'Fundo de Caixa injetado',
+    valor: 188.00,
+    obs: '-'
   }
 ];

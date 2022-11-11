@@ -50,9 +50,7 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
       <div className={styles.components}>
         <Input 
           placeholder='Número do documento' 
-          type='text' 
-          onFocus={(e) => (e.target.type='number')} 
-          onBlur={(e) => (e.target.type='text')}  
+          type='number' 
           value={idField}
           setInput={value => setIdField(value)}
           required={true} 
@@ -75,9 +73,7 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
         />
         <Input 
           placeholder='Valor do item (R$)' 
-          type='text' 
-          onFocus={(e) => (e.target.type='number')} 
-          onBlur={(e) => (e.target.type='text')} 
+          type='number' 
           value={valorField} 
           setInput={value => setValorField(value)}
           required={true}
@@ -126,7 +122,7 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
         />
       </div>
       <div className={styles.wrapper}>
-        <button onSubmit={IsSubmit} className={styles.submit}>
+        <button onClick={IsSubmit} className={styles.submit}>
           Adicionar
           <AiOutlineSend />
         </button>

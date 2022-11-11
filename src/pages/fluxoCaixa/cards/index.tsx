@@ -6,15 +6,30 @@ import { IoAnalyticsSharp } from 'react-icons/io5';
 import { TbTrendingUp, TbTrendingDown } from 'react-icons/tb';
 import CountUp from 'react-countup';
 import { Card } from './card';
+import { useEffect, useState } from 'react';
+import { items } from 'data/itens';
 
-type Props = {
-  entrada: number
-  porcentagem: number
-  saida: number
-  total: number
-}
 
-export const Cards = ({ entrada, saida, total, porcentagem }: Props) => {
+export const Cards = () => {
+  const [entrada, setEntrada] = useState(0);
+  const [saida, setSaida] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [porcentagem, setPorcentagem] = useState(0);
+
+  function lancamentos(lancamento: string){
+    return items.filter((item) => item.lancamentos === lancamento).reduce((acc, cur) => acc + cur.valor, 0);
+  }
+
+  useEffect(()=> {
+    const somaEntrada = lancamentos('Entrada');
+    const somaSaida = lancamentos('Saída');
+    const contadorTotal = somaEntrada - somaSaida;
+    const contadorPorcentagem = contadorTotal / 100;
+    setEntrada(somaEntrada);
+    setSaida(somaSaida);
+    setTotal(contadorTotal);
+    setPorcentagem(contadorPorcentagem);
+  }, []);
  
   return(
     <section className={styles.cards}>
