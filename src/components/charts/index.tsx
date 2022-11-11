@@ -81,6 +81,7 @@ const MyChart = () => {
   };
 
   const options = {
+    responsive: true,
     radius: 0,
     hitRadius: 10,
     hoverRadius: 7,
@@ -141,19 +142,19 @@ const MyChart = () => {
   };
 
   return(
-    <section className={styles.charts}>
-      <div className={styles.chartBox}>
-        <div className={styles.chartBox__titulo}>
-          <h2>Demonstrativo de lançamentos</h2>
-          <div className={styles2.searchSelect}>
-            <select className={styles2.select} onChange={(e) => filterChartByYear(Number(e.currentTarget.value))}>
-              {yearOptions.map((opcao, index) => (
-                <option key={index} value={opcao.value}>{opcao.label}</option>
-              ))}
-            </select>
-            <span><AiOutlineCalendar size={18} color='#898989' /></span>
-          </div>
+    <section className={styles.chart}>
+      <div className={styles.chart__titulo}>
+        <h2>Demonstrativo de lançamentos</h2>
+        <div className={styles2.searchSelect}>
+          <select className={styles2.select} onChange={(e) => filterChartByYear(Number(e.currentTarget.value))}>
+            {yearOptions.map((opcao, index) => (
+              <option key={index} value={opcao.value}>{opcao.label}</option>
+            ))}
+          </select>
+          <span><AiOutlineCalendar size={18} color='#898989' /></span>
         </div>
+      </div>
+      <div className={styles.box}>
         <Line
           data={data} 
           options={options}

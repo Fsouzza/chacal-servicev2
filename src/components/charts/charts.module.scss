@@ -1,29 +1,29 @@
 @import "styles/variaveis";
 
-.charts{
+.chart{
   background-color: $cor-card;
   border-radius: 1em;
   display: flex;
   filter: drop-shadow($sombra);
+  flex-direction: column;
   gap: 1em;
-  min-height: 420px;
-  margin: 4em 2em;
-  padding: 1em 0 2em 0;
-  .chartBox{
-    box-sizing: border-box;
-    height: 340px;
-    padding: 1em 2em;
-    width: 100%;
-    &__titulo{
-      align-items: flex-start;
-      color: $cor-brancol;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 1.4em;
-      margin-left: 1em;
-      h2{
-        font-weight: 400;
-      }
+  height: 100%;
+  margin: 4em 2em 5em 2em;
+  &__titulo{
+    align-items: flex-start;
+    color: $cor-brancol;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 2em 1em 2em;
+    h2{
+      font-weight: 400;
+      text-indent: .5em;
     }
+  }
+  .box{
+    box-sizing: inherit;
+    min-height: 360px;
+    max-height: 500px;
+    padding: 0 2em 2em 2em;
   }
 }
