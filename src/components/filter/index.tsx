@@ -1,7 +1,7 @@
 import styles from './filter.module.scss';
-import { Iopcoes } from 'types/opcoes';
+import { Ifilter } from 'types/filter';
 
-export const FiltroData = ({ filter, opcoes , icon}: Iopcoes) => {
+export const FiltroData = ({ filter, opcoes , icon}: Ifilter) => {
   return(
     <>
       <div className={styles.searchSelect}>

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { BiTrash } from 'react-icons/bi';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
+import { Iopcoes } from 'types/opcoes';
 
 type Props = {
   items: Item[],
@@ -19,7 +20,7 @@ export const TabelaCaixa = (props: Props) => {
   const changePage = (event: { selected: number; }) => {
     setPageNumber(event.selected);
   };
-  const colunas = [
+  const columns: Iopcoes[] = [
     {
       label: 'Nº ID'
     },
@@ -80,7 +81,7 @@ export const TabelaCaixa = (props: Props) => {
       <table className={styles.tabela}>
         <thead>
           <tr>
-            {colunas.map((coluna, index) => (
+            {columns.map((coluna, index) => (
               <td key={index}>{coluna.label}</td>
             ))}
           </tr>

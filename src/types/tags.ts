@@ -1,4 +1,3 @@
-
 export type Itags = {
   busca: string;
   onClick: React.MouseEventHandler<HTMLButtonElement> | undefined

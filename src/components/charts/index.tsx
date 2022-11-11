@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import styles from './charts.module.scss';
 import styles2 from '../filter/filter.module.scss';
 import { DataChartFilter, DataChartInit, Releases, ReleasesFiltered, } from 'helpers/chartFilter';
+import { Iopcoes } from 'types/opcoes';
 
 ChartJS.register( BarElement, LineElement, CategoryScale,
   LinearScale, PointElement, Legend, Tooltip,
@@ -15,7 +16,7 @@ const MyChart = () => {
   const [labels, setLabels] = useState<string[]>([]);
   const [incomes, setIncomes] = useState<number[] | undefined>();
   const [expanses, setExpanses] = useState<number[]>();
-  const yearOptions = [
+  const yearOptions: Iopcoes[] = [
     {
       label: 'Filtros por ano',
       value: -1

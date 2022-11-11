@@ -73,32 +73,32 @@ export const SideBar = ({active, ref}: any) => {
     <nav ref={ref} className={styles.sidebar} onBlur={closeSideBar}>
       <ul>
         <span>Operacional</span>
-        {dataOperat.map( (oper, index) => (
-          <SideBarItems key={index} icon={oper.icon} titulo={oper.titulo} link={oper.to}/>
+        {dataOperat.map( (oper) => (
+          <SideBarItems key={oper.titulo} icon={oper.icon} titulo={oper.titulo} to={oper.to}/>
         ))}
       </ul>
       <ul>
         <span>Financeiro</span>
-        {dataFinanc.map( (financ, index) => (
-          <SideBarItems key={index} icon={financ.icon} titulo={financ.titulo} link={financ.to} />
+        {dataFinanc.map( (financ) => (
+          <SideBarItems key={financ.titulo} icon={financ.icon} titulo={financ.titulo} to={financ.to} />
         ))}
       </ul>
       <ul>
         <span>Recursos Humanos</span>
-        {dataRH.map( (rh, index) => (
-          <SideBarItems key={index} icon={rh.icon} titulo={rh.titulo} link={rh.to} />
+        {dataRH.map( (rh) => (
+          <SideBarItems key={rh.titulo} icon={rh.icon} titulo={rh.titulo} to={rh.to} />
         ))}
       </ul>
       <ul>
         <span>Docs</span>
-        {dataDoc.map( (doc, index) => (
-          <SideBarItems key={index} icon={doc.icon} titulo={doc.titulo} link={doc.to} />
+        {dataDoc.map( (doc) => (
+          <SideBarItems key={doc.titulo} icon={doc.icon} titulo={doc.titulo} to={doc.to} />
         ))}
       </ul>
       <ul>
         <span>System</span>
-        {dataSystem.map( (syst, index) => (
-          <SideBarItems key={index} icon={syst.icon} titulo={syst.titulo} link={syst.to} />
+        {dataSystem.map( (syst) => (
+          <SideBarItems key={syst.titulo} icon={syst.icon} titulo={syst.titulo} to={syst.to} />
         ))}
       </ul>
     </nav>
