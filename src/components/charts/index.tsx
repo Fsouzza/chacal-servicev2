@@ -68,7 +68,13 @@ const MyChart = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
+        align: 'center' as const,
         position: 'bottom' as const,
+        labels: {
+          boxWidth: 20,
+          padding: 22,
+          usePointStyle: true
+        },
       },
       tooltip: {
         backgroundColor: 'rgba(13,13,13,0.8)',
@@ -98,17 +104,18 @@ const MyChart = () => {
     scales: {
       x: {
         grid: {
-          display: false,
-          borderWidth: 2,
-          borderColor: '#4b4b4b'
+          display: true,
+          borderWidth: 3,
+          borderColor: '#4b4b4b',
+          color: '#3a3a3a'
         }
       },
       y: {
         beginAtZero: true,
         grid: {
-          borderDash: [40],
-          borderWidth: 2,
-          borderColor: '#4b4b4b'
+          borderWidth: 3,
+          borderColor: '#4b4b4b',
+          color: '#3a3a3a'
         },
         ticks: {
           stepSize: 100,
