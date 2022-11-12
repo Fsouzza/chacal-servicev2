@@ -278,18 +278,6 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
-    date: new Date(2022, 9, 16),
-    lancamentos: 'Saída', 
-    categoria: 'Serviços',
-    departamento: 'Administrativo',
-    tipo: 'NFCe',
-    id: 634568,
-    local: 'Central & Refrigeração',
-    item: 'Manutenção de equip. Split',
-    valor: 184.00,
-    obs: '-'
-  },
-  { 
     date: new Date(2022, 11, 23),
     lancamentos: 'Entrada', 
     categoria: 'Receita',

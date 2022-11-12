@@ -1,9 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-1 - TABELA RESPONSIVA;
 2 - RESPONSIVIDADE;
 3 - TIMELINE DE ATIVIDADES RECENTES;
 4 - INSERIR DARK-LIGHT MODE;
-
 
 # dependencies
 /node_modules

@@ -1,6 +1,6 @@
 import styles from '../FormsFields.module.scss';
 
-interface Props {
+interface PropsSelect {
   placeholder: string
   required?: boolean
   setSelected: React.Dispatch<React.SetStateAction<string>>
@@ -8,7 +8,7 @@ interface Props {
   itens: string[] | number[]
 }
 
-export const Select = (props: Props) => {
+export const Select = (props: PropsSelect) => {
   const placeholderModificada = `${props.placeholder}`;
 
   return(

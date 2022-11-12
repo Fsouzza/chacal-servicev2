@@ -23,7 +23,7 @@
 		transition: 0.18s;
   	}
   	&__titulo{
-		@include title(.96em, 400);
+		@include title(.98em, 400);
 		margin: 1.5em 0 .3em 0;
 	}
 	&__descricao{
