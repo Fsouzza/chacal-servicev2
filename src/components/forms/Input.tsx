@@ -1,4 +1,4 @@
-import styles from '../FormsFields.module.scss';
+import styles from './FormsFields.module.scss';
 
 interface inputProps {
   type: 'text' | 'email' | 'password' | 'date' | 'number';

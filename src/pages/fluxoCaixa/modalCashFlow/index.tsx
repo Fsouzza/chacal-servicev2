@@ -1,6 +1,6 @@
 import { ModalWindow } from 'components/modalWindow';
-import { Input } from 'components/forms/inputs/Input';
-import { Select } from 'components/forms/selects/Select';
+import { Input } from 'components/forms/Input';
+import { Select } from 'components/forms/Select';
 import { useState } from 'react';
 import styles from './modalCashFlow.module.scss';
 import { AiOutlineSend } from 'react-icons/ai';
@@ -127,7 +127,7 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
           <AiOutlineSend />
         </button>
         <button onClick={clearFields} className={styles.clear}>
-          Reset
+          Limpar
           <BsTrash />
         </button>
       </div>

@@ -1,11 +1,24 @@
 @import 'styles/variaveis.scss';
 
-@mixin buttons($cp, $ch) {
+.components{
   align-items: center;
-  background-color: $cp;
-  border: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  @media (max-width: 425px) {
+    gap: .5em;
+    justify-content: flex-start;
+  }
+}
+
+@mixin buttons($bgColor, $bdColor, $color, $hColor, $bgHoverColor) {
+  align-items: center;
+  background-color: $bgColor;
+  border: 2px solid $bdColor;
   border-radius: .4em;
-  color: $cor-branco;
+  color: $color;
   cursor: pointer;
   display: flex;
   font-size: 1.1em;
@@ -17,26 +30,13 @@
   transition: linear 0.4s;
   width: 360px;
   &:hover {
-    background-color: $ch;
-    color: $cor-brancol;
+    background-color: $bgHoverColor;
+    color:  $hColor;
   }
-  @media (max-width: 375px) {
+  @media (max-width: 425px) {
     border-radius: .2em;
     font-size: .94em;
     max-width: 170px;
-  }
-}
-
-.components{
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1em;
-  @media (max-width: 375px) {
-    gap: .5em;
-    justify-content: flex-start;
   }
 }
 
@@ -46,14 +46,14 @@
   justify-content: center;
   margin-top: 1.4em;
   width: 100%;
-  @media (max-width: 375px) {
+  @media (max-width: 425px) {
     gap: .5em;
     margin-top: 0;
   }
   .submit{
-    @include buttons($cor-azul, #40199a);
+    @include buttons(transparent, $cor-azul, $cor-azull, $cor-brancol,  rgba(33, 33, 204, 0.2));
   }
   .clear{
-    @include buttons($cor-vermelha, #7c1212);
+    @include buttons(transparent, $cor-vermelha, #e1514c, $cor-brancol, rgba(255, 53, 60, 0.2));
   }
 }
