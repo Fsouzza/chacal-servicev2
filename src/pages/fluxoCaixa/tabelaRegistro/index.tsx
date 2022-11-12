@@ -1,26 +1,20 @@
-import { Item } from 'types/item';
-import { formatDate } from 'helpers/dateFilter';
+import { formatDate } from 'helpers/dateFormat';
 import styles from './tabelaRegistro.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { BiTrash } from 'react-icons/bi';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
-import { Iopcoes } from 'types/opcoes';
+import { filterTableByDateTags } from 'helpers/chartFilter';
+import { Buscador } from '../buscador';
+import { items } from 'data/itens';
 
-type Props = {
-  items: Item[],
-}
-
-export const TabelaCaixa = (props: Props) => {
-  const { items } = props;
+const TabelaCaixa = () => {
+  const [busca, setBusca] = useState('');
+  const [lista, setLista] = useState(items);
   const [pageNumber, setPageNumber] = useState(0);
   const itemPerPage = 12;
   const currentPages = pageNumber * itemPerPage;
-  const pageCount = Math.ceil(items.length / itemPerPage);
-  const changePage = (event: { selected: number; }) => {
-    setPageNumber(event.selected);
-  };
-  const columns: Iopcoes[] = [
+  const columns = [
     {
       label: 'Nº ID'
     },
@@ -55,7 +49,7 @@ export const TabelaCaixa = (props: Props) => {
       label: 'Ação'
     }
   ];
-  const displayTable = items.sort((a,b) => a.date < b.date ? 1 : -1).slice(currentPages, currentPages + itemPerPage).map((item, index) => (
+  const displayTable = lista.sort((a,b) => a.date < b.date ? 1 : -1).slice(currentPages, currentPages + itemPerPage).map((item, index) => (
     <tr key={index}>
       <td>{item.id}</td>
       <td>{item.item}</td>
@@ -75,22 +69,50 @@ export const TabelaCaixa = (props: Props) => {
       <td><button aria-label='Deletar item' title='Deletar item' className={styles.trash}><BiTrash /></button></td>
     </tr>
   ));
-  
+  const pageCount = Math.ceil(items.length / itemPerPage);
+  const changePage = (event: { selected: number; }) => {
+    setPageNumber(event.selected);
+  };
+
+  function filterByDate(date: number) {
+    filterTableByDateTags;
+    date < 0 ? setLista(items) : setLista(filterTableByDateTags(date));
+  }
+
+  function verificaBusca(title: string){
+    const regex = new RegExp(`^${busca}`, 'i');
+    return regex.test(title);
+  }
+
+  useEffect(()=> {
+    const listaBusca = items.filter(item => 
+      verificaBusca(item.item)
+      || verificaBusca(item.tipo) 
+      || verificaBusca(item.departamento) 
+      || verificaBusca(item.local)
+      || verificaBusca(item.lancamentos)
+    );
+    setLista(listaBusca);
+  }, [busca]);
+
   return(
     <section className={styles.secao}>
-      <table className={styles.tabela}>
-        <thead>
-          <tr>
-            {columns.map((coluna, index) => (
-              <td key={index}>{coluna.label}</td>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          { displayTable }
-        </tbody>
-      </table>
-      <ReactPaginate 
+      <div className={styles.tableContent} >
+        <Buscador busca={busca} setBusca={setBusca} filter={filterByDate}  />
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              {columns.map((coluna, index) => (
+                <td key={index}>{coluna.label}</td>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            { displayTable }
+          </tbody>
+        </table>
+      </div>
+      <ReactPaginate
         previousLabel={<MdOutlineKeyboardArrowLeft size={26} />}
         nextLabel={<MdOutlineKeyboardArrowRight size={26} />}
         pageCount={pageCount}
@@ -105,3 +127,5 @@ export const TabelaCaixa = (props: Props) => {
     </section>
   );
 };
+
+export default TabelaCaixa;

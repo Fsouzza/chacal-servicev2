@@ -2,16 +2,16 @@
 
 .busca{
   align-items: center;
-  border-top: 4px solid $cor-card;
-  border-left: 4px solid $cor-card;
-  border-right: 4px solid $cor-card;
+  background-color: $cor-principal;
+  border-top: 6px solid $cor-card;
+  border-left: 6px solid $cor-card;
+  border-right: 6px solid $cor-card;
   border-top-left-radius: 1.6em;
   border-top-right-radius: 1.6em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 2em;
-  padding: .4em 0;
+  padding: .6em 0;
   &__pesquisar {
     align-items: center;
     background-color: transparent;

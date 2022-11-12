@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import { items } from 'data/itens';
 
 
-export const Cards = () => {
+const Cards = () => {
   const [entrada, setEntrada] = useState(0);
   const [saida, setSaida] = useState(0);
   const [total, setTotal] = useState(0);
@@ -97,3 +97,5 @@ export const Cards = () => {
     </section>
   );
 };
+
+export default Cards;

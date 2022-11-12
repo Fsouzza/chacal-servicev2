@@ -1,5 +1,5 @@
 import { items } from 'data/itens';
-import { dateToString, monthToString } from './dateFilter';
+import { dateToString, monthToString } from './dateFormat';
 
 const month = [...items.sort((a,b) => a.date > b.date ? 1 : -1)];
 const stringFormat = month.map((lancamentos) => monthToString(lancamentos.date));

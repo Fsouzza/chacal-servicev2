@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import styles from './charts.module.scss';
 import styles2 from '../filter/filter.module.scss';
 import { DataChartFilter, DataChartInit, Releases, ReleasesFiltered, } from 'helpers/chartFilter';
-import { Iopcoes } from 'types/opcoes';
 
 ChartJS.register( BarElement, LineElement, CategoryScale,
   LinearScale, PointElement, Legend, Tooltip,
@@ -16,7 +15,7 @@ const MyChart = () => {
   const [labels, setLabels] = useState<string[]>([]);
   const [incomes, setIncomes] = useState<number[] | undefined>();
   const [expanses, setExpanses] = useState<number[]>();
-  const yearOptions: Iopcoes[] = [
+  const yearOptions = [
     {
       label: 'Filtros por ano',
       value: -1
@@ -34,27 +33,6 @@ const MyChart = () => {
       value: 2
     }
   ];
-
-  function filterChartByYear(date: number) {
-    const ChartByYear = DataChartFilter(date);
-    
-    if(date < 0){
-      setLabels(DataChartInit);
-      setIncomes(Releases('Entrada'));
-      setExpanses(Releases('Saída'));
-    } else {
-      setLabels(ChartByYear);
-      setIncomes(ReleasesFiltered(date, 'Entrada'));
-      setExpanses(ReleasesFiltered(date, 'Saída'));
-    }
-  }
-
-  useEffect(() => {
-    setLabels(DataChartInit);
-    setIncomes(Releases('Entrada'));
-    setExpanses(Releases('Saída'));
-  }, []);
-
   const data = {
     labels:  labels,
     datasets: [
@@ -80,7 +58,6 @@ const MyChart = () => {
       }
     ]
   };
-
   const options = {
     responsive: true,
     radius: 0,
@@ -141,6 +118,26 @@ const MyChart = () => {
       }
     },
   };
+
+  function filterChartByYear(date: number) {
+    const ChartByYear = DataChartFilter(date);
+    
+    if(date < 0){
+      setLabels(DataChartInit);
+      setIncomes(Releases('Entrada'));
+      setExpanses(Releases('Saída'));
+    } else {
+      setLabels(ChartByYear);
+      setIncomes(ReleasesFiltered(date, 'Entrada'));
+      setExpanses(ReleasesFiltered(date, 'Saída'));
+    }
+  }
+
+  useEffect(() => {
+    setLabels(DataChartInit);
+    setIncomes(Releases('Entrada'));
+    setExpanses(Releases('Saída'));
+  }, []);
 
   return(
     <section className={styles.chart}>

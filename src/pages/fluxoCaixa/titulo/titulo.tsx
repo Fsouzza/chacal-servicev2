@@ -20,7 +20,7 @@ const headers = [
   {label: 'Observação', key: 'obs'},
 ];
 
-export const Titulo = () => {
+const Titulo = () => {
   const [modalCashFlow, setModalCashFlow] = useState(false);
 
   return(
@@ -50,3 +50,5 @@ export const Titulo = () => {
     </section>
   );
 };
+
+export default Titulo;

@@ -13,14 +13,13 @@
 .secao{
   background-color: transparent;
   margin: 0 2em;
-  .tabela{
+  .table{
     background-color: $cor-card;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
     box-sizing: inherit;
     color: $cor-brancol;
     display: table;
-    filter: drop-shadow($sombra);
     min-width: 100%;
     padding: 1em;
     thead{
@@ -66,6 +65,9 @@
       margin-left: 8px;
       width: 8px;
     }
+  }
+  .tableContent{
+    filter: drop-shadow($sombra);
   }
   .pagination{
     align-items: center;
