@@ -13,18 +13,29 @@
 .secao{
   background-color: transparent;
   margin: 0 2em;
+  @media (max-width: 425px) {
+    margin: 0 .2em;
+	}
   .tableContent{
     filter: drop-shadow($sombra);
-    overflow-x: auto;
+    
+    @media (max-width: 425px) {
+      filter: none;
+      overflow-x: auto;
+    }
     .table{
       background-color: $cor-card;
       border-bottom-left-radius: 1em;
       border-bottom-right-radius: 1em;
-      box-sizing: inherit;
       color: $cor-brancol;
       display: table;
-      min-width: 100%;
+      width: 100%;
       padding: 1em;
+      @media (max-width: 425px) {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: .26em;
+      }
       thead{
         background-color: $cor-preta;
         display: table-header-group;
@@ -51,19 +62,21 @@
           td{
             align-items: center;
             @include td(.94em, 400, 1.8, 8px);
-            &:nth-child(4){
+            .lancamento{
               align-items: center;
               display: flex;
               gap: .3em;
-            }
-            div{
-              align-items: center;
-              border-radius: 50%;
-              display: flex;
-              height: 8px;
-              justify-content: center;
-              margin-left: 8px;
-              width: 8px;
+              height: max-content;
+              justify-content: flex-start;
+              div{
+                align-items: center;
+                border-radius: 50%;
+                display: flex;
+                height: 8px;
+                justify-content: center;
+                margin-left: 8px;
+                width: 8px;
+              }
             }
             .trash{
               align-items: center;
@@ -90,6 +103,10 @@
     gap: .5em;
     justify-content: center;
     margin: 2em 0;
+    @media (max-width: 425px) {
+      font-size: .82em;
+      margin: 1em .2em;
+    }
     &__bttns{
       background-color: $cor-hover;
       border-radius: .6em;

@@ -17,16 +17,37 @@
   top: 2.8em;
   z-index: 900;
   width: 260px;
+  @media (max-width: 375px) {
+    gap: .5em;
+    padding: 1em .3em 0 0;
+    top: 52px;
+    width: 300px;
+  }
+  @media (min-width: 376px) and (max-width: 425px) {
+    gap: .8em;
+    padding: 1.2em .3em 0 0;
+    top: 54px;
+    width: 360px;
+  }
   ul{
     border-bottom: 1px solid $cor-secundaria;
     padding-bottom: 1.2em;
     width: 100%;
+    @media (max-width: 375px) {
+      padding-bottom: .6em;
+    }
+    @media (min-width: 376px) and (max-width: 425px) {
+      padding-bottom: .8em;
+    }
     span{
       color: $cor-cinza;
       font-size: .62em;
       font-weight: 400;
       line-height: 2.8;
       margin-left: .8em;
+      @media (max-width: 425px) {
+        font-size: .68em;
+      }
     }
     button{
       color: $cor-cinza;

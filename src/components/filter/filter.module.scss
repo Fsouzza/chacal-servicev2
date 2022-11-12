@@ -3,6 +3,9 @@
 .searchSelect{
   padding: 0 .6em;
   position: relative;
+  @media (max-width: 425px) {
+    padding: 0;
+  }
   .select{
     align-items: center;
     background-color: $cor-principal;
@@ -20,8 +23,19 @@
     &:focus{
       border-color: $cor-azul;
     }
+    @media (max-width: 375px) {
+      padding: .4em;
+      width: 166px;
+    }
+    @media (min-width: 380px) and (max-width: 425px) {
+      padding: .6em;
+      width: 180px;
+    }
     option{
       font-size: 1.2em;
+      @media (min-width: 380px) and (max-width: 425px) {
+        font-size: 1em;
+      }
     }
   }
   span{
@@ -38,5 +52,9 @@
     right: .8em;
     top: .2em;
     width: 2em;
+    @media (max-width: 425px) {
+      right: .4em;
+      top: .24em;
+    }
   }
 }

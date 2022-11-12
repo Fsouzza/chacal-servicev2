@@ -11,5 +11,15 @@
   	.negativo{
     	color: #c34743;
   	}
+	@media (max-width: 375px) {
+		justify-content: center;
+		gap: 8px;
+		margin: 0;
+	}
+	@media (min-width: 376px) and (max-width: 425px) {
+		gap: 12px;
+		justify-content: center;
+		margin: 0;
+	  }
 }
 

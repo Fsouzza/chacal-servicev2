@@ -43,7 +43,7 @@ const TabelaCaixa = () => {
       label: 'Valor'
     },
     {
-      label: 'Oberseração'
+      label: 'Obersevação'
     },
     {
       label: 'Ação'
@@ -55,8 +55,10 @@ const TabelaCaixa = () => {
       <td>{item.item}</td>
       <td>{formatDate(item.date)}</td>
       <td className={item.lancamentos === 'Entrada' ? `${styles.valueGreen}` : `${styles.valueRed}`}>
-        <div className={item.lancamentos === 'Entrada' ? `${styles.txtGreen}` : `${styles.txtRed}`}></div>
-        {item.lancamentos}
+        <div className={styles.lancamento}>
+          <div className={item.lancamentos === 'Entrada' ? `${styles.txtGreen}` : `${styles.txtRed}`}></div>
+          {item.lancamentos}
+        </div>
       </td>
       <td>{item.tipo}</td>
       <td>{item.categoria}</td>

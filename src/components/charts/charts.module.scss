@@ -9,20 +9,40 @@
   gap: 1em;
   height: 100%;
   margin: 4em 2em 5em 2em;
+  @media (max-width: 425px) {
+    border-radius: 0;
+    filter: none;
+    gap: .5em;
+		margin: 2.5em .2em 3.5em .2em;
+	}
   &__titulo{
     align-items: flex-start;
     color: $cor-brancol;
     display: flex;
     justify-content: space-between;
     padding: 2em 2em 1em 2em;
+    @media (max-width: 425px) {
+      align-items: center;
+      flex-direction: column;
+      gap: .6em;
+      justify-content: center;
+      padding: 1em .26em;
+    }
     h2{
       font-weight: 400;
       text-indent: .5em;
+      @media (max-width: 425px) {
+        text-indent: .5em;
+        font-size: 1.2em;
+      }
     }
   }
   .box{
     box-sizing: inherit;
     height: 400px;
     padding: 0 2em 2em 2em;
+    @media (max-width: 425px) {
+      padding: 0 .26em 1em .26em;
+    }
   }
 }

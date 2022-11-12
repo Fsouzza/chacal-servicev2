@@ -68,7 +68,7 @@ export const SideBar = ({active, ref}: any) => {
       icon: <VscBellDot />
     }
   ];
-  
+
   return (
     <nav ref={ref} className={styles.sidebar} onBlur={closeSideBar}>
       <ul>

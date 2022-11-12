@@ -24,6 +24,12 @@
   gap: 2em;
   justify-content: space-between;
   padding: $padd-padrao;
+  @media (max-width: 375px) {
+    padding: 6em .6em 2em .6em;
+  }
+  @media (min-width: 376px) and (max-width: 425px) {
+    padding: 6em .8em 2em .8em;
+  }
   .texto{
     align-items: flex-start;
     display: flex;
@@ -35,11 +41,17 @@
       font-size: 1em;
       font-weight: 400;
       text-align: left;
+      @media (max-width: 375px) {
+        font-size: .9em;
+      }
     }
     span{
       color: $cor-branco;
       font-size: 1.4em;
       text-align: left;
+      @media (max-width: 375px) {
+        font-size: 1.1em;
+      }
     }
   }
   .botoes{
@@ -48,9 +60,23 @@
     flex-wrap: wrap;
     gap: 1em;
     justify-content: flex-start;
+    @media (max-width: 375px) {
+      gap: .5em;
+      justify-content: center;
+    }
+    @media (min-width: 376px) and (max-width: 425px) {
+      gap: .65em;
+    }
     &__add{
       @include buttons(transparent, dashed, $cor-azul, $cor-azull);
         font-weight: 500;
+        @media (max-width: 375px) {
+          font-size: .9em;
+          width: 170px;
+        }
+        @media (min-width: 380px) and (max-width: 425px) {
+          width: 190px;;
+        }
       &:hover{
         background-color: $cor-azul;
         color: $cor-branco;
@@ -58,10 +84,17 @@
     }
     &__export{
       @include buttons($cor-azul, solid, $cor-azul, $cor-branco);
+      @media (max-width: 375px) {
+        font-size: .9em;
+        width: 170px;
+      }
+      @media (min-width: 380px) and (max-width: 425px) {
+        width: 180px;;
+      }
       &:hover{
         background-color: transparent;
         color: $cor-azull;
-        font-weight: 600;
+        font-weight: 600; 
       }
     }
   }

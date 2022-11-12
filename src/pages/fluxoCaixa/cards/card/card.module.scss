@@ -8,13 +8,28 @@
 
 .card{
   background-color: $cor-card;
-  border-radius: 2em;
+  border-radius: 1em;
   filter: drop-shadow($sombra);
   padding: 1.6em 3em;
-  min-width: 300px;
   transition: .2s linear;
   width: 400px;
- 	 &:hover{
+	@media (max-width: 375px) {
+		border-radius: 8px;
+		filter: none;
+		font-size: 1em;
+		height: 148px;
+		padding: .6em;
+		width: 170px;
+	}
+	@media (min-width: 376px) and (max-width: 425px) {
+		border-radius: 8px;
+		filter: none;
+		font-size: 1em;
+		height: 160px;
+		padding: .8em;
+		width: 194px;
+	}
+ 	&:hover{
 		box-shadow: rgba(0, 0, 0, 0.4) 0px 25px 50px -12px;
 		filter: none;
 		-moz-transform: scale(1.1);
@@ -25,14 +40,26 @@
   	&__titulo{
 		@include title(.98em, 400);
 		margin: 1.5em 0 .3em 0;
+		@media (max-width: 375px) {
+			@include title(.86em, 400);
+		}
 	}
 	&__descricao{
 		align-items: center;
 		display: flex;
 		gap: 1.5em;
+		@media (max-width: 375px) {
+			gap: 1.5em;
+		}
 	}
 	&__subtitulo{
 		@include title(1.8em, 600);
 		text-transform: uppercase;
+		@media (max-width: 375px) {
+			@include title(1em, 500);
+		}
+		@media (min-width: 376px) and (max-width: 425px) {
+			@include title(1.35em, 600);
+		}
 	}
 }

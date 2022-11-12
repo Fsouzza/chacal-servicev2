@@ -14,6 +14,9 @@
     font-size: .7em;
     gap: 8px;
     line-height: 1.8em;
+    @media (max-width: 425px) {
+      font-size: .78em;
+    }
   }
 }
 

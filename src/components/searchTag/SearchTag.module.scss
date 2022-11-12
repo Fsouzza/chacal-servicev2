@@ -17,6 +17,9 @@
 .searchTag{
   padding: 0 .6em;
   position: relative;
+  @media (max-width: 425px) {
+    display: none;
+  }
   .default{
     @include tag($cor-card, $cor-card, $cor-brancol, 400);
     &:hover{

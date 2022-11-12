@@ -46,7 +46,7 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
   };
 
   return(
-    <ModalWindow title='Movimentação de caixa' open={open} close={close}>
+    <ModalWindow title='Adicionar transação' open={open} close={close}>
       <div className={styles.components}>
         <Input 
           placeholder='Número do documento' 
@@ -107,14 +107,14 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
           required={true}
         />
         <Input 
-          placeholder='Local de compra ou destino' 
+          placeholder='Local destinado' 
           type='text' 
           value={localField} 
           setInput={value => setLocalField(value)}
           required={true}
         />
         <Input 
-          placeholder='Informação ou observação adicional' 
+          placeholder='Informação adicional' 
           type='text' 
           value={obsField} 
           setInput={value => setObsField(value)}
