@@ -18,19 +18,21 @@
 	}
   .tableContent{
     filter: drop-shadow($sombra);
-    
+    flex-basis: 100%;
     @media (max-width: 425px) {
       filter: none;
       overflow-x: auto;
     }
     .table{
       background-color: $cor-card;
-      border-bottom-left-radius: 1em;
-      border-bottom-right-radius: 1em;
+      border-bottom-left-radius: .5em;
+      border-bottom-right-radius: .5em;
+      border-collapse: separate;
       color: $cor-brancol;
       display: table;
+      min-width: 650px;
       width: 100%;
-      padding: 1em;
+      padding: .5em;
       @media (max-width: 425px) {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
@@ -41,6 +43,8 @@
         display: table-header-group;
         @include td(1em, 400, 2.1, 8px);
         tr{
+          display: table-row;
+          vertical-align: middle;
           td{
             &:last-child{
               align-items: center;
@@ -62,6 +66,11 @@
           td{
             align-items: center;
             @include td(.94em, 400, 1.8, 8px);
+            &:nth-child(2){
+              @media (max-width: 425px){
+                width: 120px;
+              }
+            }
             .lancamento{
               align-items: center;
               display: flex;
