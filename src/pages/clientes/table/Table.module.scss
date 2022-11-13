@@ -1,0 +1,52 @@
+@import 'styles/variaveis';
+
+.tableBox{
+	background-color: $cor-card;
+	border-radius: .5em;
+	margin: 4em 2em;
+	padding: 0;
+	.table{
+		border-collapse: collapse;
+		width: 100%;
+	}
+	.th{
+		align-items: center;
+		background-color: $cor-header;
+		font-size: .9em;
+		font-weight: 400;
+		padding: 1em .6em;
+		text-transform: uppercase;
+	}
+	.tr{
+		&:hover{
+			background-color: $cor-hover;
+		}
+	}
+	.th, .td{
+		border-bottom: 0.5px solid $cor-cinza;
+		text-align: left;
+		text-indent: 10px;
+		width: auto;
+	}
+	.td{
+		color: $cor-brancol;
+		font-size: .9em;
+		padding: .6em;
+		div{
+			align-items: center;
+			display: flex;
+			gap: .5em;
+			justify-content: center;
+			button{
+				border-radius: 50%;
+				color: $cor-brancol;
+				cursor: pointer;
+				padding: 2px 4px;
+				&:hover{
+					background-color: $cor-secundaria;
+					color: $cor-azul;
+				}
+			}
+		}
+	}
+}

@@ -4,7 +4,7 @@ import Loading from 'components/loading';
 
 const PageDesignPadrao = lazy(() => import('components/homePage'));
 const FluxoCaixa = lazy(() => import('pages/fluxoCaixa'));
-const Clientes = lazy(() => import('pages/clientes/clientes'));
+const Clientes = lazy(() => import('pages/clientes'));
 const EstoqueDeEPI = lazy(() => import('pages/estoqueEPI/estoqueDeEPI'));
 const ControleDeFinancas = lazy(() => import('pages/financas/ControleDeFinancas'));
 const ListaFuncionarios = lazy(() => import('pages/funcionarios/Funcionarios'));
