@@ -4,7 +4,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale,
 import { AiOutlineCalendar } from 'react-icons/ai';
 import { useState, useEffect } from 'react';
 import styles from './charts.module.scss';
-import styles2 from '../filter/filter.module.scss';
+import styles2 from '../dataFilter/dataFilter.module.scss';
 import { DataChartFilter, DataChartInit, Releases, ReleasesFiltered, } from 'helpers/chartFilter';
 
 ChartJS.register( BarElement, LineElement, CategoryScale,
@@ -156,7 +156,7 @@ const MyChart = () => {
               <option key={index} value={opcao.value}>{opcao.label}</option>
             ))}
           </select>
-          <span><AiOutlineCalendar size={18} color='#898989' /></span>
+          <span><AiOutlineCalendar size={22} color='#898989' /></span>
         </div>
       </div>
       <div className={styles.box}>

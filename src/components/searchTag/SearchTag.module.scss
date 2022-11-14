@@ -6,7 +6,7 @@
   border-radius: .5em;
   color: $fcor;
   cursor: pointer;
-  font-size: .88rem;
+  font-size: .9rem;
   font-weight: $fweight;
   outline: none;
   padding: .5em;
@@ -15,7 +15,7 @@
 }
 
 .searchTag{
-  padding: 0 .6em;
+  padding: 0;
   position: relative;
   @media (max-width: 425px) {
     display: none;

@@ -1,7 +1,7 @@
-import styles from './filter.module.scss';
+import styles from './dataFilter.module.scss';
 import { Ifilter } from 'types/filter';
 
-export const FiltroData = ({ filter, opcoes , icon}: Ifilter) => {
+export const DataFilter = ({ filter, opcoes , icon}: Ifilter) => {
   return(
     <>
       <div className={styles.searchSelect}>

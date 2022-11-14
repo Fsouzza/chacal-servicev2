@@ -1,8 +1,25 @@
 @import 'styles/variaveis';
 
 .filter{
-	background-color: $cor-card;
-	border-radius: 1em;
-	margin: 4em 2em 4em 2em;
-	padding: 2em;
+	background-color: #27282b;
+	border-top-left-radius: .5em;
+	border-top-right-radius: .5em;
+	margin: 0;
+	padding: 1em .5em;
+	@media (max-width: 425px){
+		margin: 3em 0;
+	}
+}
+
+.filtersTags{
+	align-items: center;
+    display: flex;
+	gap: 1.4em;
+    justify-content: flex-end;
+    @media (max-width: 425px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-right: 0;
+      gap: .4em;
+    }
 }

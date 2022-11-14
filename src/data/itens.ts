@@ -1,7 +1,7 @@
 import { Item } from 'types/item';
 
 export const items: Item[] = [
-  { 
+  { index: 1,
     date: new Date(2022, 0, 15),
     lancamentos: 'Saída', 
     categoria: 'Compra',
@@ -13,7 +13,7 @@ export const items: Item[] = [
     valor: 80.00,
     obs: '-'
   },
-  { 
+  { index: 2,
     date: new Date(2022, 0, 28),
     lancamentos: 'Saída', 
     categoria: 'Compra',
@@ -25,7 +25,7 @@ export const items: Item[] = [
     valor: 80.00,
     obs: '-'
   },
-  { 
+  { index: 3,
     date: new Date(2022, 0, 17),
     lancamentos: 'Entrada', 
     categoria: 'Serviços',
@@ -37,7 +37,7 @@ export const items: Item[] = [
     valor: 180.00,
     obs: '-'
   },
-  { 
+  { index: 4,
     date: new Date(2022, 0, 22),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -49,7 +49,7 @@ export const items: Item[] = [
     valor: 50.00,
     obs: '-'
   },
-  { 
+  { index: 5,
     date: new Date(2022, 0, 24),
     lancamentos: 'Entrada', 
     categoria: 'Serviços',
@@ -61,7 +61,7 @@ export const items: Item[] = [
     valor: 69.00,
     obs: '-'
   },
-  { 
+  { index: 6,
     date: new Date(2022, 1, 17),
     lancamentos: 'Saída', 
     categoria: 'Compra',
@@ -73,7 +73,7 @@ export const items: Item[] = [
     valor: 67.00,
     obs: '-'
   },
-  { 
+  { index: 7,
     date: new Date(2022, 1, 13),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -85,7 +85,7 @@ export const items: Item[] = [
     valor: 160.00,
     obs: '-'
   },
-  { 
+  { index: 8,
     date: new Date(2022, 2, 20),
     lancamentos: 'Saída', 
     categoria: 'Refeição',
@@ -97,7 +97,7 @@ export const items: Item[] = [
     valor: 138.00,
     obs: '-'
   },
-  { 
+  { index: 9,
     date: new Date(2022, 3, 2),
     lancamentos: 'Saída', 
     categoria: 'Retirada',
@@ -109,7 +109,7 @@ export const items: Item[] = [
     valor: 167.00,
     obs: '-'
   },
-  { 
+  { index: 10,
     date: new Date(2022, 2, 12),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -121,7 +121,7 @@ export const items: Item[] = [
     valor: 156.00,
     obs: '-'
   },
-  { 
+  { index: 11,
     date: new Date(2022, 3, 28),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -133,7 +133,7 @@ export const items: Item[] = [
     valor: 114.00,
     obs: '-'
   },
-  { 
+  { index: 12,
     date: new Date(2022, 4, 19),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -145,7 +145,7 @@ export const items: Item[] = [
     valor: 146.00,
     obs: '-'
   },
-  { 
+  { index: 13,
     date: new Date(2022, 4, 28),
     lancamentos: 'Saída', 
     categoria: 'Compra',
@@ -157,7 +157,7 @@ export const items: Item[] = [
     valor: 99.00,
     obs: '-'
   },
-  { 
+  { index: 14,
     date: new Date(2022, 5, 6),
     lancamentos: 'Saída', 
     categoria: 'Serviços',
@@ -169,7 +169,7 @@ export const items: Item[] = [
     valor: 224.00,
     obs: '-'
   },
-  { 
+  { index: 15,
     date: new Date(2022, 5, 12),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -181,7 +181,7 @@ export const items: Item[] = [
     valor: 182.00,
     obs: '-'
   },
-  { 
+  { index: 16,
     date: new Date(2022, 6, 22),
     lancamentos: 'Entrada', 
     categoria: 'Serviços',
@@ -193,7 +193,7 @@ export const items: Item[] = [
     valor: 92.00,
     obs: '-'
   },
-  { 
+  { index: 17,
     date: new Date(2022, 7, 14),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -205,7 +205,7 @@ export const items: Item[] = [
     valor: 29.00,
     obs: '-'
   },
-  { 
+  { index: 18,
     date: new Date(2022, 6, 12),
     lancamentos: 'Saída', 
     categoria: 'Retirada de caixa',
@@ -217,7 +217,7 @@ export const items: Item[] = [
     valor: 234.00,
     obs: '-'
   },
-  { 
+  { index: 19,
     date: new Date(2022, 7, 14),
     lancamentos: 'Saída', 
     categoria: 'Receita',
@@ -229,7 +229,7 @@ export const items: Item[] = [
     valor: 192.00,
     obs: '-'
   },
-  { 
+  { index: 20,
     date: new Date(2022, 8, 17),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -241,7 +241,7 @@ export const items: Item[] = [
     valor: 192.00,
     obs: '-'
   },
-  { 
+  { index: 21,
     date: new Date(2022, 9, 22),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -253,7 +253,7 @@ export const items: Item[] = [
     valor: 152.00,
     obs: '-'
   },
-  { 
+  { index: 22,
     date: new Date(2022, 10, 15),
     lancamentos: 'Entrada', 
     categoria: 'Serviços',
@@ -265,7 +265,7 @@ export const items: Item[] = [
     valor: 222.00,
     obs: '-'
   },
-  { 
+  { index: 23,
     date: new Date(2022, 8, 6),
     lancamentos: 'Saída', 
     categoria: 'Serviços',
@@ -277,7 +277,7 @@ export const items: Item[] = [
     valor: 254.00,
     obs: '-'
   },
-  { 
+  { index: 24,
     date: new Date(2022, 11, 23),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -289,7 +289,7 @@ export const items: Item[] = [
     valor: 235.00,
     obs: '-'
   },
-  { 
+  { index: 25,
     date: new Date(2022, 9, 9),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -301,7 +301,7 @@ export const items: Item[] = [
     valor: 90.00,
     obs: '-'
   },
-  { 
+  { index: 26,
     date: new Date(2022, 10, 18),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -313,7 +313,7 @@ export const items: Item[] = [
     valor: 150.00,
     obs: '-'
   },
-  { 
+  { index: 27,
     date: new Date(2022, 9, 5),
     lancamentos: 'Saída', 
     categoria: 'Compra',
@@ -326,6 +326,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
+    index: 28,
     date: new Date(2022, 10, 23),
     lancamentos: 'Saída', 
     categoria: 'Compra',
@@ -338,6 +339,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
+    index: 29,
     date: new Date(2022, 11, 7),
     lancamentos: 'Saída', 
     categoria: 'Compra',
@@ -350,6 +352,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
+    index: 30,
     date: new Date(2022, 11, 21),
     lancamentos: 'Saída', 
     categoria: 'Compra',
@@ -362,6 +365,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
+    index: 31,
     date: new Date(2023, 0, 12),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -374,6 +378,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
+    index: 32,
     date: new Date(2023, 0, 11),
     lancamentos: 'Saída', 
     categoria: 'Compra',
@@ -386,6 +391,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
+    index: 33,
     date: new Date(2023, 1, 17),
     lancamentos: 'Entrada', 
     categoria: 'Receita',
@@ -398,6 +404,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
+    index: 34,
     date: new Date(2023, 1, 18),
     lancamentos: 'Saída', 
     categoria: 'Compra',
@@ -410,6 +417,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
+    index: 35,
     date: new Date(2024, 0, 18),
     lancamentos: 'Saída', 
     categoria: 'Compra',
@@ -422,6 +430,7 @@ export const items: Item[] = [
     obs: '-'
   },
   { 
+    index: 36,
     date: new Date(2024, 1, 17),
     lancamentos: 'Entrada', 
     categoria: 'Receita',

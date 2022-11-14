@@ -1,4 +1,5 @@
 export type Item = {
+  index: number;
   date: Date;
   lancamentos: string 
   categoria: string;

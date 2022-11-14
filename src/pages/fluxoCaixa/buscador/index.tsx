@@ -1,7 +1,7 @@
 import styles from './buscador.module.scss';
 import { FaSearch } from 'react-icons/fa';
 import { RiArrowDropDownLine } from 'react-icons/ri';
-import { FiltroData } from 'components/filter';
+import { DataFilter } from 'components/dataFilter';
 import { HiOutlineAdjustments } from 'react-icons/hi';
 import { SearchByTag } from 'components/searchTag';
 
@@ -86,8 +86,8 @@ export const Buscador = ({ busca, setBusca, filter }: Props) => {
         <SearchByTag busca={busca} value={'Entrada'} onClick={() => filterTag('Entrada')}>Entradas</SearchByTag>
         <SearchByTag busca={busca} value={'Saída'} onClick={() => filterTag('Saída')}>Saídas</SearchByTag>
         <SearchByTag busca={busca} value={'NFCe'} onClick={() => filterTag('NFCe')}>NFCe</SearchByTag>
-        <FiltroData filter={setBusca} opcoes={departamentos} icon={<RiArrowDropDownLine size={40} />} />
-        <FiltroData filter={filter} opcoes={dateValues} icon={< HiOutlineAdjustments size={20} color='#898989' />} />
+        <DataFilter filter={setBusca} opcoes={departamentos} icon={<RiArrowDropDownLine size={40} />} />
+        <DataFilter filter={filter} opcoes={dateValues} icon={< HiOutlineAdjustments size={20} color='#898989' />} />
       </div>
     </div>
   );

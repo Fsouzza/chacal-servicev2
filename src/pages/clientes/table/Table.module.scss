@@ -17,18 +17,20 @@
 
 .tableBox {
 	background: transparent;
+	filter: drop-shadow($sombra);
 	margin: 4em 2em;
-  @media (max-width: 425px) {
-    margin: 0;
-  }
+  	@media (max-width: 425px) {
+		filter: none;
+    	margin: 0;
+  	}
 	.tableContent {
 		background-color: $cor-card;
-    border-radius: .5em;
-    filter: drop-shadow($sombra);
+    	border-bottom-left-radius: .5em;
+		border-bottom-right-radius: .5em;
 		padding: 0 0 1.5em 0;
 		@media (max-width: 425px) {
-      border-radius: 0;
-      filter: none;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
 			overflow-x: scroll;
 		}
 	}
@@ -87,13 +89,14 @@
 		.indentify {
 			display: flex;
 			flex-direction: column;
+			gap: 3px;
 			strong {
-				font-size: 1.13em;
+				font-size: 1.132em;
 				font-weight: 400;
 			}
 			span {
 				color: $cor-cinza;
-				font-size: 0.8em;
+				font-size: .75em;
 				font-weight: 400;
 			}
 		}
@@ -102,15 +105,15 @@
 			font-size: 1.1em;
 			justify-content: flex-start;
 		}
-    .colorTrue{
-      @include colors;
-      background-color: $cor-bg-verde; 
-      color: $cor-verde;
-    }
-    .colorFalse{
-      @include colors;
-      background-color: $cor-bg-vermelha;
-      color: $cor-vermelhal;
-    }
+		.colorTrue{
+		@include colors;
+		background-color: $cor-bg-azul; 
+		color: $cor-azull;
+		}
+		.colorFalse{
+		@include colors;
+		background-color: $cor-bg-vermelha;
+		color: $cor-vermelhal;
+		}
 	}
 }

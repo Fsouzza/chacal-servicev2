@@ -5,6 +5,7 @@ import { AiOutlineEye, AiOutlineCheck } from 'react-icons/ai';
 import { FiDownload, FiEdit2, FiAlertCircle } from 'react-icons/fi';
 import { useState, useEffect } from 'react';
 import { Pagination } from 'components/pagination';
+import Filters from '../Filters';
 
 const TableContract = () => {
   const [listContract, setListContract] = useState(contract);
@@ -72,23 +73,26 @@ const TableContract = () => {
   }, []);
 
   return(
-    <section className={styles.tableBox}>
-      <div className={styles.tableContent}>
-        <table className={styles.table}>
-          <thead className={styles.thead}>
-            <tr className={styles.tr}>
-              {thead.map(item => (
-                <th className={styles.th} key={item.label}>{item.label}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody className={styles.tbody}>
-            {tbody}
-          </tbody>
-        </table>
-      </div>
+    <>
+      <section className={styles.tableBox}>
+        <Filters filter={() => []} />
+        <div className={styles.tableContent}>
+          <table className={styles.table}>
+            <thead className={styles.thead}>
+              <tr className={styles.tr}>
+                {thead.map(item => (
+                  <th className={styles.th} key={item.label}>{item.label}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className={styles.tbody}>
+              {tbody}
+            </tbody>
+          </table>
+        </div>
+      </section>
       <Pagination pageCount={pageCount} onPageChange={changePage} />
-    </section>
+    </>
   );
 };
 

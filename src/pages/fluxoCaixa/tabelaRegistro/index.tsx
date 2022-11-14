@@ -55,8 +55,8 @@ const TabelaCaixa = () => {
     }
   ];
 
-  const displayTable = lista.sort((a,b) => a.date < b.date ? 1 : -1).slice(currentPages, currentPages + itemPerPage).map((item, index) => (
-    <tr key={index}>
+  const displayTable = lista.sort((a,b) => a.date < b.date ? 1 : -1).slice(currentPages, currentPages + itemPerPage).map((item) => (
+    <tr key={item.index}>
       <td>{item.id}</td>
       <td>{item.item}</td>
       <td>{formatDate(item.date)}</td>
@@ -73,7 +73,7 @@ const TabelaCaixa = () => {
       <td>{item.departamento}</td>
       <td>{item.local}</td>
       <td className={item.lancamentos === 'Entrada' ? `${styles.valueGreen}` : `${styles.valueRed}`}>
-        R$ {item.valor.toFixed(2)}
+        R${item.valor.toFixed(2)}
       </td>
       <td>{item.obs}</td>
       <td><button aria-label='Deletar item' title='Deletar item' className={styles.trash}><BiTrash /></button></td>
