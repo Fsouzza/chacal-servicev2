@@ -1,8 +1,5 @@
 @import 'styles/variaveis';
 
-@mixin a($cor) {
-  background-color: $cor;
-}
 @mixin td($fs,$fw,$fh,$ti) {
   font-size: $fs;
   font-weight: $fw;
@@ -14,29 +11,30 @@
   background-color: transparent;
   margin: 0 2em;
   @media (max-width: 425px) {
-    margin: 0 .2em;
+    margin: 0;
 	}
   .tableContent{
+    background-color: $cor-card;
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em;
     filter: drop-shadow($sombra);
     flex-basis: 100%;
+    padding: .3em .3em 1.2em .3em;
     @media (max-width: 425px) {
       filter: none;
       overflow-x: auto;
+      padding: .3em .35em .7em .35em;
     }
     .table{
-      background-color: $cor-card;
-      border-bottom-left-radius: .5em;
-      border-bottom-right-radius: .5em;
       border-collapse: separate;
       color: $cor-brancol;
       display: table;
-      min-width: 650px;
+      min-width: 425px;
       width: 100%;
-      padding: .5em;
       @media (max-width: 425px) {
+        border-collapse: collapse;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-        padding: .26em;
       }
       thead{
         background-color: $cor-preta;
@@ -74,17 +72,18 @@
             .lancamento{
               align-items: center;
               display: flex;
-              gap: .3em;
+              gap: .15em;
               height: max-content;
               justify-content: flex-start;
+              @media (max-width: 425px){
+                gap: 1px;
+              }
               div{
                 align-items: center;
                 border-radius: 50%;
                 display: flex;
-                height: 8px;
                 justify-content: center;
                 margin-left: 8px;
-                width: 8px;
               }
             }
             .trash{
@@ -104,69 +103,16 @@
       }
     }
   }
-  .pagination{
-    align-items: center;
-    color: $cor-cinza;
-    display: flex;
-    font-size: 1em;
-    gap: .5em;
-    justify-content: center;
-    margin: 2em 0;
-    @media (max-width: 425px) {
-      font-size: .82em;
-      margin: 1em .2em;
-    }
-    &__bttns{
-      background-color: $cor-hover;
-      border-radius: .6em;
-      cursor: pointer;
-      display: flex;
-      padding: .2em;
-      transition: all .5s;
-      &:hover{
-        background-color: $cor-secundaria;
-      }
-    }
-    &__link{
-      cursor: pointer;
-      padding: .5em;
-      &:hover{
-        background-color: $cor-card;
-        border-radius: .5em;
-      }
-    }
-    &__disabled{
-      a{
-        @include a($cor-principal);
-        &:hover{
-          @include a($cor-principal);
-        }
-      }
-    }
-    &__active{
-      a{
-        @include a($cor-preta);
-        border-radius: .5em;
-        font-weight: 500;
-        padding: .5em;
-      }
-    }
-  }
 }
 
 @mixin colortxt($bc, $fcor) {
   background-color: $bc;
   color: $fcor;
 }
-.txtRed{
-  @include colortxt(#d66464, transparent);
-}
-.txtGreen{
-  @include colortxt(#96c186, transparent);
-}
+
 .valueGreen{
-  @include colortxt(transparent, #96c186);
+  @include colortxt(transparent, $cor-verde);
 }
 .valueRed{
-  @include colortxt(transparent, #d66464);
+  @include colortxt(transparent, $cor-vermelhal);
 }

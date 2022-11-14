@@ -1,52 +1,116 @@
-@import 'styles/variaveis';
+@import "styles/variaveis";
 
-.tableBox{
-	background-color: $cor-card;
-	border-radius: .5em;
+@mixin global {
+	align-items: flex-start;
+	border-bottom: 1px solid $cor-secundaria;
+	text-align: left;
+}
+@mixin colors {
+  align-items: center;
+  border-radius: 50%;
+	display: flex;
+	font-size: 1.1em;
+	justify-content: center;
+	padding: 4px;
+	width: fit-content;
+}
+
+.tableBox {
+	background: transparent;
 	margin: 4em 2em;
-	padding: 0;
-	.table{
+  @media (max-width: 425px) {
+    margin: 0;
+  }
+	.tableContent {
+		background-color: $cor-card;
+    border-radius: .5em;
+    filter: drop-shadow($sombra);
+		padding: 0 0 1.5em 0;
+		@media (max-width: 425px) {
+      border-radius: 0;
+      filter: none;
+			overflow-x: scroll;
+		}
+	}
+	.table {
 		border-collapse: collapse;
 		width: 100%;
+		@media (max-width: 425px) {
+		}
 	}
-	.th{
-		align-items: center;
+	.th {
+		@include global;
 		background-color: $cor-header;
-		font-size: .9em;
+		font-size: 0.86em;
 		font-weight: 400;
-		padding: 1em .6em;
+		padding: 1em .7em;
 		text-transform: uppercase;
 	}
-	.tr{
-		&:hover{
+	.tr {
+		&:nth-of-type(even) {
+			background-color: #27282b;
+		}
+		&:hover {
 			background-color: $cor-hover;
 		}
 	}
-	.th, .td{
-		border-bottom: 0.5px solid $cor-cinza;
-		text-align: left;
-		text-indent: 10px;
-		width: auto;
-	}
-	.td{
+	.td {
+		@include global;
 		color: $cor-brancol;
-		font-size: .9em;
-		padding: .6em;
-		div{
+		font-size: 0.96em;
+		padding: 0.7em 0.6em;
+		.buttons {
 			align-items: center;
 			display: flex;
-			gap: .5em;
-			justify-content: center;
-			button{
+			gap: 0.5em;
+			justify-content: flex-start;
+			button {
 				border-radius: 50%;
 				color: $cor-brancol;
 				cursor: pointer;
+				font-size: 1.2em;
 				padding: 2px 4px;
-				&:hover{
-					background-color: $cor-secundaria;
-					color: $cor-azul;
+				&:hover {
+					color: $cor-azull;
+					transform: scale(1, 1.14);
 				}
 			}
 		}
+		.contract {
+			align-items: center;
+			border-radius: 1em;
+			display: flex;
+			justify-content: center;
+			padding: 0.2em 0.5em;
+			width: 78px;
+		}
+		.indentify {
+			display: flex;
+			flex-direction: column;
+			strong {
+				font-size: 1.13em;
+				font-weight: 400;
+			}
+			span {
+				color: $cor-cinza;
+				font-size: 0.8em;
+				font-weight: 400;
+			}
+		}
+		.icon{
+			display: flex;
+			font-size: 1.1em;
+			justify-content: flex-start;
+		}
+    .colorTrue{
+      @include colors;
+      background-color: $cor-bg-verde; 
+      color: $cor-verde;
+    }
+    .colorFalse{
+      @include colors;
+      background-color: $cor-bg-vermelha;
+      color: $cor-vermelhal;
+    }
 	}
 }

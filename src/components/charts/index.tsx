@@ -39,9 +39,9 @@ const MyChart = () => {
       {
         label: 'Entradas',
         data: incomes,
-        backgroundColor: '#038C3E',
-        borderColor: '#038C3E',
-        pointBackgroundColor: '#038C3E',
+        backgroundColor: '#00b706',
+        borderColor: '#00b706',
+        pointBackgroundColor: '#00b706',
         borderWidth: 2.4,
         pointBorderWidth: 2,
         tension: 0.3
@@ -49,10 +49,10 @@ const MyChart = () => {
       {
         label: 'Saídas',
         data: expanses,
-        backgroundColor: '#F23D3D',
-        borderColor: '#F23D3D',
+        backgroundColor: '#d52727',
+        borderColor: '#d52727',
         borderWidth: 2.4,
-        pointBackgroundColor: '#F23D3D',
+        pointBackgroundColor: '#d52727',
         pointBorderWidth: 2, 
         tension: 0.3,
       }

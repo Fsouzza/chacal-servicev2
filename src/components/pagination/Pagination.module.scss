@@ -1,0 +1,55 @@
+@import 'styles/variaveis';
+
+@mixin a($cor) {
+  background-color: $cor;
+}
+
+.pagination{
+  align-items: center;
+  color: $cor-cinza;
+  display: flex;
+  font-size: 1em;
+  gap: .5em;
+  justify-content: flex-end;
+  margin: 2em 0;
+  @media (max-width: 425px) {
+    font-size: .82em;
+    margin: 1em 0;
+    justify-content: center;
+  }
+  &__bttns{
+    background-color: $cor-hover;
+    border-radius: .6em;
+    cursor: pointer;
+    display: flex;
+    padding: .2em;
+    transition: all .5s;
+    &:hover{
+      background-color: $cor-secundaria;
+    }
+  }
+  &__link{
+    cursor: pointer;
+    padding: .5em;
+    &:hover{
+      background-color: $cor-card;
+      border-radius: .5em;
+    }
+  }
+  &__disabled{
+    a{
+      @include a($cor-principal);
+      &:hover{
+        @include a($cor-principal);
+      }
+    }
+  }
+  &__active{
+    a{
+      @include a($cor-preta);
+      border-radius: .5em;
+      font-weight: 500;
+      padding: .5em;
+    }
+  }
+}

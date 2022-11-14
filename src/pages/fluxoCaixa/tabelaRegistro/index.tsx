@@ -1,12 +1,12 @@
 import { formatDate } from 'helpers/dateFormat';
 import styles from './tabelaRegistro.module.scss';
 import { useEffect, useState } from 'react';
-import ReactPaginate from 'react-paginate';
 import { BiTrash } from 'react-icons/bi';
-import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { filterTableByDateTags } from 'helpers/chartFilter';
 import { Buscador } from '../buscador';
 import { items } from 'data/itens';
+import { Pagination } from 'components/pagination';
 
 const TabelaCaixa = () => {
   const [busca, setBusca] = useState('');
@@ -14,6 +14,11 @@ const TabelaCaixa = () => {
   const [pageNumber, setPageNumber] = useState(0);
   const itemPerPage = 12;
   const currentPages = pageNumber * itemPerPage;
+  const pageCount = Math.ceil(items.length / itemPerPage);
+  const changePage = (event: { selected: number; }) => {
+    setPageNumber(event.selected);
+  };
+
   const columns = [
     {
       label: 'Nº ID'
@@ -49,6 +54,7 @@ const TabelaCaixa = () => {
       label: 'Ação'
     }
   ];
+
   const displayTable = lista.sort((a,b) => a.date < b.date ? 1 : -1).slice(currentPages, currentPages + itemPerPage).map((item, index) => (
     <tr key={index}>
       <td>{item.id}</td>
@@ -56,7 +62,9 @@ const TabelaCaixa = () => {
       <td>{formatDate(item.date)}</td>
       <td className={item.lancamentos === 'Entrada' ? `${styles.valueGreen}` : `${styles.valueRed}`}>
         <div className={styles.lancamento}>
-          <div className={item.lancamentos === 'Entrada' ? `${styles.txtGreen}` : `${styles.txtRed}`}></div>
+          <div>
+            {item.lancamentos === 'Entrada' ? <IoIosArrowUp size={12}/> : < IoIosArrowDown size={12}/> }
+          </div>
           {item.lancamentos}
         </div>
       </td>
@@ -71,10 +79,6 @@ const TabelaCaixa = () => {
       <td><button aria-label='Deletar item' title='Deletar item' className={styles.trash}><BiTrash /></button></td>
     </tr>
   ));
-  const pageCount = Math.ceil(items.length / itemPerPage);
-  const changePage = (event: { selected: number; }) => {
-    setPageNumber(event.selected);
-  };
 
   function filterByDate(date: number) {
     filterTableByDateTags;
@@ -88,25 +92,19 @@ const TabelaCaixa = () => {
 
   useEffect(()=> {
     const listaBusca = items.filter(item => 
-      verificaBusca(item.item)
-      || verificaBusca(item.tipo) 
-      || verificaBusca(item.departamento) 
-      || verificaBusca(item.local)
-      || verificaBusca(item.lancamentos)
+      verificaBusca(item.item) || verificaBusca(item.tipo) || verificaBusca(item.departamento) || verificaBusca(item.local) || verificaBusca(item.lancamentos)
     );
     setLista(listaBusca);
   }, [busca]);
 
   return(
     <section className={styles.secao}>
+      <Buscador busca={busca} setBusca={setBusca} filter={filterByDate}  />
       <div className={styles.tableContent} >
-        <Buscador busca={busca} setBusca={setBusca} filter={filterByDate}  />
         <table className={styles.table}>
           <thead>
-            <tr>
-              {columns.map((coluna, index) => (
-                <td key={index}>{coluna.label}</td>
-              ))}
+            <tr> {columns.map((coluna, index) => (
+              <td key={index}>{coluna.label}</td>))}
             </tr>
           </thead>
           <tbody>
@@ -114,18 +112,7 @@ const TabelaCaixa = () => {
           </tbody>
         </table>
       </div>
-      <ReactPaginate
-        previousLabel={<MdOutlineKeyboardArrowLeft size={26} />}
-        nextLabel={<MdOutlineKeyboardArrowRight size={26} />}
-        pageCount={pageCount}
-        onPageChange={changePage}
-        containerClassName={`${styles.pagination}`}
-        previousLinkClassName={`${styles.pagination__bttns}`}
-        nextLinkClassName={`${styles.pagination__bttns}`}
-        disabledClassName={`${styles.pagination__disabled}`}
-        activeClassName={`${styles.pagination__active}`}
-        pageLinkClassName={`${styles.pagination__link}`}     
-      />
+      <Pagination pageCount={pageCount} onPageChange={changePage} />
     </section>
   );
 };

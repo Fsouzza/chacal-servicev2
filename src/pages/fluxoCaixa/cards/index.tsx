@@ -35,7 +35,7 @@ const Cards = () => {
     <section className={styles.cards}>
       <Card 
         titulo='Total de entrada' 
-        icon={<BsCreditCard size={32} color={'#038C3E'} />} 
+        icon={<BsCreditCard size={32} color={'#00b706'} />} 
         indicador={<BsFillArrowUpCircleFill size={20} color={'#add193'} />}
       >
         <CountUp

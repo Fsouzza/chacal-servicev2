@@ -5,8 +5,8 @@ import TableContract from './table/index';
 const Clientes = () => {
   return(
     <>
-      <Filters />
       <Search />
+      <Filters />
       <TableContract />
     </>
   );

@@ -54,6 +54,6 @@
     @include buttons(transparent, $cor-azul, $cor-azull, $cor-brancol,  rgba(33, 33, 204, 0.2));
   }
   .clear{
-    @include buttons(transparent, $cor-vermelha, #e1514c, $cor-brancol, rgba(255, 53, 60, 0.2));
+    @include buttons(transparent, $cor-vermelha, #e1514c, $cor-brancol, $cor-bg-vermelha);
   }
 }

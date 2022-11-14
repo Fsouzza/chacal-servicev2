@@ -38,3 +38,16 @@ button {
 	background-color: transparent;
 	border: none;
 }
+
+#pendente{
+	background-color: $cor-bg-amarela;
+	color: $cor-amarela;
+}
+#inativo{
+	background-color: $cor-bg-cinza;
+	color: $cor-branco;
+}
+#ativo{
+	background-color: $cor-bg-verde;
+	color:$cor-verde;
+}
