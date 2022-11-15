@@ -38,6 +38,12 @@
 		&:first-child{
 			padding-left: .9em;
 		}
+		@media (max-width: 375px){
+			padding: .5em .7em .5em .7em;
+		}
+		@media (min-width: 376px) and (max-width: 425px) {
+			padding: .5em 2.6em .5em .5em;
+		}
 	}
 	.tr {
 		&:nth-of-type(even) {
@@ -54,6 +60,9 @@
 		padding: 0.7em 0.6em;
 		@media (max-width: 425px){
 			height: 80px;
+		}
+		@media (min-width: 376px) and (max-width: 425px) {
+			padding: .5em 1.1em .5em .5em;
 		}
 		.buttons {
 			align-items: center;

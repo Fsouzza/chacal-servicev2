@@ -3,7 +3,6 @@ import styles from './Filters.module.scss';
 import styles2 from '../../fluxoCaixa/buscador/buscador.module.scss';
 import { BsCash } from 'react-icons/bs';
 import { HiOutlineAdjustments } from 'react-icons/hi';
-import { BsSortAlphaDown } from 'react-icons/bs';
 import { SearchByTag } from 'components/searchTag';
 import { SearchComponent } from 'components/search';
 
@@ -14,21 +13,16 @@ interface PropsFilterSearch {
 
 const Filters = ({ busca, setBusca }: PropsFilterSearch ) => {
   const optionContracts = [
-    {label: 'Situação cadastral', value: ''},
+    {label: 'Contrato', value: ''},
     {label: 'Ativo', value: 'Ativo'},
     {label: 'Inativo', value: 'Inativo'},
     {label: 'Pendente', value: 'Pendente'},
   ];
   const optionInvoice = [
-    {label: 'Tipos de cobranças', value: ''},
+    {label: 'Cobranças', value: ''},
     {label: 'Semanal', value: 'Semanal'},
     {label: 'Quinzenal', value: 'Quinzenal'},
     {label: 'Mensal', value: 'Mensal'},
-  ];
-  const optionSort = [
-    {label: 'Ordenar por', value: ''},
-    {label: 'A-Z', value: 'A'},
-    {label: 'Z-A', value: 'Z'},
   ];
   
   function filterTag(value: string) {
@@ -50,7 +44,6 @@ const Filters = ({ busca, setBusca }: PropsFilterSearch ) => {
           <SearchByTag busca={busca} value={'frota'} onClick={() => filterTag('frota')}>FROTA</SearchByTag>
           <DataFilter opcoes={ optionInvoice} filter={setBusca} icon={<BsCash size={24} />} />
           <DataFilter opcoes={optionContracts} filter={setBusca} icon={<HiOutlineAdjustments size={22} />} />
-          <DataFilter opcoes={optionSort} filter={() => []} icon={<BsSortAlphaDown size={22} />} />
         </div>
       </div>
     </section>
