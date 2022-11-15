@@ -1,6 +1,6 @@
 import { ModalWindow } from 'components/modalWindow';
 import { Input } from 'components/forms/Input';
-import { Select } from 'components/forms/Select';
+import { SelectComponent, SelectOption } from 'components/forms/Select';
 import { useState } from 'react';
 import styles from './modalCashFlow.module.scss';
 import { AiOutlineSend } from 'react-icons/ai';
@@ -12,32 +12,60 @@ interface PropsModalCash {
 }
 
 export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
+  const lancamentos = [
+    {label: '', value: ''},
+    {label: 'Entrada', value: 'Entrada'},
+    {label: 'Saída', value: 'Saída'}
+  ];
+  const documentos = [
+    {label: '', value: ''}, 
+    {label: 'Comprovante', value: 'Comprovante'}, 
+    {label: 'NFCe', value: 'NFCe'}, 
+    {label: 'NF', value: 'NF'}, 
+    {label: 'Recibo', value: 'Recibo'}, 
+    {label: 'S/ Recibo', value: 'S/ Recibo'}
+  ];
+  const categorias = [
+    {label: '', value: '' }, 
+    {label: 'Compra', value: 'Compra' }, 
+    {label: 'Despesa', value: 'Despesa' }, 
+    {label: 'Pagamentos', value: 'Pagamentos' }, 
+    {label: 'Receita', value: 'Receita' }, 
+    {label: 'Refeição', value: 'Refeição' }, 
+    {label: 'Retirada', value: 'Retirada' }, 
+    {label: 'Serviços', value: 'Serviços' }, 
+    {label: 'Vale Transporte', value: 'Vale Transporte' }, 
+    {label: 'Veiculo', value: 'Veiculo' }, 
+    {label: 'VR+VT', value: 'VR+VT' }
+  ];
+  const departamentos = [
+    {label: '', value: ''}, 
+    {label: 'Administrativo', value: 'Administrativo'}, 
+    {label: 'Financeiro', value: 'Financeiro'},
+    {label: 'Officeboy', value: 'Officeboy'},
+    {label: 'Operacional', value: 'Operacional'},
+    {label: 'RH', value: 'RH'}, 
+    {label: 'Tercerizados', value: 'Tercerizados'},
+  ];
+
+  const [docField, setDocField] = useState<SelectOption | undefined>(documentos[0]);
+  const [lancamentoField, setLancamentoField] = useState<SelectOption | undefined>(lancamentos[0]);
+  const [categoriaField, setCategoriaField] = useState<SelectOption | undefined>(categorias[0]);
+  const [deptoField, setDeptoField] = useState<SelectOption | undefined>(departamentos[0]);
   const [dataField, setDataField] = useState('');
-  const [lancamentoField, setLancamentoField] = useState('');
-  const [categoriaField, setCategoriaField] = useState('');
-  const [deptoField, setDeptoField] = useState('');
-  const [docField, setDocField] = useState('');
   const [idField, setIdField] = useState('');
   const [localField, setLocalField] = useState('');
   const [itemField, setItemField] = useState('');
   const [obsField, setObsField] = useState('');
   const [valorField, setValorField] = useState('');
-  const lancamentos = ['', 'Entrada', 'Saída'];
-  const documentos = ['', 'Comprovante', 'NFCe', 'NF', 'Recibo', 'S/ Recibo'];
-  const categorias = ['', 'Compra', 'Despesa', 'Pagamentos', 'Receita', 'Refeição', 'Retirada', 'Serviços', 'Vale Transporte', 'Veiculo', 'VR+VT'];
-  const departamentos = ['', 'Administrativo', 'Financeiro', 'Officeboy', 'Operacional', 'Recursos Humanos', 'Tercerizados'];
 
   const IsSubmit = () => {
     console.log('Você clicou!');
     close();
   };
-
+  
   const clearFields = () => {
     setDataField('');
-    setLancamentoField('');
-    setCategoriaField('');
-    setDeptoField('');
-    setDocField('');
     setIdField('');
     setLocalField('');
     setItemField('');
@@ -78,33 +106,29 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
           setInput={value => setValorField(value)}
           required={true}
         />
-        <Select
-          placeholder='Tipo de lançamento'
-          itens={lancamentos} 
+        <SelectComponent 
+          placeholder='Tipo de lançamento' 
+          options={lancamentos} 
           value={lancamentoField} 
-          setSelected={value => setLancamentoField(value)}
-          required={true}
+          onChange={o => setLancamentoField(o)} 
         />
-        <Select
-          placeholder='Tipo de documento'
-          itens={documentos} 
+        <SelectComponent 
+          placeholder='Tipo de documento' 
+          options={documentos} 
           value={docField} 
-          setSelected={value => setDocField(value)}
-          required={true}
+          onChange={o => setDocField(o)} 
         />
-        <Select
-          placeholder='Tipo de categoria'
-          itens={categorias} 
+        <SelectComponent 
+          placeholder='Tipo de categoria' 
+          options={categorias} 
           value={categoriaField} 
-          setSelected={value => setCategoriaField(value)}
-          required={true}
+          onChange={o => setCategoriaField(o)} 
         />
-        <Select 
-          placeholder='Departamento'
-          itens={departamentos} 
+        <SelectComponent 
+          placeholder='Departamentos' 
+          options={departamentos} 
           value={deptoField} 
-          setSelected={value => setDeptoField(value)}
-          required={true}
+          onChange={o => setDeptoField(o)} 
         />
         <Input 
           placeholder='Local destinado' 

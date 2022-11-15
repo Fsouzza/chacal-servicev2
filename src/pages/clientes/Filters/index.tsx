@@ -36,7 +36,7 @@ const Filters = ({ busca, setBusca }: PropsFilterSearch ) => {
         <h2>Filtros</h2>
       </div>
       <div className={styles.filter__box}>
-        <div className={styles.searchBorder}>
+        <div className={styles.searchBorder} tabIndex={0}>
           <SearchComponent placeholder='Pesquise por cliente' busca={busca} setBusca={setBusca} />
         </div>
         <div className={styles2.filtersTags}>

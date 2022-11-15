@@ -36,5 +36,8 @@
 		background-color: transparent;
 		border: 2px solid $cor-secundaria;
 		border-radius: .5em;
+		&:focus{
+			border-color: $cor-azul;
+		}
 	}
 }

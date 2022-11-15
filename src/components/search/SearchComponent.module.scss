@@ -8,9 +8,6 @@
   justify-content: center;
   padding: .6em 1em;
   width: 400px;
-  &:focus{
-    border-color: $cor-azul;
-  }
   @media (max-width: 425px){
 		width: 100%;
 	}
