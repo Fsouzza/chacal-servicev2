@@ -1,11 +1,11 @@
 @import 'styles/variaveis';
 
 .filter{
-	background-color: #27282b;
+	background-color: $cor-terciaria;
 	border-top-left-radius: .5em;
 	border-top-right-radius: .5em;
 	margin: 0;
-	padding: 1.3em 1.2em 1em 1.2em;
+	padding: 1.3em 1.2em;
 	@media (max-width: 425px){
 		margin: 3em 0 0 0;
 		padding: 1em;

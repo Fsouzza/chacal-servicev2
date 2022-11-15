@@ -1,8 +1,54 @@
 @import 'styles/variaveis';
 
-.search{
+.addBox{
 	background-color: $cor-card;
 	border-radius: .5em;
-	margin: 8em 2em 4em 2em;
+	filter: drop-shadow($sombra);
+	margin: 8em 2em 3em 2em;
 	padding: 2em;
+	.buttons{
+		align-items: center;
+		display: flex;
+		gap: 2em;
+		justify-content: flex-end;
+		&__export{
+			align-items: center;
+			border: 2px solid $cor-cinzaS;
+			border-radius: .5em;
+			color: $cor-brancol;
+			cursor: pointer;
+			display: flex;
+			font-size: 1em;
+			height: 42px;
+			justify-content: center;
+			gap: 8px;
+			padding: .5em 1em;
+			width: 170px;
+			&:hover{
+				background-color: $cor-bg-cinza;
+				border-color: $cor-card-l;
+				color: $cor-secundaria-l;
+			}
+		}
+		&__add{
+			align-items: center;
+			background-color: $cor-azul;
+			border: 3px solid $cor-azul;
+			border-radius: .5em;
+			color: $cor-branco;
+			cursor: pointer;
+			display: flex;
+			font-size: 1em;
+			height: 42px;
+			justify-content: center;
+			gap: 8px;
+			padding: .5em 1em;
+			width: 170px;
+			&:hover{
+				background-color: $cor-bg-azul;
+				border-color: #471da7;
+				color: $cor-branco;
+			}
+		}
+	}
 }

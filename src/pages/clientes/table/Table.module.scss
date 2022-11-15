@@ -6,7 +6,7 @@
 .tableBox {
 	background: transparent;
 	filter: drop-shadow($sombra);
-	margin: 4em 2em 2em 2em;
+	margin: 2em;
   	@media (max-width: 425px) {
 		filter: none;
     	margin: 0;
@@ -15,7 +15,7 @@
 		background-color: $cor-card;
     	border-bottom-left-radius: .5em;
 		border-bottom-right-radius: .5em;
-		padding: 0 0 1.5em 0;
+		padding: 0 0 1.6em 0;
 		@media (max-width: 425px) {
 			border-bottom-left-radius: 0;
 			border-bottom-right-radius: 0;
@@ -31,9 +31,9 @@
 	.th {
 		@include global;
 		background-color: $cor-header;
-		font-size: 0.86em;
-		font-weight: 400;
-		padding: 1.4em .7em 1em .7em;
+		font-size: 0.9em;
+		font-weight: 500;
+		padding: 1.5em .7em 1.2em .7em;
 		text-transform: uppercase;
 		&:first-child{
 			padding-left: .9em;
