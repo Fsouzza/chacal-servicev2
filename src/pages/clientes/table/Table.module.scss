@@ -1,24 +1,12 @@
 @import "styles/variaveis";
 
-@mixin global {
-	align-items: flex-start;
-	border-bottom: 1px solid $cor-secundaria;
-	text-align: left;
-}
-@mixin colors {
-  align-items: center;
-  border-radius: 50%;
-	display: flex;
-	font-size: 1.1em;
-	justify-content: center;
-	padding: 4px;
-	width: fit-content;
-}
+@mixin global { align-items: flex-start; border-bottom: 1px solid $cor-secundaria; text-align: left; }
+@mixin colors { align-items: center; border-radius: 50%; display: flex; font-size: 1.1em; justify-content: center; padding: 4px; width: fit-content; }
 
 .tableBox {
 	background: transparent;
 	filter: drop-shadow($sombra);
-	margin: 4em 2em;
+	margin: 4em 2em 2em 2em;
   	@media (max-width: 425px) {
 		filter: none;
     	margin: 0;
@@ -45,8 +33,11 @@
 		background-color: $cor-header;
 		font-size: 0.86em;
 		font-weight: 400;
-		padding: 1em .7em;
+		padding: 1.4em .7em 1em .7em;
 		text-transform: uppercase;
+		&:first-child{
+			padding-left: .9em;
+		}
 	}
 	.tr {
 		&:nth-of-type(even) {
@@ -61,6 +52,9 @@
 		color: $cor-brancol;
 		font-size: 0.96em;
 		padding: 0.7em 0.6em;
+		@media (max-width: 425px){
+			height: 80px;
+		}
 		.buttons {
 			align-items: center;
 			display: flex;
@@ -106,14 +100,14 @@
 			justify-content: flex-start;
 		}
 		.colorTrue{
-		@include colors;
-		background-color: $cor-bg-azul; 
-		color: $cor-azull;
+      @include colors;
+      background-color: $cor-bg-azul; 
+      color: $cor-azull;
 		}
 		.colorFalse{
-		@include colors;
-		background-color: $cor-bg-vermelha;
-		color: $cor-vermelhal;
+      @include colors;
+      background-color: $cor-bg-vermelha;
+      color: $cor-vermelhal;
 		}
 	}
 }

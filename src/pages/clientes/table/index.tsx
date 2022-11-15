@@ -16,10 +16,9 @@ const TableContract = () => {
   const changePage = (event: { selected: number; }) => {
     setPageNumber(event.selected);
   };
-
   const thead = [
     {label: 'ID'}, 
-    {label: 'Empresa'}, 
+    {label: 'Cliente'}, 
     {label: 'CNPJ'},
     {label: 'Reajuste'},
     {label: 'Serviço'}, 
@@ -29,7 +28,6 @@ const TableContract = () => {
     {label: 'Situação'},
     {label: 'Ações'}, 
   ];
-
   const tbody = listContract.slice(currentPages, currentPages + itemPerPage).map((item) => (
     <tr className={styles.tr} key={item.id}>
       <td className={styles.td}>{item.id}</td>

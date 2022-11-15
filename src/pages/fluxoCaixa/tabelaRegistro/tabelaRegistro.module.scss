@@ -1,15 +1,11 @@
 @import 'styles/variaveis';
 
-@mixin td($fs,$fw,$fh,$ti) {
-  font-size: $fs;
-  font-weight: $fw;
-  line-height: $fh;
-  text-indent: $ti;
-}
+@mixin td($fs,$fw) { font-size: $fs; font-weight: $fw; }
+@mixin colortxt($bc, $fcor) { background-color: $bc; color: $fcor; }
 
 .secao{
   background-color: transparent;
-  margin: 0 2em;
+  margin: 0 2em 2em 2em;
   @media (max-width: 425px) {
     margin: 0;
 	}
@@ -18,9 +14,10 @@
     border-bottom-left-radius: .5em;
     border-bottom-right-radius: .5em;
     filter: drop-shadow($sombra);
-    flex-basis: 100%;
     padding: .3em .3em 1.2em .3em;
     @media (max-width: 425px) {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
       filter: none;
       overflow-x: auto;
       padding: .3em .35em .7em .35em;
@@ -28,91 +25,63 @@
     .table{
       border-collapse: separate;
       color: $cor-brancol;
-      display: table;
-      min-width: 425px;
       width: 100%;
       @media (max-width: 425px) {
         border-collapse: collapse;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
       }
-      thead{
+      .th{
         background-color: $cor-preta;
-        display: table-header-group;
-        @include td(1em, 400, 2.1, 8px);
-        tr{
-          display: table-row;
-          vertical-align: middle;
-          td{
-            &:last-child{
-              align-items: center;
-              text-align: center;
-            }
-          }
+        @include td(.9em, 500);
+        padding: .8em .5em;
+        text-align: left;
+        text-transform: uppercase;
+        &:last-child{
+          align-items: center;
+          text-align: center;
         }
       }
-      tbody{
-        display: table-row-group;
-        tr{
+      .tr{
+        &:nth-of-type(even){
+          background-color: #27282b;
+        }
+        &:hover{
+          background-color: $cor-hover;
+        }
+      }
+      .td{
+        @include td(.88em, 400);
+        padding: .5em .6em;
+        @media (max-width: 425px){
+          height: 70px;
+        }
+        .lancamento{
+          align-items: flex-start;
+          display: flex;
+          gap: .4em;
+          height: max-content;
+          @media (max-width: 425px){
+            gap: 2px;
+          }
+        }
+        .trash{
+          align-items: center;
+          color: $cor-cinza;
+          display: flex;
           cursor: pointer;
-          &:nth-of-type(even){
-            background-color: #27282b;
-          }
+          font-size: 1.2em;
+          justify-content: center;
+          width: 100%;
           &:hover{
-            background-color: $cor-hover;
+            color: $cor-vermelhal;
           }
-          td{
-            align-items: center;
-            @include td(.94em, 400, 1.8, 8px);
-            &:nth-child(2){
-              @media (max-width: 425px){
-                width: 120px;
-              }
-            }
-            .lancamento{
-              align-items: center;
-              display: flex;
-              gap: .15em;
-              height: max-content;
-              justify-content: flex-start;
-              @media (max-width: 425px){
-                gap: 1px;
-              }
-              div{
-                align-items: center;
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                margin-left: 8px;
-              }
-            }
-            .trash{
-              align-items: center;
-              color: $cor-cinza;
-              display: flex;
-              cursor: pointer;
-              font-size: 1.2em;
-              justify-content: center;
-              width: 100%;
-              &:hover{
-                color: $cor-vermelhal;
-              }
-            }
-          }
-        } 
+        }
+        .valueGreen{
+          @include colortxt(transparent, $cor-verde);
+        }
+        .valueRed{
+          @include colortxt(transparent, $cor-vermelhal);
+        }
       }
     }
   }
-}
-
-@mixin colortxt($bc, $fcor) {
-  background-color: $bc;
-  color: $fcor;
-}
-
-.valueGreen{
-  @include colortxt(transparent, $cor-verde);
-}
-.valueRed{
-  @include colortxt(transparent, $cor-vermelhal);
 }

@@ -29,7 +29,8 @@ const Filters = ({ filter }: PropsFilterSearch ) => {
         <h2>Filtros</h2>
       </div>
       <div className={styles.filtersTags}>
-        <SearchByTag busca={''} value={'MDO'} onClick={() => filter('MDO')}>NFCe</SearchByTag>
+        <SearchByTag busca={''} value={'MDO'} onClick={() => filter('MDO')}>MDO</SearchByTag>
+        <SearchByTag busca={''} value={'frota'} onClick={() => filter('frota')}>FROTA</SearchByTag>
         <DataFilter opcoes={ optionInvoice} filter={filter} icon={<BsCash size={24} />} />
         <DataFilter opcoes={optionContracts} filter={filter} icon={<HiOutlineAdjustments size={22} />} />
       </div>
