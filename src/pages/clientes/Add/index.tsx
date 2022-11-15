@@ -1,6 +1,6 @@
-import styles from './Search.module.scss';
+import styles from './AddContract.module.scss';
 
-const Search = () => {
+const AddContract = () => {
   return(
     <section className={styles.search}>
       <div>
@@ -17,4 +17,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default AddContract;

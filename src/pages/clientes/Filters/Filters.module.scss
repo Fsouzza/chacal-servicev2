@@ -5,21 +5,36 @@
 	border-top-left-radius: .5em;
 	border-top-right-radius: .5em;
 	margin: 0;
-	padding: 1em .5em;
+	padding: 1.3em 1.2em 1em 1.2em;
 	@media (max-width: 425px){
-		margin: 3em 0;
+		margin: 3em 0 0 0;
+		padding: 1em;
 	}
-}
-
-.filtersTags{
-	align-items: center;
-    display: flex;
-	gap: 1.4em;
-    justify-content: flex-end;
-    @media (max-width: 425px) {
-      flex-wrap: wrap;
-      justify-content: center;
-      padding-right: 0;
-      gap: .4em;
-    }
+	&__titulo{
+		align-items: center;
+		display: flex;
+		margin-bottom: 1.2em;
+		@media (max-width: 425px){
+			justify-content: center;
+		}
+		h2{
+			color: $cor-brancol;
+			font-weight: 400;
+		}
+	}
+	&__box{
+		background-color: transparent;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		@media (max-width: 425px){
+			flex-direction: column;
+			gap: 1em;
+		}
+	}
+	.searchBorder{
+		background-color: transparent;
+		border: 2px solid $cor-secundaria;
+		border-radius: .5em;
+	}
 }

@@ -1,9 +1,9 @@
 import styles from './buscador.module.scss';
-import { FaSearch } from 'react-icons/fa';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import { DataFilter } from 'components/dataFilter';
 import { HiOutlineAdjustments } from 'react-icons/hi';
 import { SearchByTag } from 'components/searchTag';
+import { SearchComponent } from 'components/search';
 
 interface Props {
 	busca: string;
@@ -73,16 +73,8 @@ export const Buscador = ({ busca, setBusca, filter }: Props) => {
   
   return ( 
     <div className={styles.busca}>
-      <div className={styles.busca__pesquisar}>
-        <FaSearch size={22} />
-        <input
-          value={busca}
-          onChange={(evento) => setBusca(evento.target.value)}
-          placeholder='Pesquisar por item ou local'
-          type={'search'}
-        />
-      </div>
-      <div className={styles.busca__tags}>
+      <SearchComponent placeholder='Pesquisar por item ou local' busca={busca} setBusca={setBusca} />
+      <div className={styles.filtersTags}>
         <SearchByTag busca={busca} value={'Entrada'} onClick={() => filterTag('Entrada')}>Entradas</SearchByTag>
         <SearchByTag busca={busca} value={'Saída'} onClick={() => filterTag('Saída')}>Saídas</SearchByTag>
         <SearchByTag busca={busca} value={'NFCe'} onClick={() => filterTag('NFCe')}>NFCe</SearchByTag>

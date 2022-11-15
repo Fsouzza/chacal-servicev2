@@ -1,10 +1,10 @@
-import Search from './Search';
-import TableContract from './table/index';
+import TableContract from './Table/index';
+import AddContract from './Add/index';
 
 const Clientes = () => {
   return(
     <>
-      <Search />
+      <AddContract />
       <TableContract />
     </>
   );

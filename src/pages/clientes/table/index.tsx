@@ -9,6 +9,7 @@ import Filters from '../Filters';
 
 const TableContract = () => {
   const [listContract, setListContract] = useState(contract);
+  const [busca, setBusca] = useState('');
   const [pageNumber, setPageNumber] = useState(0);
   const itemPerPage = 10;
   const currentPages = pageNumber * itemPerPage;
@@ -67,13 +68,20 @@ const TableContract = () => {
   ));
 
   useEffect(() => {
-    setListContract(contract);
-  }, []);
+    const newList = contract.filter(item => 
+      verificaBusca(item.empresa) || verificaBusca(item.servico) || verificaBusca(item.faturamento) || verificaBusca(item.situacao));
+    setListContract(newList);
+  }, [busca]);
+
+  function verificaBusca(title: string){
+    const regex = new RegExp(`^${busca}`, 'i');
+    return regex.test(title);
+  }
 
   return(
     <>
       <section className={styles.tableBox}>
-        <Filters filter={() => []} />
+        <Filters busca={busca} setBusca={setBusca} />
         <div className={styles.tableContent}>
           <table className={styles.table}>
             <thead className={styles.thead}>

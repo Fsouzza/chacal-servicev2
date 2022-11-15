@@ -1,0 +1,43 @@
+@import 'styles/variaveis';
+
+.search{
+  align-items: center;
+  color: $cor-cinza;
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  padding: .6em 1em;
+  width: 400px;
+  &:focus{
+    border-color: $cor-azul;
+  }
+  @media (max-width: 425px){
+		width: 100%;
+	}
+  .input{
+    position: relative;
+    width: 100%;
+  }
+  .inputContent{
+    background-color: transparent;
+    border: none;
+    color: $cor-branco;
+    font-size: 1.1em;
+    height: 100%;
+    outline: none;
+    width: 100%;
+    &::placeholder {
+      color: $cor-brancol;
+      opacity: 0.6;
+    }
+  }
+  .clear{
+    background-color: #27282b;
+    color: $cor-vermelhal;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    right: 0;
+    top: 0;
+  }
+}

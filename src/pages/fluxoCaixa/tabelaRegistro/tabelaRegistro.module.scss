@@ -5,20 +5,20 @@
 
 .secao{
   background-color: transparent;
+  filter: drop-shadow($sombra);
   margin: 0 2em 2em 2em;
   @media (max-width: 425px) {
+    filter: none;
     margin: 0;
 	}
   .tableContent{
     background-color: $cor-card;
     border-bottom-left-radius: .5em;
     border-bottom-right-radius: .5em;
-    filter: drop-shadow($sombra);
     padding: .3em .3em 1.2em .3em;
     @media (max-width: 425px) {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      filter: none;
       overflow-x: auto;
       padding: .3em .35em .7em .35em;
     }
