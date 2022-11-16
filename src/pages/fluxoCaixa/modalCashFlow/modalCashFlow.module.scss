@@ -1,18 +1,5 @@
 @import 'styles/variaveis.scss';
 
-.components{
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1em;
-  @media (max-width: 425px) {
-    gap: .5em;
-    justify-content: flex-start;
-  }
-}
-
 @mixin buttons($bgColor, $bdColor, $color, $hColor, $bgHoverColor) {
   align-items: center;
   background-color: $bgColor;
@@ -33,10 +20,22 @@
     background-color: $bgHoverColor;
     color:  $hColor;
   }
-  @media (max-width: 425px) {
+  @media (max-width: 375px) {
     border-radius: .2em;
     font-size: .94em;
-    max-width: 170px;
+    max-width: 12em;
+  }
+}
+
+.components{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  @media (max-width: 425px) {
+    gap: .6em;
   }
 }
 
@@ -47,13 +46,13 @@
   margin-top: 1.4em;
   width: 100%;
   @media (max-width: 425px) {
-    gap: .5em;
+    gap: .6em;
     margin-top: 0;
   }
   .submit{
     @include buttons(transparent, $cor-azul, $cor-azull, $cor-brancol, $cor-bg-azul);
   }
   .clear{
-    @include buttons(transparent, $cor-vermelha, #e1514c, $cor-brancol, $cor-bg-vermelha);
+    @include buttons(transparent, $cor-vermelha, $cor-vermelhal, $cor-brancol, $cor-bg-vermelha);
   }
 }

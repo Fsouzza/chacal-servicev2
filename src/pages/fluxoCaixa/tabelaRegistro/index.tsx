@@ -20,7 +20,7 @@ const TabelaCaixa = () => {
   };
   const columns = [
     {label: 'Nº ID'},
-    {label: 'Descrição do item'},
+    {label: 'Item'},
     {label: 'Data'},
     {label: 'Lançamento'},
     {label: 'Documento'},

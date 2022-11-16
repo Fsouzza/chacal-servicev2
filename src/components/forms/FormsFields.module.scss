@@ -1,21 +1,68 @@
 @import 'styles/variaveis.scss';
 
-.areaField{
+@mixin field {
   background-color: $cor-pretal;
-  border-top-right-radius: .4em;
-  border-top-left-radius: .4em;
+  border-top-right-radius: .3em;
+  border-top-left-radius: .3em;
   border-bottom: 2px solid $cor-secundaria;
   margin-bottom: 2em;
   padding: .5em 0;
   position: relative;
   width: 360px;
   min-width: 150px;
+  &:focus{
+    outline: none;
+  }
   @media (max-width: 375px) {
-    max-width: 170px;
+    max-width: 10.5em;
   }
   @media (min-width: 376px) and (max-width: 425px) {
-    max-width: 195px;
+    max-width: 12em;
   }
+}
+@mixin placeholder {
+  background: none;
+  color: $cor-cinza;
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  @media (max-width: 425px) {
+    font-size: .9em;
+  }
+  &::after{
+    color: $cor-cinza;
+    content: attr(data-placeholder);
+    display: block;
+    font-size: .88em;
+    left: 0px;
+    position: absolute;
+    padding-left: .4em;
+    top: 16px;
+    transition: all .4s;
+    width: 100%;
+    @media (max-width: 425px) {
+      top: 14px
+    }
+  }
+  &::before{
+    content: '';
+    background: $cor-azull;
+    bottom: -2px;
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transition: all .4s;
+    width: 0;
+  }
+}
+
+.areaField{
+  @include field;
   .input{
     background-color: transparent;
     border: none;
@@ -32,54 +79,8 @@
       outline: none;
     }
   }
-  .option{
-    background-color: $cor-pretal;
-    border: none;
-    color: $cor-dropdown-l;
-    font-size: 1.1em;
-    @media (max-width: 425px) {
-      font-size: 1em;
-    }
-  }
   .focus{
-    background: none;
-    color: $cor-cinza;
-    display: block;
-    height: 100%;
-    left: 0;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    @media (max-width: 425px) {
-      font-size: .9em;
-    }
-    &::before{
-      content: '';
-      background: $cor-azull;
-      bottom: -2px;
-      display: block;
-      height: 2px;
-      left: 0;
-      position: absolute;
-      transition: all .4s;
-      width: 0;
-    }
-    &::after{
-      color: $cor-cinza;
-      content: attr(data-placeholder);
-      display: block;
-      font-size: .88em;
-      left: 0px;
-      position: absolute;
-      padding-left: .4em;
-      top: 16px;
-      transition: all .4s;
-      width: 100%;
-      @media (max-width: 425px) {
-        top: 14px
-      }
-    }
+    @include placeholder; 
   }
   .input:focus + .focus::after{
     color: $cor-azull;
@@ -88,11 +89,9 @@
       top: -18px;
     }
   }
-
   .input:focus + .focus::before{
     width: 100%;
   }
-
   .hasVal + .focus::after{
     top: -18px;
     width: 100%;
@@ -103,66 +102,25 @@
 }
 
 .container{
-  background-color: $cor-pretal;
-  border-top-right-radius: .4em;
-  border-top-left-radius: .4em;
-  border-bottom: 2px solid $cor-secundaria;
-  margin-bottom: 2em;
-  padding: .5em 0;
-  position: relative;
-  width: 360px;
-  min-width: 150px;
-  &:focus{
-    outline: none;
-  }
+  @include field;
   .placeholder{
-    background: none;
-    color: $cor-cinza;
-    display: block;
-    height: 100%;
-    left: 0;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    &::after{
-      color: $cor-cinza;
-      content: attr(data-placeholder);
-      display: block;
-      font-size: .88em;
-      padding-left: .4em;
-      position: absolute;
-      transition: all .4s;
-      top: 16px;
-      width: 100%;
-    }
-    &::before{
-      content: '';
-      background: $cor-azull;
-      bottom: -2px;
-      display: block;
-      height: 2px;
-      left: 0;
-      position: absolute;
-      transition: all .4s;
-      width: 0;
-    }
+   @include placeholder;
   }
   .value{
     align-items: center;
     display: flex;
     font-size: 1.1em;
     height: 26.5px;
-    padding: 0 .4em;
-    position: relative; 
-    &:focus{
-      outline: none;
-    }
+    padding: .1em .4em;
+    position: relative;
+    @media (max-width: 425px) {
+      font-size: 1em;
+     }
     &__caret{
       align-items: center;
       display: flex;
       color: $cor-cinza;
-      font-size: 1.4em;
+      font-size: 1.5em;
       position: absolute;
       top: 0;
       right: .2em;
@@ -171,8 +129,8 @@
     display: none;
       &__show{
         background-color: $cor-dropdown;
-        border-bottom-left-radius: .5em;
-        border-bottom-right-radius: .5em;
+        border-bottom-left-radius: .3em;
+        border-bottom-right-radius: .3em;
         box-shadow: $sombra;
         display: block;
         left: 0;
@@ -195,6 +153,15 @@
           background-color: #3e3e3e;
           border-radius: 8px;
         }
+        @media (max-width: 375px) {
+          max-height: 7em;
+          max-width: 10em;
+        }
+        @media (min-width: 376px) and (max-width: 425px) {
+          font-size: 1em;
+          max-height: 7em;
+          max-width: 13em;
+        }
       }
     }
     .option{
@@ -207,7 +174,6 @@
       }
     }
   }
-
   .value:focus + .placeholder::after{
     color: $cor-azull;
     top: -18px;

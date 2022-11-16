@@ -1,4 +1,5 @@
 import styles from './buscador.module.scss';
+import styles2 from 'components/searchTag/SearchTag.module.scss';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import { DataFilter } from 'components/dataFilter';
 import { HiOutlineAdjustments } from 'react-icons/hi';
@@ -74,7 +75,7 @@ export const Buscador = ({ busca, setBusca, filter }: Props) => {
   return ( 
     <div className={styles.busca}>
       <SearchComponent placeholder='Pesquisar por item ou local' busca={busca} setBusca={setBusca} />
-      <div className={styles.filtersTags}>
+      <div className={styles2.filtersTags}>
         <SearchByTag busca={busca} value={'Entrada'} onClick={() => filterTag('Entrada')}>Entradas</SearchByTag>
         <SearchByTag busca={busca} value={'Saída'} onClick={() => filterTag('Saída')}>Saídas</SearchByTag>
         <SearchByTag busca={busca} value={'NFCe'} onClick={() => filterTag('NFCe')}>NFCe</SearchByTag>

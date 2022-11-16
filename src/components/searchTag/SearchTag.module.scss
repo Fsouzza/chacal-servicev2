@@ -37,3 +37,22 @@
     }
   }
 }
+
+.filtersTags{
+  align-items: center;
+  display: flex;
+  gap: .8em;
+  justify-content: flex-end;
+  @media (max-width: 375px){
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-right: 0;
+    gap: .4em;
+  }
+  @media (min-width: 376px) and (max-width: 425px) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-right: 0;
+    gap: .5em;
+  }
+}

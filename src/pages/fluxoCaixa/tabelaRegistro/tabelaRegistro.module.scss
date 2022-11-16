@@ -39,20 +39,29 @@
           align-items: center;
           text-align: center;
         }
+        @media (max-width: 425px) {
+          &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8), &:nth-child(10), &:nth-child(11){
+            display: none;
+          }
+        }
       }
       .tr{
         &:nth-of-type(even){
-          background-color: #27282b;
+          background-color: $cor-terciaria;
         }
         &:hover{
           background-color: $cor-hover;
         }
       }
       .td{
-        @include td(.88em, 400);
+        @include td(.94em, 400);
         padding: .5em .6em;
         @media (max-width: 425px){
           height: 70px;
+          padding: .6em .7em;
+          &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8), &:nth-child(10), &:nth-child(11){
+            display: none;
+          }
         }
         .lancamento{
           align-items: flex-start;

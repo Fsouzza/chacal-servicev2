@@ -36,7 +36,7 @@ const Cards = () => {
       <Card 
         titulo='Total de entrada' 
         icon={<BsCreditCard size={32} color={'#00b706'} />} 
-        indicador={<BsFillArrowUpCircleFill size={20} color={'#add193'} />}
+        indicador={<BsFillArrowUpCircleFill size={20} color={'#9fc882'} />}
       >
         <CountUp
           start={0}
