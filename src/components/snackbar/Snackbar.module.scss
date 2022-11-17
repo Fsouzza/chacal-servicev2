@@ -1,0 +1,32 @@
+@import 'styles/variaveis';
+
+.snackbar{
+  align-items: center;
+  border-radius: .2em;
+  color: rgb(235, 235, 235);
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  padding: .8em .6em;
+  position: fixed;
+  top: 1.5em;
+  right: 2em;
+  z-index: 999;
+  min-width: 280px;
+  .icon{
+    font-size: 1.3em;
+    height: 1em;
+  }
+  .message{
+    font-size: .9em;
+    font-weight: 400;
+    height: 1em;
+  }
+}
+
+#show{
+  visibility: visible;
+}
+#hide{
+  visibility: hidden;
+}
