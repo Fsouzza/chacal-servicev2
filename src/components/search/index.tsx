@@ -22,7 +22,7 @@ export const SearchComponent = ({ busca, setBusca, placeholder }: PropsSearch) =
           value={busca}
           onChange={(evento) => setBusca(evento.target.value)}
         />
-        <span className={styles.clear}>{busca !== '' ? <IoCloseSharp size={22} /> : ''}</span>
+        <span className={styles.clear}>{busca !== '' ? <IoCloseSharp size={22} /> : null}</span>
       </div>
     </div>
   );

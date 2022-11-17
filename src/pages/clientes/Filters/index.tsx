@@ -11,20 +11,21 @@ interface PropsFilterSearch {
 	setBusca: React.Dispatch<React.SetStateAction<string>>;
 }
 
+const optionContracts = [
+  {label: 'Contrato', value: ''},
+  {label: 'Ativo', value: 'Ativo'},
+  {label: 'Inativo', value: 'Inativo'},
+  {label: 'Pendente', value: 'Pendente'},
+];
+const optionInvoice = [
+  {label: 'Cobranças', value: ''},
+  {label: 'Semanal', value: 'Semanal'},
+  {label: 'Quinzenal', value: 'Quinzenal'},
+  {label: 'Mensal', value: 'Mensal'},
+];
+
 const Filters = ({ busca, setBusca }: PropsFilterSearch ) => {
-  const optionContracts = [
-    {label: 'Contrato', value: ''},
-    {label: 'Ativo', value: 'Ativo'},
-    {label: 'Inativo', value: 'Inativo'},
-    {label: 'Pendente', value: 'Pendente'},
-  ];
-  const optionInvoice = [
-    {label: 'Cobranças', value: ''},
-    {label: 'Semanal', value: 'Semanal'},
-    {label: 'Quinzenal', value: 'Quinzenal'},
-    {label: 'Mensal', value: 'Mensal'},
-  ];
-  
+
   function filterTag(value: string) {
     if(busca === value) return setBusca('');
     return setBusca(value);

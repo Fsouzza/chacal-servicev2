@@ -29,7 +29,7 @@ export const Header = () => {
       <div className={styles.esquerda} ref={sideBarEvent}>
         <div className={sidebar ? `${styles.menu__ativo}` : `${styles.menu}`} onClick={ShowSidebar}>
           <FiMenu />
-          {sidebar && <SideBar active={setSidebar} />}
+          {sidebar ? <SideBar active={setSidebar} /> : null}
         </div>
         <img className={styles.logo} src={logo} alt='Logo da empresa' />
         <strong>Chacal Service</strong>

@@ -8,67 +8,69 @@ import { VscReport, VscBellDot } from 'react-icons/vsc';
 import styles from './sidebar.module.scss';
 import { SideBarItems } from './sidebarItens/sidebarItems';
 
+const dataOperat = [
+  {
+    titulo: 'Clientes',
+    to: '/clientes',
+    icon: <MdOutlineDashboardCustomize />
+  },
+  {
+    titulo: 'Estoque de EPI',
+    to: '/estoqueEPI',
+    icon: <BsCartDash />
+  },
+];
+const dataFinanc = [
+  {
+    titulo: 'Fluxo de caixa',
+    to: '/fluxoDeCaixa',
+    icon: <MdAttachMoney />
+  },
+  {
+    titulo: 'Controle financeiro',
+    to: '/financas',
+    icon: <BsCash />
+  },
+];
+const dataRH = [
+  {
+    titulo: 'Funcionários',
+    to: '/funcionarios',
+    icon:<FiUserPlus />
+  },
+];
+const dataDoc = [
+  {
+    titulo: 'Documentação',
+    to: '/documentos',
+    icon: <AiOutlineFilePdf />
+  },
+  {
+    titulo: 'Arquivos',
+    to: '/arquivos',
+    icon: <BiArchive />
+  },
+];
+const dataSystem = [
+  {
+    titulo: 'Report',
+    to: '/report',
+    icon: <VscReport />
+  },
+  {
+    titulo: 'Notificações',
+    to: '/notificacoes',
+    icon: <VscBellDot />
+  }
+];
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const SideBar = ({active, ref}: any) => {
+  
   const closeSideBar = () => {
     active(false);
   };
-  const dataOperat = [
-    {
-      titulo: 'Clientes',
-      to: '/clientes',
-      icon: <MdOutlineDashboardCustomize />
-    },
-    {
-      titulo: 'Estoque de EPI',
-      to: '/estoqueEPI',
-      icon: <BsCartDash />
-    },
-  ];
-  const dataFinanc = [
-    {
-      titulo: 'Fluxo de caixa',
-      to: '/fluxoDeCaixa',
-      icon: <MdAttachMoney />
-    },
-    {
-      titulo: 'Controle financeiro',
-      to: '/financas',
-      icon: <BsCash />
-    },
-  ];
-  const dataRH = [
-    {
-      titulo: 'Funcionários',
-      to: '/funcionarios',
-      icon:<FiUserPlus />
-    },
-  ];
-  const dataDoc = [
-    {
-      titulo: 'Documentação',
-      to: '/documentos',
-      icon: <AiOutlineFilePdf />
-    },
-    {
-      titulo: 'Arquivos',
-      to: '/arquivos',
-      icon: <BiArchive />
-    },
-  ];
-  const dataSystem = [
-    {
-      titulo: 'Report',
-      to: '/report',
-      icon: <VscReport />
-    },
-    {
-      titulo: 'Notificações',
-      to: '/notificacoes',
-      icon: <VscBellDot />
-    }
-  ];
-
+  
   return (
     <nav ref={ref} className={styles.sidebar} onBlur={closeSideBar}>
       <ul>

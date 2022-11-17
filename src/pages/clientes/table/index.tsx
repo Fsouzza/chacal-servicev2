@@ -7,6 +7,19 @@ import { useState, useEffect } from 'react';
 import { Pagination } from 'components/pagination';
 import Filters from '../Filters';
 
+const thead = [
+  {label: 'ID'}, 
+  {label: 'Cliente'}, 
+  {label: 'CNPJ'},
+  {label: 'Reajuste'},
+  {label: 'Serviço'}, 
+  {label: 'Valor atual (R$)'}, 
+  {label: 'Data contrato'},
+  {label: 'Tipo faturamento'},
+  {label: 'Situação'},
+  {label: 'Ações'}, 
+];
+
 const TableContract = () => {
   const [listContract, setListContract] = useState(contract);
   const [busca, setBusca] = useState('');
@@ -17,18 +30,6 @@ const TableContract = () => {
   const changePage = (event: { selected: number; }) => {
     setPageNumber(event.selected);
   };
-  const thead = [
-    {label: 'ID'}, 
-    {label: 'Cliente'}, 
-    {label: 'CNPJ'},
-    {label: 'Reajuste'},
-    {label: 'Serviço'}, 
-    {label: 'Valor atual (R$)'}, 
-    {label: 'Data contrato'},
-    {label: 'Tipo faturamento'},
-    {label: 'Situação'},
-    {label: 'Ações'}, 
-  ];
   const tbody = listContract.slice(currentPages, currentPages + itemPerPage).map((item) => (
     <tr className={styles.tr} key={item.id}>
       <td className={styles.td}>{item.id}</td>

@@ -3,6 +3,13 @@ import { dateToString, monthToString } from './dateFormat';
 
 const month = [...items.sort((a,b) => a.date > b.date ? 1 : -1)];
 const stringFormat = month.map((lancamentos) => monthToString(lancamentos.date));
+const ParamsYear = (date: number) => {
+  const monthStart = (new Date(2022 + date, 0, 1));
+  const monthEnd = new Date(2022 + date, 12, 0);
+  const filterByYear = [...month.filter((item) => item.date).filter(item => item.date >= monthStart && item.date <= monthEnd)];
+  const yearToString = filterByYear.map((lancamentos) => dateToString(lancamentos.date));
+  return yearToString;
+};
 
 export const DataChartInit = () => {
   const newListMonth = [...new Set(stringFormat)];
@@ -25,14 +32,6 @@ export const Releases = (lancamentos: string) => {
       .filter((item) => item.lancamentos === lancamentos)
       .reduce((acc, cur) => acc + cur.valor, 0);
   });
-};
-
-const ParamsYear = (date: number) => {
-  const monthStart = (new Date(2022 + date, 0, 1));
-  const monthEnd = new Date(2022 + date, 12, 0);
-  const filterByYear = [...month.filter((item) => item.date).filter(item => item.date >= monthStart && item.date <= monthEnd)];
-  const yearToString = filterByYear.map((lancamentos) => dateToString(lancamentos.date));
-  return yearToString;
 };
 
 export const DataChartFilter = (date: number) => {

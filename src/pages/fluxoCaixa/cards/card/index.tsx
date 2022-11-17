@@ -1,14 +1,14 @@
 import { ReactElement, ReactNode } from 'react';
 import styles from './card.module.scss';
 
-type Props = {
+type PropsCard = {
   children: ReactElement
   icon: ReactNode
   titulo: string
   indicador: ReactNode
 }
 
-export const Card = ({children, icon, titulo, indicador}: Props) => {
+export const Card = ({children, icon, titulo, indicador}: PropsCard) => {
   return(
     <article className={styles.card}>
       {icon}

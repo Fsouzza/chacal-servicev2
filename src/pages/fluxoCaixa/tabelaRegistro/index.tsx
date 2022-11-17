@@ -8,6 +8,20 @@ import { Buscador } from '../buscador';
 import { items } from 'data/itens';
 import { Pagination } from 'components/pagination';
 
+const columns = [
+  {label: 'Nº ID'},
+  {label: 'Item'},
+  {label: 'Data'},
+  {label: 'Lançamento'},
+  {label: 'Documento'},
+  {label: 'Categoria'},
+  {label: 'Departamento'},
+  {label: 'Local'},
+  {label: 'Valor (R$)'},
+  {label: 'Obersevação'},
+  {label: 'Ação'},
+];
+
 const TabelaCaixa = () => {
   const [busca, setBusca] = useState('');
   const [lista, setLista] = useState(items);
@@ -18,19 +32,6 @@ const TabelaCaixa = () => {
   const changePage = (event: { selected: number; }) => {
     setPageNumber(event.selected);
   };
-  const columns = [
-    {label: 'Nº ID'},
-    {label: 'Item'},
-    {label: 'Data'},
-    {label: 'Lançamento'},
-    {label: 'Documento'},
-    {label: 'Categoria'},
-    {label: 'Departamento'},
-    {label: 'Local'},
-    {label: 'Valor (R$)'},
-    {label: 'Obersevação'},
-    {label: 'Ação'},
-  ];
 
   function filterByDate(date: number) {
     filterTableByDateTags;

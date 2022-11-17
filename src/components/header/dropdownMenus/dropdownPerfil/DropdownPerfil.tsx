@@ -6,6 +6,11 @@ import { BiUser, BiLogOut, BiHelpCircle } from 'react-icons/bi';
 import styles2 from '../../header.module.scss';
 import styles from './DropdownPerfil.module.scss';
 
+const optionsPerfil = [
+  {label: 'Seu perfil', icon: <BiUser />},
+  {label: 'Ajuda', icon: <BiHelpCircle />},
+];
+
 export const DropdownPerfil = () => {
   const [profileOpen, setProfileOpen] = useState(false);
   const dropdownPerfil = useRef<HTMLDivElement>(null);
@@ -38,12 +43,11 @@ export const DropdownPerfil = () => {
           <span>Assist. Administrativo</span>
         </div>
         <ul className={styles.profileMenu__items}>
-          <li>
-            <button className={styles.button}><BiUser /> Seu perfil</button>
-          </li>
-          <li>
-            <button className={styles.button}><BiHelpCircle /> Ajuda</button>
-          </li>
+          {optionsPerfil.map(option => (
+            <li key={option.label}>
+              <button className={styles.button}>{option.icon}{option.label}</button>
+            </li>
+          ))}
           <li>
             <button className={styles.buttonRed}><BiLogOut /> Desconectar</button>
           </li>

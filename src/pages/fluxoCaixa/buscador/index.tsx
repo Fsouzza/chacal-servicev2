@@ -13,59 +13,60 @@ interface Props {
   filter: (e: any) => void;
 }
 
+const departamentos = [
+  {
+    label : 'Filtro por Depto', 
+    value: ''
+  }, 
+  {
+    label : 'Administrativo',
+    value: 'Administrativo'
+  }, 
+  {
+    label : 'Financeiro', 
+    value: 'Financeiro'
+  }, 
+  {
+    label : 'Officeboy', 
+    value: 'Officeboy'
+  }, 
+  {
+    label : 'Operacional', 
+    value: 'Operacional'
+  }, 
+  {
+    label : 'RH', 
+    value: 'RH'
+  }, 
+  {
+    label : 'Terceirizado', 
+    value: 'Terceirizado'
+  }
+];
+const dateValues = [
+  {
+    label: 'Filtro por data',
+    value : -1
+  },
+  {
+    label: 'Hoje',
+    value : 0
+  },
+  {
+    label: '7 dias',
+    value : 7
+  },
+  {
+    label: '15 dias',
+    value : 15
+  },
+  {
+    label: '30 dias',
+    value : 30
+  },
+];
+
 export const Buscador = ({ busca, setBusca, filter }: Props) => {
-  const departamentos = [
-    {
-      label : 'Filtro por Depto', 
-      value: ''
-    }, 
-    {
-      label : 'Administrativo',
-      value: 'Administrativo'
-    }, 
-    {
-      label : 'Financeiro', 
-      value: 'Financeiro'
-    }, 
-    {
-      label : 'Officeboy', 
-      value: 'Officeboy'
-    }, 
-    {
-      label : 'Operacional', 
-      value: 'Operacional'
-    }, 
-    {
-      label : 'RH', 
-      value: 'RH'
-    }, 
-    {
-      label : 'Terceirizado', 
-      value: 'Terceirizado'
-    }
-  ];
-  const dateValues = [
-    {
-      label: 'Filtro por data',
-      value : -1
-    },
-    {
-      label: 'Hoje',
-      value : 0
-    },
-    {
-      label: '7 dias',
-      value : 7
-    },
-    {
-      label: '15 dias',
-      value : 15
-    },
-    {
-      label: '30 dias',
-      value : 30
-    },
-  ];
 
   function filterTag(value: string) {
     if(busca === value) return setBusca('');

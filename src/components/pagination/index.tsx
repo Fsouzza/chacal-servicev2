@@ -6,6 +6,7 @@ interface PropsPagination {
   pageCount: number;
   onPageChange: (event: {selected: number }) => void;
 }
+
 export const Pagination = ({ pageCount, onPageChange }: PropsPagination) => {
   return(
     <>

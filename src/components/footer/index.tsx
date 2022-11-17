@@ -4,21 +4,21 @@ import { FaFacebook } from 'react-icons/fa';
 import { FiInstagram } from 'react-icons/fi';
 import { IoLogoTwitter } from 'react-icons/io5';
 
-const Footer = () =>{
-  const rotas = [{
-    titulo: 'Facebook',
-    label: <FaFacebook />,
-    to: 'https://www.facebook.com'
-  }, {
-    titulo: 'Instagram',
-    label: <FiInstagram />,
-    to: 'https://www.instagram.com'
-  }, {
-    titulo: 'Twitter',
-    label: <IoLogoTwitter />,
-    to: 'https://twitter.com'
-  }];
+const rotas = [{
+  titulo: 'Facebook',
+  label: <FaFacebook />,
+  to: 'https://www.facebook.com'
+}, {
+  titulo: 'Instagram',
+  label: <FiInstagram />,
+  to: 'https://www.instagram.com'
+}, {
+  titulo: 'Twitter',
+  label: <IoLogoTwitter />,
+  to: 'https://twitter.com'
+}];
 
+const Footer = () =>{
   return(
     <footer className={styles.footer}>
       <div className={styles.footer__content}>

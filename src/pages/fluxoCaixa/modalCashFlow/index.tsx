@@ -11,43 +11,43 @@ interface PropsModalCash {
   close: () => void
 }
 
-export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
-  const lancamentos = [
-    {label: '', value: ''},
-    {label: 'Entrada', value: 'Entrada'},
-    {label: 'Saída', value: 'Saída'}
-  ];
-  const documentos = [
-    {label: '', value: ''}, 
-    {label: 'Comprovante', value: 'Comprovante'}, 
-    {label: 'NFCe', value: 'NFCe'}, 
-    {label: 'NF', value: 'NF'}, 
-    {label: 'Recibo', value: 'Recibo'}, 
-    {label: 'S/ Recibo', value: 'S/ Recibo'}
-  ];
-  const categorias = [
-    {label: '', value: '' }, 
-    {label: 'Compra', value: 'Compra' }, 
-    {label: 'Despesa', value: 'Despesa' }, 
-    {label: 'Pagamentos', value: 'Pagamentos' }, 
-    {label: 'Receita', value: 'Receita' }, 
-    {label: 'Refeição', value: 'Refeição' }, 
-    {label: 'Retirada', value: 'Retirada' }, 
-    {label: 'Serviços', value: 'Serviços' }, 
-    {label: 'Vale Transporte', value: 'Vale Transporte' }, 
-    {label: 'Veiculo', value: 'Veiculo' }, 
-    {label: 'VR+VT', value: 'VR+VT' }
-  ];
-  const departamentos = [
-    {label: '', value: ''}, 
-    {label: 'Administrativo', value: 'Administrativo'}, 
-    {label: 'Financeiro', value: 'Financeiro'},
-    {label: 'Officeboy', value: 'Officeboy'},
-    {label: 'Operacional', value: 'Operacional'},
-    {label: 'RH', value: 'RH'}, 
-    {label: 'Tercerizados', value: 'Tercerizados'},
-  ];
+const lancamentos = [
+  {label: '', value: ''},
+  {label: 'Entrada', value: 'Entrada'},
+  {label: 'Saída', value: 'Saída'}
+];
+const documentos = [
+  {label: '', value: ''}, 
+  {label: 'Comprovante', value: 'Comprovante'}, 
+  {label: 'NFCe', value: 'NFCe'}, 
+  {label: 'NF', value: 'NF'}, 
+  {label: 'Recibo', value: 'Recibo'}, 
+  {label: 'S/ Recibo', value: 'S/ Recibo'}
+];
+const categorias = [
+  {label: '', value: '' }, 
+  {label: 'Compra', value: 'Compra' }, 
+  {label: 'Despesa', value: 'Despesa' }, 
+  {label: 'Pagamentos', value: 'Pagamentos' }, 
+  {label: 'Receita', value: 'Receita' }, 
+  {label: 'Refeição', value: 'Refeição' }, 
+  {label: 'Retirada', value: 'Retirada' }, 
+  {label: 'Serviços', value: 'Serviços' }, 
+  {label: 'Vale Transporte', value: 'Vale Transporte' }, 
+  {label: 'Veiculo', value: 'Veiculo' }, 
+  {label: 'VR+VT', value: 'VR+VT' }
+];
+const departamentos = [
+  {label: '', value: ''}, 
+  {label: 'Administrativo', value: 'Administrativo'}, 
+  {label: 'Financeiro', value: 'Financeiro'},
+  {label: 'Officeboy', value: 'Officeboy'},
+  {label: 'Operacional', value: 'Operacional'},
+  {label: 'RH', value: 'RH'}, 
+  {label: 'Tercerizados', value: 'Tercerizados'},
+];
 
+export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
   const [docField, setDocField] = useState<SelectOption | undefined>(documentos[0]);
   const [lancamentoField, setLancamentoField] = useState<SelectOption | undefined>(lancamentos[0]);
   const [categoriaField, setCategoriaField] = useState<SelectOption | undefined>(categorias[0]);

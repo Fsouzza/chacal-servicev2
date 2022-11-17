@@ -3,18 +3,18 @@ import { FiDownload } from 'react-icons/fi';
 import { contract } from 'data/contratos';
 import { CSVLink } from 'react-csv';
 
-const AddContract = () => {
-  const headers = [
-    {label: 'Id Contrato', key: 'numero'},
-    {label: 'Cliente', key: 'empresa'},
-    {label: 'CNPJ', key: 'cnpj'},
-    {label: 'Serviço', key: 'servico'},
-    {label: 'Valor Reajustado', key: 'vlrReajustado'},
-    {label: 'Data Contrato', key: 'contrato'},
-    {label: 'Faturamento', key: 'faturamento'},
-    {label: 'Situação', key: 'situacao'},
-  ];
+const headers = [
+  {label: 'Id Contrato', key: 'numero'},
+  {label: 'Cliente', key: 'empresa'},
+  {label: 'CNPJ', key: 'cnpj'},
+  {label: 'Serviço', key: 'servico'},
+  {label: 'Valor Reajustado', key: 'vlrReajustado'},
+  {label: 'Data Contrato', key: 'contrato'},
+  {label: 'Faturamento', key: 'faturamento'},
+  {label: 'Situação', key: 'situacao'},
+];
 
+const AddContract = () => {
   return(
     <section className={styles.addBox}>
       <div className={styles.buttons}>
