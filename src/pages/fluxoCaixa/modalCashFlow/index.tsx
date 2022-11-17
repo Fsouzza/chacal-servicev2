@@ -1,10 +1,11 @@
 import { ModalWindow } from 'components/modalWindow';
 import { Input } from 'components/forms/Input';
-import { SelectComponent, SelectOption } from 'components/forms/Select';
+import { SelectComponent } from 'components/forms/Select';
 import { useState } from 'react';
 import styles from './modalCashFlow.module.scss';
 import { AiOutlineSend } from 'react-icons/ai';
 import { BsTrash } from 'react-icons/bs';
+import { SelectOption } from 'types/select';
 
 interface PropsModalCash {
   open: boolean

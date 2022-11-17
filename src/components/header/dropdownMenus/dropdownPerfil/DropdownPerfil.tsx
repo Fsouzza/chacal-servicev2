@@ -14,6 +14,7 @@ const optionsPerfil = [
 export const DropdownPerfil = () => {
   const [profileOpen, setProfileOpen] = useState(false);
   const dropdownPerfil = useRef<HTMLDivElement>(null);
+  const handleFocus = () => { setProfileOpen(!profileOpen); };
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,10 +25,6 @@ export const DropdownPerfil = () => {
     };
     profileOpen ? window.addEventListener('click', handleClickOutside) : window.removeEventListener('click', handleClickOutside);
   }, [profileOpen]);
-
-  const handleFocus = () => {
-    setProfileOpen(!profileOpen);
-  };
 
   return(
     <div ref={dropdownPerfil}>

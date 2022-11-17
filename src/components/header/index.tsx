@@ -19,10 +19,10 @@ export const Header = () => {
         setSidebar(false);
       }
     };
-    sidebar 
-      ? window.addEventListener('click', handleMenuClickOutside) 
-      : window.removeEventListener('click', handleMenuClickOutside);
+    sidebar ? window.addEventListener('click', handleMenuClickOutside) : window.removeEventListener('click', handleMenuClickOutside);
   }, [sidebar]);
+
+  
 
   return(
     <header className={styles.header}>

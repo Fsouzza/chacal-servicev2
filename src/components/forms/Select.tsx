@@ -1,18 +1,9 @@
 import styles from './FormsFields.module.scss';
 import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
 import { useState } from 'react';
+import { SelectOption, SelectProps } from 'types/select';
 
-export type SelectOption = {
-  label: string;
-  value?: string | number | undefined;
-}
 
-type SelectProps = {
-  placeholder: string;
-  options: SelectOption[];
-  value?: SelectOption;
-  onChange: (value: SelectOption | undefined) => void;
-}
 
 export const SelectComponent = ({ value, onChange, options, placeholder }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
