@@ -1,25 +1,15 @@
 import styles from './Snackbar.module.scss';
 import { BsCheck2Circle, BsExclamationDiamond } from 'react-icons/bs';
-import { useState, forwardRef, useImperativeHandle } from 'react';
+import { useState } from 'react';
 
 interface Snackbar {
   type: string;
   message: string
-  ref: React.ForwardedRef<unknown>
 }
 
-// eslint-disable-next-line react/display-name
-const Snackbar = forwardRef(({type, message, ref}: Snackbar) => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  useImperativeHandle(ref, () => ({
-    show() {
-      setIsOpen(true);
-      setTimeout(() => {
-        setIsOpen(false);
-      }, 2500);
-    }
-  }));
+const Snackbar = ({type, message}: Snackbar) => {
+  const [isOpen] = useState(false);
 
   return(
     <div 
@@ -35,6 +25,6 @@ const Snackbar = forwardRef(({type, message, ref}: Snackbar) => {
       <div className={styles.message}>{message}</div>
     </div>
   );
-});
+};
 
 export default Snackbar;
