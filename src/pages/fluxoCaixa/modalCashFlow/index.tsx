@@ -5,6 +5,7 @@ import styles from './modalCashFlow.module.scss';
 import { SelectOption } from 'types/select';
 import FormInput from 'components/forms/FormInput';
 import FormButton from 'components/forms/FormButton';
+import Snackbar from 'common/context/snackbar';
 
 interface PropsModalCash {
   open: boolean
@@ -58,10 +59,20 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
   const [itemField, setItemField] = useState('');
   const [obsField, setObsField] = useState('');
   const [valorField, setValorField] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+
+  function showSnackbar(){
+    setIsOpen(true);
+    setTimeout( () => {
+      setIsOpen(false);
+    }
+    , 2500
+    );
+  }
 
   const IsSubmit = () => {
     console.log('Você clicou!');
-    close();
+    showSnackbar();
   };
   
   const clearFields = () => {
@@ -74,81 +85,84 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
   };
 
   return(
-    <ModalWindow title='Adicionar transação' open={open} close={close}>
-      <div className={styles.components}>
-        <FormInput 
-          placeholder='Número do documento' 
-          type='number' 
-          value={idField}
-          setInput={value => setIdField(value)}
-          required={true} 
-        />
-        <FormInput  
-          placeholder='Descrição do Item' 
-          type='text'
-          value={itemField} 
-          setInput={value => setItemField(value)}
-          required={true}
-        />
-        <FormInput 
-          placeholder='Data de emissão' 
-          type='text' 
-          onFocus={(e) => (e.target.type='date')} 
-          onBlur={(e) => (e.target.type='text')}
-          value={dataField} 
-          setInput={value => setDataField(value)}
-          required={true}
-        />
-        <FormInput 
-          placeholder='Valor do item (R$)' 
-          type='number' 
-          value={valorField} 
-          setInput={value => setValorField(value)}
-          required={true}
-        />
-        <FormSelect 
-          placeholder='Tipo de lançamento' 
-          options={lancamentos} 
-          value={lancamentoField} 
-          onChange={o => setLancamentoField(o)} 
-        />
-        <FormSelect 
-          placeholder='Tipo de documento' 
-          options={documentos} 
-          value={docField} 
-          onChange={o => setDocField(o)} 
-        />
-        <FormSelect 
-          placeholder='Tipo de categoria' 
-          options={categorias} 
-          value={categoriaField} 
-          onChange={o => setCategoriaField(o)} 
-        />
-        <FormSelect 
-          placeholder='Departamentos' 
-          options={departamentos} 
-          value={deptoField} 
-          onChange={o => setDeptoField(o)} 
-        />
-        <FormInput 
-          placeholder='Local destinado' 
-          type='text' 
-          value={localField} 
-          setInput={value => setLocalField(value)}
-          required={true}
-        />
-        <FormInput 
-          placeholder='Informação adicional' 
-          type='text' 
-          value={obsField} 
-          setInput={value => setObsField(value)}
-          required={false}
-        />
-      </div>
-      <div className={styles.wrapper}>
-        <FormButton title={'Adicionar'} onClick={IsSubmit} />
-        <FormButton title={'Limpar'} onClick={clearFields} />
-      </div>
-    </ModalWindow>
+    <>
+      {!isOpen ? null : <Snackbar />}
+      <ModalWindow title='Adicionar transação' open={open} close={close}>
+        <div className={styles.components}>
+          <FormInput 
+            placeholder='Número do documento' 
+            type='number' 
+            value={idField}
+            setInput={value => setIdField(value)}
+            required={true} 
+          />
+          <FormInput  
+            placeholder='Descrição do Item' 
+            type='text'
+            value={itemField} 
+            setInput={value => setItemField(value)}
+            required={true}
+          />
+          <FormInput 
+            placeholder='Data de emissão' 
+            type='text' 
+            onFocus={(e) => (e.target.type='date')} 
+            onBlur={(e) => (e.target.type='text')}
+            value={dataField} 
+            setInput={value => setDataField(value)}
+            required={true}
+          />
+          <FormInput 
+            placeholder='Valor do item (R$)' 
+            type='number' 
+            value={valorField} 
+            setInput={value => setValorField(value)}
+            required={true}
+          />
+          <FormSelect 
+            placeholder='Tipo de lançamento' 
+            options={lancamentos} 
+            value={lancamentoField} 
+            onChange={o => setLancamentoField(o)} 
+          />
+          <FormSelect 
+            placeholder='Tipo de documento' 
+            options={documentos} 
+            value={docField} 
+            onChange={o => setDocField(o)} 
+          />
+          <FormSelect 
+            placeholder='Tipo de categoria' 
+            options={categorias} 
+            value={categoriaField} 
+            onChange={o => setCategoriaField(o)} 
+          />
+          <FormSelect 
+            placeholder='Departamentos' 
+            options={departamentos} 
+            value={deptoField} 
+            onChange={o => setDeptoField(o)} 
+          />
+          <FormInput 
+            placeholder='Local destinado' 
+            type='text' 
+            value={localField} 
+            setInput={value => setLocalField(value)}
+            required={true}
+          />
+          <FormInput 
+            placeholder='Informação adicional' 
+            type='text' 
+            value={obsField} 
+            setInput={value => setObsField(value)}
+            required={false}
+          />
+        </div>
+        <div className={styles.wrapper}>
+          <FormButton title={'Adicionar'} onClick={IsSubmit} />
+          <FormButton title={'Limpar'} onClick={clearFields} />
+        </div>
+      </ModalWindow>
+    </>
   );
 };

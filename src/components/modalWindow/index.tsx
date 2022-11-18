@@ -1,4 +1,3 @@
-import Snackbar from 'components/snackbar';
 import { CgClose } from 'react-icons/cg';
 import styles from './modalWindow.module.scss';
 
@@ -17,10 +16,6 @@ export const ModalWindow = ({ children, title, open, close}: modalProps) => {
   return(
     <>
       <div onClick={close} className={styles.modal} />
-      <Snackbar
-        message='Cadastro realizado com sucesso' 
-        type='success'
-      />
       <form className={styles.modal__form}>
         <div className={styles.modal__wrapper} 
         >
