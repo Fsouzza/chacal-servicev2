@@ -1,11 +1,10 @@
 import { ModalWindow } from 'components/modalWindow';
-import { Input } from 'components/forms/Input';
-import { SelectComponent } from 'components/forms/Select';
+import FormSelect from 'components/forms/FormSelect';
 import { useState } from 'react';
 import styles from './modalCashFlow.module.scss';
-import { AiOutlineSend } from 'react-icons/ai';
-import { BsTrash } from 'react-icons/bs';
 import { SelectOption } from 'types/select';
+import FormInput from 'components/forms/FormInput';
+import FormButton from 'components/forms/FormButton';
 
 interface PropsModalCash {
   open: boolean
@@ -77,21 +76,21 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
   return(
     <ModalWindow title='Adicionar transação' open={open} close={close}>
       <div className={styles.components}>
-        <Input 
+        <FormInput 
           placeholder='Número do documento' 
           type='number' 
           value={idField}
           setInput={value => setIdField(value)}
           required={true} 
         />
-        <Input  
+        <FormInput  
           placeholder='Descrição do Item' 
           type='text'
           value={itemField} 
           setInput={value => setItemField(value)}
           required={true}
         />
-        <Input 
+        <FormInput 
           placeholder='Data de emissão' 
           type='text' 
           onFocus={(e) => (e.target.type='date')} 
@@ -100,45 +99,45 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
           setInput={value => setDataField(value)}
           required={true}
         />
-        <Input 
+        <FormInput 
           placeholder='Valor do item (R$)' 
           type='number' 
           value={valorField} 
           setInput={value => setValorField(value)}
           required={true}
         />
-        <SelectComponent 
+        <FormSelect 
           placeholder='Tipo de lançamento' 
           options={lancamentos} 
           value={lancamentoField} 
           onChange={o => setLancamentoField(o)} 
         />
-        <SelectComponent 
+        <FormSelect 
           placeholder='Tipo de documento' 
           options={documentos} 
           value={docField} 
           onChange={o => setDocField(o)} 
         />
-        <SelectComponent 
+        <FormSelect 
           placeholder='Tipo de categoria' 
           options={categorias} 
           value={categoriaField} 
           onChange={o => setCategoriaField(o)} 
         />
-        <SelectComponent 
+        <FormSelect 
           placeholder='Departamentos' 
           options={departamentos} 
           value={deptoField} 
           onChange={o => setDeptoField(o)} 
         />
-        <Input 
+        <FormInput 
           placeholder='Local destinado' 
           type='text' 
           value={localField} 
           setInput={value => setLocalField(value)}
           required={true}
         />
-        <Input 
+        <FormInput 
           placeholder='Informação adicional' 
           type='text' 
           value={obsField} 
@@ -147,14 +146,8 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
         />
       </div>
       <div className={styles.wrapper}>
-        <button onClick={IsSubmit} className={styles.submit}>
-          Adicionar
-          <AiOutlineSend />
-        </button>
-        <button onClick={clearFields} className={styles.clear}>
-          Limpar
-          <BsTrash />
-        </button>
+        <FormButton title={'Adicionar'} onClick={IsSubmit} />
+        <FormButton title={'Limpar'} onClick={clearFields} />
       </div>
     </ModalWindow>
   );

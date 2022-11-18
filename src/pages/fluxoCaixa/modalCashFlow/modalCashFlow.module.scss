@@ -49,10 +49,4 @@
     gap: .6em;
     margin-top: 0;
   }
-  .submit{
-    @include buttons(transparent, $cor-azul, $cor-azull, $cor-brancol, $cor-bg-azul);
-  }
-  .clear{
-    @include buttons(transparent, $cor-vermelha, $cor-vermelhal, $cor-brancol, $cor-bg-vermelha);
-  }
 }

@@ -5,7 +5,7 @@ import { SelectOption, SelectProps } from 'types/select';
 
 
 
-export const SelectComponent = ({ value, onChange, options, placeholder }: SelectProps) => {
+const FormSelect = ({ value, onChange, options, placeholder }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const placeholderModificada = `${placeholder}`;
 
@@ -42,3 +42,5 @@ export const SelectComponent = ({ value, onChange, options, placeholder }: Selec
     </div>
   );
 };
+
+export default FormSelect;

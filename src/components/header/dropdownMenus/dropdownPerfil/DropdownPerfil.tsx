@@ -9,6 +9,7 @@ import styles from './DropdownPerfil.module.scss';
 const optionsPerfil = [
   {label: 'Seu perfil', icon: <BiUser />},
   {label: 'Ajuda', icon: <BiHelpCircle />},
+  {label: 'Desconectar', icon: <BiLogOut />},
 ];
 
 export const DropdownPerfil = () => {
@@ -42,12 +43,9 @@ export const DropdownPerfil = () => {
         <ul className={styles.profileMenu__items}>
           {optionsPerfil.map(option => (
             <li key={option.label}>
-              <button className={styles.button}>{option.icon}{option.label}</button>
+              <button className={option.label === 'Desconectar' ? `${styles.buttonRed}` : `${styles.button}` }>{option.icon}{option.label}</button>
             </li>
           ))}
-          <li>
-            <button className={styles.buttonRed}><BiLogOut /> Desconectar</button>
-          </li>
         </ul>
         <div className={styles.profileMenu__termos}>
           <span>* Politica de Privacidade</span>

@@ -10,7 +10,7 @@ interface inputProps {
   onBlur?: React.FocusEventHandler<HTMLInputElement>
 }
 
-export const Input = ({ placeholder, type, value, setInput, required, onBlur, onFocus }: inputProps) => {
+const FormInput = ({ placeholder, type, value, setInput, required, onBlur, onFocus }: inputProps) => {
   const placeholderModificada = `${placeholder}`;
 
   return(
@@ -28,3 +28,5 @@ export const Input = ({ placeholder, type, value, setInput, required, onBlur, on
     </div>
   );
 };
+
+export default FormInput;
