@@ -66,7 +66,7 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
     setTimeout( () => {
       setIsOpen(false);
     }
-    , 2800
+    , 2500
     );
   }
 
@@ -86,7 +86,7 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
 
   return(
     <>
-      {!isOpen ? null : <Snackbar />}
+      {!isOpen ? null : <Snackbar type='Success' message='Cadastro realizado com sucesso' />}
       <ModalWindow title='Adicionar transação' open={open} close={close}>
         <div className={styles.components}>
           <FormInput 
