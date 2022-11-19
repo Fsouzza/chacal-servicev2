@@ -1,0 +1,29 @@
+@import 'styles/variaveis';
+
+.backToTop{
+  align-items: center;
+  background-color: $cor-cinzad;
+  border-radius: .5em;
+  bottom: 8em;
+  cursor: pointer;
+  height: fit-content;
+  opacity: .6;
+  padding: .5em;
+  position: fixed;
+  right: 2em;
+  width: fit-content;
+  @media (max-width: 425px){
+    bottom: 2.6em;
+    opacity: .8;
+    right: .5em;
+  }
+  &:hover{
+    opacity: 1;
+  }
+  .icon{
+    align-items: center;
+    color: $cor-azull;
+    display: flex;
+    font-size: 1.6em;
+  }
+}

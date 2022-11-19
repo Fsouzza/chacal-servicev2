@@ -1,13 +1,8 @@
 import styles from './Snackbar.module.scss';
 import { BsCheck2Circle, BsExclamationDiamond } from 'react-icons/bs';
+import { VscError } from 'react-icons/vsc';
 import { useContext } from 'react';
 import { SnackbarContext } from 'common/context/SnackbarContext';
-
-interface Snackbar {
-  type: string;
-  message: string
-}
-
 
 const Snackbar = () => {
   const snack = useContext(SnackbarContext);
@@ -20,7 +15,7 @@ const Snackbar = () => {
       }}
     >
       <div className={styles.icon}>
-        {snack.success.type === 'Success' ? <BsCheck2Circle /> : <BsExclamationDiamond />}
+        {snack.success.type === 'Success' ? <BsCheck2Circle /> : <VscError />}
       </div>
       <div className={styles.message}>{snack.success.message}</div>
     </div>

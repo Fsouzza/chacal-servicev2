@@ -1,9 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-1 - BOTAO VOLTA AO TOPO;
-2 - FUNCTION ADD + SNACKBAR;
-3 - RESPONSIVIDADE (425px a 768px);
-4 - TIMELINE DE ATIVIDADES RECENTES;
-5 - INSERIR DARK-LIGHT MODE;
+1 - FUNCTION ADD + SNACKBAR;
+2 - RESPONSIVIDADE (425px a 768px);
+3 - TIMELINE DE ATIVIDADES RECENTES;
+4 - INSERIR DARK-LIGHT MODE;
 
 # dependencies
 /node_modules

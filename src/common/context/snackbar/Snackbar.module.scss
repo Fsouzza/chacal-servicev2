@@ -6,14 +6,15 @@
   border-radius: .2em;
   color: rgb(226, 224, 224);
   display: flex;
-  gap: 1em;
+  gap: .6em;
   justify-content: center;
-  padding: .9em .6em;
+  padding: .9em;
   position: fixed;
   top: 1.4em;
   right: 1em;
   z-index: 999;
-  min-width: 280px;
+  min-width: 320px;
+  max-width: 320px;
   .icon{
     font-size: 1.34em;
     height: 1em;

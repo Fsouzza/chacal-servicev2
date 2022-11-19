@@ -66,7 +66,7 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
     setTimeout( () => {
       setIsOpen(false);
     }
-    , 2500
+    , 2800
     );
   }
 
