@@ -23,6 +23,13 @@
     width: 100vw;
     height: 55vh;
   }
+  @media (min-width: 426px) and (max-width: 768px) {
+    border-color: $cor-azull;
+    border-radius: .1em;
+    padding: .15em;
+    top: 49px;
+    width: 400px;
+  }
 	&::before {
 		background-color: $cor-dropdown;
 		border-left: 1px solid $cor-secundaria;
@@ -34,7 +41,7 @@
 		top: -10px;
 		transform: rotate(45deg);
 		width: 16px;
-		@media (max-width: 425px) {
+		@media (max-width: 768px) {
 			display: none;
 		}
 	}
@@ -59,6 +66,9 @@
       font-size: .7em;
       padding: .3em .8em;
     }
+    @media (min-width: 426px) and (max-width: 768px) {
+      padding: 1em;
+    }
   }
   .info{
     align-items: center;
@@ -67,6 +77,9 @@
     gap: .8em;
     padding: .8em;
     width: 100%;
+    @media (min-width: 426px) and (max-width: 768px) {
+      padding: 1em;
+    }
     &__icon{
       background-color: $cor-bg-verde;
       border-radius: 50%;

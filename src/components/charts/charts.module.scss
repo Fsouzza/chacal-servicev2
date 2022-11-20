@@ -15,8 +15,14 @@
     gap: .5em;
 		margin: 3.4em 0 4em 0;
 	}
+  @media (min-width: 426px) and (max-width: 768px) {
+    border-radius: .2em;
+    filter: none;
+    gap: .5em;
+		margin: 4em .5em;
+	}
   &__titulo{
-    align-items: flex-start;
+    align-items: center;
     color: $cor-brancol;
     display: flex;
     justify-content: space-between;
@@ -28,12 +34,19 @@
       justify-content: center;
       padding: 1em .26em;
     }
+    @media (min-width: 426px) and (max-width: 768px) {
+      align-items: center;
+      padding: 1em 1.6em;
+    }
     h2{
       font-weight: 400;
       text-indent: .5em;
       @media (max-width: 425px) {
         text-indent: .5em;
         font-size: 1.2em;
+      }
+      @media (min-width: 426px) and (max-width: 768px) {
+        font-size: 1.16em;
       }
     }
   }
@@ -43,6 +56,9 @@
     padding: 0 2em 2em 2em;
     @media (max-width: 425px) {
       padding: 0 .26em 1em .26em;
+    }
+    @media (min-width: 426px) and (max-width: 768px) {
+      padding: 0 .8em 1em .8em;
     }
   }
 }

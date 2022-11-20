@@ -24,6 +24,12 @@
 		width: 100%;
 		height: 50vh;
 	}
+	@media (min-width: 426px) and (max-width: 768px) {
+		border-color: $cor-azull;
+		border-radius: .1em;
+		top: 61px;
+		width: 280px;
+	}
 	&::before {
 		background-color: $cor-dropdown;
 		border-left: 1px solid $cor-secundaria;
@@ -35,7 +41,7 @@
 		top: -10px;
 		transform: rotate(45deg);
 		width: 16px;
-		@media (max-width: 425px) {
+		@media (max-width: 768px) {
 			display: none;
 		}
 	}

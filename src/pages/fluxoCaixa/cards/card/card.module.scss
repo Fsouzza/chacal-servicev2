@@ -29,6 +29,14 @@
 		padding: .8em;
 		width: 194px;
 	}
+	@media (min-width: 426px) and (max-width: 768px) {
+		border-radius: .2em;
+		filter: none;
+		font-size: 1em;
+		height: 160px;
+		padding: 1em;
+		width: 18em;
+	}
  	&:hover{
 		box-shadow: rgba(0, 0, 0, 0.4) 0px 25px 50px -12px;
 		filter: none;

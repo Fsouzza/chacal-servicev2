@@ -11,12 +11,16 @@
     filter: none;
     margin: 0;
 	}
+  @media (min-width: 426px) and (max-width: 768px) {
+    filter: none;
+		margin: 2em .5em;
+	}
   .tableContent{
     background-color: $cor-card;
     border-bottom-left-radius: .5em;
     border-bottom-right-radius: .5em;
     padding: .3em .3em 1.2em .3em;
-    @media (max-width: 425px) {
+    @media (max-width: 768px) {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       overflow-x: auto;

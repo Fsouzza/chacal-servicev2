@@ -17,6 +17,9 @@
     margin: 1em 0;
     justify-content: center;
   }
+  @media (min-width: 426px) and (max-width: 768px){
+    margin: 0 .8em;
+  }
   &__bttns{
     background-color: $cor-hover;
     border-radius: .6em;
