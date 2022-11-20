@@ -1,0 +1,122 @@
+@import "styles/variaveis";
+
+.notificationMenu {
+	align-items: center;
+	background-color: $cor-dropdown;
+	border: 1px solid $cor-secundaria;
+	border-radius: .4em;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	opacity: 1;
+	padding: .1em;
+	position: absolute;
+	right: -1em;
+	top: 2.7em;
+	width: 360px;
+  @media (max-width: 425px) {
+    border-color: $cor-azull;
+    border-radius: 0;
+    right: -6.05em;
+    top: 44px;
+    width: 100vw;
+    height: 55vh;
+  }
+	&::before {
+		background-color: $cor-dropdown;
+		border-left: 1px solid $cor-secundaria;
+		border-top: 1px solid $cor-secundaria;
+		content: "";
+		height: 16px;
+		position: absolute;
+		right: 1.4em;
+		top: -10px;
+		transform: rotate(45deg);
+		width: 16px;
+		@media (max-width: 425px) {
+			display: none;
+		}
+	}
+	&__inativo {
+		display: none;
+	}
+  .titulo{
+    align-items: center;
+    border-bottom: 1px solid $cor-secundaria;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em .9em;
+    width: 100%;
+    h3{
+      font-size: 1.05em;
+      font-weight: 400;
+    }
+    span{
+      background-color: $cor-bg-cinza;
+      border-radius: 40%;
+      color: $cor-azull;
+      font-size: .7em;
+      padding: .3em .8em;
+    }
+  }
+  .info{
+    align-items: center;
+    border-bottom: 1px solid $cor-secundaria;
+    display: flex;
+    gap: .8em;
+    padding: .8em;
+    width: 100%;
+    &__icon{
+      background-color: $cor-bg-verde;
+      border-radius: 50%;
+      font-size: .86em;
+      font-weight: 500;
+      padding: .5em;
+    }
+    &__content{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+      h5{
+        font-size: .8em;
+      }
+      p{
+        color: $cor-brancol;
+        font-size: .7em;
+      }
+    }
+    &__data{
+      display: flex;
+      color: $cor-cinza;
+      font-size: .76em;
+      font-weight: 600;
+      justify-content: flex-end;
+      width: 25%;
+    }
+  }
+  .button{
+    align-items: center;
+    padding: .8em;
+    width: 100%;
+    &__content{
+      background-color: $cor-azul;
+      border: 2px solid $cor-azul;
+      border-radius: .5em;
+      color: $cor-brancol;
+      cursor: pointer;
+      font-size: .74em;
+      font-weight: 500;
+      padding: .8em;
+      text-transform: uppercase;
+      transition: all .5s;
+      width: 100%;
+      &:hover{
+        background: $cor-bg-azul;
+        border-color: $cor-azull;
+        color: $cor-azull;
+      }
+    }
+  }
+}

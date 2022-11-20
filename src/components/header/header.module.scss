@@ -83,9 +83,9 @@
 }
 
 .link {
-  @include menu(transparent, 1.3em, 2px);
+  @include menu(transparent, 1.3em, 3px);
   @media (max-width: 375px) {
-    @include menu(transparent, 1.14em, 2px);
+    @include menu(transparent, 1.14em, 3px);
   }
   overflow: hidden;
   &:hover {
@@ -94,10 +94,24 @@
     transition: 0.4s ease-in;
   }
   &__ativo{
-    @include menu(#5a6af9, 1.3em, 2px);
+    @include menu(#5a6af9, 1.3em, 3px);
     @media (max-width: 375px) {
-      @include menu(#5a6af9, 1.14em, 2px);
+      @include menu(#5a6af9, 1.14em, 3px);
     }
   }
+}
+
+.notification{
+  position: relative;
+}
+
+.circle{
+  background-color: $cor-vermelhal;
+  border-radius: 50%;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+  top: 4px;
+  right: 6px;
 }
 

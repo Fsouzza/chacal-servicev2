@@ -1,7 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 1 - RESPONSIVIDADE (425px a 768px);
-2 - TIMELINE DE ATIVIDADES RECENTES;
-3 - INSERIR DARK-LIGHT MODE;
+2 - INSERIR DARK-LIGHT MODE;
 
 # dependencies
 /node_modules
