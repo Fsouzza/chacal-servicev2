@@ -5,10 +5,11 @@ export interface modalProps {
   children: React.ReactNode,
   title: string,
   open: boolean,
-  close: () => void
+  close: () => void,
+  onSubmit: React.FormEventHandler<HTMLFormElement>
 }
 
-export const ModalWindow = ({ children, title, open, close}: modalProps) => {
+export const ModalWindow = ({ children, title, open, close, onSubmit }: modalProps) => {
   if(!open) {
     return <></>;
   }
@@ -16,7 +17,7 @@ export const ModalWindow = ({ children, title, open, close}: modalProps) => {
   return(
     <>
       <div onClick={close} className={styles.modal} />
-      <form className={styles.modal__form}>
+      <form className={styles.modal__form} onSubmit={onSubmit} action=''>
         <div className={styles.modal__wrapper} 
         >
           <h2>{title}</h2>

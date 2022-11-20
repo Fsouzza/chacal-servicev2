@@ -50,7 +50,7 @@ const Snackbar = ({ type, message }: SnackbarProps) => {
           <div className={styles.icon}>
             <BsExclamationDiamond />
           </div>
-          <div className={styles.message}>{message}a</div>
+          <div className={styles.message}>{message}</div>
         </div> : null
       }
     </>

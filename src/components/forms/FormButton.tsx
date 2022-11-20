@@ -4,7 +4,7 @@ import styles from './FormsFields.module.scss';
 
 interface ButtonsProps {
   title: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const FormButton = ({ title, onClick }: ButtonsProps) => {

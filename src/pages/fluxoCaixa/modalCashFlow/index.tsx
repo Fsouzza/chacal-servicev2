@@ -59,49 +59,73 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
   const [itemField, setItemField] = useState('');
   const [obsField, setObsField] = useState('');
   const [valorField, setValorField] = useState('');
-  const [isOpen, setIsOpen] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isWarning, setIsWarning] = useState(false);
 
-  function showSnackbar(){
-    setIsOpen(true);
+  function showSnackbarSuccess(){
+    setIsSuccess(true);
     setTimeout( () => {
-      setIsOpen(false);
+      setIsSuccess(false);
+    }
+    , 2500
+    );
+    setTimeout( () => {
+      close();
+    }
+    , 2000
+    );
+  }
+
+  function showSnackbarWarning(){
+    setIsWarning(true);
+    setTimeout( () => {
+      setIsWarning(false);
     }
     , 2500
     );
   }
 
-  const IsSubmit = () => {
-    console.log('Você clicou!');
-    showSnackbar();
+  const IsSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log('Informações salvas: ', dataField, idField, localField, itemField, obsField, valorField, docField?.value );
+  };
+
+  const salveFields = () => {
+    showSnackbarSuccess();
   };
   
   const clearFields = () => {
+    showSnackbarWarning();
     setDataField('');
     setIdField('');
     setLocalField('');
     setItemField('');
     setObsField('');
     setValorField('');
+    setDocField(documentos[0]);
+    setLancamentoField(lancamentos[0]);
+    setCategoriaField(categorias[0]);
+    setDeptoField(departamentos[0]);
+    showSnackbarWarning();
   };
 
   return(
     <>
-      {!isOpen ? null : <Snackbar type='Success' message='Cadastro realizado com sucesso' />}
-      <ModalWindow title='Adicionar transação' open={open} close={close}>
+      {!isSuccess ? null : <Snackbar type='Success' message='Cadastro realizado com sucesso' />}
+      {!isWarning ? null : <Snackbar type='Alert' message='Os campos foram limpos!' />}
+      <ModalWindow title='Adicionar transação' open={open} close={close} onSubmit={IsSubmit}>
         <div className={styles.components}>
           <FormInput 
             placeholder='Número do documento' 
             type='number' 
             value={idField}
-            setInput={value => setIdField(value)}
-            required={true} 
+            setInput={value => setIdField(value)} 
           />
           <FormInput  
             placeholder='Descrição do Item' 
             type='text'
             value={itemField} 
             setInput={value => setItemField(value)}
-            required={true}
           />
           <FormInput 
             placeholder='Data de emissão' 
@@ -110,14 +134,12 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
             onBlur={(e) => (e.target.type='text')}
             value={dataField} 
             setInput={value => setDataField(value)}
-            required={true}
           />
           <FormInput 
             placeholder='Valor do item (R$)' 
             type='number' 
             value={valorField} 
             setInput={value => setValorField(value)}
-            required={true}
           />
           <FormSelect 
             placeholder='Tipo de lançamento' 
@@ -148,18 +170,16 @@ export const ModalCashFlow = ({ open, close }: PropsModalCash) => {
             type='text' 
             value={localField} 
             setInput={value => setLocalField(value)}
-            required={true}
           />
           <FormInput 
             placeholder='Informação adicional' 
             type='text' 
             value={obsField} 
             setInput={value => setObsField(value)}
-            required={false}
           />
         </div>
         <div className={styles.wrapper}>
-          <FormButton title={'Adicionar'} onClick={IsSubmit} />
+          <FormButton title={'Adicionar'} onClick={salveFields}  />
           <FormButton title={'Limpar'} onClick={clearFields} />
         </div>
       </ModalWindow>

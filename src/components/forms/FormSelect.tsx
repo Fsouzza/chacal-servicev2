@@ -3,14 +3,11 @@ import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
 import { useState } from 'react';
 import { SelectOption, SelectProps } from 'types/select';
 
-
-
 const FormSelect = ({ value, onChange, options, placeholder }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const placeholderModificada = `${placeholder}`;
 
   function selectOption(option: SelectOption){
-    console.log(option.value);
     onChange(option);
   }
 

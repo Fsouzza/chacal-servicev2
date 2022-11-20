@@ -13,6 +13,6 @@ export const snack = {
   alert: {
     id: 3,
     corFundo: '#aba902',
-    type: 'alert',
+    type: 'Alert',
   }
 };
