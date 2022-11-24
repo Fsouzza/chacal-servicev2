@@ -1,10 +1,10 @@
 import styles from './buscador.module.scss';
 import styles2 from 'components/searchTag/SearchTag.module.scss';
 import { RiArrowDropDownLine } from 'react-icons/ri';
-import { DataFilter } from 'components/dataFilter';
+import DataFilter from 'components/dataFilter';
 import { HiOutlineAdjustments } from 'react-icons/hi';
-import { SearchByTag } from 'components/searchTag';
-import { SearchComponent } from 'components/search';
+import SearchByTag from 'components/searchTag';
+import SearchComponent from 'components/search';
 
 interface Props {
 	busca: string;

@@ -1,8 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Loading from 'components/loading';
+import PageDesignPadrao from 'components/homePage';
 
-const PageDesignPadrao = lazy(() => import('components/homePage'));
 const FluxoCaixa = lazy(() => import('pages/fluxoCaixa'));
 const Clientes = lazy(() => import('pages/clientes'));
 const EstoqueDeEPI = lazy(() => import('pages/estoqueEPI/estoqueDeEPI'));

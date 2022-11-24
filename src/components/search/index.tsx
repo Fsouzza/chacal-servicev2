@@ -1,6 +1,7 @@
 import { IoCloseSharp } from 'react-icons/io5';
 import { FaSearch } from 'react-icons/fa';
 import styles from './SearchComponent.module.scss';
+import { memo, useMemo } from 'react';
 
 interface PropsSearch {
 	busca: string;
@@ -8,12 +9,13 @@ interface PropsSearch {
   placeholder: string;
 }
 
-export const SearchComponent = ({ busca, setBusca, placeholder }: PropsSearch) => {
+const SearchComponent = ({ busca, setBusca, placeholder }: PropsSearch) => {
   const txtPlaceholder = `${placeholder}`;
+  const searchIcon = useMemo(() => <FaSearch size={22} />, []);
 
   return(
     <div className={styles.search}>
-      <FaSearch size={22} />
+      {searchIcon}
       <div className={styles.input}>
         <input
           className={styles.inputContent}
@@ -27,3 +29,5 @@ export const SearchComponent = ({ busca, setBusca, placeholder }: PropsSearch) =
     </div>
   );
 };
+
+export default memo(SearchComponent);

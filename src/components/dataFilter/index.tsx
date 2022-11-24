@@ -1,7 +1,8 @@
 import styles from './dataFilter.module.scss';
 import { Ifilter } from 'types/filter';
+import { memo } from 'react';
 
-export const DataFilter = ({ filter, opcoes , icon}: Ifilter) => {
+const DataFilter = ({ filter, opcoes , icon}: Ifilter) => {
   return(
     <>
       <div className={styles.searchSelect}>
@@ -15,3 +16,5 @@ export const DataFilter = ({ filter, opcoes , icon}: Ifilter) => {
     </>
   );
 };
+
+export default memo(DataFilter);

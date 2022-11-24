@@ -1,10 +1,10 @@
-import { DataFilter } from 'components/dataFilter';
+import DataFilter from 'components/dataFilter';
 import styles from './Filters.module.scss';
 import styles2 from 'components/searchTag/SearchTag.module.scss';
 import { BsCash } from 'react-icons/bs';
 import { HiOutlineAdjustments } from 'react-icons/hi';
-import { SearchByTag } from 'components/searchTag';
-import { SearchComponent } from 'components/search';
+import SearchByTag from 'components/searchTag';
+import SearchComponent from 'components/search';
 
 interface PropsFilterSearch {
   busca: string;

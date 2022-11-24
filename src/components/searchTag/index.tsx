@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { Itags } from 'types/tags';
 import styles from './SearchTag.module.scss';
 
-export const SearchByTag = ({busca, onClick, children, value}: Itags) => {
+const SearchByTag = ({busca, onClick, children, value}: Itags) => {
   
   return(
     <div className={styles.searchTag}>
@@ -15,3 +16,5 @@ export const SearchByTag = ({busca, onClick, children, value}: Itags) => {
     </div>
   );
 };
+
+export default memo(SearchByTag);

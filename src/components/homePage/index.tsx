@@ -5,11 +5,11 @@ import 'styles/lightMode.scss';
 
 const PageDesignPadrao = () => {
   return(
-    <main className={'app'}>
+    <>
       <Header />
       <Outlet />
       <Footer />
-    </main>
+    </>
   );
 };
 

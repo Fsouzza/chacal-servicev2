@@ -1,6 +1,6 @@
 import { formatDate } from 'helpers/dateFormat';
 import styles from './tabelaRegistro.module.scss';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { BiTrash } from 'react-icons/bi';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { filterTableByDateTags } from 'helpers/chartFilter';
@@ -107,4 +107,4 @@ const TabelaCaixa = () => {
   );
 };
 
-export default TabelaCaixa;
+export default memo(TabelaCaixa);
