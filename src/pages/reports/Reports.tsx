@@ -1,5 +1,5 @@
 const Reports = () => {
-  return(
+  return (
     <div>
       <h1>Envie seu Report</h1>
     </div>

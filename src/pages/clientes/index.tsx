@@ -1,4 +1,4 @@
-import TableContract from './Table/index';
+import TableContract from './table/index';
 import AddContract from './Add/index';
 
 const Clientes = () => {
